@@ -1,29 +1,39 @@
 # Portfolio Projects
 
-## Public portfolio projects
+## Purpose
 
-- SupportDesk Lite
-- QuotePilot
-- Luma Studio
-- API Meter
-- SpeedZone
+The developer profile promotes both the finished portfolio projects and the underlying `kv-web-starter` boilerplate. The project set should prove range, not repetition.
 
-## Broader work
+## Completed Boilerplate Projects
+
+- SupportDesk Lite: support dashboard, tickets, statuses, comments, email notifications.
+- QuotePilot: quote/business workflow, clients, line items, taxes, public quote links.
+- Luma Studio: premium marketing website, visual design, SEO, contact form.
+- API Meter: SaaS/API portal, developer docs, usage concepts, OpenAPI.
+
+## Planned Boilerplate Projects
+
+- ReserveFlow: booking system for services, staff availability, and confirmations.
+- CommerceKit: Stripe-ready product catalog, checkout, orders, and admin dashboard.
+- ClientHub: client portal with projects, messages, files, and milestones.
+- EventPass: event registration, attendee tickets, capacity, and check-in dashboard.
+
+## Broader Work
 
 - GasMobile
 - Suze Immo: https://suzeimmo.com
-- Three additional functional websites for real users, to be added as public
-  details become available.
+- SpeedZone: listed as a portfolio project, not linked live until deployed.
 
-## Presentation rule
+## Presentation Rule
 
-Public repos and live URLs should be linked when available. Private or client
-work should still be described clearly without exposing sensitive details.
+Public repos and live URLs should be linked when available. Private or client work should still be described clearly without exposing sensitive details.
 
-## Site sections
+Each project card should make the variation obvious: dashboard, business SaaS, marketing site, API portal, booking, commerce, client portal, event app.
 
-- `/` introduces the profile and selected work.
-- `/projects` lists all public, private, and upcoming work.
+## Site Sections
+
+- `/` introduces the profile, boilerplate provenance, and selected work.
+- `/projects` lists public, private, and upcoming work.
 - `/services` describes the type of development work represented.
 - `/stack` documents technologies and engineering practices.
 - `/process` explains the staged branch workflow.
