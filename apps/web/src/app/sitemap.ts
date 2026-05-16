@@ -4,15 +4,12 @@ import { env } from "@/lib/env";
 
 const routes = [
   "",
+  "/projects",
+  "/about",
   "/services",
-  "/pricing",
+  "/stack",
+  "/process",
   "/contact",
-  "/faq",
-  "/testimonials",
-  "/booking",
-  "/developers",
-  "/docs",
-  "/docs/api",
   "/privacy",
   "/terms",
 ];

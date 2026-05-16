@@ -109,6 +109,57 @@ export const upcomingProjects = [
   "Additional SaaS/dashboard builds from the same starter",
 ];
 
+export const serviceAreas = [
+  {
+    title: "Portfolio and business websites",
+    description:
+      "Client-facing websites with clear positioning, responsive UI, SEO structure, contact flows, and deployable code.",
+  },
+  {
+    title: "SaaS and dashboard products",
+    description:
+      "Operational interfaces for tickets, quotes, API usage, admin workflows, and product data management.",
+  },
+  {
+    title: "API and backend foundations",
+    description:
+      "Prisma data models, validated API routes, auth-ready dashboards, usage tracking, billing-ready structure, and deployment setup.",
+  },
+  {
+    title: "Product improvement",
+    description:
+      "Design polish, UX cleanup, accessibility passes, Git history cleanup, documentation, and production readiness.",
+  },
+];
+
+export const processSteps = [
+  {
+    title: "Plan the slice",
+    description:
+      "Define the outcome, branch name, files likely to change, and verification needed before touching implementation.",
+  },
+  {
+    title: "Build in a focused branch",
+    description:
+      "Keep each branch small enough to review: foundation, content, project pages, design polish, SEO, or deployment.",
+  },
+  {
+    title: "Verify before commit",
+    description:
+      "Run lint, typecheck, tests, and build when the change touches shared behavior or production routes.",
+  },
+  {
+    title: "Document the decision",
+    description:
+      "Update README or docs when a reviewer would benefit from knowing why the structure exists.",
+  },
+  {
+    title: "Merge and continue",
+    description:
+      "Push the working branch, merge into main, then start the next branch from the clean main history.",
+  },
+];
+
 export const stackGroups = [
   {
     title: "Frontend",
