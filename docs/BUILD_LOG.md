@@ -178,3 +178,17 @@ Completed:
 - Added SpeedZone as a visible portfolio project.
 - Added the Suze Immo live URL to the project data.
 - Updated client-site copy so recruiters can inspect the live work directly.
+
+## 08-signature-design-system
+
+Goal: move the profile site from clean/simple to a more memorable recruiter-facing experience while preserving clarity.
+
+Completed:
+
+- Added a signature hero with a recruiter cockpit visual, staged-branch motion, and clearer quality signals.
+- Added an animated project rail that showcases the breadth of the portfolio without requiring extra clicks.
+- Made project rail items clickable: live projects open the live site and others open project details.
+- Added a boilerplate provenance section with a GitHub link to `kurtisv/kv-web-starter`.
+- Strengthened project cards with accent bars, stronger link affordances, and more tactile hover states.
+- Updated the navbar with a more distinctive monogram, portfolio label, and pill navigation.
+- Added motion CSS with `prefers-reduced-motion` handling.

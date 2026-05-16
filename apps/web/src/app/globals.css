@@ -1,16 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f6f1;
-  --foreground: #17211f;
-  --card: #fffdf8;
-  --muted: #ebe7dc;
-  --muted-foreground: #5f685f;
-  --border: #d8d1c2;
-  --primary: #24513f;
+  --background: #f5f1e8;
+  --foreground: #151f1c;
+  --card: #fffaf0;
+  --muted: #e8dfcf;
+  --muted-foreground: #5d675f;
+  --border: #d3c4ae;
+  --primary: #17483e;
   --primary-foreground: #fafafa;
-  --secondary: #e7e1d3;
-  --secondary-foreground: #17211f;
+  --secondary: #f0d7b1;
+  --secondary-foreground: #241811;
+  --accent: #b85b3e;
+  --accent-foreground: #fff7ef;
+  --ink: #0e1715;
+  --gold: #bf9149;
 }
 
 @theme inline {
@@ -24,6 +28,8 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -40,13 +46,149 @@ body::before {
   pointer-events: none;
   content: "";
   background:
-    linear-gradient(90deg, rgba(36, 81, 63, 0.055) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(36, 81, 63, 0.05) 1px, transparent 1px);
-  background-size: 72px 72px;
+    linear-gradient(90deg, rgba(23, 72, 62, 0.06) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(23, 72, 62, 0.052) 1px, transparent 1px),
+    radial-gradient(circle at 30% 12%, rgba(184, 91, 62, 0.12), transparent 34%);
+  background-size: 72px 72px, 72px 72px, 100% 100%;
   mask-image: linear-gradient(180deg, black 0%, transparent 78%);
 }
 
 ::selection {
   background: #bbf7d0;
   color: #102018;
+}
+
+.signature-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(245, 241, 232, 0.98) 0%, rgba(240, 215, 177, 0.88) 46%, rgba(214, 229, 213, 0.95) 100%),
+    linear-gradient(90deg, rgba(23, 72, 62, 0.12), rgba(184, 91, 62, 0.12));
+}
+
+.signature-hero::before {
+  position: absolute;
+  inset: 18px;
+  pointer-events: none;
+  content: "";
+  border: 1px solid rgba(23, 72, 62, 0.12);
+}
+
+.signature-hero::after {
+  position: absolute;
+  inset: auto -10% -38% 28%;
+  height: 58%;
+  pointer-events: none;
+  content: "";
+  background: repeating-linear-gradient(
+    112deg,
+    rgba(23, 72, 62, 0.11) 0 1px,
+    transparent 1px 22px
+  );
+  transform: rotate(-2deg);
+}
+
+.hero-wordmark {
+  color: transparent;
+  background: linear-gradient(105deg, #0e1715 0%, #17483e 55%, #b85b3e 100%);
+  background-clip: text;
+}
+
+.motion-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.motion-card::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.38) 42%, transparent 64%);
+  transform: translateX(-120%);
+  animation: card-sheen 6s ease-in-out infinite;
+}
+
+.timeline-pulse {
+  animation: timeline-pulse 2.8s ease-in-out infinite;
+}
+
+.float-soft {
+  animation: float-soft 7s ease-in-out infinite;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 34s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.project-card-accent {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card-accent::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  content: "";
+  background: linear-gradient(90deg, var(--primary), var(--accent), var(--gold));
+}
+
+@keyframes card-sheen {
+  0%, 58% {
+    transform: translateX(-120%);
+  }
+  78%, 100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes timeline-pulse {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scaleX(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes float-soft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .marquee-track {
+    transform: none;
+  }
 }
