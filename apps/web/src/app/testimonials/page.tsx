@@ -3,9 +3,9 @@ import { Section } from "@/components/marketing/section";
 import { Card, CardContent } from "@/components/ui/card";
 
 const testimonials = [
-  "Un starter concu pour livrer vite des projets client.",
-  "La separation contenu, business logic et dashboard rend la base claire.",
-  "Le module API portal donne une vraie option SaaS des le depart.",
+  "Des interfaces qui restent claires meme quand le produit devient plus complet.",
+  "Une structure de code lisible, facile a verifier et a faire evoluer.",
+  "Des projets live qui montrent le parcours complet: idee, build, repo et deploiement.",
 ];
 
 export default function TestimonialsPage() {

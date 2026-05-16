@@ -6,7 +6,7 @@ const globalForPrisma = globalThis as unknown as {
 };
 
 const connectionString =
-  process.env.DATABASE_URL ?? "postgresql://postgres:postgres@localhost:5432/kv_web_starter";
+  process.env.DATABASE_URL ?? "postgresql://postgres:postgres@localhost:5432/dev_portfolio";
 
 export const prisma =
   globalForPrisma.prisma ??

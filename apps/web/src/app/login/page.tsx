@@ -25,7 +25,7 @@ export default async function LoginPage({
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle>Connexion</CardTitle>
-          <CardDescription>Acces administrateur pour le boilerplate.</CardDescription>
+          <CardDescription>Acces administrateur pour les outils internes du portfolio.</CardDescription>
         </CardHeader>
         <CardContent>
           {params.error ? (

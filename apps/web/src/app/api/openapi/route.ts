@@ -4,9 +4,9 @@ export function GET() {
   return NextResponse.json({
     openapi: "3.1.0",
     info: {
-      title: "KV Web Starter API",
+      title: "Dev Portfolio API",
       version: "0.1.0",
-      description: "Starter API surface for paid API products.",
+      description: "Small API surface kept in the portfolio to demonstrate API documentation patterns.",
     },
     servers: [{ url: "/api/v1" }],
     paths: {
