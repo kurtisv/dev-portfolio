@@ -15,13 +15,13 @@ export function ProjectCard({
   const labels = pageCopy[locale].projectCard;
 
   return (
-    <article className="group flex h-full flex-col border border-border bg-card p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+    <article className="project-card-accent group flex h-full flex-col border border-border bg-card p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_18px_50px_rgba(14,23,21,0.12)]">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className="text-sm font-medium text-emerald-700">{copy.category}</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary">{copy.category}</p>
           <h3 className="mt-2 text-xl font-semibold">{project.name}</h3>
         </div>
-        <span className="border border-border bg-background px-2.5 py-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+        <span className="border border-border bg-background/85 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
           {project.status}
         </span>
       </div>
@@ -35,17 +35,17 @@ export function ProjectCard({
           </span>
         ))}
       </div>
-      <div className="mt-6 flex flex-wrap gap-3">
+      <div className="mt-6 flex flex-wrap gap-2">
         <Link
           href={`/projects/${project.slug}`}
-          className="inline-flex items-center gap-2 text-sm font-semibold text-foreground"
+          className="inline-flex items-center gap-2 border border-foreground/15 bg-foreground px-3 py-1.5 text-sm font-semibold text-background transition hover:bg-primary"
         >
           {labels.details} <ArrowUpRight className="size-4 transition group-hover:translate-x-0.5" />
         </Link>
         {project.liveUrl ? (
           <Link
             href={project.liveUrl}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700"
+            className="inline-flex items-center gap-2 border border-primary/25 bg-secondary/70 px-3 py-1.5 text-sm font-semibold text-primary transition hover:border-primary"
           >
             {labels.live} <ArrowUpRight className="size-4" />
           </Link>
@@ -53,7 +53,7 @@ export function ProjectCard({
         {project.repoUrl ? (
           <Link
             href={project.repoUrl}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground"
+            className="inline-flex items-center gap-2 px-2 py-1.5 text-sm font-semibold text-muted-foreground transition hover:text-foreground"
           >
             {labels.repo} <ArrowUpRight className="size-4" />
           </Link>
