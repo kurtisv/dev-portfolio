@@ -112,3 +112,34 @@ Next:
 
 - Verify, commit, push, and merge into `main`.
 - Start `05-deploy`.
+
+Verification:
+
+- `pnpm lint` passed.
+- `pnpm typecheck` passed.
+- `pnpm test` passed: 50 tests.
+- `pnpm build` passed.
+
+Commit:
+
+- `ab11625 feat: polish recruiter portfolio experience`
+
+Merge:
+
+- `23a83b7 merge: recruiter design polish`
+
+## 05-deploy
+
+Goal: publish the developer profile site and record production status.
+
+Completed:
+
+- Deployed production to Vercel.
+- Connected the public GitHub repository to Vercel.
+- Smoke tested `/`, `/projects`, `/projects/api-meter`, and `/process`.
+
+Production:
+
+- URL: https://dev-portfolio-mocha-five.vercel.app
+- Deployment id: `dpl_G7hdyebzqu8m6pPTsYJKzQxickQp`
+- Inspector: https://vercel.com/verskurtislivefrs-projects/dev-portfolio/G7hdyebzqu8m6pPTsYJKzQxickQp
