@@ -217,36 +217,71 @@ export const featuredProjects: PortfolioProject[] = [
     repoUrl: "https://github.com/kurtisv/gasmobile",
   },
   {
+    slug: "speedzone",
+    name: "SpeedZone",
+    category: "Automotive community platform",
+    status: "live",
+    summary: "A car enthusiast platform with profiles, vehicle publishing, articles, comments, and Sanity-backed content.",
+    description:
+      "SpeedZone is a larger portfolio application for the automotive space. It combines a Next.js front end, Sanity CMS, Google authentication, user profiles, vehicle listings, comments, articles, and product-style community interactions.",
+    stack: ["Next.js", "React", "TypeScript", "Sanity", "NextAuth", "Tailwind CSS"],
+    highlights: ["Automotive community", "Sanity CMS", "Auth and user profiles"],
+    recruiterValue:
+      "Shows a richer product surface than a landing page: auth, content modeling, user-generated listings, comments, and a domain-specific visual direction.",
+    buildNotes: [
+      "Built around the automotive niche with a distinct dark/red visual identity.",
+      "Connects public content, authenticated user flows, Sanity data, and article/detail pages.",
+      "Useful for recruiters who want to see a broader app structure with CMS-backed content.",
+    ],
+    fr: {
+      category: "Plateforme communautaire automobile",
+      summary:
+        "Une plateforme pour passionnes auto avec profils, publication de voitures, articles, commentaires et contenu Sanity.",
+      description:
+        "SpeedZone est une application portfolio plus large dans l'univers automobile. Elle combine un front Next.js, Sanity CMS, l'authentification Google, des profils utilisateurs, des fiches voitures, des commentaires, des articles et des interactions communautaires.",
+      highlights: ["Communaute automobile", "Sanity CMS", "Auth et profils"],
+      recruiterValue:
+        "Montre une surface produit plus riche qu'une page vitrine: auth, modelisation de contenu, publications utilisateur, commentaires et direction visuelle specifique au domaine.",
+      buildNotes: [
+        "Construit autour de l'univers automobile avec une identite sombre/rouge distincte.",
+        "Relie contenu public, flux authentifies, donnees Sanity et pages article/detail.",
+        "Utile pour voir une structure applicative plus large avec contenu CMS.",
+      ],
+    },
+    repoUrl: "https://github.com/kurtisv/speedzone",
+  },
+  {
     slug: "suze-immo",
     name: "Suze Immo",
     category: "Real client website",
-    status: "private",
+    status: "live",
     summary: "A real estate website project for a functional business presence.",
     description:
-      "Suze Immo is a real site context. Public details can be limited while still showing the type of client-facing work delivered.",
+      "Suze Immo is a real site context for a real estate audience. The live site is linked so recruiters can inspect the delivered client-facing experience directly.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS"],
     highlights: ["Client context", "Business website", "SEO-minded structure"],
     recruiterValue:
-      "Shows real client website context and the ability to work on functional business sites.",
+      "Shows real client website context and the ability to work on functional business sites that need trust, conversion, SEO, and responsive UI.",
     buildNotes: [
-      "Details stay limited where client context should remain private.",
+      "Live site is available for recruiter review.",
       "Represents work beyond portfolio exercises.",
-      "Will be expanded when public client material is ready.",
+      "Focuses on real estate presentation, property discovery, contact flows, and brand cleanup.",
     ],
     fr: {
       category: "Site client reel",
       summary: "Un site immobilier pour une presence d'affaires fonctionnelle.",
       description:
-        "Suze Immo est un contexte de vrai site. Les details publics restent limites, mais le type de travail client est clair.",
+        "Suze Immo est un vrai contexte de site immobilier. Le site live est lie pour que le recruteur puisse inspecter directement l'experience livree.",
       highlights: ["Contexte client", "Site d'affaires", "Structure orientee SEO"],
       recruiterValue:
-        "Montre un contexte client reel et la capacite a livrer des sites fonctionnels.",
+        "Montre un contexte client reel et la capacite a livrer des sites fonctionnels qui demandent confiance, conversion, SEO et UI responsive.",
       buildNotes: [
-        "Details limites quand le contexte client doit rester prive.",
+        "Site live disponible pour revue recruteur.",
         "Travail au-dela des exercices portfolio.",
-        "A enrichir quand le materiel public sera pret.",
+        "Travail sur presentation immobiliere, recherche de proprietes, contact et nettoyage de marque.",
       ],
     },
+    liveUrl: "https://suzeimmo.com",
   },
 ];
 

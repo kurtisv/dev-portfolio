@@ -6,11 +6,12 @@
 - QuotePilot
 - Luma Studio
 - API Meter
+- SpeedZone
 
 ## Broader work
 
 - GasMobile
-- Suze Immo
+- Suze Immo: https://suzeimmo.com
 - Three additional functional websites for real users, to be added as public
   details become available.
 
