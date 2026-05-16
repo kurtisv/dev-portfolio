@@ -9,6 +9,8 @@ export type PortfolioProject = {
   description: string;
   stack: string[];
   highlights: string[];
+  recruiterValue: string;
+  buildNotes: string[];
   liveUrl?: string;
   repoUrl?: string;
 };
@@ -38,6 +40,13 @@ export const featuredProjects: PortfolioProject[] = [
       "SupportDesk Lite demonstrates business dashboard work: operational flows, support context, status-driven UI, and a classic visual direction distinct from the other portfolio projects.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Supabase"],
     highlights: ["Ticket workflow", "Client-ready dashboard", "Classic elegant theme"],
+    recruiterValue:
+      "Shows that I can structure operational UI around real support work instead of only making marketing pages.",
+    buildNotes: [
+      "Separated from the starter into its own repository.",
+      "Uses a distinct visual identity from the other portfolio apps.",
+      "Frames ticket state, priority, and client context as the main product workflow.",
+    ],
     repoUrl: "https://github.com/kurtisv/supportdesk-lite",
   },
   {
@@ -50,6 +59,13 @@ export const featuredProjects: PortfolioProject[] = [
       "QuotePilot shows CRUD, business logic, pricing structure, and a more refined color system for a practical SMB workflow.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Supabase"],
     highlights: ["Quote workflow", "Client and line item model", "Supabase PostgreSQL"],
+    recruiterValue:
+      "Demonstrates business logic, data modeling, and a practical workflow a small business could understand.",
+    buildNotes: [
+      "Moved database direction to Supabase PostgreSQL.",
+      "Refined the theme after the first color pass.",
+      "Shows taxes, quote status, client data, and quote line structure.",
+    ],
     repoUrl: "https://github.com/kurtisv/quotepilot",
   },
   {
@@ -62,6 +78,13 @@ export const featuredProjects: PortfolioProject[] = [
       "Luma Studio proves the boilerplate can produce a polished client-facing website, not only dashboard applications.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Resend-ready forms"],
     highlights: ["FR/EN support", "Real imagery", "Marketing and SEO structure"],
+    recruiterValue:
+      "Shows that I can move beyond dashboards and create a polished client-facing site with visual direction.",
+    buildNotes: [
+      "Built as project 3 to prove marketing-site versatility.",
+      "Includes bilingual copy and real image treatment.",
+      "Documents the design system and portfolio rationale.",
+    ],
     liveUrl: "https://luma-studio-ruddy.vercel.app",
     repoUrl: "https://github.com/kurtisv/luma-studio",
   },
@@ -75,6 +98,13 @@ export const featuredProjects: PortfolioProject[] = [
       "API Meter demonstrates API keys, usage tracking concepts, developer documentation, and a calm SaaS product interface.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "OpenAPI"],
     highlights: ["FR/EN support", "Developer portal", "Usage dashboard"],
+    recruiterValue:
+      "Demonstrates the API/SaaS side of the starter: developer docs, usage concepts, API routes, and dashboard UI.",
+    buildNotes: [
+      "Built after Luma Studio as project 4.",
+      "Includes a public developer portal, OpenAPI route, pricing concept, and demo dashboard.",
+      "Uses a restrained technical design with FR/EN support.",
+    ],
     liveUrl: "https://api-meter.vercel.app",
     repoUrl: "https://github.com/kurtisv/api-meter",
   },
@@ -88,6 +118,13 @@ export const featuredProjects: PortfolioProject[] = [
       "GasMobile is part of the broader work history and shows product ambition beyond small portfolio websites.",
     stack: ["React Native", "Expo", "TypeScript", "Maps", "Sanity"],
     highlights: ["Mobile experience", "Map workflows", "Production product thinking"],
+    recruiterValue:
+      "Shows broader product ambition and mobile-facing work beyond small web demos.",
+    buildNotes: [
+      "Represents application work with maps and mobile product flows.",
+      "Useful context for product thinking outside the portfolio website series.",
+      "Included as a major project even if details evolve separately.",
+    ],
     repoUrl: "https://github.com/kurtisv/gasmobile",
   },
   {
@@ -100,8 +137,19 @@ export const featuredProjects: PortfolioProject[] = [
       "Suze Immo is a real site context. Public details can be limited while still showing the type of client-facing work delivered.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS"],
     highlights: ["Client context", "Business website", "SEO-minded structure"],
+    recruiterValue:
+      "Shows real client website context and the ability to work on functional business sites.",
+    buildNotes: [
+      "Details stay limited where client context should remain private.",
+      "Represents work beyond fictional portfolio prompts.",
+      "Will be expanded when public client material is ready.",
+    ],
   },
 ];
+
+export function getProjectBySlug(slug: string) {
+  return featuredProjects.find((project) => project.slug === slug);
+}
 
 export const upcomingProjects = [
   "Three additional functional websites for real users",

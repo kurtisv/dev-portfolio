@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { env } from "@/lib/env";
+import { featuredProjects } from "@/data/portfolio";
 
 const routes = [
   "",
@@ -15,7 +16,9 @@ const routes = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((route) => ({
+  const projectRoutes = featuredProjects.map((project) => `/projects/${project.slug}`);
+
+  return [...routes, ...projectRoutes].map((route) => ({
     url: `${env.NEXT_PUBLIC_APP_URL}${route}`,
     lastModified: new Date(),
     changeFrequency: "weekly",

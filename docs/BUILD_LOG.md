@@ -48,3 +48,35 @@ Next:
 
 - Verify, commit, push, and merge into `main`.
 - Start `03-projects-showcase`.
+
+Verification:
+
+- `pnpm lint` passed.
+- `pnpm typecheck` passed.
+- `pnpm test` passed: 50 tests.
+- `pnpm build` passed.
+
+Commit:
+
+- `14c8ec6 feat: add profile content structure`
+
+Merge:
+
+- `af910cf merge: profile content structure`
+
+## 03-projects-showcase
+
+Goal: make each project useful to inspect, not just listed as a card.
+
+Completed:
+
+- Added recruiter value and build notes to each project record.
+- Added `getProjectBySlug` helper.
+- Added `/projects/[slug]` detail pages with metadata and static params.
+- Added live/GitHub links where available.
+- Added project detail routes to the sitemap.
+
+Next:
+
+- Verify, commit, push, and merge into `main`.
+- Start `04-design-polish`.
