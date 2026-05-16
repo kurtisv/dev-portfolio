@@ -1,40 +1,32 @@
-import { CheckCircle2 } from "lucide-react";
+import type { Metadata } from "next";
 
+import { SectionHeading } from "@/components/portfolio/section-heading";
 import { MarketingPageShell } from "@/components/marketing/page-shell";
-import { Section } from "@/components/marketing/section";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { serviceAreas } from "@/data/portfolio";
 
-const services = [
-  "Site vitrine professionnel",
-  "Prise de rendez-vous",
-  "Portail API payante",
-  "Dashboard client/admin",
-  "SEO local et contenu",
-  "Integrations Stripe, Resend, Sanity",
-];
+export const metadata: Metadata = {
+  title: "Services",
+  description: "Development services and project types represented in the portfolio.",
+};
 
 export default function ServicesPage() {
   return (
     <MarketingPageShell>
-      <Section>
-        <h1 className="text-4xl font-semibold">Services</h1>
-        <p className="mt-4 max-w-2xl text-muted-foreground">
-          Une structure prete pour vendre rapidement des sites de service, des plateformes booking et des portails SaaS/API.
-        </p>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <Card key={service}>
-              <CardHeader>
-                <CheckCircle2 className="size-5" />
-                <CardTitle>{service}</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                Module activable et adaptable selon le projet client.
-              </CardContent>
-            </Card>
+      <main className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+        <SectionHeading
+          eyebrow="Services"
+          title="The work is centered on practical product development."
+          description="This page frames the portfolio from a client or recruiter perspective: what kind of problems the work is meant to solve."
+        />
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          {serviceAreas.map((area) => (
+            <article key={area.title} className="border border-border bg-card p-6 shadow-sm">
+              <h2 className="text-xl font-semibold">{area.title}</h2>
+              <p className="mt-4 leading-7 text-muted-foreground">{area.description}</p>
+            </article>
           ))}
         </div>
-      </Section>
+      </main>
     </MarketingPageShell>
   );
 }
