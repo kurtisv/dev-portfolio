@@ -192,3 +192,14 @@ Completed:
 - Strengthened project cards with accent bars, stronger link affordances, and more tactile hover states.
 - Updated the navbar with a more distinctive monogram, portfolio label, and pill navigation.
 - Added motion CSS with `prefers-reduced-motion` handling.
+
+## 09-diverse-boilerplate-roadmap
+
+Goal: reposition the eight-project portfolio roadmap so it promotes the versatility of `kv-web-starter`, not repeated dashboard patterns.
+
+Completed:
+
+- Marked SupportDesk Lite, QuotePilot, Luma Studio, and API Meter as completed.
+- Replaced the remaining similar dashboard-heavy backlog with more varied projects: ReserveFlow, CommerceKit, ClientHub, and EventPass.
+- Documented which boilerplate capability each project demonstrates.
+- Updated local roadmap docs and the Symphonee project note.
