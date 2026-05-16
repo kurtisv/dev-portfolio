@@ -168,3 +168,13 @@ Verification:
 Next:
 
 - Commit, push, merge into `main`, and deploy production.
+
+## 07-client-site-links
+
+Goal: make the broader portfolio more complete for recruiters by exposing client/personal site links.
+
+Completed:
+
+- Added SpeedZone as a visible portfolio project.
+- Added the Suze Immo live URL to the project data.
+- Updated client-site copy so recruiters can inspect the live work directly.
