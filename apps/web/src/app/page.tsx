@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Code2, Layers3 } from "lucide-react";
 
 import { ProjectCard } from "@/components/portfolio/project-card";
+import { ProofStrip } from "@/components/portfolio/proof-strip";
 import { SectionHeading } from "@/components/portfolio/section-heading";
 import { MarketingPageShell } from "@/components/marketing/page-shell";
 import { Button } from "@/components/ui/button";
@@ -59,6 +60,8 @@ export default function Home() {
           </div>
         </section>
 
+        <ProofStrip />
+
         <section className="mx-auto max-w-6xl px-6 py-16">
           <SectionHeading
             eyebrow="Selected work"
@@ -105,6 +108,27 @@ export default function Home() {
                 {item}
               </div>
             ))}
+          </div>
+        </section>
+
+        <section className="bg-[#122019] text-white">
+          <div className="mx-auto grid max-w-6xl gap-8 px-6 py-16 lg:grid-cols-[1fr_0.8fr] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-300">
+                Recruiter note
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-normal text-balance sm:text-4xl">
+                This repository is built to be inspected, not just visited.
+              </h2>
+              <p className="mt-4 max-w-2xl leading-7 text-slate-300">
+                The site is developed branch by branch, with verification and
+                documentation along the way, so the GitHub history reflects the
+                same discipline expected in production work.
+              </p>
+            </div>
+            <Button asChild size="lg" variant="secondary">
+              <Link href="/process">Review the process</Link>
+            </Button>
           </div>
         </section>
       </main>

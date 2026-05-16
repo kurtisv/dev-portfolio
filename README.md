@@ -10,7 +10,9 @@ workflow so recruiters can review how the site was constructed over time.
 
 - Developer profile landing page
 - Project index
+- Project detail pages
 - About page
+- Services page
 - Stack page
 - Process page
 - Shared project data source
@@ -39,3 +41,14 @@ pnpm typecheck
 pnpm test
 pnpm build
 ```
+
+## Public repo
+
+GitHub: https://github.com/kurtisv/dev-portfolio
+
+## Review notes
+
+The site is intentionally built in incremental branches so a recruiter can
+inspect progression instead of only seeing one final commit. The main content
+model lives in `apps/web/src/data/portfolio.ts`; most public pages consume that
+data rather than duplicating project facts.
