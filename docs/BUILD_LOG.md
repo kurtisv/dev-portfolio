@@ -80,3 +80,35 @@ Next:
 
 - Verify, commit, push, and merge into `main`.
 - Start `04-design-polish`.
+
+Verification:
+
+- `pnpm lint` passed.
+- `pnpm typecheck` passed.
+- `pnpm test` passed: 50 tests.
+- `pnpm build` passed.
+
+Commit:
+
+- `24c3b84 feat: add project detail showcase`
+
+Merge:
+
+- `bb46e2b merge: project detail showcase`
+
+## 04-design-polish
+
+Goal: improve recruiter-facing polish and production review quality.
+
+Completed:
+
+- Added proof strip to the landing page.
+- Added a dark recruiter note CTA section.
+- Tightened README review notes.
+- Expanded design documentation around recruiter experience.
+- Updated robots rules to keep dashboard/login/API paths out of crawl focus.
+
+Next:
+
+- Verify, commit, push, and merge into `main`.
+- Start `05-deploy`.

@@ -38,3 +38,11 @@ range, process, and code quality.
 - Use semantic headings.
 - Preserve visible focus states from UI primitives.
 - Avoid color-only meaning for status where possible.
+
+## Recruiter experience
+
+- The first viewport must explain the role and type of work quickly.
+- Project cards must show category, status, stack, and a path to detail.
+- Detail pages must explain recruiter value, not only features.
+- The process page must make the branch-by-branch workflow explicit.
+- Documentation should make the repo easier to review.
