@@ -6,11 +6,11 @@ Goal: create the first working foundation for the developer profile site.
 
 Completed:
 
-- Copied `kv-web-starter` into a separate `dev-portfolio` repo.
+- Created a separate `dev-portfolio` repo from the shared foundation.
 - Added the repo to the Symphonee portfolio space.
 - Created branch `01-foundation`.
 - Added profile data, project data, shared project card, and section heading.
-- Replaced the generic starter landing page with a developer portfolio home.
+- Replaced the generic landing page with a developer portfolio home.
 - Added initial `/projects`, `/about`, `/stack`, and `/process` pages.
 - Added Vercel monorepo configuration.
 
@@ -143,3 +143,28 @@ Production:
 - URL: https://dev-portfolio-mocha-five.vercel.app
 - Deployment id: `dpl_G7hdyebzqu8m6pPTsYJKzQxickQp`
 - Inspector: https://vercel.com/verskurtislivefrs-projects/dev-portfolio/G7hdyebzqu8m6pPTsYJKzQxickQp
+
+## 06-fr-en-visual-polish
+
+Goal: make the developer profile stronger for recruiters with bilingual content, visible portfolio links, and cleaner repository wording.
+
+Completed:
+
+- Added a FR/EN language switcher backed by a locale cookie.
+- Localized the main profile pages, project cards, detail pages, footer, and navigation.
+- Added visible live-site and GitHub links to recruiter-facing project cards.
+- Strengthened the visual direction with warmer surfaces, calmer green accents, richer hero treatment, and more deliberate card depth.
+- Replaced old foundation wording in public routes, docs, API metadata, tests, and repository notes.
+- Updated Playwright configuration so e2e tests can run on a clean per-run port.
+
+Verification:
+
+- `pnpm lint` passed.
+- `pnpm typecheck` passed.
+- `pnpm test` passed: 50 tests.
+- `pnpm build` passed.
+- `PLAYWRIGHT_PORT=3008 pnpm test:e2e` passed: 2 tests.
+
+Next:
+
+- Commit, push, merge into `main`, and deploy production.

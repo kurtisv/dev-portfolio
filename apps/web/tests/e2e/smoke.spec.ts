@@ -1,17 +1,17 @@
 import { expect, test } from "@playwright/test";
 
-test("marketing, docs, and public API routes render", async ({ page, request }) => {
+test("portfolio, docs, and public API routes render", async ({ page, request }) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { name: /base premium/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /web products that are useful/i })).toBeVisible();
 
-  await page.goto("/booking?date=2026-05-18");
-  await expect(page.getByRole("heading", { name: /reservation claire/i })).toBeVisible();
+  await page.goto("/projects");
+  await expect(page.getByRole("heading", { name: /different product surfaces/i })).toBeVisible();
 
   await page.goto("/docs");
-  await expect(page.getByRole("heading", { name: /utiliser kv web starter/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /how this portfolio is built/i })).toBeVisible();
 
   await page.goto("/docs/api");
-  await expect(page.getByText(/kv web starter api/i).first()).toBeVisible();
+  await expect(page.getByText(/dev portfolio api/i).first()).toBeVisible();
 
   const openapi = await request.get("/api/openapi");
   expect(openapi.ok()).toBe(true);

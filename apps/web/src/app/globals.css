@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8faf7;
-  --foreground: #17211b;
-  --card: #ffffff;
-  --muted: #edf3ee;
-  --muted-foreground: #53615a;
-  --border: #dbe5dd;
-  --primary: #1f4d36;
+  --background: #f7f6f1;
+  --foreground: #17211f;
+  --card: #fffdf8;
+  --muted: #ebe7dc;
+  --muted-foreground: #5f685f;
+  --border: #d8d1c2;
+  --primary: #24513f;
   --primary-foreground: #fafafa;
-  --secondary: #e7eee8;
-  --secondary-foreground: #17211b;
+  --secondary: #e7e1d3;
+  --secondary-foreground: #17211f;
 }
 
 @theme inline {
@@ -31,6 +31,19 @@
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(36, 81, 63, 0.055) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(36, 81, 63, 0.05) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(180deg, black 0%, transparent 78%);
 }
 
 ::selection {

@@ -1,7 +1,7 @@
 const en = {
   app: {
-    name: "KV Web Starter",
-    tagline: "Premium modular boilerplate for marketing, booking, and SaaS/API projects.",
+    name: "Kurtis V.",
+    tagline: "Bilingual developer portfolio for web products, business interfaces, and APIs.",
   },
   nav: {
     services: "Services",

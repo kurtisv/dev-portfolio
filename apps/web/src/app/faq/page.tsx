@@ -3,9 +3,9 @@ import { Section } from "@/components/marketing/section";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
-  ["Est-ce un template SaaS complet?", "Non. C'est une base modulaire pour construire vite sans trainer du code inutile."],
-  ["Peut-on cacher les modules?", "Oui. Les feature flags servent a masquer booking, billing, CMS ou API portal selon le projet."],
-  ["Sanity remplace-t-il Postgres?", "Non. Sanity gere le contenu marketing; Postgres garde la logique business."],
+  ["Quels types de projets sont presentes?", "Des sites, interfaces metier et API qui montrent le passage de l'idee au deploiement."],
+  ["Pourquoi garder des routes techniques?", "Elles rendent visible la capacite a structurer un vrai produit au-dela d'une page vitrine."],
+  ["Le portfolio est-il bilingue?", "Oui. Le contenu principal est disponible en francais et en anglais pour les recruteurs."],
 ];
 
 export default function FaqPage() {

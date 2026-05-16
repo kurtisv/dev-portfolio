@@ -12,7 +12,7 @@ range, process, and code quality.
 - Light, warm-neutral surfaces.
 - Green accent used with restraint.
 - Dense enough to scan, not decorative.
-- No generic AI gradients.
+- No generic decorative gradients.
 - No nested cards.
 
 ## Palette

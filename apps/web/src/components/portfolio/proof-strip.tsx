@@ -1,11 +1,9 @@
-const proofs = [
-  ["4", "portfolio builds from the starter"],
-  ["1", "mobile product included"],
-  ["3+", "client sites planned or in progress"],
-  ["50", "tests passing in the foundation"],
-];
+import type { Locale } from "@/i18n/config";
+import { pageCopy } from "@/data/portfolio";
 
-export function ProofStrip() {
+export function ProofStrip({ locale = "en" }: { locale?: Locale }) {
+  const proofs = pageCopy[locale].proof;
+
   return (
     <section className="border-y border-border bg-white">
       <div className="mx-auto grid max-w-6xl gap-4 px-6 py-8 sm:grid-cols-2 lg:grid-cols-4">

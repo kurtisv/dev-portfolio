@@ -33,7 +33,7 @@ describe("Auth.js trusted host configuration", () => {
     ).toBe(false);
   });
 
-  it("matches the starter default through AUTH_TRUST_HOST", () => {
+  it("matches the local default through AUTH_TRUST_HOST", () => {
     expect(
       shouldTrustAuthHost({
         authTrustHost: true,

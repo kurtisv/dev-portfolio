@@ -3,8 +3,9 @@
 This repository contains the developer profile site that brings together public
 portfolio projects, real client website context, and product application work.
 
-The project is built from `kv-web-starter` and intentionally uses a staged Git
-workflow so recruiters can review how the site was constructed over time.
+The project is built from a reusable Next.js foundation and intentionally uses
+a staged Git workflow so recruiters can review how the site was constructed
+over time.
 
 ## Current scope
 

@@ -1,7 +1,7 @@
 import { ApiReference } from "@scalar/nextjs-api-reference";
 
 export const GET = ApiReference({
-  title: "KV Web Starter API",
+  title: "Dev Portfolio API",
   url: "/api/openapi",
   theme: "kepler",
   layout: "modern",
