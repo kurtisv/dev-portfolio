@@ -184,6 +184,142 @@ export const featuredProjects: PortfolioProject[] = [
     repoUrl: "https://github.com/kurtisv/api-meter",
   },
   {
+    slug: "reserveflow",
+    name: "ReserveFlow",
+    category: "Booking system",
+    status: "live",
+    summary: "A service booking product with public scheduling, staff capacity, and an operations dashboard.",
+    description:
+      "ReserveFlow shows how the foundation can become a booking workflow for a service business, with a deeper product surface than a static portfolio page.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Supabase"],
+    highlights: ["Booking flow", "Staff availability", "Shared Supabase ecosystem"],
+    recruiterValue:
+      "Shows scheduling logic, operational thinking, and a polished service-business interface built from the same boilerplate.",
+    buildNotes: [
+      "Built as project 5 from kv-web-starter.",
+      "Uses the shared kv-portfolio Supabase database.",
+      "Includes FR/EN support, product depth, and a recruiter-facing case study.",
+    ],
+    fr: {
+      category: "Systeme de reservation",
+      summary: "Un produit de reservation avec prise de rendez-vous, capacite equipe et dashboard operationnel.",
+      description:
+        "ReserveFlow montre comment la base devient un flux de reservation pour entreprise de services, avec plus de profondeur qu'une simple page vitrine.",
+      highlights: ["Flux de reservation", "Disponibilite equipe", "Ecosysteme Supabase partage"],
+      recruiterValue:
+        "Montre logique de planification, pensee operationnelle et interface de service construite depuis le meme boilerplate.",
+      buildNotes: [
+        "Construit comme projet 5 depuis kv-web-starter.",
+        "Utilise la base Supabase partagee kv-portfolio.",
+        "Inclut FR/EN, profondeur produit et etude de cas recruteur.",
+      ],
+    },
+    liveUrl: "https://reserveflow-psi.vercel.app",
+    repoUrl: "https://github.com/kurtisv/reserveflow",
+  },
+  {
+    slug: "commercekit",
+    name: "CommerceKit",
+    category: "Commerce workflow",
+    status: "live",
+    summary: "A small commerce product with catalog, product details, checkout demo, and order cockpit.",
+    description:
+      "CommerceKit demonstrates the Stripe-ready commerce side of the boilerplate with order data, product cards, confirmation flows, and dashboard context.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Supabase"],
+    highlights: ["Product catalog", "Checkout path", "Order dashboard"],
+    recruiterValue:
+      "Shows product merchandising, order modeling, and commerce UX without hiding behind placeholder screens.",
+    buildNotes: [
+      "Built as project 6 in its own public repo.",
+      "Production is connected to the shared kv-portfolio Supabase database.",
+      "Public pages, order flow, and dashboard surfaces are bilingual.",
+    ],
+    fr: {
+      category: "Flux commerce",
+      summary: "Un produit commerce avec catalogue, details produit, checkout demo et cockpit commandes.",
+      description:
+        "CommerceKit demontre le cote commerce/Stripe-ready du boilerplate avec donnees de commandes, cartes produit, confirmation et dashboard.",
+      highlights: ["Catalogue produit", "Flux checkout", "Dashboard commandes"],
+      recruiterValue:
+        "Montre merchandising, modelisation de commandes et UX commerce sans rester sur des ecrans placeholder.",
+      buildNotes: [
+        "Construit comme projet 6 dans son propre repo public.",
+        "Production connectee a la base Supabase partagee kv-portfolio.",
+        "Pages publiques, commande et dashboard en bilingue.",
+      ],
+    },
+    liveUrl: "https://commercekit.vercel.app",
+    repoUrl: "https://github.com/kurtisv/commercekit",
+  },
+  {
+    slug: "clienthub",
+    name: "ClientHub",
+    category: "Client portal",
+    status: "live",
+    summary: "A B2B client portal for projects, milestones, files, messages, and delivery status.",
+    description:
+      "ClientHub turns the starter into a client collaboration product with project context, delivery progress, document references, and message history.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Supabase"],
+    highlights: ["Project portal", "Milestones and files", "B2B workflow"],
+    recruiterValue:
+      "Shows protected-portal thinking, client collaboration UX, and structured project data from the same foundation.",
+    buildNotes: [
+      "Built as project 7 with a separate public repo.",
+      "Production is connected to shared kv-portfolio Supabase tables.",
+      "Designed as a calmer B2B tool rather than another marketing site.",
+    ],
+    fr: {
+      category: "Portail client",
+      summary: "Un portail B2B pour projets, jalons, fichiers, messages et statut de livraison.",
+      description:
+        "ClientHub transforme le starter en produit de collaboration client avec contexte projet, progression, documents et historique de messages.",
+      highlights: ["Portail projet", "Jalons et fichiers", "Flux B2B"],
+      recruiterValue:
+        "Montre une logique de portail protege, UX de collaboration client et donnees projet structurees.",
+      buildNotes: [
+        "Construit comme projet 7 dans un repo public separe.",
+        "Production connectee aux tables Supabase partagees kv-portfolio.",
+        "Design oriente outil B2B calme plutot qu'autre site marketing.",
+      ],
+    },
+    liveUrl: "https://clienthub-five.vercel.app",
+    repoUrl: "https://github.com/kurtisv/clienthub",
+  },
+  {
+    slug: "eventpass",
+    name: "EventPass",
+    category: "Event registration app",
+    status: "live",
+    summary: "An event registration and check-in product with capacity, tickets, and arrival operations.",
+    description:
+      "EventPass completes the eight-project series with public event pages, tokenized tickets, capacity display, and an admin check-in surface.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Supabase"],
+    highlights: ["Event catalog", "Token ticket", "Admin check-in"],
+    recruiterValue:
+      "Shows public registration, capacity constraints, tokenized access, and operations UI in a distinct product style.",
+    buildNotes: [
+      "Built as project 8 from kv-web-starter.",
+      "Production is connected to the shared kv-portfolio Supabase database.",
+      "Includes FR/EN, case study, and a separate public GitHub repo.",
+    ],
+    fr: {
+      category: "App d'inscription evenementielle",
+      summary: "Un produit evenementiel avec capacite, billets et operations d'arrivee.",
+      description:
+        "EventPass complete la serie de huit projets avec pages evenement, billets tokenises, capacite visible et check-in admin.",
+      highlights: ["Catalogue evenements", "Billet tokenise", "Check-in admin"],
+      recruiterValue:
+        "Montre inscription publique, contraintes de capacite, acces tokenise et UI operationnelle avec style distinct.",
+      buildNotes: [
+        "Construit comme projet 8 depuis kv-web-starter.",
+        "Production connectee a la base Supabase partagee kv-portfolio.",
+        "Inclut FR/EN, etude de cas et repo GitHub public separe.",
+      ],
+    },
+    liveUrl: "https://eventpass-nine.vercel.app",
+    repoUrl: "https://github.com/kurtisv/eventpass",
+  },
+  {
     slug: "gasmobile",
     name: "GasMobile",
     category: "Mobile application",
@@ -343,7 +479,7 @@ export const pageCopy = {
       repo: "GitHub",
     },
     proof: [
-      ["4", "portfolio builds from the foundation"],
+      ["8", "portfolio builds from the foundation"],
       ["1", "mobile product included"],
       ["3+", "client sites planned or in progress"],
       ["50", "tests passing in the foundation"],
@@ -387,7 +523,7 @@ export const pageCopy = {
       repo: "GitHub",
     },
     proof: [
-      ["4", "projets portfolio issus de la base"],
+      ["8", "projets portfolio issus de la base"],
       ["1", "produit mobile inclus"],
       ["3+", "sites clients prevus ou en cours"],
       ["50", "tests passent dans la fondation"],
