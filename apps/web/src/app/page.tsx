@@ -122,6 +122,123 @@ export default async function Home() {
       boilerplateSecondary: "Voir le processus",
     },
   }[locale];
+  const stepDetails = locale === "fr"
+    ? [
+        {
+          role: "Porte d'entree publique",
+          action: "Remplir le formulaire Luma avec tes propres infos.",
+          received: "Aucune donnee entrante obligatoire.",
+          sent: "lead.created vers QuotePilot.",
+          boilerplate: "Site vitrine bilingue, formulaire valide, server action.",
+        },
+        {
+          role: "Conversion commerciale",
+          action: "Creer une soumission depuis le lead recu.",
+          received: "Nom, email, projet, budget, message, flowId.",
+          sent: "quote.accepted et consultant.selected vers ReserveFlow.",
+          boilerplate: "CRUD, Prisma, pipeline, simulation email.",
+        },
+        {
+          role: "Planification",
+          action: "Choisir un creneau et confirmer le rendez-vous.",
+          received: "Client, soumission, budget, consultant, besoin.",
+          sent: "booking.created vers ClientHub.",
+          boilerplate: "Calendrier, disponibilites, formulaire pre-rempli.",
+        },
+        {
+          role: "Portail projet",
+          action: "Creer le projet ClientHub depuis le rendez-vous.",
+          received: "Soumission acceptee, notes, client, consultant.",
+          sent: "Projet vers CommerceKit, EventPass, SupportDesk et API Meter.",
+          boilerplate: "Dashboard B2B, donnees relationnelles, actions serveur.",
+        },
+        {
+          role: "Commerce",
+          action: "Creer une commande liee au projet.",
+          received: "Client, projet, service, montant, flowId.",
+          sent: "order.created vers SupportDesk et API Meter.",
+          boilerplate: "Commandes, revenus, statuts et catalogue.",
+        },
+        {
+          role: "Evenementiel",
+          action: "Creer un billet puis marquer le check-in.",
+          received: "Client, commande, besoin atelier, contexte projet.",
+          sent: "event.ticket.created et event.checkin.completed.",
+          boilerplate: "Billets tokenises, inscription, check-in.",
+        },
+        {
+          role: "Support",
+          action: "Creer ou resoudre un ticket lie au parcours.",
+          received: "Contexte projet, commande, evenement ou livraison.",
+          sent: "ticket.created et ticket.resolved vers API Meter.",
+          boilerplate: "Helpdesk, SLA, priorites, statut.",
+        },
+        {
+          role: "Observabilite",
+          action: "Lire les logs et payloads du parcours complet.",
+          received: "Tous les events de l'ecosysteme.",
+          sent: "Mesures visibles pour recruteur.",
+          boilerplate: "Devtool, logs, usage API, monitoring.",
+        },
+      ]
+    : [
+        {
+          role: "Public entry point",
+          action: "Submit the Luma form with your own test data.",
+          received: "No required incoming data.",
+          sent: "lead.created to QuotePilot.",
+          boilerplate: "Bilingual marketing site, validated form, server action.",
+        },
+        {
+          role: "Sales conversion",
+          action: "Create a proposal from the received lead.",
+          received: "Name, email, project, budget, message, flowId.",
+          sent: "quote.accepted and consultant.selected to ReserveFlow.",
+          boilerplate: "CRUD, Prisma, pipeline, email simulation.",
+        },
+        {
+          role: "Scheduling",
+          action: "Choose a slot and confirm the booking.",
+          received: "Client, quote, budget, consultant, need.",
+          sent: "booking.created to ClientHub.",
+          boilerplate: "Calendar, availability, prefilled form.",
+        },
+        {
+          role: "Project portal",
+          action: "Create the ClientHub project from the booking.",
+          received: "Accepted quote, notes, client, consultant.",
+          sent: "Project context to CommerceKit, EventPass, SupportDesk and API Meter.",
+          boilerplate: "B2B dashboard, relational data, server actions.",
+        },
+        {
+          role: "Commerce",
+          action: "Create an order tied to the project.",
+          received: "Client, project, service, amount, flowId.",
+          sent: "order.created to SupportDesk and API Meter.",
+          boilerplate: "Orders, revenue, statuses and catalog.",
+        },
+        {
+          role: "Events",
+          action: "Create a ticket, then complete check-in.",
+          received: "Client, order, workshop need, project context.",
+          sent: "event.ticket.created and event.checkin.completed.",
+          boilerplate: "Token tickets, registration, check-in.",
+        },
+        {
+          role: "Support",
+          action: "Create or resolve a ticket linked to the flow.",
+          received: "Project, order, event or delivery context.",
+          sent: "ticket.created and ticket.resolved to API Meter.",
+          boilerplate: "Helpdesk, SLA, priorities, status.",
+        },
+        {
+          role: "Observability",
+          action: "Read logs and payloads from the full journey.",
+          received: "All ecosystem events.",
+          sent: "Recruiter-visible measurements.",
+          boilerplate: "Devtool, logs, API usage, monitoring.",
+        },
+      ];
 
   return (
     <MarketingPageShell>
@@ -275,6 +392,16 @@ export default async function Home() {
                 <p className="mt-5 leading-7 text-muted-foreground">
                   {signature.testText}
                 </p>
+                <div className="mt-6 border border-primary/20 bg-card p-4">
+                  <p className="text-sm font-semibold">
+                    {locale === "fr" ? "Comment tester l'ecosysteme en 5 minutes" : "How to test the ecosystem in 5 minutes"}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                    {locale === "fr"
+                      ? "Ouvre Luma, soumets une demande differente, puis avance module par module avec le meme flowId."
+                      : "Open Luma, submit a different request, then move module by module with the same flowId."}
+                  </p>
+                </div>
                 <div className="mt-6 border border-primary/20 bg-[#f7f2e8] p-4 text-sm font-semibold text-primary">
                   {ecosystem.database}
                 </div>
@@ -300,10 +427,11 @@ export default async function Home() {
               <div className="grid gap-3">
                 {flow.map((item, index) => {
                   const project = ecosystemProjects.find((entry) => entry.slug === item.projects[0]);
+                  const details = stepDetails[index] ?? stepDetails[0];
                   if (!project) return null;
 
                   return (
-                    <article key={item.step} className="grid gap-4 border border-border bg-card p-4 shadow-sm sm:grid-cols-[4rem_1fr_auto] sm:items-center">
+                    <article key={item.step} className="grid gap-4 border border-border bg-card p-4 shadow-sm lg:grid-cols-[4rem_1fr_auto] lg:items-center">
                       <div className="flex size-14 items-center justify-center bg-[#111a17] font-mono text-sm font-semibold text-[#f0d7b1]">
                         {item.step}
                       </div>
@@ -316,6 +444,15 @@ export default async function Home() {
                         </div>
                         <p className="mt-2 text-sm leading-6 text-muted-foreground">
                           {signature.testSteps[index]}
+                        </p>
+                        <div className="mt-4 grid gap-2 text-sm md:grid-cols-2">
+                          <p><span className="font-semibold">{locale === "fr" ? "Role:" : "Role:"}</span> {details.role}</p>
+                          <p><span className="font-semibold">{locale === "fr" ? "Action:" : "Action:"}</span> {details.action}</p>
+                          <p><span className="font-semibold">{locale === "fr" ? "Recoit:" : "Receives:"}</span> {details.received}</p>
+                          <p><span className="font-semibold">{locale === "fr" ? "Transmet:" : "Sends:"}</span> {details.sent}</p>
+                        </div>
+                        <p className="mt-3 rounded-md border border-primary/15 bg-secondary/50 px-3 py-2 text-sm">
+                          <span className="font-semibold">{locale === "fr" ? "Fonction boilerplate:" : "Boilerplate feature:"}</span> {details.boilerplate}
                         </p>
                         <p className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                           {signature.testSignal}
