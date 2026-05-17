@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Code2, GitBranch, Layers3, MousePointer2 } from "lucide-react";
 
 import { MarketingPageShell } from "@/components/marketing/page-shell";
+import { resetDemoScenario } from "@/app/actions/demo-scenario";
 import { ProjectCard } from "@/components/portfolio/project-card";
 import { ProofStrip } from "@/components/portfolio/proof-strip";
 import { SectionHeading } from "@/components/portfolio/section-heading";
@@ -52,15 +53,22 @@ export default async function Home() {
       testLive: "Open live",
       testDetails: "Case note",
       testSignal: "What to verify",
+      reset: "Reset demo scenario",
+      scenario: "Demo scenario",
+      scenarioName: "KV Portfolio Demo Flow",
+      scenarioClient: "Camille Moreau",
+      scenarioEmail: "camille.demo@kvportfolio.dev",
+      scenarioProject: "Refonte d'un studio creatif",
+      scenarioBudget: "4 850 $",
       testSteps: [
-        "Submit or inspect the Luma Studio request path for Mara, Elliot, or Nadia.",
-        "Verify the same client appears as a qualified lead or quote in QuotePilot.",
-        "Book or inspect the related ReserveFlow appointment.",
-        "Open ClientHub and confirm the quote, booking, files, and milestones are connected.",
-        "Review CommerceKit orders for launch kits, workshop bundles, or API credits.",
-        "Open EventPass and inspect registration, agenda, ticket, and check-in context.",
-        "Open SupportDesk Lite and look for the post-order, post-event, or post-booking ticket.",
-        "Open API Meter and verify route logs and module usage for the same activity.",
+        "Start from Luma Studio and submit the Camille Moreau inquiry.",
+        "Open QuotePilot and verify the Camille lead, budget, message, source, and flowId.",
+        "Create and accept the QuotePilot proposal, then choose Maya Laurent or Noah Bennett.",
+        "Plan the ReserveFlow appointment from the accepted proposal context.",
+        "Create the ClientHub project and verify the Luma, QuotePilot, and ReserveFlow history.",
+        "Create the CommerceKit order tied to the same project and flowId.",
+        "Create the EventPass ticket, then mark check-in complete.",
+        "Open SupportDesk Lite and API Meter to verify the support ticket and complete event trail.",
       ],
       boilerplateEyebrow: "Built from my boilerplate",
       boilerplateTitle: "These portfolio sites start from the same reusable foundation.",
@@ -89,15 +97,22 @@ export default async function Home() {
       testLive: "Ouvrir live",
       testDetails: "Fiche projet",
       testSignal: "A verifier",
+      reset: "Reset demo scenario",
+      scenario: "Scenario demo",
+      scenarioName: "KV Portfolio Demo Flow",
+      scenarioClient: "Camille Moreau",
+      scenarioEmail: "camille.demo@kvportfolio.dev",
+      scenarioProject: "Refonte d'un studio creatif",
+      scenarioBudget: "4 850 $",
       testSteps: [
-        "Soumettre ou inspecter le chemin de demande Luma Studio pour Mara, Elliot ou Nadia.",
-        "Verifier que le meme client apparait comme lead ou soumission dans QuotePilot.",
-        "Reserver ou inspecter le rendez-vous lie dans ReserveFlow.",
-        "Ouvrir ClientHub et confirmer que soumission, rendez-vous, fichiers et jalons sont relies.",
-        "Reviser les commandes CommerceKit: launch kit, bundle atelier ou credit API.",
-        "Ouvrir EventPass et inspecter inscription, agenda, billet et check-in.",
-        "Ouvrir SupportDesk Lite et chercher le ticket apres commande, evenement ou rendez-vous.",
-        "Ouvrir API Meter et verifier les logs de routes et l'usage par module.",
+        "Commencer dans Luma Studio et soumettre la demande de Camille Moreau.",
+        "Ouvrir QuotePilot et verifier le lead Camille, le budget, le message, la source et le flowId.",
+        "Creer et accepter la soumission QuotePilot, puis choisir Maya Laurent ou Noah Bennett.",
+        "Planifier le rendez-vous ReserveFlow depuis le contexte de soumission acceptee.",
+        "Creer le projet ClientHub et verifier l'historique Luma, QuotePilot et ReserveFlow.",
+        "Creer la commande CommerceKit reliee au meme projet et au meme flowId.",
+        "Creer le billet EventPass, puis marquer le check-in complete.",
+        "Ouvrir SupportDesk Lite et API Meter pour verifier le ticket support et la trace complete.",
       ],
       boilerplateEyebrow: "Cree depuis mon boilerplate",
       boilerplateTitle: "Ces sites portfolio partent de la meme fondation reutilisable.",
@@ -262,6 +277,23 @@ export default async function Home() {
                 </p>
                 <div className="mt-6 border border-primary/20 bg-[#f7f2e8] p-4 text-sm font-semibold text-primary">
                   {ecosystem.database}
+                </div>
+                <div className="mt-4 border border-border bg-card p-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                    {signature.scenario}
+                  </p>
+                  <p className="mt-2 font-semibold">{signature.scenarioName}</p>
+                  <div className="mt-3 grid gap-1 text-sm text-muted-foreground">
+                    <p>{signature.scenarioClient}</p>
+                    <p>{signature.scenarioEmail}</p>
+                    <p>{signature.scenarioProject}</p>
+                    <p>{signature.scenarioBudget}</p>
+                  </div>
+                  <form action={resetDemoScenario} className="mt-4">
+                    <button className="w-full border border-primary/20 bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-[#111a17]">
+                      {signature.reset}
+                    </button>
+                  </form>
                 </div>
               </div>
 
