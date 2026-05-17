@@ -28,6 +28,16 @@ export function ProjectCard({
       <p className="mt-4 flex-1 text-sm leading-6 text-muted-foreground">
         {copy.summary}
       </p>
+      {copy.ecosystemRole ? (
+        <div className="mt-4 border-l-2 border-primary/45 bg-background/70 px-3 py-2">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-primary">
+            {labels.role}
+          </p>
+          <p className="mt-1 text-xs leading-5 text-muted-foreground">
+            {copy.ecosystemRole}
+          </p>
+        </div>
+      ) : null}
       <div className="mt-5 flex flex-wrap gap-2">
         {project.stack.slice(0, 3).map((item) => (
           <span key={item} className="bg-secondary px-2.5 py-1 text-xs text-secondary-foreground">

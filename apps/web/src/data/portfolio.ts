@@ -5,6 +5,8 @@ export type PortfolioProject = {
   name: string;
   category: string;
   status: ProjectStatus;
+  ecosystemRole?: string;
+  ecosystemLinks?: string[];
   summary: string;
   description: string;
   stack: string[];
@@ -18,6 +20,7 @@ export type PortfolioProject = {
     highlights: string[];
     recruiterValue: string;
     buildNotes: string[];
+    ecosystemRole?: string;
   };
   liveUrl?: string;
   repoUrl?: string;
@@ -52,6 +55,9 @@ export const featuredProjects: PortfolioProject[] = [
     name: "SupportDesk Lite",
     category: "Customer support dashboard",
     status: "live",
+    ecosystemRole:
+      "Handles client support after a project, purchase, event, or service booking has already created a relationship.",
+    ecosystemLinks: ["clienthub", "commercekit", "reserveflow"],
     summary: "A compact support portal for tickets, statuses, priorities, and client communication.",
     description:
       "SupportDesk Lite demonstrates business dashboard work: operational flows, support context, status-driven UI, and a classic visual direction distinct from the other portfolio projects.",
@@ -66,6 +72,8 @@ export const featuredProjects: PortfolioProject[] = [
     ],
     fr: {
       category: "Dashboard de support client",
+      ecosystemRole:
+        "Gere le support client apres un projet, un achat, un evenement ou une reservation de service.",
       summary: "Un portail support compact pour tickets, statuts, priorites et communication client.",
       description:
         "SupportDesk Lite montre un travail de dashboard operationnel: flux support, contexte client, UI basee sur les statuts et direction visuelle classique.",
@@ -86,6 +94,9 @@ export const featuredProjects: PortfolioProject[] = [
     name: "QuotePilot",
     category: "Quote management app",
     status: "live",
+    ecosystemRole:
+      "Turns a qualified lead into a structured commercial proposal before booking, delivery, or client onboarding.",
+    ecosystemLinks: ["luma-studio", "reserveflow", "clienthub"],
     summary: "A quote builder for small businesses with clients, line items, taxes, and quote states.",
     description:
       "QuotePilot shows CRUD, business logic, pricing structure, and a more refined color system for a practical SMB workflow.",
@@ -100,6 +111,8 @@ export const featuredProjects: PortfolioProject[] = [
     ],
     fr: {
       category: "Gestionnaire de soumissions",
+      ecosystemRole:
+        "Transforme une opportunite qualifiee en proposition commerciale avant reservation, livraison ou onboarding client.",
       summary: "Un outil de soumissions pour PME avec clients, lignes, taxes et statuts.",
       description:
         "QuotePilot montre de la logique metier, de la modelisation de donnees et un flux de prix qu'une petite entreprise peut comprendre.",
@@ -120,6 +133,9 @@ export const featuredProjects: PortfolioProject[] = [
     name: "Luma Studio",
     category: "Premium marketing website",
     status: "live",
+    ecosystemRole:
+      "Acts as the public brand front door that explains the company, generates trust, and sends visitors toward quotes, booking, or contact.",
+    ecosystemLinks: ["quotepilot", "reserveflow", "clienthub"],
     summary: "A bilingual interior design studio site with services, work, contact, and case study pages.",
     description:
       "Luma Studio proves the shared foundation can produce a polished client-facing website, not only dashboard applications.",
@@ -134,6 +150,8 @@ export const featuredProjects: PortfolioProject[] = [
     ],
     fr: {
       category: "Site marketing premium",
+      ecosystemRole:
+        "Sert de porte d'entree publique: presenter l'entreprise, generer la confiance et diriger vers soumission, reservation ou contact.",
       summary: "Un site bilingue pour studio interieur avec services, realisations, contact et etude de cas.",
       description:
         "Luma Studio prouve que la meme base peut produire un site client poli, pas seulement des applications dashboard.",
@@ -154,6 +172,9 @@ export const featuredProjects: PortfolioProject[] = [
     name: "API Meter",
     category: "SaaS/API portal",
     status: "live",
+    ecosystemRole:
+      "Measures API usage and developer access when the company exposes technical services to partners or internal tools.",
+    ecosystemLinks: ["clienthub", "supportdesk-lite", "commercekit"],
     summary: "A bilingual API metering product with docs, pricing, dashboard demo, and OpenAPI route.",
     description:
       "API Meter demonstrates API keys, usage tracking concepts, developer documentation, and a calm SaaS product interface.",
@@ -168,6 +189,8 @@ export const featuredProjects: PortfolioProject[] = [
     ],
     fr: {
       category: "Portail SaaS/API",
+      ecosystemRole:
+        "Mesure l'usage API et l'acces developpeur lorsque l'entreprise expose des services techniques a des partenaires ou outils internes.",
       summary: "Un produit bilingue de mesure API avec docs, prix, dashboard demo et OpenAPI.",
       description:
         "API Meter montre le cote SaaS/API: cles API, usage, documentation developpeur et interface produit calme.",
@@ -188,6 +211,9 @@ export const featuredProjects: PortfolioProject[] = [
     name: "ReserveFlow",
     category: "Booking system",
     status: "live",
+    ecosystemRole:
+      "Schedules discovery calls, service appointments, and operational capacity before work is confirmed.",
+    ecosystemLinks: ["luma-studio", "quotepilot", "clienthub"],
     summary: "A service booking product with public scheduling, staff capacity, and an operations dashboard.",
     description:
       "ReserveFlow shows how the foundation can become a booking workflow for a service business, with a deeper product surface than a static portfolio page.",
@@ -202,6 +228,8 @@ export const featuredProjects: PortfolioProject[] = [
     ],
     fr: {
       category: "Systeme de reservation",
+      ecosystemRole:
+        "Planifie appels de decouverte, rendez-vous de service et capacite operationnelle avant confirmation du travail.",
       summary: "Un produit de reservation avec prise de rendez-vous, capacite equipe et dashboard operationnel.",
       description:
         "ReserveFlow montre comment la base devient un flux de reservation pour entreprise de services, avec plus de profondeur qu'une simple page vitrine.",
@@ -222,6 +250,9 @@ export const featuredProjects: PortfolioProject[] = [
     name: "CommerceKit",
     category: "Commerce workflow",
     status: "live",
+    ecosystemRole:
+      "Sells kits, resources, productized services, or add-ons that support the same company operations.",
+    ecosystemLinks: ["supportdesk-lite", "clienthub", "eventpass"],
     summary: "A small commerce product with catalog, product details, checkout demo, and order cockpit.",
     description:
       "CommerceKit demonstrates the Stripe-ready commerce side of the boilerplate with order data, product cards, confirmation flows, and dashboard context.",
@@ -236,6 +267,8 @@ export const featuredProjects: PortfolioProject[] = [
     ],
     fr: {
       category: "Flux commerce",
+      ecosystemRole:
+        "Vend des kits, ressources, services productises ou ajouts relies aux operations de la meme entreprise.",
       summary: "Un produit commerce avec catalogue, details produit, checkout demo et cockpit commandes.",
       description:
         "CommerceKit demontre le cote commerce/Stripe-ready du boilerplate avec donnees de commandes, cartes produit, confirmation et dashboard.",
@@ -256,6 +289,9 @@ export const featuredProjects: PortfolioProject[] = [
     name: "ClientHub",
     category: "Client portal",
     status: "live",
+    ecosystemRole:
+      "Centralizes project delivery after a quote is accepted: milestones, files, messages, and client-facing progress.",
+    ecosystemLinks: ["quotepilot", "supportdesk-lite", "api-meter"],
     summary: "A B2B client portal for projects, milestones, files, messages, and delivery status.",
     description:
       "ClientHub turns the starter into a client collaboration product with project context, delivery progress, document references, and message history.",
@@ -270,6 +306,8 @@ export const featuredProjects: PortfolioProject[] = [
     ],
     fr: {
       category: "Portail client",
+      ecosystemRole:
+        "Centralise la livraison apres acceptation d'une soumission: jalons, fichiers, messages et progression client.",
       summary: "Un portail B2B pour projets, jalons, fichiers, messages et statut de livraison.",
       description:
         "ClientHub transforme le starter en produit de collaboration client avec contexte projet, progression, documents et historique de messages.",
@@ -290,6 +328,9 @@ export const featuredProjects: PortfolioProject[] = [
     name: "EventPass",
     category: "Event registration app",
     status: "live",
+    ecosystemRole:
+      "Runs workshops, launches, and client events that connect marketing, commerce, and follow-up support.",
+    ecosystemLinks: ["luma-studio", "commercekit", "supportdesk-lite"],
     summary: "An event registration and check-in product with capacity, tickets, and arrival operations.",
     description:
       "EventPass completes the eight-project series with public event pages, tokenized tickets, capacity display, and an admin check-in surface.",
@@ -304,6 +345,8 @@ export const featuredProjects: PortfolioProject[] = [
     ],
     fr: {
       category: "App d'inscription evenementielle",
+      ecosystemRole:
+        "Gere ateliers, lancements et evenements clients qui relient marketing, commerce et support apres evenement.",
       summary: "Un produit evenementiel avec capacite, billets et operations d'arrivee.",
       description:
         "EventPass complete la serie de huit projets avec pages evenement, billets tokenises, capacite visible et check-in admin.",
@@ -429,6 +472,7 @@ export function getProjectCopy(project: PortfolioProject, locale: "en" | "fr") {
   if (locale === "en") {
     return {
       category: project.category,
+      ecosystemRole: project.ecosystemRole,
       summary: project.summary,
       description: project.description,
       highlights: project.highlights,
@@ -477,6 +521,7 @@ export const pageCopy = {
       details: "View case note",
       live: "Live site",
       repo: "GitHub",
+      role: "Ecosystem role",
     },
     proof: [
       ["8", "portfolio builds from the foundation"],
@@ -521,6 +566,7 @@ export const pageCopy = {
       details: "Voir la fiche",
       live: "Site live",
       repo: "GitHub",
+      role: "Role ecosysteme",
     },
     proof: [
       ["8", "projets portfolio issus de la base"],
@@ -542,6 +588,82 @@ export const upcomingProjectsFr = [
   "Plus d'etudes de cas client quand elles pourront etre publiques",
   "D'autres builds SaaS/dashboard a partir de la meme base",
 ];
+
+export const ecosystemNarrative = {
+  en: {
+    eyebrow: "One shared business ecosystem",
+    title: "The eight builds are presented as connected company software, not disconnected demos.",
+    description:
+      "Each project uses the same technical foundation and connects to the shared Supabase KV Portfolio data layer. The recruiter should read the portfolio as a company operating system: brand, sales, booking, delivery, commerce, events, support, and API usage.",
+    database: "Shared database: Supabase KV Portfolio",
+    foundation: "Foundation: kv-web-starter boilerplate",
+    cta: "Explore ecosystem map",
+  },
+  fr: {
+    eyebrow: "Un ecosysteme d'entreprise partage",
+    title: "Les huit builds sont presentes comme des logiciels connectes, pas comme des demos separees.",
+    description:
+      "Chaque projet utilise la meme fondation technique et se relie a la base Supabase KV Portfolio. Un recruteur doit lire le portfolio comme un systeme d'entreprise: marque, ventes, reservation, livraison, commerce, evenements, support et usage API.",
+    database: "Base partagee: Supabase KV Portfolio",
+    foundation: "Fondation: boilerplate kv-web-starter",
+    cta: "Explorer la carte ecosysteme",
+  },
+} as const;
+
+export const ecosystemFlow = {
+  en: [
+    {
+      step: "01",
+      title: "Attract and explain",
+      description: "Luma Studio presents the brand, services, proof, and trust signals.",
+      projects: ["luma-studio"],
+    },
+    {
+      step: "02",
+      title: "Qualify and schedule",
+      description: "QuotePilot structures the commercial proposal while ReserveFlow books the next service moment.",
+      projects: ["quotepilot", "reserveflow"],
+    },
+    {
+      step: "03",
+      title: "Deliver and sell",
+      description: "ClientHub gives the client visibility, and CommerceKit handles productized add-ons or resources.",
+      projects: ["clienthub", "commercekit"],
+    },
+    {
+      step: "04",
+      title: "Engage and support",
+      description: "EventPass manages workshops and launches, SupportDesk handles follow-up, and API Meter measures technical usage.",
+      projects: ["eventpass", "supportdesk-lite", "api-meter"],
+    },
+  ],
+  fr: [
+    {
+      step: "01",
+      title: "Attirer et expliquer",
+      description: "Luma Studio presente la marque, les services, les preuves et les signaux de confiance.",
+      projects: ["luma-studio"],
+    },
+    {
+      step: "02",
+      title: "Qualifier et planifier",
+      description: "QuotePilot structure la proposition commerciale pendant que ReserveFlow reserve le prochain moment de service.",
+      projects: ["quotepilot", "reserveflow"],
+    },
+    {
+      step: "03",
+      title: "Livrer et vendre",
+      description: "ClientHub donne de la visibilite au client, et CommerceKit gere les ressources ou ajouts productises.",
+      projects: ["clienthub", "commercekit"],
+    },
+    {
+      step: "04",
+      title: "Engager et supporter",
+      description: "EventPass gere ateliers et lancements, SupportDesk suit l'apres-service, et API Meter mesure l'usage technique.",
+      projects: ["eventpass", "supportdesk-lite", "api-meter"],
+    },
+  ],
+} as const;
 
 export const serviceAreas = [
   {
