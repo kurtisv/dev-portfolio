@@ -468,6 +468,27 @@ export function getProjectBySlug(slug: string) {
   return featuredProjects.find((project) => project.slug === slug);
 }
 
+export const ecosystemOrder = [
+  "luma-studio",
+  "quotepilot",
+  "reserveflow",
+  "clienthub",
+  "commercekit",
+  "eventpass",
+  "supportdesk-lite",
+  "api-meter",
+] as const;
+
+export function getProjectsInEcosystemOrder() {
+  const bySlug = new Map(featuredProjects.map((project) => [project.slug, project]));
+  const ordered = ecosystemOrder
+    .map((slug) => bySlug.get(slug))
+    .filter((project): project is PortfolioProject => Boolean(project));
+  const rest = featuredProjects.filter((project) => !ecosystemOrder.includes(project.slug as (typeof ecosystemOrder)[number]));
+
+  return [...ordered, ...rest];
+}
+
 export function getProjectCopy(project: PortfolioProject, locale: "en" | "fr") {
   if (locale === "en") {
     return {
@@ -614,53 +635,101 @@ export const ecosystemFlow = {
   en: [
     {
       step: "01",
-      title: "Attract and explain",
-      description: "Luma Studio presents the brand, services, proof, and trust signals.",
+      title: "Attract a visitor",
+      description: "Luma Studio presents the brand, services, proof, and contact path that starts the business journey.",
       projects: ["luma-studio"],
     },
     {
       step: "02",
-      title: "Qualify and schedule",
-      description: "QuotePilot structures the commercial proposal while ReserveFlow books the next service moment.",
-      projects: ["quotepilot", "reserveflow"],
+      title: "Convert the visitor into a lead",
+      description: "QuotePilot receives the Luma request, qualifies scope, and turns it into a structured proposal.",
+      projects: ["quotepilot"],
     },
     {
       step: "03",
-      title: "Deliver and sell",
-      description: "ClientHub gives the client visibility, and CommerceKit handles productized add-ons or resources.",
-      projects: ["clienthub", "commercekit"],
+      title: "Schedule the appointment",
+      description: "ReserveFlow books the discovery call, workshop, or project review needed before delivery starts.",
+      projects: ["reserveflow"],
     },
     {
       step: "04",
-      title: "Engage and support",
-      description: "EventPass manages workshops and launches, SupportDesk handles follow-up, and API Meter measures technical usage.",
-      projects: ["eventpass", "supportdesk-lite", "api-meter"],
+      title: "Manage the client",
+      description: "ClientHub centralizes the accepted quote, booking notes, milestones, files, and client messages.",
+      projects: ["clienthub"],
+    },
+    {
+      step: "05",
+      title: "Sell a product or service",
+      description: "CommerceKit adds paid launch kits, workshop bundles, support credits, or API usage credits.",
+      projects: ["commercekit"],
+    },
+    {
+      step: "06",
+      title: "Run an event",
+      description: "EventPass handles launch events, workshops, tickets, registrations, and check-in operations.",
+      projects: ["eventpass"],
+    },
+    {
+      step: "07",
+      title: "Offer support",
+      description: "SupportDesk Lite receives post-booking, post-order, and post-event requests with client context.",
+      projects: ["supportdesk-lite"],
+    },
+    {
+      step: "08",
+      title: "Measure technical activity",
+      description: "API Meter tracks the forms, endpoints, events, keys, and usage generated across the system.",
+      projects: ["api-meter"],
     },
   ],
   fr: [
     {
       step: "01",
-      title: "Attirer et expliquer",
-      description: "Luma Studio presente la marque, les services, les preuves et les signaux de confiance.",
+      title: "Attirer un visiteur",
+      description: "Luma Studio presente la marque, les services, les preuves et le chemin de contact qui lance le parcours.",
       projects: ["luma-studio"],
     },
     {
       step: "02",
-      title: "Qualifier et planifier",
-      description: "QuotePilot structure la proposition commerciale pendant que ReserveFlow reserve le prochain moment de service.",
-      projects: ["quotepilot", "reserveflow"],
+      title: "Transformer le visiteur en lead",
+      description: "QuotePilot recoit la demande Luma, qualifie le besoin et la transforme en proposition structuree.",
+      projects: ["quotepilot"],
     },
     {
       step: "03",
-      title: "Livrer et vendre",
-      description: "ClientHub donne de la visibilite au client, et CommerceKit gere les ressources ou ajouts productises.",
-      projects: ["clienthub", "commercekit"],
+      title: "Planifier un rendez-vous",
+      description: "ReserveFlow reserve l'appel, l'atelier ou la revue projet avant le demarrage de la livraison.",
+      projects: ["reserveflow"],
     },
     {
       step: "04",
-      title: "Engager et supporter",
-      description: "EventPass gere ateliers et lancements, SupportDesk suit l'apres-service, et API Meter mesure l'usage technique.",
-      projects: ["eventpass", "supportdesk-lite", "api-meter"],
+      title: "Gerer le client",
+      description: "ClientHub centralise la soumission acceptee, les notes de rendez-vous, les jalons, fichiers et messages.",
+      projects: ["clienthub"],
+    },
+    {
+      step: "05",
+      title: "Vendre un produit ou service",
+      description: "CommerceKit ajoute kits de lancement, bundles atelier, credits support ou credits API payants.",
+      projects: ["commercekit"],
+    },
+    {
+      step: "06",
+      title: "Gerer un evenement",
+      description: "EventPass gere lancements, ateliers, billets, inscriptions et operations de check-in.",
+      projects: ["eventpass"],
+    },
+    {
+      step: "07",
+      title: "Offrir du support",
+      description: "SupportDesk Lite recoit les demandes apres rendez-vous, commande ou evenement avec le contexte client.",
+      projects: ["supportdesk-lite"],
+    },
+    {
+      step: "08",
+      title: "Mesurer l'activite technique",
+      description: "API Meter suit les formulaires, endpoints, evenements, cles et usages generes par le systeme.",
+      projects: ["api-meter"],
     },
   ],
 } as const;

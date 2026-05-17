@@ -10,6 +10,7 @@ import {
   ecosystemFlow,
   ecosystemNarrative,
   featuredProjects,
+  getProjectsInEcosystemOrder,
   pageCopy,
   profile,
   stackGroups,
@@ -22,8 +23,9 @@ import { getCurrentLocale } from "@/lib/locale";
 export default async function Home() {
   const locale = await getCurrentLocale();
   const t = pageCopy[locale].home;
-  const visibleProjects = featuredProjects.slice(0, 4);
-  const projectRail = [...featuredProjects, ...featuredProjects];
+  const ecosystemProjects = getProjectsInEcosystemOrder();
+  const visibleProjects = ecosystemProjects.slice(0, 4);
+  const projectRail = [...ecosystemProjects, ...ecosystemProjects];
   const principles = locale === "fr" ? profile.principlesFr : profile.principles;
   const stack = locale === "fr" ? stackGroupsFr : stackGroups;
   const nextItems = locale === "fr" ? upcomingProjectsFr : upcomingProjects;
@@ -42,6 +44,24 @@ export default async function Home() {
       rail: "Portfolio surface",
       railLive: "Live",
       railDetails: "Details",
+      testSystem: "Test the system",
+      testEyebrow: "Recruiter test path",
+      testTitle: "Open the modules in order and follow the same company data across the system.",
+      testText:
+        "This is the plan of attack for reviewing the ecosystem quickly: start with the public site, then follow the lead, booking, client, order, event, support, and API usage trail.",
+      testLive: "Open live",
+      testDetails: "Case note",
+      testSignal: "What to verify",
+      testSteps: [
+        "Submit or inspect the Luma Studio request path for Mara, Elliot, or Nadia.",
+        "Verify the same client appears as a qualified lead or quote in QuotePilot.",
+        "Book or inspect the related ReserveFlow appointment.",
+        "Open ClientHub and confirm the quote, booking, files, and milestones are connected.",
+        "Review CommerceKit orders for launch kits, workshop bundles, or API credits.",
+        "Open EventPass and inspect registration, agenda, ticket, and check-in context.",
+        "Open SupportDesk Lite and look for the post-order, post-event, or post-booking ticket.",
+        "Open API Meter and verify route logs and module usage for the same activity.",
+      ],
       boilerplateEyebrow: "Built from my boilerplate",
       boilerplateTitle: "These portfolio sites start from the same reusable foundation.",
       boilerplateText:
@@ -61,6 +81,24 @@ export default async function Home() {
       rail: "Surface portfolio",
       railLive: "Live",
       railDetails: "Details",
+      testSystem: "Tester le systeme",
+      testEyebrow: "Plan de test recruteur",
+      testTitle: "Ouvrir les modules dans l'ordre et suivre les memes donnees d'entreprise.",
+      testText:
+        "Voici le plan de match pour reviser l'ecosysteme rapidement: commencer par le site public, puis suivre le lead, le rendez-vous, le client, la commande, l'evenement, le support et l'usage API.",
+      testLive: "Ouvrir live",
+      testDetails: "Fiche projet",
+      testSignal: "A verifier",
+      testSteps: [
+        "Soumettre ou inspecter le chemin de demande Luma Studio pour Mara, Elliot ou Nadia.",
+        "Verifier que le meme client apparait comme lead ou soumission dans QuotePilot.",
+        "Reserver ou inspecter le rendez-vous lie dans ReserveFlow.",
+        "Ouvrir ClientHub et confirmer que soumission, rendez-vous, fichiers et jalons sont relies.",
+        "Reviser les commandes CommerceKit: launch kit, bundle atelier ou credit API.",
+        "Ouvrir EventPass et inspecter inscription, agenda, billet et check-in.",
+        "Ouvrir SupportDesk Lite et chercher le ticket apres commande, evenement ou rendez-vous.",
+        "Ouvrir API Meter et verifier les logs de routes et l'usage par module.",
+      ],
       boilerplateEyebrow: "Cree depuis mon boilerplate",
       boilerplateTitle: "Ces sites portfolio partent de la meme fondation reutilisable.",
       boilerplateText:
@@ -91,13 +129,13 @@ export default async function Home() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button asChild size="lg">
-                  <Link href="/projects">
-                    {t.projects} <ArrowRight className="size-4" />
+                  <Link href="#test-system">
+                    {signature.testSystem} <ArrowRight className="size-4" />
                   </Link>
                 </Button>
                 <Button asChild size="lg" variant="secondary">
-                  <Link href="https://github.com/kurtisv">
-                    {t.github} <Code2 className="size-4" />
+                  <Link href="/projects">
+                    {t.projects} <Code2 className="size-4" />
                   </Link>
                 </Button>
               </div>
@@ -209,6 +247,76 @@ export default async function Home() {
 
         <ProofStrip locale={locale} />
 
+        <section id="test-system" className="border-b border-border bg-white">
+          <div className="mx-auto max-w-6xl px-6 py-16">
+            <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+              <div className="lg:sticky lg:top-6">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+                  {signature.testEyebrow}
+                </p>
+                <h2 className="mt-4 text-3xl font-semibold tracking-normal text-balance sm:text-5xl">
+                  {signature.testTitle}
+                </h2>
+                <p className="mt-5 leading-7 text-muted-foreground">
+                  {signature.testText}
+                </p>
+                <div className="mt-6 border border-primary/20 bg-[#f7f2e8] p-4 text-sm font-semibold text-primary">
+                  {ecosystem.database}
+                </div>
+              </div>
+
+              <div className="grid gap-3">
+                {flow.map((item, index) => {
+                  const project = ecosystemProjects.find((entry) => entry.slug === item.projects[0]);
+                  if (!project) return null;
+
+                  return (
+                    <article key={item.step} className="grid gap-4 border border-border bg-card p-4 shadow-sm sm:grid-cols-[4rem_1fr_auto] sm:items-center">
+                      <div className="flex size-14 items-center justify-center bg-[#111a17] font-mono text-sm font-semibold text-[#f0d7b1]">
+                        {item.step}
+                      </div>
+                      <div>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <h3 className="text-lg font-semibold">{project.name}</h3>
+                          <span className="border border-primary/15 bg-secondary/70 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-primary">
+                            {item.title}
+                          </span>
+                        </div>
+                        <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                          {signature.testSteps[index]}
+                        </p>
+                        <p className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                          {signature.testSignal}
+                        </p>
+                        <p className="mt-1 text-sm leading-6">{item.description}</p>
+                      </div>
+                      <div className="flex flex-wrap gap-2 sm:min-w-36 sm:flex-col">
+                        {project.liveUrl ? (
+                          <Link
+                            href={project.liveUrl}
+                            target="_blank"
+                            className="inline-flex items-center justify-between gap-2 border border-primary/20 bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground transition hover:bg-[#111a17]"
+                          >
+                            {signature.testLive}
+                            <ArrowRight className="size-3.5" />
+                          </Link>
+                        ) : null}
+                        <Link
+                          href={`/projects/${project.slug}`}
+                          className="inline-flex items-center justify-between gap-2 border border-border bg-background px-3 py-2 text-xs font-semibold transition hover:border-primary/40"
+                        >
+                          {signature.testDetails}
+                          <ArrowRight className="size-3.5" />
+                        </Link>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="ecosystem" className="border-b border-border bg-[#f7f2e8]">
           <div className="mx-auto max-w-6xl px-6 py-16">
             <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
@@ -247,7 +355,7 @@ export default async function Home() {
                       <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.description}</p>
                       <div className="mt-4 flex flex-wrap gap-2">
                         {item.projects.map((slug) => {
-                          const project = featuredProjects.find((entry) => entry.slug === slug);
+                          const project = ecosystemProjects.find((entry) => entry.slug === slug);
                           if (!project) return null;
                           return (
                             <Link
