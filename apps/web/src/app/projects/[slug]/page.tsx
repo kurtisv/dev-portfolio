@@ -5,7 +5,12 @@ import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 import { MarketingPageShell } from "@/components/marketing/page-shell";
 import { Button } from "@/components/ui/button";
-import { featuredProjects, getProjectBySlug, getProjectCopy } from "@/data/portfolio";
+import {
+  ecosystemNarrative,
+  featuredProjects,
+  getProjectBySlug,
+  getProjectCopy,
+} from "@/data/portfolio";
 import { getCurrentLocale } from "@/lib/locale";
 
 export function generateStaticParams() {
@@ -54,6 +59,8 @@ export default async function ProjectDetailPage({
       recruiter: "Recruiter value",
       notes: "Build notes",
       stack: "Stack",
+      ecosystem: "Role in the ecosystem",
+      connected: "Connected modules",
     },
     fr: {
       back: "Retour aux projets",
@@ -63,8 +70,14 @@ export default async function ProjectDetailPage({
       recruiter: "Valeur recruteur",
       notes: "Notes de build",
       stack: "Stack",
+      ecosystem: "Role dans l'ecosysteme",
+      connected: "Modules relies",
     },
   }[locale];
+  const ecosystem = ecosystemNarrative[locale];
+  const connectedProjects = (project.ecosystemLinks ?? [])
+    .map((linkedSlug) => getProjectBySlug(linkedSlug))
+    .filter((linkedProject): linkedProject is NonNullable<typeof linkedProject> => Boolean(linkedProject));
 
   return (
     <MarketingPageShell>
@@ -96,14 +109,14 @@ export default async function ProjectDetailPage({
                 <div className="mt-6 flex flex-wrap gap-3">
                   {project.liveUrl ? (
                     <Button asChild>
-                      <Link href={project.liveUrl}>
+                      <Link href={project.liveUrl} target="_blank">
                         {labels.live} <ArrowUpRight className="size-4" />
                       </Link>
                     </Button>
                   ) : null}
                   {project.repoUrl ? (
                     <Button asChild variant="secondary">
-                      <Link href={project.repoUrl}>
+                      <Link href={project.repoUrl} target="_blank">
                         {labels.repo} <ArrowUpRight className="size-4" />
                       </Link>
                     </Button>
@@ -113,6 +126,48 @@ export default async function ProjectDetailPage({
             </div>
           </div>
         </section>
+
+        {copy.ecosystemRole ? (
+          <section className="border-b border-border bg-[#111a17] text-white">
+            <div className="mx-auto grid max-w-6xl gap-6 px-6 py-12 lg:grid-cols-[0.85fr_1.15fr]">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#f0d7b1]">
+                  {labels.ecosystem}
+                </p>
+                <h2 className="mt-4 text-3xl font-semibold tracking-normal text-balance">
+                  {project.name} {locale === "fr" ? "dans KV Portfolio" : "inside KV Portfolio"}
+                </h2>
+                <p className="mt-4 leading-7 text-white/68">{copy.ecosystemRole}</p>
+                <p className="mt-5 border-l border-[#f0d7b1]/50 pl-3 text-sm font-semibold text-[#f0d7b1]">
+                  {ecosystem.database}
+                </p>
+              </div>
+              <div className="border border-white/10 bg-white/[0.06] p-5">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/50">
+                  {labels.connected}
+                </p>
+                <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                  {connectedProjects.map((linkedProject) => {
+                    const linkedCopy = getProjectCopy(linkedProject, locale);
+                    return (
+                      <Link
+                        key={linkedProject.slug}
+                        href={`/projects/${linkedProject.slug}`}
+                        className="group border border-white/10 bg-[#18241f] p-4 transition hover:border-[#f0d7b1]/60"
+                      >
+                        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#f0d7b1]">
+                          {linkedCopy.category}
+                        </p>
+                        <p className="mt-2 font-semibold">{linkedProject.name}</p>
+                        <p className="mt-2 text-xs leading-5 text-white/58">{linkedCopy.summary}</p>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         <section className="mx-auto grid max-w-6xl gap-6 px-6 py-16 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="border border-border bg-card p-6 shadow-sm">

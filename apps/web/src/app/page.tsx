@@ -7,6 +7,8 @@ import { ProofStrip } from "@/components/portfolio/proof-strip";
 import { SectionHeading } from "@/components/portfolio/section-heading";
 import { Button } from "@/components/ui/button";
 import {
+  ecosystemFlow,
+  ecosystemNarrative,
   featuredProjects,
   pageCopy,
   profile,
@@ -25,6 +27,8 @@ export default async function Home() {
   const principles = locale === "fr" ? profile.principlesFr : profile.principles;
   const stack = locale === "fr" ? stackGroupsFr : stackGroups;
   const nextItems = locale === "fr" ? upcomingProjectsFr : upcomingProjects;
+  const ecosystem = ecosystemNarrative[locale];
+  const flow = ecosystemFlow[locale];
   const signature = {
     en: {
       availability: "Open for focused product work",
@@ -204,6 +208,65 @@ export default async function Home() {
         </section>
 
         <ProofStrip locale={locale} />
+
+        <section id="ecosystem" className="border-b border-border bg-[#f7f2e8]">
+          <div className="mx-auto max-w-6xl px-6 py-16">
+            <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+                  {ecosystem.eyebrow}
+                </p>
+                <h2 className="mt-4 text-3xl font-semibold tracking-normal text-balance sm:text-5xl">
+                  {ecosystem.title}
+                </h2>
+                <p className="mt-5 leading-7 text-muted-foreground">
+                  {ecosystem.description}
+                </p>
+                <div className="mt-6 grid gap-3 text-sm font-semibold">
+                  <div className="border border-primary/20 bg-card px-4 py-3 text-primary">
+                    {ecosystem.database}
+                  </div>
+                  <Link
+                    href="https://github.com/kurtisv/kv-web-starter"
+                    target="_blank"
+                    className="group flex items-center justify-between border border-border bg-background px-4 py-3 text-foreground transition hover:border-primary/40"
+                  >
+                    {ecosystem.foundation}
+                    <ArrowRight className="size-4 transition group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </div>
+              <div className="grid gap-4">
+                {flow.map((item) => (
+                  <article key={item.step} className="grid gap-4 border border-border bg-card p-5 shadow-sm sm:grid-cols-[4rem_1fr]">
+                    <div className="flex size-14 items-center justify-center bg-primary text-lg font-semibold text-primary-foreground">
+                      {item.step}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold">{item.title}</h3>
+                      <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.description}</p>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {item.projects.map((slug) => {
+                          const project = featuredProjects.find((entry) => entry.slug === slug);
+                          if (!project) return null;
+                          return (
+                            <Link
+                              key={slug}
+                              href={`/projects/${slug}`}
+                              className="border border-primary/15 bg-secondary/70 px-2.5 py-1 text-xs font-semibold text-primary transition hover:border-primary"
+                            >
+                              {project.name}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="border-b border-border bg-card/80">
           <div className="mx-auto grid max-w-6xl gap-8 px-6 py-14 lg:grid-cols-[1fr_0.72fr] lg:items-center">
