@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 const copy = {
   en: {
     eyebrow: "Projects",
-    title: "A connected product ecosystem built from one reusable foundation.",
+    title: "A focused portfolio path built from one reusable foundation.",
     description:
-      "These projects are organized as a company operating system, not a loose gallery: public brand, sales, booking, delivery, commerce, events, support, and API usage.",
+      "The public portfolio now keeps the cleanest recruiter path: public brand, sales, booking, support, and API activity.",
     mapTitle: "How the modules work together",
     cardCta: "Module to inspect",
     dataIn: "Receives",
@@ -24,9 +24,9 @@ const copy = {
   },
   fr: {
     eyebrow: "Projets",
-    title: "Un ecosysteme produit connecte construit depuis une fondation reutilisable.",
+    title: "Un parcours portfolio cible construit depuis une fondation reutilisable.",
     description:
-      "Ces projets sont organises comme un systeme d'entreprise, pas comme une galerie: marque publique, ventes, reservation, livraison, commerce, evenements, support et usage API.",
+      "Le portfolio public garde maintenant le chemin recruteur le plus clair: marque publique, vente, rendez-vous, support et activite API.",
     mapTitle: "Comment les modules se completent",
     cardCta: "Module a inspecter",
     dataIn: "Recoit",
@@ -38,22 +38,16 @@ const handoffCopy = {
   en: [
     ["Public visitor, project interest", "Qualified lead for QuotePilot"],
     ["Luma request, budget, scope", "Accepted quote and next booking need"],
-    ["Qualified quote and service type", "Confirmed appointment for ClientHub"],
-    ["Quote, booking notes, client messages", "Order, event, and support context"],
-    ["Client project and add-on need", "Order, fulfillment, support entitlement"],
-    ["Client, order, workshop need", "Registration, ticket, attendance signal"],
-    ["Order, booking, event, or project issue", "Resolved ticket and customer health"],
-    ["All module actions and API routes", "Usage, errors, limits, and technical proof"],
+    ["Qualified quote and service type", "Confirmed appointment and customer context"],
+    ["Booking, accepted quote, and customer need", "Resolved ticket and customer health"],
+    ["Lead, quote, booking, and support events", "Usage, errors, limits, and technical proof"],
   ],
   fr: [
     ["Visiteur public, interet projet", "Lead qualifie pour QuotePilot"],
     ["Demande Luma, budget, portee", "Soumission acceptee et besoin de rendez-vous"],
-    ["Soumission qualifiee et type de service", "Rendez-vous confirme pour ClientHub"],
-    ["Soumission, notes de rendez-vous, messages", "Commande, evenement et contexte support"],
-    ["Projet client et besoin d'ajout", "Commande, fulfillment et droit au support"],
-    ["Client, commande, besoin atelier", "Inscription, billet et signal de presence"],
-    ["Probleme apres commande, rendez-vous ou evenement", "Ticket resolu et sante client"],
-    ["Actions des modules et routes API", "Usage, erreurs, limites et preuve technique"],
+    ["Soumission qualifiee et type de service", "Rendez-vous confirme et contexte client"],
+    ["Rendez-vous, soumission acceptee et besoin client", "Ticket resolu et sante client"],
+    ["Evenements lead, soumission, rendez-vous et support", "Usage, erreurs, limites et preuve technique"],
   ],
 } as const;
 

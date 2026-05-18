@@ -7,14 +7,14 @@ import { MarketingPageShell } from "@/components/marketing/page-shell";
 import { Button } from "@/components/ui/button";
 import {
   ecosystemNarrative,
-  featuredProjects,
   getProjectBySlug,
   getProjectCopy,
+  publicPortfolioProjects,
 } from "@/data/portfolio";
 import { getCurrentLocale } from "@/lib/locale";
 
 export function generateStaticParams() {
-  return featuredProjects.map((project) => ({ slug: project.slug }));
+  return publicPortfolioProjects.map((project) => ({ slug: project.slug }));
 }
 
 export async function generateMetadata({

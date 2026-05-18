@@ -10,9 +10,9 @@ import { Button } from "@/components/ui/button";
 import {
   ecosystemFlow,
   ecosystemNarrative,
-  featuredProjects,
   getProjectsInEcosystemOrder,
   pageCopy,
+  publicPortfolioProjects,
   profile,
   stackGroups,
   stackGroupsFr,
@@ -47,9 +47,9 @@ export default async function Home() {
       railDetails: "Details",
       testSystem: "Test the system",
       testEyebrow: "Recruiter test path",
-      testTitle: "Open the modules in order and follow the same company data across the system.",
+      testTitle: "Open the modules in order and follow the same request through the lean path.",
       testText:
-        "This is the plan of attack for reviewing the ecosystem quickly: start with the public site, then follow the lead, booking, client, order, event, support, and API usage trail.",
+        "This review path keeps the strongest connected modules: public request, proposal, booking, support follow-up, and API activity.",
       testLive: "Open live",
       testDetails: "Case note",
       testSignal: "What to verify",
@@ -65,10 +65,8 @@ export default async function Home() {
         "Open QuotePilot and verify that same lead, budget, message, source, and flowId.",
         "Create and accept the QuotePilot proposal, then choose a consultant.",
         "Plan the ReserveFlow appointment from the accepted proposal context.",
-        "Create the ClientHub project; it then orchestrates CommerceKit, EventPass, and SupportDesk Lite intents.",
-        "In CommerceKit, create the order from commerce.intent.created.",
-        "In EventPass, create the registration and ticket from event.intent.created, then mark check-in complete.",
-        "In SupportDesk Lite, create and resolve the follow-up ticket; API Meter should show the full post-ReserveFlow trail.",
+        "Open SupportDesk Lite and create the follow-up ticket from the same customer context.",
+        "Open API Meter and verify the lead, quote, booking, and support events.",
       ],
       boilerplateEyebrow: "Built from my boilerplate",
       boilerplateTitle: "These portfolio sites start from the same reusable foundation.",
@@ -91,9 +89,9 @@ export default async function Home() {
       railDetails: "Details",
       testSystem: "Tester le systeme",
       testEyebrow: "Plan de test recruteur",
-      testTitle: "Ouvrir les modules dans l'ordre et suivre les memes donnees d'entreprise.",
+      testTitle: "Ouvrir les modules dans l'ordre et suivre la meme demande dans le parcours cible.",
       testText:
-        "Voici le plan de match pour reviser l'ecosysteme rapidement: commencer par le site public, puis suivre le lead, le rendez-vous, le client, la commande, l'evenement, le support et l'usage API.",
+        "Ce parcours de revue garde les modules connectes les plus forts: demande publique, soumission, rendez-vous, support et activite API.",
       testLive: "Ouvrir live",
       testDetails: "Fiche projet",
       testSignal: "A verifier",
@@ -109,10 +107,8 @@ export default async function Home() {
         "Ouvrir QuotePilot et verifier ce meme lead, le budget, le message, la source et le flowId.",
         "Creer et accepter la soumission QuotePilot, puis choisir un consultant.",
         "Planifier le rendez-vous ReserveFlow depuis le contexte de soumission acceptee.",
-        "Creer le projet ClientHub; il orchestre ensuite les intentions CommerceKit, EventPass et SupportDesk Lite.",
-        "Dans CommerceKit, creer la commande depuis commerce.intent.created.",
-        "Dans EventPass, creer l'inscription et le billet depuis event.intent.created, puis marquer le check-in complete.",
-        "Dans SupportDesk Lite, creer puis resoudre le ticket de suivi; API Meter doit afficher toute la trace post-ReserveFlow.",
+        "Ouvrir SupportDesk Lite et creer le ticket de suivi avec le meme contexte client.",
+        "Ouvrir API Meter et verifier les evenements lead, soumission, rendez-vous et support.",
       ],
       boilerplateEyebrow: "Cree depuis mon boilerplate",
       boilerplateTitle: "Ces sites portfolio partent de la meme fondation reutilisable.",
@@ -142,34 +138,13 @@ export default async function Home() {
           role: "Planification",
           action: "Choisir un creneau et confirmer le rendez-vous.",
           received: "Client, soumission, budget, consultant, besoin.",
-          sent: "booking.created vers ClientHub.",
+          sent: "booking.created vers la suite support.",
           boilerplate: "Calendrier, disponibilites, formulaire pre-rempli.",
-        },
-        {
-          role: "Portail projet",
-          action: "Creer le projet ClientHub depuis le rendez-vous.",
-          received: "Soumission acceptee, notes, client, consultant.",
-          sent: "commerce.intent.created, event.intent.created et support.context.created.",
-          boilerplate: "Dashboard B2B, donnees relationnelles, actions serveur.",
-        },
-        {
-          role: "Commerce",
-          action: "Creer une commande liee au projet.",
-          received: "commerce.intent.created avec client, projet, service, montant, flowId.",
-          sent: "order.created vers SupportDesk et API Meter.",
-          boilerplate: "Commandes, revenus, statuts et catalogue.",
-        },
-        {
-          role: "Evenementiel",
-          action: "Creer un billet puis marquer le check-in.",
-          received: "event.intent.created avec client, besoin atelier et contexte projet.",
-          sent: "event.ticket.created et event.checkin.completed.",
-          boilerplate: "Billets tokenises, inscription, check-in.",
         },
         {
           role: "Support",
           action: "Creer ou resoudre un ticket lie au parcours.",
-          received: "support.context.created, order.created, event.ticket.created ou event.checkin.completed.",
+          received: "Contexte client, soumission acceptee et rendez-vous confirme.",
           sent: "ticket.created et ticket.resolved vers API Meter.",
           boilerplate: "Helpdesk, SLA, priorites, statut.",
         },
@@ -200,34 +175,13 @@ export default async function Home() {
           role: "Scheduling",
           action: "Choose a slot and confirm the booking.",
           received: "Client, quote, budget, consultant, need.",
-          sent: "booking.created to ClientHub.",
+          sent: "booking.created to the support path.",
           boilerplate: "Calendar, availability, prefilled form.",
-        },
-        {
-          role: "Project portal",
-          action: "Create the ClientHub project from the booking.",
-          received: "Accepted quote, notes, client, consultant.",
-          sent: "commerce.intent.created, event.intent.created, and support.context.created.",
-          boilerplate: "B2B dashboard, relational data, server actions.",
-        },
-        {
-          role: "Commerce",
-          action: "Create an order tied to the project.",
-          received: "commerce.intent.created with client, project, service, amount, flowId.",
-          sent: "order.created to SupportDesk and API Meter.",
-          boilerplate: "Orders, revenue, statuses and catalog.",
-        },
-        {
-          role: "Events",
-          action: "Create a ticket, then complete check-in.",
-          received: "event.intent.created with client, workshop need, and project context.",
-          sent: "event.ticket.created and event.checkin.completed.",
-          boilerplate: "Token tickets, registration, check-in.",
         },
         {
           role: "Support",
           action: "Create or resolve a ticket linked to the flow.",
-          received: "support.context.created, order.created, event.ticket.created, or event.checkin.completed.",
+          received: "Customer context, accepted quote, and confirmed booking.",
           sent: "ticket.created and ticket.resolved to API Meter.",
           boilerplate: "Helpdesk, SLA, priorities, status.",
         },
@@ -299,7 +253,7 @@ export default async function Home() {
                       <p className="text-xs uppercase tracking-[0.18em] text-emerald-200">
                         {signature.shipped}
                       </p>
-                      <p className="mt-3 text-5xl font-semibold">{featuredProjects.length}</p>
+                      <p className="mt-3 text-5xl font-semibold">{publicPortfolioProjects.length}</p>
                       <p className="mt-2 text-sm leading-6 text-white/60">{signature.motion}</p>
                     </div>
                     <div className="border border-white/10 bg-[#18241f] p-4">
@@ -308,7 +262,7 @@ export default async function Home() {
                         <GitBranch className="size-4 text-[#f0d7b1]" />
                       </div>
                       <div className="mt-5 grid gap-3">
-                        {["01", "03", "06", "08"].map((step, index) => (
+                        {["01", "02", "03", "05"].map((step, index) => (
                           <div key={step} className="grid grid-cols-[2.5rem_1fr] items-center gap-3">
                             <span className="font-mono text-xs text-white/50">{step}</span>
                             <span

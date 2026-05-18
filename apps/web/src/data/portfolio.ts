@@ -465,26 +465,27 @@ export const featuredProjects: PortfolioProject[] = [
 ];
 
 export function getProjectBySlug(slug: string) {
-  return featuredProjects.find((project) => project.slug === slug);
+  return publicPortfolioProjects.find((project) => project.slug === slug);
 }
 
 export const ecosystemOrder = [
   "luma-studio",
   "quotepilot",
   "reserveflow",
-  "clienthub",
-  "commercekit",
-  "eventpass",
   "supportdesk-lite",
   "api-meter",
 ] as const;
 
+const removedFromPortfolio = new Set(["clienthub", "commercekit", "eventpass"]);
+
+export const publicPortfolioProjects = featuredProjects.filter((project) => !removedFromPortfolio.has(project.slug));
+
 export function getProjectsInEcosystemOrder() {
-  const bySlug = new Map(featuredProjects.map((project) => [project.slug, project]));
+  const bySlug = new Map(publicPortfolioProjects.map((project) => [project.slug, project]));
   const ordered = ecosystemOrder
     .map((slug) => bySlug.get(slug))
     .filter((project): project is PortfolioProject => Boolean(project));
-  const rest = featuredProjects.filter((project) => !ecosystemOrder.includes(project.slug as (typeof ecosystemOrder)[number]));
+  const rest = publicPortfolioProjects.filter((project) => !ecosystemOrder.includes(project.slug as (typeof ecosystemOrder)[number]));
 
   return [...ordered, ...rest];
 }
@@ -545,7 +546,7 @@ export const pageCopy = {
       role: "Ecosystem role",
     },
     proof: [
-      ["8", "portfolio builds from the foundation"],
+      ["5", "connected portfolio modules"],
       ["1", "mobile product included"],
       ["3+", "client sites planned or in progress"],
       ["50", "tests passing in the foundation"],
@@ -590,7 +591,7 @@ export const pageCopy = {
       role: "Role ecosysteme",
     },
     proof: [
-      ["8", "projets portfolio issus de la base"],
+      ["5", "modules portfolio connectes"],
       ["1", "produit mobile inclus"],
       ["3+", "sites clients prevus ou en cours"],
       ["50", "tests passent dans la fondation"],
@@ -612,22 +613,22 @@ export const upcomingProjectsFr = [
 
 export const ecosystemNarrative = {
   en: {
-    eyebrow: "One shared business ecosystem",
-    title: "The eight builds are presented as connected company software, not disconnected demos.",
+    eyebrow: "Focused portfolio path",
+    title: "The public portfolio now follows a lean five-step recruiter journey.",
     description:
-      "Each project uses the same technical foundation and connects to the shared Supabase KV Portfolio data layer. The recruiter should read the portfolio as a company operating system: brand, sales, booking, delivery, commerce, events, support, and API usage.",
+      "The visible journey keeps the strongest connected modules: public brand, sales proposal, booking, support follow-up, and API activity. ClientHub, CommerceKit, and EventPass are no longer part of the public portfolio path.",
     database: "Shared database: Supabase KV Portfolio",
     foundation: "Foundation: kv-web-starter boilerplate",
-    cta: "Explore ecosystem map",
+    cta: "Explore the path",
   },
   fr: {
-    eyebrow: "Un ecosysteme d'entreprise partage",
-    title: "Les huit builds sont presentes comme des logiciels connectes, pas comme des demos separees.",
+    eyebrow: "Parcours portfolio cible",
+    title: "Le portfolio public suit maintenant un parcours recruteur en cinq etapes.",
     description:
-      "Chaque projet utilise la meme fondation technique et se relie a la base Supabase KV Portfolio. Un recruteur doit lire le portfolio comme un systeme d'entreprise: marque, ventes, reservation, livraison, commerce, evenements, support et usage API.",
+      "Le parcours visible garde les modules connectes les plus forts: marque publique, soumission, rendez-vous, support et activite API. ClientHub, CommerceKit et EventPass ne font plus partie du parcours portfolio public.",
     database: "Base partagee: Supabase KV Portfolio",
     foundation: "Fondation: boilerplate kv-web-starter",
-    cta: "Explorer la carte ecosysteme",
+    cta: "Explorer le parcours",
   },
 } as const;
 
@@ -653,32 +654,14 @@ export const ecosystemFlow = {
     },
     {
       step: "04",
-      title: "Manage the client",
-      description: "ClientHub centralizes the accepted quote, booking notes, milestones, files, and client messages.",
-      projects: ["clienthub"],
-    },
-    {
-      step: "05",
-      title: "Sell a product or service",
-      description: "CommerceKit adds paid launch kits, workshop bundles, support credits, or API usage credits.",
-      projects: ["commercekit"],
-    },
-    {
-      step: "06",
-      title: "Run an event",
-      description: "EventPass handles launch events, workshops, tickets, registrations, and check-in operations.",
-      projects: ["eventpass"],
-    },
-    {
-      step: "07",
       title: "Offer support",
-      description: "SupportDesk Lite receives post-booking, post-order, and post-event requests with client context.",
+      description: "SupportDesk Lite turns the accepted request and booking context into a follow-up support workflow.",
       projects: ["supportdesk-lite"],
     },
     {
-      step: "08",
+      step: "05",
       title: "Measure technical activity",
-      description: "API Meter tracks the forms, endpoints, events, keys, and usage generated across the system.",
+      description: "API Meter tracks the forms, endpoints, events, keys, and usage generated by the lean demo path.",
       projects: ["api-meter"],
     },
   ],
@@ -703,32 +686,14 @@ export const ecosystemFlow = {
     },
     {
       step: "04",
-      title: "Gerer le client",
-      description: "ClientHub centralise la soumission acceptee, les notes de rendez-vous, les jalons, fichiers et messages.",
-      projects: ["clienthub"],
-    },
-    {
-      step: "05",
-      title: "Vendre un produit ou service",
-      description: "CommerceKit ajoute kits de lancement, bundles atelier, credits support ou credits API payants.",
-      projects: ["commercekit"],
-    },
-    {
-      step: "06",
-      title: "Gerer un evenement",
-      description: "EventPass gere lancements, ateliers, billets, inscriptions et operations de check-in.",
-      projects: ["eventpass"],
-    },
-    {
-      step: "07",
       title: "Offrir du support",
-      description: "SupportDesk Lite recoit les demandes apres rendez-vous, commande ou evenement avec le contexte client.",
+      description: "SupportDesk Lite transforme la demande acceptee et le rendez-vous en suivi support clair.",
       projects: ["supportdesk-lite"],
     },
     {
-      step: "08",
+      step: "05",
       title: "Mesurer l'activite technique",
-      description: "API Meter suit les formulaires, endpoints, evenements, cles et usages generes par le systeme.",
+      description: "API Meter suit les formulaires, endpoints, evenements, cles et usages generes par le parcours cible.",
       projects: ["api-meter"],
     },
   ],
