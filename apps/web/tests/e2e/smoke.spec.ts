@@ -5,7 +5,7 @@ test("portfolio, docs, and public API routes render", async ({ page, request }) 
   await expect(page.getByRole("heading", { name: /web products that are useful/i })).toBeVisible();
 
   await page.goto("/projects");
-  await expect(page.getByRole("heading", { name: /different product surfaces/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /portfolio projects/i })).toBeVisible();
 
   await page.goto("/docs");
   await expect(page.getByRole("heading", { name: /how this portfolio is built/i })).toBeVisible();
@@ -20,7 +20,7 @@ test("portfolio, docs, and public API routes render", async ({ page, request }) 
   expect(demo.ok()).toBe(true);
 });
 
-test("dashboard routes require login", async ({ page }) => {
+test("dashboard demo routes render", async ({ page }) => {
   await page.goto("/dashboard/api-usage");
-  await expect(page).toHaveURL(/\/login/);
+  await expect(page.getByRole("heading", { name: /api usage/i })).toBeVisible();
 });
