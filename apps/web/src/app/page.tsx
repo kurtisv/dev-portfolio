@@ -2,14 +2,11 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Code2, GitBranch, Layers3, MousePointer2 } from "lucide-react";
 
 import { MarketingPageShell } from "@/components/marketing/page-shell";
-import { resetDemoScenario } from "@/app/actions/demo-scenario";
 import { ProjectCard } from "@/components/portfolio/project-card";
 import { ProofStrip } from "@/components/portfolio/proof-strip";
 import { SectionHeading } from "@/components/portfolio/section-heading";
 import { Button } from "@/components/ui/button";
 import {
-  ecosystemFlow,
-  ecosystemNarrative,
   getProjectsInEcosystemOrder,
   pageCopy,
   publicPortfolioProjects,
@@ -25,13 +22,11 @@ export default async function Home() {
   const locale = await getCurrentLocale();
   const t = pageCopy[locale].home;
   const ecosystemProjects = getProjectsInEcosystemOrder();
-  const visibleProjects = ecosystemProjects.slice(0, 4);
+  const visibleProjects = ecosystemProjects.slice(0, 5);
   const projectRail = [...ecosystemProjects, ...ecosystemProjects];
   const principles = locale === "fr" ? profile.principlesFr : profile.principles;
   const stack = locale === "fr" ? stackGroupsFr : stackGroups;
   const nextItems = locale === "fr" ? upcomingProjectsFr : upcomingProjects;
-  const ecosystem = ecosystemNarrative[locale];
-  const flow = ecosystemFlow[locale];
   const signature = {
     en: {
       availability: "Open for focused product work",
@@ -108,26 +103,6 @@ export default async function Home() {
       boilerplateSecondary: "Voir le processus",
     },
   }[locale];
-  const stepDetails = locale === "fr"
-    ? [
-        {
-          role: "Porte d'entree publique",
-          action: "Remplir le formulaire Luma avec tes propres infos.",
-          received: "Aucune donnee entrante obligatoire.",
-          sent: "Formulaire valide et contact envoye.",
-          boilerplate: "Site vitrine bilingue, formulaire valide, server action.",
-        },
-      ]
-    : [
-        {
-          role: "Public entry point",
-          action: "Submit the Luma form with your own test data.",
-          received: "No required incoming data.",
-          sent: "Validated form and contact submitted.",
-          boilerplate: "Bilingual marketing site, validated form, server action.",
-        },
-      ];
-
   return (
     <MarketingPageShell>
       <main>
@@ -149,13 +124,13 @@ export default async function Home() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button asChild size="lg">
-                  <Link href="#test-system">
-                    {signature.testSystem} <ArrowRight className="size-4" />
+                  <Link href="/projects">
+                    {t.projects} <ArrowRight className="size-4" />
                   </Link>
                 </Button>
                 <Button asChild size="lg" variant="secondary">
-                  <Link href="/projects">
-                    {t.projects} <Code2 className="size-4" />
+                  <Link href="https://github.com/kurtisv" target="_blank">
+                    {t.github} <Code2 className="size-4" />
                   </Link>
                 </Button>
               </div>
@@ -267,172 +242,6 @@ export default async function Home() {
 
         <ProofStrip locale={locale} />
 
-        <section id="test-system" className="border-b border-border bg-white">
-          <div className="mx-auto max-w-6xl px-6 py-16">
-            <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
-              <div className="lg:sticky lg:top-6">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-                  {signature.testEyebrow}
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold tracking-normal text-balance sm:text-5xl">
-                  {signature.testTitle}
-                </h2>
-                <p className="mt-5 leading-7 text-muted-foreground">
-                  {signature.testText}
-                </p>
-                <div className="mt-6 border border-primary/20 bg-card p-4">
-                  <p className="text-sm font-semibold">
-                    {locale === "fr" ? "Comment tester rapidement l'ecosysteme" : "How to test the ecosystem quickly"}
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                    {locale === "fr"
-                      ? "Ouvre Luma, soumets une demande differente, puis avance module par module avec le meme flowId."
-                      : "Open Luma, submit a different request, then move module by module with the same flowId."}
-                  </p>
-                </div>
-                <div className="mt-6 border border-primary/20 bg-[#f7f2e8] p-4 text-sm font-semibold text-primary">
-                  {ecosystem.database}
-                </div>
-                <div className="mt-4 border border-border bg-card p-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-                    {signature.scenario}
-                  </p>
-                  <p className="mt-2 font-semibold">{signature.scenarioName}</p>
-                  <div className="mt-3 grid gap-1 text-sm text-muted-foreground">
-                    <p>{signature.scenarioClient}</p>
-                    <p>{signature.scenarioEmail}</p>
-                    <p>{signature.scenarioProject}</p>
-                    <p>{signature.scenarioBudget}</p>
-                  </div>
-                  <form action={resetDemoScenario} className="mt-4">
-                    <button className="w-full border border-primary/20 bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-[#111a17]">
-                      {signature.reset}
-                    </button>
-                  </form>
-                </div>
-              </div>
-
-              <div className="grid gap-3">
-                {flow.map((item, index) => {
-                  const project = ecosystemProjects.find((entry) => entry.slug === item.projects[0]);
-                  const details = stepDetails[index] ?? stepDetails[0];
-                  if (!project) return null;
-
-                  return (
-                    <article key={item.step} className="grid gap-4 border border-border bg-card p-4 shadow-sm lg:grid-cols-[4rem_1fr_auto] lg:items-center">
-                      <div className="flex size-14 items-center justify-center bg-[#111a17] font-mono text-sm font-semibold text-[#f0d7b1]">
-                        {item.step}
-                      </div>
-                      <div>
-                        <div className="flex flex-wrap items-center gap-2">
-                          <h3 className="text-lg font-semibold">{project.name}</h3>
-                          <span className="border border-primary/15 bg-secondary/70 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-primary">
-                            {item.title}
-                          </span>
-                        </div>
-                        <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                          {signature.testSteps[index]}
-                        </p>
-                        <div className="mt-4 grid gap-2 text-sm md:grid-cols-2">
-                          <p><span className="font-semibold">{locale === "fr" ? "Role:" : "Role:"}</span> {details.role}</p>
-                          <p><span className="font-semibold">{locale === "fr" ? "Action:" : "Action:"}</span> {details.action}</p>
-                          <p><span className="font-semibold">{locale === "fr" ? "Recoit:" : "Receives:"}</span> {details.received}</p>
-                          <p><span className="font-semibold">{locale === "fr" ? "Transmet:" : "Sends:"}</span> {details.sent}</p>
-                        </div>
-                        <p className="mt-3 rounded-md border border-primary/15 bg-secondary/50 px-3 py-2 text-sm">
-                          <span className="font-semibold">{locale === "fr" ? "Fonction boilerplate:" : "Boilerplate feature:"}</span> {details.boilerplate}
-                        </p>
-                        <p className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-                          {signature.testSignal}
-                        </p>
-                        <p className="mt-1 text-sm leading-6">{item.description}</p>
-                      </div>
-                      <div className="flex flex-wrap gap-2 sm:min-w-36 sm:flex-col">
-                        {project.liveUrl ? (
-                          <Link
-                            href={project.liveUrl}
-                            target="_blank"
-                            className="inline-flex items-center justify-between gap-2 border border-primary/20 bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground transition hover:bg-[#111a17]"
-                          >
-                            {signature.testLive}
-                            <ArrowRight className="size-3.5" />
-                          </Link>
-                        ) : null}
-                        <Link
-                          href={`/projects/${project.slug}`}
-                          className="inline-flex items-center justify-between gap-2 border border-border bg-background px-3 py-2 text-xs font-semibold transition hover:border-primary/40"
-                        >
-                          {signature.testDetails}
-                          <ArrowRight className="size-3.5" />
-                        </Link>
-                      </div>
-                    </article>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="ecosystem" className="border-b border-border bg-[#f7f2e8]">
-          <div className="mx-auto max-w-6xl px-6 py-16">
-            <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-                  {ecosystem.eyebrow}
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold tracking-normal text-balance sm:text-5xl">
-                  {ecosystem.title}
-                </h2>
-                <p className="mt-5 leading-7 text-muted-foreground">
-                  {ecosystem.description}
-                </p>
-                <div className="mt-6 grid gap-3 text-sm font-semibold">
-                  <div className="border border-primary/20 bg-card px-4 py-3 text-primary">
-                    {ecosystem.database}
-                  </div>
-                  <Link
-                    href="https://github.com/kurtisv/kv-web-starter"
-                    target="_blank"
-                    className="group flex items-center justify-between border border-border bg-background px-4 py-3 text-foreground transition hover:border-primary/40"
-                  >
-                    {ecosystem.foundation}
-                    <ArrowRight className="size-4 transition group-hover:translate-x-1" />
-                  </Link>
-                </div>
-              </div>
-              <div className="grid gap-4">
-                {flow.map((item) => (
-                  <article key={item.step} className="grid gap-4 border border-border bg-card p-5 shadow-sm sm:grid-cols-[4rem_1fr]">
-                    <div className="flex size-14 items-center justify-center bg-primary text-lg font-semibold text-primary-foreground">
-                      {item.step}
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold">{item.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.description}</p>
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        {item.projects.map((slug) => {
-                          const project = ecosystemProjects.find((entry) => entry.slug === slug);
-                          if (!project) return null;
-                          return (
-                            <Link
-                              key={slug}
-                              href={`/projects/${slug}`}
-                              className="border border-primary/15 bg-secondary/70 px-2.5 py-1 text-xs font-semibold text-primary transition hover:border-primary"
-                            >
-                              {project.name}
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section className="border-b border-border bg-card/80">
           <div className="mx-auto grid max-w-6xl gap-8 px-6 py-14 lg:grid-cols-[1fr_0.72fr] lg:items-center">
             <div>
@@ -456,10 +265,17 @@ export default async function Home() {
                 <ArrowRight className="size-4 transition group-hover:translate-x-1" />
               </Link>
               <Link
-                href="/process"
+                href="/projects/kv-web-starter"
                 className="group flex items-center justify-between border border-border bg-background px-5 py-4 text-sm font-semibold text-foreground transition hover:border-primary/40"
               >
                 {signature.boilerplateSecondary}
+                <ArrowRight className="size-4 transition group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/process"
+                className="group flex items-center justify-between border border-border bg-background px-5 py-4 text-sm font-semibold text-foreground transition hover:border-primary/40"
+              >
+                {locale === "fr" ? "Voir le processus" : "See build process"}
                 <GitBranch className="size-4 transition group-hover:translate-x-1" />
               </Link>
             </div>

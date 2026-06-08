@@ -57,9 +57,9 @@ export const featuredProjects: PortfolioProject[] = [
     status: "live",
     ecosystemRole:
       "Acts as the public brand front door that explains the company, generates trust, and sends visitors toward quotes, booking, or contact.",
-    summary: "A bilingual interior design studio site with services, work, contact, and case study pages.",
+    summary: "A bilingual interior design studio marketing site with services, portfolio pages, contact forms, and SEO structure.",
     description:
-      "Luma Studio proves the shared foundation can produce a polished client-facing website, not only dashboard applications.",
+      "Luma Studio is the marketing-site showcase of the kv-web-starter boilerplate. It shows how the same foundation becomes a polished brand website with FR/EN support, real imagery, validated contact forms, and SEO-ready page structure.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Resend-ready forms"],
     highlights: ["FR/EN support", "Real imagery", "Marketing and SEO structure"],
     recruiterValue:
@@ -71,9 +71,9 @@ export const featuredProjects: PortfolioProject[] = [
     ],
     fr: {
       category: "Site marketing premium",
-      summary: "Un site bilingue pour studio interieur avec services, realisations, contact et etude de cas.",
+      summary: "Un site marketing bilingue pour studio interieur avec services, portfolio, formulaires de contact et structure SEO.",
       description:
-        "Luma Studio prouve que la meme base peut produire un site client poli, pas seulement des applications dashboard.",
+        "Luma Studio est la demo site marketing du boilerplate kv-web-starter. Il montre comment la meme base devient un site de marque soigne avec support FR/EN, images reelles, formulaires valides et structure SEO.",
       highlights: ["Support FR/EN", "Images reelles", "Structure SEO et marketing"],
       recruiterValue:
         "Montre ma capacite a creer une vitrine client avec direction visuelle.",
@@ -91,30 +91,30 @@ export const featuredProjects: PortfolioProject[] = [
     name: "GasMobile",
     category: "Mobile application",
     status: "live",
-    summary: "A real application project focused on mobile product workflows and user-facing utility.",
+    summary: "A React Native mobile app for finding gas stations, comparing fuel prices, and predicting price trends.",
     description:
-      "GasMobile is part of the broader work history and shows product ambition beyond small portfolio websites.",
+      "GasMobile is a production-grade mobile product built with React Native and Expo. It combines real-time gas station maps, fuel price comparison, and a predictive pricing engine backed by live market data and a Sanity content layer.",
     stack: ["React Native", "Expo", "TypeScript", "Maps", "Sanity"],
-    highlights: ["Mobile experience", "Map workflows", "Production product thinking"],
+    highlights: ["Real-time maps", "Price prediction engine", "Sanity content"],
     recruiterValue:
-      "Shows broader product ambition and mobile-facing work beyond small web demos.",
+      "Shows cross-platform mobile development, real-time data integration, map workflows, and product thinking beyond web demos.",
     buildNotes: [
-      "Represents application work with maps and mobile product flows.",
-      "Useful context for product thinking outside the portfolio website series.",
-      "Included as a major project even if details evolve separately.",
+      "Built with React Native and Expo for iOS and Android.",
+      "Integrates live gas price data with a prediction engine.",
+      "Sanity powers editorial and station content.",
     ],
     fr: {
       category: "Application mobile",
-      summary: "Un projet d'application reel autour de flux mobile et d'utilite utilisateur.",
+      summary: "Une app mobile React Native pour trouver des stations, comparer les prix carburant et predire les tendances de prix.",
       description:
-        "GasMobile fait partie du parcours produit et montre une ambition au-dela des petits sites portfolio.",
-      highlights: ["Experience mobile", "Flux cartes", "Vision produit"],
+        "GasMobile est un produit mobile de qualite production construit avec React Native et Expo. Il combine cartes de stations en temps reel, comparaison de prix carburant et un moteur de prediction tarifaire alimente par des donnees marche live.",
+      highlights: ["Cartes en temps reel", "Moteur de prediction prix", "Contenu Sanity"],
       recruiterValue:
-        "Montre une experience produit plus large que les demos web.",
+        "Montre le developpement mobile multiplateforme, l'integration de donnees en temps reel, les flux cartes et une vision produit au-dela des demos web.",
       buildNotes: [
-        "Travail applicatif avec cartes et flux mobiles.",
-        "Contexte utile pour la pensee produit hors sites portfolio.",
-        "Projet majeur inclus meme si les details evoluent separement.",
+        "Construit avec React Native et Expo pour iOS et Android.",
+        "Integre des donnees prix carburant live avec un moteur de prediction.",
+        "Sanity alimente le contenu editorialv et les stations.",
       ],
     },
     repoUrl: "https://github.com/kurtisv/gasmobile",
@@ -124,31 +124,31 @@ export const featuredProjects: PortfolioProject[] = [
     name: "SpeedZone",
     category: "Automotive community platform",
     status: "live",
-    summary: "A car enthusiast platform with profiles, vehicle publishing, articles, comments, and Sanity-backed content.",
+    summary: "A full-featured automotive community platform with vehicle profiles, social features, articles, and Sanity CMS.",
     description:
-      "SpeedZone is a larger portfolio application for the automotive space. It combines a Next.js front end, Sanity CMS, Google authentication, user profiles, vehicle listings, comments, articles, and product-style community interactions.",
+      "SpeedZone is a larger portfolio application for the automotive space. It combines Next.js, Sanity CMS, Google authentication, vehicle listings, owner profiles, follow functionality, community comments, and editorial articles into one platform.",
     stack: ["Next.js", "React", "TypeScript", "Sanity", "NextAuth", "Tailwind CSS"],
     highlights: ["Automotive community", "Sanity CMS", "Auth and user profiles"],
     recruiterValue:
       "Shows a richer product surface than a landing page: auth, content modeling, user-generated listings, comments, and a domain-specific visual direction.",
     buildNotes: [
-      "Built around the automotive niche with a distinct dark/red visual identity.",
+      "Built with a distinct dark/red automotive visual identity.",
       "Connects public content, authenticated user flows, Sanity data, and article/detail pages.",
-      "Useful for recruiters who want to see a broader app structure with CMS-backed content.",
+      "Live at cardream-phi.vercel.app",
     ],
     fr: {
       category: "Plateforme communautaire automobile",
       summary:
-        "Une plateforme pour passionnes auto avec profils, publication de voitures, articles, commentaires et contenu Sanity.",
+        "Une plateforme communautaire automobile complete avec profils vehicules, fonctionnalites sociales, articles et Sanity CMS.",
       description:
-        "SpeedZone est une application portfolio plus large dans l'univers automobile. Elle combine un front Next.js, Sanity CMS, l'authentification Google, des profils utilisateurs, des fiches voitures, des commentaires, des articles et des interactions communautaires.",
+        "SpeedZone est une application portfolio plus large dans l'univers automobile. Elle combine Next.js, Sanity CMS, l'authentification Google, des fiches vehicules, profils proprietaires, suivi, commentaires communautaires et articles editoriaux.",
       highlights: ["Communaute automobile", "Sanity CMS", "Auth et profils"],
       recruiterValue:
         "Montre une surface produit plus riche qu'une page vitrine: auth, modelisation de contenu, publications utilisateur, commentaires et direction visuelle specifique au domaine.",
       buildNotes: [
-        "Construit autour de l'univers automobile avec une identite sombre/rouge distincte.",
+        "Construit avec une identite visuelle sombre/rouge distincte.",
         "Relie contenu public, flux authentifies, donnees Sanity et pages article/detail.",
-        "Utile pour voir une structure applicative plus large avec contenu CMS.",
+        "Live sur cardream-phi.vercel.app",
       ],
     },
     repoUrl: "https://github.com/kurtisv/speedzone",
@@ -159,30 +159,30 @@ export const featuredProjects: PortfolioProject[] = [
     name: "Suze Immo",
     category: "Real client website",
     status: "live",
-    summary: "A real estate website project for a functional business presence.",
+    summary: "A live real estate client website with property presentation, contact flows, and a trust-focused design.",
     description:
-      "Suze Immo is a real site context for a real estate audience. The live site is linked so recruiters can inspect the delivered client-facing experience directly.",
+      "Suze Immo is a delivered client website for a real estate professional. It covers property presentation, search context, a conversion-focused layout, and a clean design that works for a real audience.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS"],
     highlights: ["Client context", "Business website", "SEO-minded structure"],
     recruiterValue:
       "Shows real client website context and the ability to work on functional business sites that need trust, conversion, SEO, and responsive UI.",
     buildNotes: [
-      "Live site is available for recruiter review.",
-      "Represents work beyond portfolio exercises.",
-      "Focuses on real estate presentation, property discovery, contact flows, and brand cleanup.",
+      "Live site available for direct recruiter review.",
+      "Delivers property presentation, contact flows, and trust-building UX.",
+      "Built for a real client with SEO, responsive layout, and brand alignment.",
     ],
     fr: {
       category: "Site client reel",
-      summary: "Un site immobilier pour une presence d'affaires fonctionnelle.",
+      summary: "Un site client immobilier live avec presentation de proprietes, flux de contact et design oriente confiance.",
       description:
-        "Suze Immo est un vrai contexte de site immobilier. Le site live est lie pour que le recruteur puisse inspecter directement l'experience livree.",
+        "Suze Immo est un site livre pour un professionnel de l'immobilier. Il couvre la presentation de proprietes, le contexte de recherche, une mise en page orientee conversion et un design propre adapte a un vrai public.",
       highlights: ["Contexte client", "Site d'affaires", "Structure orientee SEO"],
       recruiterValue:
         "Montre un contexte client reel et la capacite a livrer des sites fonctionnels qui demandent confiance, conversion, SEO et UI responsive.",
       buildNotes: [
-        "Site live disponible pour revue recruteur.",
-        "Travail au-dela des exercices portfolio.",
-        "Travail sur presentation immobiliere, recherche de proprietes, contact et nettoyage de marque.",
+        "Site live disponible pour revue recruteur directe.",
+        "Livraison: presentation proprietes, flux contact et UX de confiance.",
+        "Construit pour un vrai client avec SEO, layout responsive et alignement marque.",
       ],
     },
     liveUrl: "https://suzeimmo.com",
@@ -196,7 +196,7 @@ export const featuredProjects: PortfolioProject[] = [
     description:
       "KV Web Starter is the shared foundation behind every portfolio project on this site. It ships with Auth.js, Prisma, Supabase, Tailwind CSS, Zod validation, FR/EN i18n, and a passing test suite so each new product starts from a verified base.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Supabase", "Auth.js", "Zod"],
-    highlights: ["Auth and database ready", "FR/EN i18n", "50+ tests passing"],
+    highlights: ["Auth + DB ready out of the box", "FR/EN i18n built in", "50+ tests passing"],
     recruiterValue:
       "Shows systems thinking: instead of rebuilding the same foundation each project, I maintain a versioned boilerplate that every product in this portfolio inherits from.",
     buildNotes: [
@@ -209,7 +209,7 @@ export const featuredProjects: PortfolioProject[] = [
       summary: "Un starter Next.js reutilisable avec auth, base de donnees, structure facturation, support bilingue et suite de tests.",
       description:
         "KV Web Starter est la base partagee derriere chaque projet portfolio de ce site. Il inclut Auth.js, Prisma, Supabase, Tailwind CSS, validation Zod, i18n FR/EN et une suite de tests pour demarrer chaque produit sur une base verifiee.",
-      highlights: ["Auth et base de donnees prets", "i18n FR/EN", "50+ tests qui passent"],
+      highlights: ["Auth + BDD prets hors de la boite", "i18n FR/EN integre", "50+ tests qui passent"],
       recruiterValue:
         "Montre une pensee systeme: plutot que de reconstruire la meme base a chaque projet, je maintiens un boilerplate versionne dont chaque produit de ce portfolio herite.",
       buildNotes: [
@@ -298,9 +298,9 @@ export const pageCopy = {
       role: "Ecosystem role",
     },
     proof: [
-      ["1", "live marketing site in the portfolio"],
-      ["1", "mobile product included"],
-      ["3", "real client sites deployed live"],
+      ["5", "projects shipped and deployed"],
+      ["1", "mobile app included"],
+      ["2", "real client sites live"],
       ["50", "tests passing in the foundation"],
     ],
   },
@@ -343,9 +343,9 @@ export const pageCopy = {
       role: "Role ecosysteme",
     },
     proof: [
-      ["1", "site marketing live dans le portfolio"],
-      ["1", "produit mobile inclus"],
-      ["3", "vrais sites clients deployes live"],
+      ["5", "projets livres et deployes"],
+      ["1", "app mobile incluse"],
+      ["2", "vrais sites clients live"],
       ["50", "tests passent dans la fondation"],
     ],
   },

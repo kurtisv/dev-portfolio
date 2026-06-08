@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { ProjectCard } from "@/components/portfolio/project-card";
 import { SectionHeading } from "@/components/portfolio/section-heading";
 import { MarketingPageShell } from "@/components/marketing/page-shell";
-import { ecosystemFlow, ecosystemNarrative, getProjectsInEcosystemOrder } from "@/data/portfolio";
+import { getProjectsInEcosystemOrder } from "@/data/portfolio";
 import { getCurrentLocale } from "@/lib/locale";
 
 export const metadata: Metadata = {
@@ -14,42 +14,22 @@ export const metadata: Metadata = {
 const copy = {
   en: {
     eyebrow: "Projects",
-    title: "A portfolio of real launched sites and a marketing demo built from one foundation.",
+    title: "Portfolio projects — real sites, a marketing demo, a mobile app, and the boilerplate foundation.",
     description:
-      "The public portfolio keeps Luma Studio as the marketing demo, plus real client sites and broader app work across different verticals.",
-    mapTitle: "How the modules work together",
-    cardCta: "Module to inspect",
-    dataIn: "Receives",
-    dataOut: "Sends forward",
+      "Five shipped projects across different verticals: a client real estate site, an automotive platform, a mobile gas price app, a bilingual marketing demo, and the Next.js starter that powers them all.",
   },
   fr: {
     eyebrow: "Projets",
-    title: "Un portfolio de vrais sites lances et une demo marketing, construits depuis une fondation.",
+    title: "Projets portfolio — vrais sites, une demo marketing, une app mobile et la fondation boilerplate.",
     description:
-      "Le portfolio public garde Luma Studio comme demo marketing, plus de vrais sites clients et du travail applicatif dans differents domaines.",
-    mapTitle: "Comment les modules se completent",
-    cardCta: "Module a inspecter",
-    dataIn: "Recoit",
-    dataOut: "Transmet",
+      "Cinq projets livres dans differents domaines: un site client immobilier, une plateforme auto, une app mobile de prix carburant, une demo marketing bilingue et le starter Next.js qui les alimente tous.",
   },
-} as const;
-
-const handoffCopy = {
-  en: [
-    ["Public visitor, project interest", "Contact form submitted and lead captured"],
-  ],
-  fr: [
-    ["Visiteur public, interet projet", "Formulaire contact soumis et lead capture"],
-  ],
 } as const;
 
 export default async function ProjectsPage() {
   const locale = await getCurrentLocale();
   const t = copy[locale];
-  const ecosystem = ecosystemNarrative[locale];
-  const flow = ecosystemFlow[locale];
   const orderedProjects = getProjectsInEcosystemOrder();
-  const handoffs = handoffCopy[locale];
 
   return (
     <MarketingPageShell>
@@ -59,67 +39,8 @@ export default async function ProjectsPage() {
           title={t.title}
           description={t.description}
         />
-        <section className="mt-10 border border-border bg-card p-5 shadow-sm">
-          <div className="grid gap-6 lg:grid-cols-[0.82fr_1.18fr]">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                {ecosystem.eyebrow}
-              </p>
-              <h2 className="mt-3 text-2xl font-semibold tracking-normal">{t.mapTitle}</h2>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                {ecosystem.description}
-              </p>
-              <p className="mt-4 border-l-2 border-primary/50 pl-3 text-sm font-semibold text-primary">
-                {ecosystem.database}
-              </p>
-            </div>
-            <div className="grid gap-3">
-              {flow.map((item) => (
-                <div key={item.step} className="grid gap-3 border border-border bg-background p-4 sm:grid-cols-[3rem_1fr]">
-                  <span className="font-mono text-sm font-semibold text-primary">{item.step}</span>
-                  <div>
-                    <p className="font-semibold">{item.title}</p>
-                    <p className="mt-1 text-sm leading-6 text-muted-foreground">{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-        <div className="mt-10 grid gap-5">
-          {flow.map((item, index) => {
-            const project = orderedProjects.find((entry) => entry.slug === item.projects[0]);
-            if (!project) return null;
-            const handoff = handoffs[index];
-
-            return (
-              <article key={item.step} className="grid gap-5 border border-border bg-card p-5 shadow-sm lg:grid-cols-[0.72fr_1.28fr]">
-                <div className="border border-primary/15 bg-background p-5">
-                  <p className="font-mono text-sm font-semibold text-primary">{item.step}</p>
-                  <h2 className="mt-4 text-2xl font-semibold tracking-normal">{item.title}</h2>
-                  <p className="mt-3 text-sm leading-6 text-muted-foreground">{item.description}</p>
-                  <div className="mt-5 grid gap-3 text-sm">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">{t.dataIn}</p>
-                      <p className="mt-1 font-medium">{handoff[0]}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">{t.dataOut}</p>
-                      <p className="mt-1 font-medium">{handoff[1]}</p>
-                    </div>
-                  </div>
-                  <p className="mt-5 border-l-2 border-primary/40 pl-3 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-                    {t.cardCta}
-                  </p>
-                </div>
-                <ProjectCard project={project} locale={locale} />
-              </article>
-            );
-          })}
-        </div>
-
         <div className="mt-10 grid gap-4 md:grid-cols-2">
-          {orderedProjects.slice(flow.length).map((project) => (
+          {orderedProjects.map((project) => (
             <ProjectCard key={project.slug} project={project} locale={locale} />
           ))}
         </div>

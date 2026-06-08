@@ -24,8 +24,8 @@ export async function Footer() {
         </div>
         <div className="grid gap-2 text-slate-400">
           <Link href="https://github.com/kurtisv">GitHub</Link>
-          <Link href="/projects/api-meter">API Meter</Link>
-          <Link href="/projects/luma-studio">Luma Studio</Link>
+          <Link href="/projects/speedzone">SpeedZone</Link>
+          <Link href="/projects/kv-web-starter">KV Web Starter</Link>
           <Link href="/contact">Contact</Link>
         </div>
       </div>
