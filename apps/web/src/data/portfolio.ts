@@ -152,6 +152,7 @@ export const featuredProjects: PortfolioProject[] = [
       ],
     },
     repoUrl: "https://github.com/kurtisv/speedzone",
+    liveUrl: "https://cardream-phi.vercel.app",
   },
   {
     slug: "suze-immo",
@@ -185,39 +186,6 @@ export const featuredProjects: PortfolioProject[] = [
       ],
     },
     liveUrl: "https://suzeimmo.com",
-  },
-  {
-    slug: "cardream",
-    name: "CarDream",
-    category: "Automotive showcase platform",
-    status: "live",
-    summary: "A car showcase platform with a public gallery, vehicle detail pages, and a Sanity-backed content layer.",
-    description:
-      "CarDream is a content-driven Next.js application for the automotive niche. It uses Sanity as the CMS backbone, dynamic vehicle detail routes, an owner profile system, and a visual direction built around car culture.",
-    stack: ["Next.js", "TypeScript", "Sanity", "Tailwind CSS"],
-    highlights: ["Vehicle gallery", "Sanity CMS", "Dynamic detail routes"],
-    recruiterValue:
-      "Shows a Sanity-backed Next.js app with dynamic routes, domain-specific content modeling, and a polished visual direction outside the standard boilerplate projects.",
-    buildNotes: [
-      "Sanity powers the vehicle content layer with structured schemas.",
-      "Dynamic car detail pages with owner profiles and social interactions.",
-      "Deployed live on Vercel.",
-    ],
-    fr: {
-      category: "Plateforme vitrine automobile",
-      summary: "Une plateforme vitrine auto avec galerie publique, pages detail voitures et un backend Sanity.",
-      description:
-        "CarDream est une application Next.js orientee contenu pour le domaine automobile. Elle utilise Sanity comme CMS, des routes detail dynamiques, des profils proprietaires et une direction visuelle centree sur la culture auto.",
-      highlights: ["Galerie vehicules", "Sanity CMS", "Routes detail dynamiques"],
-      recruiterValue:
-        "Montre une app Next.js avec Sanity, routes dynamiques, modelisation de contenu specifique au domaine et direction visuelle soignee hors des projets boilerplate standards.",
-      buildNotes: [
-        "Sanity alimente la couche contenu vehicules avec des schemas structures.",
-        "Pages detail avec profils proprietaires et interactions sociales.",
-        "Deploye live sur Vercel.",
-      ],
-    },
-    liveUrl: "https://cardream-phi.vercel.app",
   },
   {
     slug: "kv-web-starter",
