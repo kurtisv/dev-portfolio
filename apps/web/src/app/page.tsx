@@ -47,9 +47,9 @@ export default async function Home() {
       railDetails: "Details",
       testSystem: "Test the system",
       testEyebrow: "Recruiter test path",
-      testTitle: "Open the modules in order and follow the same request through the lean path.",
+      testTitle: "Open Luma Studio and see how the public marketing entry point is built.",
       testText:
-        "This review path keeps the strongest connected modules: public request, proposal, booking, support follow-up, and API activity.",
+        "The portfolio highlights Luma Studio as the flagship marketing demo, alongside real launched client sites.",
       testLive: "Open live",
       testDetails: "Case note",
       testSignal: "What to verify",
@@ -61,17 +61,12 @@ export default async function Home() {
       scenarioProject: "Use your own project request",
       scenarioBudget: "Use your own budget range",
       testSteps: [
-        "Start from Luma Studio and submit a new inquiry with your own name, email, project, and budget.",
-        "Open QuotePilot and verify that same lead, budget, message, source, and flowId.",
-        "Create and accept the QuotePilot proposal, then choose a consultant.",
-        "Plan the ReserveFlow appointment from the accepted proposal context.",
-        "Open SupportDesk Lite and create the follow-up ticket from the same customer context.",
-        "Open API Meter and verify the lead, quote, booking, and support events.",
+        "Open Luma Studio, inspect the bilingual marketing structure, the validated contact form, and the deployed build.",
       ],
       boilerplateEyebrow: "Built from my boilerplate",
       boilerplateTitle: "These portfolio sites start from the same reusable foundation.",
       boilerplateText:
-        "SupportDesk Lite, QuotePilot, Luma Studio, API Meter, and this profile are built from my own Next.js boilerplate. Recruiters can inspect the base repo and then compare how each project branches into a different product.",
+        "Luma Studio and this portfolio are built from my own Next.js boilerplate. Recruiters can inspect the base repo and compare how the same foundation becomes different products.",
       boilerplateCta: "View boilerplate repo",
       boilerplateSecondary: "See build process",
     },
@@ -89,9 +84,9 @@ export default async function Home() {
       railDetails: "Details",
       testSystem: "Tester le systeme",
       testEyebrow: "Plan de test recruteur",
-      testTitle: "Ouvrir les modules dans l'ordre et suivre la meme demande dans le parcours cible.",
+      testTitle: "Ouvrir Luma Studio et voir comment le point d'entree marketing public est construit.",
       testText:
-        "Ce parcours de revue garde les modules connectes les plus forts: demande publique, soumission, rendez-vous, support et activite API.",
+        "Le portfolio met en avant Luma Studio comme demo marketing principale, aux cotes des vrais sites clients lances.",
       testLive: "Ouvrir live",
       testDetails: "Fiche projet",
       testSignal: "A verifier",
@@ -103,17 +98,12 @@ export default async function Home() {
       scenarioProject: "Utilise ta propre demande de projet",
       scenarioBudget: "Utilise ta propre plage budgetaire",
       testSteps: [
-        "Commencer dans Luma Studio et soumettre une nouvelle demande avec ton nom, ton courriel, ton projet et ton budget.",
-        "Ouvrir QuotePilot et verifier ce meme lead, le budget, le message, la source et le flowId.",
-        "Creer et accepter la soumission QuotePilot, puis choisir un consultant.",
-        "Planifier le rendez-vous ReserveFlow depuis le contexte de soumission acceptee.",
-        "Ouvrir SupportDesk Lite et creer le ticket de suivi avec le meme contexte client.",
-        "Ouvrir API Meter et verifier les evenements lead, soumission, rendez-vous et support.",
+        "Ouvrir Luma Studio, inspecter la structure marketing bilingue, le formulaire contact valide et le build deploye.",
       ],
       boilerplateEyebrow: "Cree depuis mon boilerplate",
       boilerplateTitle: "Ces sites portfolio partent de la meme fondation reutilisable.",
       boilerplateText:
-        "SupportDesk Lite, QuotePilot, Luma Studio, API Meter et ce profil sont construits a partir de mon propre boilerplate Next.js. Un recruteur peut inspecter le repo de base, puis comparer comment chaque projet devient un produit different.",
+        "Luma Studio et ce portfolio sont construits a partir de mon propre boilerplate Next.js. Un recruteur peut inspecter le repo de base et voir comment la meme fondation devient differents produits.",
       boilerplateCta: "Voir le repo boilerplate",
       boilerplateSecondary: "Voir le processus",
     },
@@ -124,36 +114,8 @@ export default async function Home() {
           role: "Porte d'entree publique",
           action: "Remplir le formulaire Luma avec tes propres infos.",
           received: "Aucune donnee entrante obligatoire.",
-          sent: "lead.created vers QuotePilot.",
+          sent: "Formulaire valide et contact envoye.",
           boilerplate: "Site vitrine bilingue, formulaire valide, server action.",
-        },
-        {
-          role: "Conversion commerciale",
-          action: "Creer une soumission depuis le lead recu.",
-          received: "Nom, email, projet, budget, message, flowId.",
-          sent: "quote.accepted et consultant.selected vers ReserveFlow.",
-          boilerplate: "CRUD, Prisma, pipeline, simulation email.",
-        },
-        {
-          role: "Planification",
-          action: "Choisir un creneau et confirmer le rendez-vous.",
-          received: "Client, soumission, budget, consultant, besoin.",
-          sent: "booking.created vers la suite support.",
-          boilerplate: "Calendrier, disponibilites, formulaire pre-rempli.",
-        },
-        {
-          role: "Support",
-          action: "Creer ou resoudre un ticket lie au parcours.",
-          received: "Contexte client, soumission acceptee et rendez-vous confirme.",
-          sent: "ticket.created et ticket.resolved vers API Meter.",
-          boilerplate: "Helpdesk, SLA, priorites, statut.",
-        },
-        {
-          role: "Observabilite",
-          action: "Lire les logs et payloads du parcours complet.",
-          received: "Tous les events de l'ecosysteme.",
-          sent: "Mesures visibles pour recruteur.",
-          boilerplate: "Devtool, logs, usage API, monitoring.",
         },
       ]
     : [
@@ -161,36 +123,8 @@ export default async function Home() {
           role: "Public entry point",
           action: "Submit the Luma form with your own test data.",
           received: "No required incoming data.",
-          sent: "lead.created to QuotePilot.",
+          sent: "Validated form and contact submitted.",
           boilerplate: "Bilingual marketing site, validated form, server action.",
-        },
-        {
-          role: "Sales conversion",
-          action: "Create a proposal from the received lead.",
-          received: "Name, email, project, budget, message, flowId.",
-          sent: "quote.accepted and consultant.selected to ReserveFlow.",
-          boilerplate: "CRUD, Prisma, pipeline, email simulation.",
-        },
-        {
-          role: "Scheduling",
-          action: "Choose a slot and confirm the booking.",
-          received: "Client, quote, budget, consultant, need.",
-          sent: "booking.created to the support path.",
-          boilerplate: "Calendar, availability, prefilled form.",
-        },
-        {
-          role: "Support",
-          action: "Create or resolve a ticket linked to the flow.",
-          received: "Customer context, accepted quote, and confirmed booking.",
-          sent: "ticket.created and ticket.resolved to API Meter.",
-          boilerplate: "Helpdesk, SLA, priorities, status.",
-        },
-        {
-          role: "Observability",
-          action: "Read logs and payloads from the full journey.",
-          received: "All ecosystem events.",
-          sent: "Recruiter-visible measurements.",
-          boilerplate: "Devtool, logs, API usage, monitoring.",
         },
       ];
 
@@ -262,7 +196,7 @@ export default async function Home() {
                         <GitBranch className="size-4 text-[#f0d7b1]" />
                       </div>
                       <div className="mt-5 grid gap-3">
-                        {["01", "02", "03", "05"].map((step, index) => (
+                        {["01", "02", "03"].map((step, index) => (
                           <div key={step} className="grid grid-cols-[2.5rem_1fr] items-center gap-3">
                             <span className="font-mono text-xs text-white/50">{step}</span>
                             <span
@@ -348,7 +282,7 @@ export default async function Home() {
                 </p>
                 <div className="mt-6 border border-primary/20 bg-card p-4">
                   <p className="text-sm font-semibold">
-                    {locale === "fr" ? "Comment tester l'ecosysteme en 5 minutes" : "How to test the ecosystem in 5 minutes"}
+                    {locale === "fr" ? "Comment tester rapidement l'ecosysteme" : "How to test the ecosystem quickly"}
                   </p>
                   <p className="mt-2 text-sm leading-6 text-muted-foreground">
                     {locale === "fr"

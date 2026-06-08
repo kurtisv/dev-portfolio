@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 const copy = {
   en: {
     eyebrow: "Projects",
-    title: "A focused portfolio path built from one reusable foundation.",
+    title: "A portfolio of real launched sites and a marketing demo built from one foundation.",
     description:
-      "The public portfolio now keeps the cleanest recruiter path: public brand, sales, booking, support, and API activity.",
+      "The public portfolio keeps Luma Studio as the marketing demo, plus real client sites and broader app work across different verticals.",
     mapTitle: "How the modules work together",
     cardCta: "Module to inspect",
     dataIn: "Receives",
@@ -24,9 +24,9 @@ const copy = {
   },
   fr: {
     eyebrow: "Projets",
-    title: "Un parcours portfolio cible construit depuis une fondation reutilisable.",
+    title: "Un portfolio de vrais sites lances et une demo marketing, construits depuis une fondation.",
     description:
-      "Le portfolio public garde maintenant le chemin recruteur le plus clair: marque publique, vente, rendez-vous, support et activite API.",
+      "Le portfolio public garde Luma Studio comme demo marketing, plus de vrais sites clients et du travail applicatif dans differents domaines.",
     mapTitle: "Comment les modules se completent",
     cardCta: "Module a inspecter",
     dataIn: "Recoit",
@@ -36,18 +36,10 @@ const copy = {
 
 const handoffCopy = {
   en: [
-    ["Public visitor, project interest", "Qualified lead for QuotePilot"],
-    ["Luma request, budget, scope", "Accepted quote and next booking need"],
-    ["Qualified quote and service type", "Confirmed appointment and customer context"],
-    ["Booking, accepted quote, and customer need", "Resolved ticket and customer health"],
-    ["Lead, quote, booking, and support events", "Usage, errors, limits, and technical proof"],
+    ["Public visitor, project interest", "Contact form submitted and lead captured"],
   ],
   fr: [
-    ["Visiteur public, interet projet", "Lead qualifie pour QuotePilot"],
-    ["Demande Luma, budget, portee", "Soumission acceptee et besoin de rendez-vous"],
-    ["Soumission qualifiee et type de service", "Rendez-vous confirme et contexte client"],
-    ["Rendez-vous, soumission acceptee et besoin client", "Ticket resolu et sante client"],
-    ["Evenements lead, soumission, rendez-vous et support", "Usage, erreurs, limites et preuve technique"],
+    ["Visiteur public, interet projet", "Formulaire contact soumis et lead capture"],
   ],
 } as const;
 
@@ -127,7 +119,7 @@ export default async function ProjectsPage() {
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2">
-          {orderedProjects.slice(8).map((project) => (
+          {orderedProjects.slice(flow.length).map((project) => (
             <ProjectCard key={project.slug} project={project} locale={locale} />
           ))}
         </div>
