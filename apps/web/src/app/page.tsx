@@ -7,10 +7,9 @@ import { ProofStrip } from "@/components/portfolio/proof-strip";
 import { SectionHeading } from "@/components/portfolio/section-heading";
 import { Button } from "@/components/ui/button";
 import {
-  ecosystemFlow,
-  ecosystemNarrative,
-  featuredProjects,
+  getProjectsInEcosystemOrder,
   pageCopy,
+  publicPortfolioProjects,
   profile,
   stackGroups,
   stackGroupsFr,
@@ -22,13 +21,12 @@ import { getCurrentLocale } from "@/lib/locale";
 export default async function Home() {
   const locale = await getCurrentLocale();
   const t = pageCopy[locale].home;
-  const visibleProjects = featuredProjects.slice(0, 4);
-  const projectRail = [...featuredProjects, ...featuredProjects];
+  const ecosystemProjects = getProjectsInEcosystemOrder();
+  const visibleProjects = ecosystemProjects.slice(0, 5);
+  const projectRail = [...ecosystemProjects, ...ecosystemProjects];
   const principles = locale === "fr" ? profile.principlesFr : profile.principles;
   const stack = locale === "fr" ? stackGroupsFr : stackGroups;
   const nextItems = locale === "fr" ? upcomingProjectsFr : upcomingProjects;
-  const ecosystem = ecosystemNarrative[locale];
-  const flow = ecosystemFlow[locale];
   const signature = {
     en: {
       availability: "Open for focused product work",
@@ -42,10 +40,28 @@ export default async function Home() {
       rail: "Portfolio surface",
       railLive: "Live",
       railDetails: "Details",
+      testSystem: "Test the system",
+      testEyebrow: "Recruiter test path",
+      testTitle: "Open Luma Studio and see how the public marketing entry point is built.",
+      testText:
+        "The portfolio highlights Luma Studio as the flagship marketing demo, alongside real launched client sites.",
+      testLive: "Open live",
+      testDetails: "Case note",
+      testSignal: "What to verify",
+      reset: "Reset demo scenario",
+      scenario: "Interactive demo",
+      scenarioName: "KV Portfolio Demo Flow",
+      scenarioClient: "Use your own test client",
+      scenarioEmail: "Use your own test email",
+      scenarioProject: "Use your own project request",
+      scenarioBudget: "Use your own budget range",
+      testSteps: [
+        "Open Luma Studio, inspect the bilingual marketing structure, the validated contact form, and the deployed build.",
+      ],
       boilerplateEyebrow: "Built from my boilerplate",
       boilerplateTitle: "These portfolio sites start from the same reusable foundation.",
       boilerplateText:
-        "SupportDesk Lite, QuotePilot, Luma Studio, API Meter, and this profile are built from my own Next.js boilerplate. Recruiters can inspect the base repo and then compare how each project branches into a different product.",
+        "Luma Studio and this portfolio are built from my own Next.js boilerplate. Recruiters can inspect the base repo and compare how the same foundation becomes different products.",
       boilerplateCta: "View boilerplate repo",
       boilerplateSecondary: "See build process",
     },
@@ -61,15 +77,32 @@ export default async function Home() {
       rail: "Surface portfolio",
       railLive: "Live",
       railDetails: "Details",
+      testSystem: "Tester le systeme",
+      testEyebrow: "Plan de test recruteur",
+      testTitle: "Ouvrir Luma Studio et voir comment le point d'entree marketing public est construit.",
+      testText:
+        "Le portfolio met en avant Luma Studio comme demo marketing principale, aux cotes des vrais sites clients lances.",
+      testLive: "Ouvrir live",
+      testDetails: "Fiche projet",
+      testSignal: "A verifier",
+      reset: "Reset demo scenario",
+      scenario: "Demo interactive",
+      scenarioName: "KV Portfolio Demo Flow",
+      scenarioClient: "Utilise ton propre client test",
+      scenarioEmail: "Utilise ton propre courriel test",
+      scenarioProject: "Utilise ta propre demande de projet",
+      scenarioBudget: "Utilise ta propre plage budgetaire",
+      testSteps: [
+        "Ouvrir Luma Studio, inspecter la structure marketing bilingue, le formulaire contact valide et le build deploye.",
+      ],
       boilerplateEyebrow: "Cree depuis mon boilerplate",
       boilerplateTitle: "Ces sites portfolio partent de la meme fondation reutilisable.",
       boilerplateText:
-        "SupportDesk Lite, QuotePilot, Luma Studio, API Meter et ce profil sont construits a partir de mon propre boilerplate Next.js. Un recruteur peut inspecter le repo de base, puis comparer comment chaque projet devient un produit different.",
+        "Luma Studio et ce portfolio sont construits a partir de mon propre boilerplate Next.js. Un recruteur peut inspecter le repo de base et voir comment la meme fondation devient differents produits.",
       boilerplateCta: "Voir le repo boilerplate",
       boilerplateSecondary: "Voir le processus",
     },
   }[locale];
-
   return (
     <MarketingPageShell>
       <main>
@@ -96,7 +129,7 @@ export default async function Home() {
                   </Link>
                 </Button>
                 <Button asChild size="lg" variant="secondary">
-                  <Link href="https://github.com/kurtisv">
+                  <Link href="https://github.com/kurtisv" target="_blank">
                     {t.github} <Code2 className="size-4" />
                   </Link>
                 </Button>
@@ -129,7 +162,7 @@ export default async function Home() {
                       <p className="text-xs uppercase tracking-[0.18em] text-emerald-200">
                         {signature.shipped}
                       </p>
-                      <p className="mt-3 text-5xl font-semibold">{featuredProjects.length}</p>
+                      <p className="mt-3 text-5xl font-semibold">{publicPortfolioProjects.length}</p>
                       <p className="mt-2 text-sm leading-6 text-white/60">{signature.motion}</p>
                     </div>
                     <div className="border border-white/10 bg-[#18241f] p-4">
@@ -138,7 +171,7 @@ export default async function Home() {
                         <GitBranch className="size-4 text-[#f0d7b1]" />
                       </div>
                       <div className="mt-5 grid gap-3">
-                        {["01", "03", "06", "08"].map((step, index) => (
+                        {["01", "02", "03"].map((step, index) => (
                           <div key={step} className="grid grid-cols-[2.5rem_1fr] items-center gap-3">
                             <span className="font-mono text-xs text-white/50">{step}</span>
                             <span
@@ -209,65 +242,6 @@ export default async function Home() {
 
         <ProofStrip locale={locale} />
 
-        <section id="ecosystem" className="border-b border-border bg-[#f7f2e8]">
-          <div className="mx-auto max-w-6xl px-6 py-16">
-            <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-                  {ecosystem.eyebrow}
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold tracking-normal text-balance sm:text-5xl">
-                  {ecosystem.title}
-                </h2>
-                <p className="mt-5 leading-7 text-muted-foreground">
-                  {ecosystem.description}
-                </p>
-                <div className="mt-6 grid gap-3 text-sm font-semibold">
-                  <div className="border border-primary/20 bg-card px-4 py-3 text-primary">
-                    {ecosystem.database}
-                  </div>
-                  <Link
-                    href="https://github.com/kurtisv/kv-web-starter"
-                    target="_blank"
-                    className="group flex items-center justify-between border border-border bg-background px-4 py-3 text-foreground transition hover:border-primary/40"
-                  >
-                    {ecosystem.foundation}
-                    <ArrowRight className="size-4 transition group-hover:translate-x-1" />
-                  </Link>
-                </div>
-              </div>
-              <div className="grid gap-4">
-                {flow.map((item) => (
-                  <article key={item.step} className="grid gap-4 border border-border bg-card p-5 shadow-sm sm:grid-cols-[4rem_1fr]">
-                    <div className="flex size-14 items-center justify-center bg-primary text-lg font-semibold text-primary-foreground">
-                      {item.step}
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold">{item.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.description}</p>
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        {item.projects.map((slug) => {
-                          const project = featuredProjects.find((entry) => entry.slug === slug);
-                          if (!project) return null;
-                          return (
-                            <Link
-                              key={slug}
-                              href={`/projects/${slug}`}
-                              className="border border-primary/15 bg-secondary/70 px-2.5 py-1 text-xs font-semibold text-primary transition hover:border-primary"
-                            >
-                              {project.name}
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section className="border-b border-border bg-card/80">
           <div className="mx-auto grid max-w-6xl gap-8 px-6 py-14 lg:grid-cols-[1fr_0.72fr] lg:items-center">
             <div>
@@ -291,10 +265,17 @@ export default async function Home() {
                 <ArrowRight className="size-4 transition group-hover:translate-x-1" />
               </Link>
               <Link
-                href="/process"
+                href="/projects/kv-web-starter"
                 className="group flex items-center justify-between border border-border bg-background px-5 py-4 text-sm font-semibold text-foreground transition hover:border-primary/40"
               >
                 {signature.boilerplateSecondary}
+                <ArrowRight className="size-4 transition group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/process"
+                className="group flex items-center justify-between border border-border bg-background px-5 py-4 text-sm font-semibold text-foreground transition hover:border-primary/40"
+              >
+                {locale === "fr" ? "Voir le processus" : "See build process"}
                 <GitBranch className="size-4 transition group-hover:translate-x-1" />
               </Link>
             </div>

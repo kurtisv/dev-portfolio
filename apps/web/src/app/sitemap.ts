@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { env } from "@/lib/env";
-import { featuredProjects } from "@/data/portfolio";
+import { publicPortfolioProjects } from "@/data/portfolio";
 
 const routes = [
   "",
@@ -16,7 +16,7 @@ const routes = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const projectRoutes = featuredProjects.map((project) => `/projects/${project.slug}`);
+  const projectRoutes = publicPortfolioProjects.map((project) => `/projects/${project.slug}`);
 
   return [...routes, ...projectRoutes].map((route) => ({
     url: `${env.NEXT_PUBLIC_APP_URL}${route}`,
