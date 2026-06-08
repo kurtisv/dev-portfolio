@@ -87,123 +87,6 @@ export const featuredProjects: PortfolioProject[] = [
     repoUrl: "https://github.com/kurtisv/luma-studio",
   },
   {
-    slug: "commercekit",
-    name: "CommerceKit",
-    category: "Commerce workflow",
-    status: "live",
-    ecosystemRole:
-      "Sells kits, resources, productized services, or add-ons that support the same company operations.",
-    ecosystemLinks: ["supportdesk-lite", "clienthub", "eventpass"],
-    summary: "A small commerce product with catalog, product details, checkout demo, and order cockpit.",
-    description:
-      "CommerceKit demonstrates the Stripe-ready commerce side of the boilerplate with order data, product cards, confirmation flows, and dashboard context.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Supabase"],
-    highlights: ["Product catalog", "Checkout path", "Order dashboard"],
-    recruiterValue:
-      "Shows product merchandising, order modeling, and commerce UX without hiding behind placeholder screens.",
-    buildNotes: [
-      "Built as project 6 in its own public repo.",
-      "Production is connected to the shared kv-portfolio Supabase database.",
-      "Public pages, order flow, and dashboard surfaces are bilingual.",
-    ],
-    fr: {
-      category: "Flux commerce",
-      ecosystemRole:
-        "Vend des kits, ressources, services productises ou ajouts relies aux operations de la meme entreprise.",
-      summary: "Un produit commerce avec catalogue, details produit, checkout demo et cockpit commandes.",
-      description:
-        "CommerceKit demontre le cote commerce/Stripe-ready du boilerplate avec donnees de commandes, cartes produit, confirmation et dashboard.",
-      highlights: ["Catalogue produit", "Flux checkout", "Dashboard commandes"],
-      recruiterValue:
-        "Montre merchandising, modelisation de commandes et UX commerce sans rester sur des ecrans placeholder.",
-      buildNotes: [
-        "Construit comme projet 6 dans son propre repo public.",
-        "Production connectee a la base Supabase partagee kv-portfolio.",
-        "Pages publiques, commande et dashboard en bilingue.",
-      ],
-    },
-    liveUrl: "https://commercekit.vercel.app",
-    repoUrl: "https://github.com/kurtisv/commercekit",
-  },
-  {
-    slug: "clienthub",
-    name: "ClientHub",
-    category: "Client portal",
-    status: "live",
-    ecosystemRole:
-      "Centralizes project delivery after a quote is accepted: milestones, files, messages, and client-facing progress.",
-    ecosystemLinks: ["quotepilot", "supportdesk-lite", "api-meter"],
-    summary: "A B2B client portal for projects, milestones, files, messages, and delivery status.",
-    description:
-      "ClientHub turns the starter into a client collaboration product with project context, delivery progress, document references, and message history.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Supabase"],
-    highlights: ["Project portal", "Milestones and files", "B2B workflow"],
-    recruiterValue:
-      "Shows protected-portal thinking, client collaboration UX, and structured project data from the same foundation.",
-    buildNotes: [
-      "Built as project 7 with a separate public repo.",
-      "Production is connected to shared kv-portfolio Supabase tables.",
-      "Designed as a calmer B2B tool rather than another marketing site.",
-    ],
-    fr: {
-      category: "Portail client",
-      ecosystemRole:
-        "Centralise la livraison apres acceptation d'une soumission: jalons, fichiers, messages et progression client.",
-      summary: "Un portail B2B pour projets, jalons, fichiers, messages et statut de livraison.",
-      description:
-        "ClientHub transforme le starter en produit de collaboration client avec contexte projet, progression, documents et historique de messages.",
-      highlights: ["Portail projet", "Jalons et fichiers", "Flux B2B"],
-      recruiterValue:
-        "Montre une logique de portail protege, UX de collaboration client et donnees projet structurees.",
-      buildNotes: [
-        "Construit comme projet 7 dans un repo public separe.",
-        "Production connectee aux tables Supabase partagees kv-portfolio.",
-        "Design oriente outil B2B calme plutot qu'autre site marketing.",
-      ],
-    },
-    liveUrl: "https://clienthub-five.vercel.app",
-    repoUrl: "https://github.com/kurtisv/clienthub",
-  },
-  {
-    slug: "eventpass",
-    name: "EventPass",
-    category: "Event registration app",
-    status: "live",
-    ecosystemRole:
-      "Runs workshops, launches, and client events that connect marketing, commerce, and follow-up support.",
-    ecosystemLinks: ["luma-studio", "commercekit", "supportdesk-lite"],
-    summary: "An event registration and check-in product with capacity, tickets, and arrival operations.",
-    description:
-      "EventPass completes the eight-project series with public event pages, tokenized tickets, capacity display, and an admin check-in surface.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Supabase"],
-    highlights: ["Event catalog", "Token ticket", "Admin check-in"],
-    recruiterValue:
-      "Shows public registration, capacity constraints, tokenized access, and operations UI in a distinct product style.",
-    buildNotes: [
-      "Built as project 8 from kv-web-starter.",
-      "Production is connected to the shared kv-portfolio Supabase database.",
-      "Includes FR/EN, case study, and a separate public GitHub repo.",
-    ],
-    fr: {
-      category: "App d'inscription evenementielle",
-      ecosystemRole:
-        "Gere ateliers, lancements et evenements clients qui relient marketing, commerce et support apres evenement.",
-      summary: "Un produit evenementiel avec capacite, billets et operations d'arrivee.",
-      description:
-        "EventPass complete la serie de huit projets avec pages evenement, billets tokenises, capacite visible et check-in admin.",
-      highlights: ["Catalogue evenements", "Billet tokenise", "Check-in admin"],
-      recruiterValue:
-        "Montre inscription publique, contraintes de capacite, acces tokenise et UI operationnelle avec style distinct.",
-      buildNotes: [
-        "Construit comme projet 8 depuis kv-web-starter.",
-        "Production connectee a la base Supabase partagee kv-portfolio.",
-        "Inclut FR/EN, etude de cas et repo GitHub public separe.",
-      ],
-    },
-    liveUrl: "https://eventpass-nine.vercel.app",
-    repoUrl: "https://github.com/kurtisv/eventpass",
-  },
-  {
     slug: "gasmobile",
     name: "GasMobile",
     category: "Mobile application",
@@ -336,6 +219,39 @@ export const featuredProjects: PortfolioProject[] = [
     },
     liveUrl: "https://cardream-phi.vercel.app",
   },
+  {
+    slug: "kv-web-starter",
+    name: "KV Web Starter",
+    category: "Next.js boilerplate",
+    status: "live",
+    summary: "A reusable Next.js starter with auth, database, billing structure, bilingual support, and a test suite.",
+    description:
+      "KV Web Starter is the shared foundation behind every portfolio project on this site. It ships with Auth.js, Prisma, Supabase, Tailwind CSS, Zod validation, FR/EN i18n, and a passing test suite so each new product starts from a verified base.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Supabase", "Auth.js", "Zod"],
+    highlights: ["Auth and database ready", "FR/EN i18n", "50+ tests passing"],
+    recruiterValue:
+      "Shows systems thinking: instead of rebuilding the same foundation each project, I maintain a versioned boilerplate that every product in this portfolio inherits from.",
+    buildNotes: [
+      "Every portfolio project on this site is built from this starter.",
+      "Includes auth, data layer, validation, i18n, and deployment config out of the box.",
+      "Public repo so recruiters can inspect the foundation directly.",
+    ],
+    fr: {
+      category: "Boilerplate Next.js",
+      summary: "Un starter Next.js reutilisable avec auth, base de donnees, structure facturation, support bilingue et suite de tests.",
+      description:
+        "KV Web Starter est la base partagee derriere chaque projet portfolio de ce site. Il inclut Auth.js, Prisma, Supabase, Tailwind CSS, validation Zod, i18n FR/EN et une suite de tests pour demarrer chaque produit sur une base verifiee.",
+      highlights: ["Auth et base de donnees prets", "i18n FR/EN", "50+ tests qui passent"],
+      recruiterValue:
+        "Montre une pensee systeme: plutot que de reconstruire la meme base a chaque projet, je maintiens un boilerplate versionne dont chaque produit de ce portfolio herite.",
+      buildNotes: [
+        "Chaque projet portfolio de ce site est construit depuis ce starter.",
+        "Inclut auth, couche donnees, validation, i18n et config de deploiement.",
+        "Repo public pour que les recruteurs inspectent la fondation directement.",
+      ],
+    },
+    repoUrl: "https://github.com/kurtisv/kv-web-starter",
+  },
 ];
 
 export function getProjectBySlug(slug: string) {
@@ -346,13 +262,7 @@ export const ecosystemOrder = [
   "luma-studio",
 ] as const;
 
-const removedFromPortfolio = new Set([
-  "clienthub",
-  "commercekit",
-  "eventpass",
-]);
-
-export const publicPortfolioProjects = featuredProjects.filter((project) => !removedFromPortfolio.has(project.slug));
+export const publicPortfolioProjects = featuredProjects;
 
 export function getProjectsInEcosystemOrder() {
   const bySlug = new Map(publicPortfolioProjects.map((project) => [project.slug, project]));
