@@ -51,91 +51,12 @@ export const profile = {
 
 export const featuredProjects: PortfolioProject[] = [
   {
-    slug: "supportdesk-lite",
-    name: "SupportDesk Lite",
-    category: "Customer support dashboard",
-    status: "live",
-    ecosystemRole:
-      "Handles client support after a project, purchase, event, or service booking has already created a relationship.",
-    ecosystemLinks: ["clienthub", "commercekit", "reserveflow"],
-    summary: "A compact support portal for tickets, statuses, priorities, and client communication.",
-    description:
-      "SupportDesk Lite demonstrates business dashboard work: operational flows, support context, status-driven UI, and a classic visual direction distinct from the other portfolio projects.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Supabase"],
-    highlights: ["Ticket workflow", "Client-ready dashboard", "Classic elegant theme"],
-    recruiterValue:
-      "Shows that I can structure operational UI around real support work instead of only making marketing pages.",
-    buildNotes: [
-      "Separated into its own repository.",
-      "Uses a distinct visual identity from the other portfolio apps.",
-      "Frames ticket state, priority, and client context as the main product workflow.",
-    ],
-    fr: {
-      category: "Dashboard de support client",
-      ecosystemRole:
-        "Gere le support client apres un projet, un achat, un evenement ou une reservation de service.",
-      summary: "Un portail support compact pour tickets, statuts, priorites et communication client.",
-      description:
-        "SupportDesk Lite montre un travail de dashboard operationnel: flux support, contexte client, UI basee sur les statuts et direction visuelle classique.",
-      highlights: ["Flux tickets", "Dashboard client-ready", "Theme classique elegant"],
-      recruiterValue:
-        "Montre ma capacite a structurer une interface operationnelle autour d'un vrai flux support.",
-      buildNotes: [
-        "Cree dans son propre repo public.",
-        "Identite visuelle distincte des autres apps portfolio.",
-        "Le statut, la priorite et le contexte client guident le produit.",
-      ],
-    },
-    liveUrl: "https://supportdesk-lite-verskurtislivefrs-projects.vercel.app",
-    repoUrl: "https://github.com/kurtisv/supportdesk-lite",
-  },
-  {
-    slug: "quotepilot",
-    name: "QuotePilot",
-    category: "Quote management app",
-    status: "live",
-    ecosystemRole:
-      "Turns a qualified lead into a structured commercial proposal before booking, delivery, or client onboarding.",
-    ecosystemLinks: ["luma-studio", "reserveflow", "clienthub"],
-    summary: "A quote builder for small businesses with clients, line items, taxes, and quote states.",
-    description:
-      "QuotePilot shows CRUD, business logic, pricing structure, and a more refined color system for a practical SMB workflow.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Supabase"],
-    highlights: ["Quote workflow", "Client and line item model", "Supabase PostgreSQL"],
-    recruiterValue:
-      "Demonstrates business logic, data modeling, and a practical workflow a small business could understand.",
-    buildNotes: [
-      "Moved database direction to Supabase PostgreSQL.",
-      "Refined the theme after the first color pass.",
-      "Shows taxes, quote status, client data, and quote line structure.",
-    ],
-    fr: {
-      category: "Gestionnaire de soumissions",
-      ecosystemRole:
-        "Transforme une opportunite qualifiee en proposition commerciale avant reservation, livraison ou onboarding client.",
-      summary: "Un outil de soumissions pour PME avec clients, lignes, taxes et statuts.",
-      description:
-        "QuotePilot montre de la logique metier, de la modelisation de donnees et un flux de prix qu'une petite entreprise peut comprendre.",
-      highlights: ["Flux de soumission", "Clients et lignes de prix", "PostgreSQL via Supabase"],
-      recruiterValue:
-        "Demontre logique business, structure de donnees et workflow utile pour PME.",
-      buildNotes: [
-        "Decision de base de donnees orientee Supabase PostgreSQL.",
-        "Theme affine apres une premiere passe couleur.",
-        "Montre taxes, statuts, clients et lignes de soumission.",
-      ],
-    },
-    liveUrl: "https://quotepilot-omega.vercel.app",
-    repoUrl: "https://github.com/kurtisv/quotepilot",
-  },
-  {
     slug: "luma-studio",
     name: "Luma Studio",
     category: "Premium marketing website",
     status: "live",
     ecosystemRole:
       "Acts as the public brand front door that explains the company, generates trust, and sends visitors toward quotes, booking, or contact.",
-    ecosystemLinks: ["quotepilot", "reserveflow", "clienthub"],
     summary: "A bilingual interior design studio site with services, work, contact, and case study pages.",
     description:
       "Luma Studio proves the shared foundation can produce a polished client-facing website, not only dashboard applications.",
@@ -150,8 +71,6 @@ export const featuredProjects: PortfolioProject[] = [
     ],
     fr: {
       category: "Site marketing premium",
-      ecosystemRole:
-        "Sert de porte d'entree publique: presenter l'entreprise, generer la confiance et diriger vers soumission, reservation ou contact.",
       summary: "Un site bilingue pour studio interieur avec services, realisations, contact et etude de cas.",
       description:
         "Luma Studio prouve que la meme base peut produire un site client poli, pas seulement des applications dashboard.",
@@ -166,84 +85,6 @@ export const featuredProjects: PortfolioProject[] = [
     },
     liveUrl: "https://luma-studio-ruddy.vercel.app",
     repoUrl: "https://github.com/kurtisv/luma-studio",
-  },
-  {
-    slug: "api-meter",
-    name: "API Meter",
-    category: "SaaS/API portal",
-    status: "live",
-    ecosystemRole:
-      "Measures API usage and developer access when the company exposes technical services to partners or internal tools.",
-    ecosystemLinks: ["clienthub", "supportdesk-lite", "commercekit"],
-    summary: "A bilingual API metering product with docs, pricing, dashboard demo, and OpenAPI route.",
-    description:
-      "API Meter demonstrates API keys, usage tracking concepts, developer documentation, and a calm SaaS product interface.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "OpenAPI"],
-    highlights: ["FR/EN support", "Developer portal", "Usage dashboard"],
-    recruiterValue:
-      "Demonstrates the API/SaaS side of the foundation: developer docs, usage concepts, API routes, and dashboard UI.",
-    buildNotes: [
-      "Built after Luma Studio as project 4.",
-      "Includes a public developer portal, OpenAPI route, pricing concept, and demo dashboard.",
-      "Uses a restrained technical design with FR/EN support.",
-    ],
-    fr: {
-      category: "Portail SaaS/API",
-      ecosystemRole:
-        "Mesure l'usage API et l'acces developpeur lorsque l'entreprise expose des services techniques a des partenaires ou outils internes.",
-      summary: "Un produit bilingue de mesure API avec docs, prix, dashboard demo et OpenAPI.",
-      description:
-        "API Meter montre le cote SaaS/API: cles API, usage, documentation developpeur et interface produit calme.",
-      highlights: ["Support FR/EN", "Portail developpeur", "Dashboard d'usage"],
-      recruiterValue:
-        "Demontre le cote API/SaaS: docs developpeur, concepts d'usage, routes API et UI dashboard.",
-      buildNotes: [
-        "Construit apres Luma Studio comme projet 4.",
-        "Inclut portail developpeur, OpenAPI, prix et dashboard demo.",
-        "Design technique sobre avec support FR/EN.",
-      ],
-    },
-    liveUrl: "https://api-meter.vercel.app",
-    repoUrl: "https://github.com/kurtisv/api-meter",
-  },
-  {
-    slug: "reserveflow",
-    name: "ReserveFlow",
-    category: "Booking system",
-    status: "live",
-    ecosystemRole:
-      "Schedules discovery calls, service appointments, and operational capacity before work is confirmed.",
-    ecosystemLinks: ["luma-studio", "quotepilot", "clienthub"],
-    summary: "A service booking product with public scheduling, staff capacity, and an operations dashboard.",
-    description:
-      "ReserveFlow shows how the foundation can become a booking workflow for a service business, with a deeper product surface than a static portfolio page.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Supabase"],
-    highlights: ["Booking flow", "Staff availability", "Shared Supabase ecosystem"],
-    recruiterValue:
-      "Shows scheduling logic, operational thinking, and a polished service-business interface built from the same boilerplate.",
-    buildNotes: [
-      "Built as project 5 from kv-web-starter.",
-      "Uses the shared kv-portfolio Supabase database.",
-      "Includes FR/EN support, product depth, and a recruiter-facing case study.",
-    ],
-    fr: {
-      category: "Systeme de reservation",
-      ecosystemRole:
-        "Planifie appels de decouverte, rendez-vous de service et capacite operationnelle avant confirmation du travail.",
-      summary: "Un produit de reservation avec prise de rendez-vous, capacite equipe et dashboard operationnel.",
-      description:
-        "ReserveFlow montre comment la base devient un flux de reservation pour entreprise de services, avec plus de profondeur qu'une simple page vitrine.",
-      highlights: ["Flux de reservation", "Disponibilite equipe", "Ecosysteme Supabase partage"],
-      recruiterValue:
-        "Montre logique de planification, pensee operationnelle et interface de service construite depuis le meme boilerplate.",
-      buildNotes: [
-        "Construit comme projet 5 depuis kv-web-starter.",
-        "Utilise la base Supabase partagee kv-portfolio.",
-        "Inclut FR/EN, profondeur produit et etude de cas recruteur.",
-      ],
-    },
-    liveUrl: "https://reserveflow-psi.vercel.app",
-    repoUrl: "https://github.com/kurtisv/reserveflow",
   },
   {
     slug: "commercekit",
@@ -462,6 +303,39 @@ export const featuredProjects: PortfolioProject[] = [
     },
     liveUrl: "https://suzeimmo.com",
   },
+  {
+    slug: "cardream",
+    name: "CarDream",
+    category: "Automotive showcase platform",
+    status: "live",
+    summary: "A car showcase platform with a public gallery, vehicle detail pages, and a Sanity-backed content layer.",
+    description:
+      "CarDream is a content-driven Next.js application for the automotive niche. It uses Sanity as the CMS backbone, dynamic vehicle detail routes, an owner profile system, and a visual direction built around car culture.",
+    stack: ["Next.js", "TypeScript", "Sanity", "Tailwind CSS"],
+    highlights: ["Vehicle gallery", "Sanity CMS", "Dynamic detail routes"],
+    recruiterValue:
+      "Shows a Sanity-backed Next.js app with dynamic routes, domain-specific content modeling, and a polished visual direction outside the standard boilerplate projects.",
+    buildNotes: [
+      "Sanity powers the vehicle content layer with structured schemas.",
+      "Dynamic car detail pages with owner profiles and social interactions.",
+      "Deployed live on Vercel.",
+    ],
+    fr: {
+      category: "Plateforme vitrine automobile",
+      summary: "Une plateforme vitrine auto avec galerie publique, pages detail voitures et un backend Sanity.",
+      description:
+        "CarDream est une application Next.js orientee contenu pour le domaine automobile. Elle utilise Sanity comme CMS, des routes detail dynamiques, des profils proprietaires et une direction visuelle centree sur la culture auto.",
+      highlights: ["Galerie vehicules", "Sanity CMS", "Routes detail dynamiques"],
+      recruiterValue:
+        "Montre une app Next.js avec Sanity, routes dynamiques, modelisation de contenu specifique au domaine et direction visuelle soignee hors des projets boilerplate standards.",
+      buildNotes: [
+        "Sanity alimente la couche contenu vehicules avec des schemas structures.",
+        "Pages detail avec profils proprietaires et interactions sociales.",
+        "Deploye live sur Vercel.",
+      ],
+    },
+    liveUrl: "https://cardream-phi.vercel.app",
+  },
 ];
 
 export function getProjectBySlug(slug: string) {
@@ -470,13 +344,13 @@ export function getProjectBySlug(slug: string) {
 
 export const ecosystemOrder = [
   "luma-studio",
-  "quotepilot",
-  "reserveflow",
-  "supportdesk-lite",
-  "api-meter",
 ] as const;
 
-const removedFromPortfolio = new Set(["clienthub", "commercekit", "eventpass"]);
+const removedFromPortfolio = new Set([
+  "clienthub",
+  "commercekit",
+  "eventpass",
+]);
 
 export const publicPortfolioProjects = featuredProjects.filter((project) => !removedFromPortfolio.has(project.slug));
 
@@ -524,9 +398,9 @@ export const pageCopy = {
       github: "GitHub",
       selectedEyebrow: "Selected work",
       selectedTitle:
-        "A portfolio that shows range: dashboards, SaaS/API, client websites, and product apps.",
+        "A portfolio centered on real launched sites, a marketing demo, and broader app work.",
       selectedDescription:
-        "Each project is documented as a real build, with public repos where possible and a clear explanation of what the work demonstrates.",
+        "The public portfolio shows shipped code, real client context, and product depth across different verticals.",
       stackEyebrow: "Stack",
       stackTitle: "Built with a repeatable, recruiter-friendly workflow.",
       stackDescription:
@@ -546,9 +420,9 @@ export const pageCopy = {
       role: "Ecosystem role",
     },
     proof: [
-      ["5", "connected portfolio modules"],
+      ["1", "live marketing site in the portfolio"],
       ["1", "mobile product included"],
-      ["3+", "client sites planned or in progress"],
+      ["3", "real client sites deployed live"],
       ["50", "tests passing in the foundation"],
     ],
   },
@@ -569,9 +443,9 @@ export const pageCopy = {
       github: "GitHub",
       selectedEyebrow: "Travaux selectionnes",
       selectedTitle:
-        "Un portfolio qui montre plusieurs surfaces: dashboards, SaaS/API, sites clients et apps produit.",
+        "Un portfolio centre sur des sites reels lances, une demo marketing et du travail applicatif plus large.",
       selectedDescription:
-        "Chaque projet est documente comme un vrai build, avec repos publics quand possible et une explication claire de ce qu'il demontre.",
+        "Le portfolio public montre du code livre, du contexte client reel et de la profondeur produit dans differents domaines.",
       stackEyebrow: "Stack",
       stackTitle: "Construit avec un workflow repetable et lisible par un recruteur.",
       stackDescription:
@@ -591,41 +465,39 @@ export const pageCopy = {
       role: "Role ecosysteme",
     },
     proof: [
-      ["5", "modules portfolio connectes"],
+      ["1", "site marketing live dans le portfolio"],
       ["1", "produit mobile inclus"],
-      ["3+", "sites clients prevus ou en cours"],
+      ["3", "vrais sites clients deployes live"],
       ["50", "tests passent dans la fondation"],
     ],
   },
 } as const;
 
 export const upcomingProjects = [
-  "Three additional functional websites for real users",
   "More client case studies as they become public",
   "Additional SaaS/dashboard builds from the same foundation",
 ];
 
 export const upcomingProjectsFr = [
-  "Trois autres sites fonctionnels pour de vrais utilisateurs",
   "Plus d'etudes de cas client quand elles pourront etre publiques",
   "D'autres builds SaaS/dashboard a partir de la meme base",
 ];
 
 export const ecosystemNarrative = {
   en: {
-    eyebrow: "Focused portfolio path",
-    title: "The public portfolio now follows a lean five-step recruiter journey.",
+    eyebrow: "Focused portfolio",
+    title: "The public portfolio keeps only the strongest work.",
     description:
-      "The visible journey keeps the strongest connected modules: public brand, sales proposal, booking, support follow-up, and API activity. ClientHub, CommerceKit, and EventPass are no longer part of the public portfolio path.",
+      "The visible portfolio now centers on the real launched sites and the Luma Studio marketing demo. ClientHub, CommerceKit, and EventPass are available on request.",
     database: "Shared database: Supabase KV Portfolio",
     foundation: "Foundation: kv-web-starter boilerplate",
     cta: "Explore the path",
   },
   fr: {
-    eyebrow: "Parcours portfolio cible",
-    title: "Le portfolio public suit maintenant un parcours recruteur en cinq etapes.",
+    eyebrow: "Portfolio cible",
+    title: "Le portfolio public garde seulement le travail le plus fort.",
     description:
-      "Le parcours visible garde les modules connectes les plus forts: marque publique, soumission, rendez-vous, support et activite API. ClientHub, CommerceKit et EventPass ne font plus partie du parcours portfolio public.",
+      "Le portfolio visible se concentre maintenant sur les vrais sites lances et la demo marketing Luma Studio. ClientHub, CommerceKit et EventPass sont disponibles sur demande.",
     database: "Base partagee: Supabase KV Portfolio",
     foundation: "Fondation: boilerplate kv-web-starter",
     cta: "Explorer le parcours",
@@ -640,30 +512,6 @@ export const ecosystemFlow = {
       description: "Luma Studio presents the brand, services, proof, and contact path that starts the business journey.",
       projects: ["luma-studio"],
     },
-    {
-      step: "02",
-      title: "Convert the visitor into a lead",
-      description: "QuotePilot receives the Luma request, qualifies scope, and turns it into a structured proposal.",
-      projects: ["quotepilot"],
-    },
-    {
-      step: "03",
-      title: "Schedule the appointment",
-      description: "ReserveFlow books the discovery call, workshop, or project review needed before delivery starts.",
-      projects: ["reserveflow"],
-    },
-    {
-      step: "04",
-      title: "Offer support",
-      description: "SupportDesk Lite turns the accepted request and booking context into a follow-up support workflow.",
-      projects: ["supportdesk-lite"],
-    },
-    {
-      step: "05",
-      title: "Measure technical activity",
-      description: "API Meter tracks the forms, endpoints, events, keys, and usage generated by the lean demo path.",
-      projects: ["api-meter"],
-    },
   ],
   fr: [
     {
@@ -671,30 +519,6 @@ export const ecosystemFlow = {
       title: "Attirer un visiteur",
       description: "Luma Studio presente la marque, les services, les preuves et le chemin de contact qui lance le parcours.",
       projects: ["luma-studio"],
-    },
-    {
-      step: "02",
-      title: "Transformer le visiteur en lead",
-      description: "QuotePilot recoit la demande Luma, qualifie le besoin et la transforme en proposition structuree.",
-      projects: ["quotepilot"],
-    },
-    {
-      step: "03",
-      title: "Planifier un rendez-vous",
-      description: "ReserveFlow reserve l'appel, l'atelier ou la revue projet avant le demarrage de la livraison.",
-      projects: ["reserveflow"],
-    },
-    {
-      step: "04",
-      title: "Offrir du support",
-      description: "SupportDesk Lite transforme la demande acceptee et le rendez-vous en suivi support clair.",
-      projects: ["supportdesk-lite"],
-    },
-    {
-      step: "05",
-      title: "Mesurer l'activite technique",
-      description: "API Meter suit les formulaires, endpoints, evenements, cles et usages generes par le parcours cible.",
-      projects: ["api-meter"],
     },
   ],
 } as const;
