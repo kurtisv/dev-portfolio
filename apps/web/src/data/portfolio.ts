@@ -1,11 +1,5 @@
 export type ProjectStatus = "live" | "private" | "coming-soon";
 
-export type ProjectImage = {
-  src: string;
-  alt: string;
-  tall?: boolean;
-};
-
 export type PortfolioProject = {
   slug: string;
   name: string;
@@ -30,8 +24,6 @@ export type PortfolioProject = {
   };
   liveUrl?: string;
   repoUrl?: string;
-  image?: ProjectImage;
-  gallery?: ProjectImage[];
 };
 
 export const profile = {
@@ -152,7 +144,7 @@ export const featuredProjects: PortfolioProject[] = [
     summary:
       "A React Native app for real-time photo sharing at events. Attendees join via QR code or event code, capture photos, and browse a shared live feed.",
     description:
-      "EventPic is a mobile-first event photo-sharing platform. Guests join a private event session via a generated code or QR code and contribute photos to a shared, real-time feed. The app features per-event theming, admin moderation with approval flows, swipe-to-browse gallery navigation, offline detection, gallery save with FileSystem download, and a slideshow generator with Deezer music selection — all backed by a Cloudflare Workers edge API.",
+      "EventPic is a mobile-first event photo-sharing platform built with React Native and Expo SDK 54. Guests scan a QR code or enter an event code to join a private session -- no account, just a display name -- and every photo they capture lands in a shared feed that refreshes in real time with infinite scroll. The host creates an event in three steps (name, date, ambiance) and picks a theme -- wedding, birthday, family, corporate, sports -- that recolors the entire app at navigation level through a Zustand store. Admins get a moderation queue with approval flows, a role-based UI, and a shareable invitation sheet with QR code and access code. The app handles the hard mobile details: offline detection, saving photos to the device gallery through the FileSystem API, haptics, deep links, lazy-loaded push notifications, and an animated landing mosaic of real event photography. A slideshow generator with Deezer music search turns the feed into a ready-to-share memory. The backend is a Cloudflare Workers edge API with R2 object storage and JWT sessions that separate admin and guest roles -- production-shaped infrastructure without a managed cloud.",
     stack: [
       "React Native",
       "Expo SDK 54",
@@ -180,7 +172,7 @@ export const featuredProjects: PortfolioProject[] = [
       summary:
         "Une app React Native pour partager des photos en temps reel lors d'evenements. Les invites rejoignent via QR code ou code evenement et consultent un fil commun en direct.",
       description:
-        "EventPic est une plateforme mobile de partage de photos lors d'evenements. Les invites rejoignent une session privee par code ou QR code et contribuent a un fil commun en temps reel. L'app integre un theme par type d'evenement, une moderation admin avec flux d'approbation, navigation a glissement entre photos, detection hors ligne, sauvegarde galerie avec telechargement FileSystem et un generateur de diaporama avec selection musicale Deezer.",
+        "EventPic est une plateforme mobile de partage de photos d'evenements construite avec React Native et Expo SDK 54. Les invites scannent un QR code ou entrent un code d'evenement pour rejoindre une session privee -- aucun compte, juste un pseudo -- et chaque photo capturee arrive dans un fil commun rafraichi en temps reel avec scroll infini. L'hote cree son evenement en trois etapes (nom, date, ambiance) et choisit un theme -- mariage, anniversaire, famille, corporate, sport -- qui recolore toute l'app au niveau navigation via un store Zustand. Les admins disposent d'une file de moderation avec approbation, d'une UI par role et d'une feuille d'invitation partageable avec QR code et code d'acces. L'app gere les details mobiles difficiles: detection hors ligne, sauvegarde des photos dans la galerie via l'API FileSystem, haptique, liens profonds, notifications push chargees a la demande et une mosaique animee de vraies photos d'evenements en page d'accueil. Un generateur de diaporama avec recherche musicale Deezer transforme le fil en souvenir pret a partager. Le backend est une API edge Cloudflare Workers avec stockage R2 et sessions JWT separant les roles admin et invite -- une infrastructure de forme production sans cloud gere.",
       highlights: [
         "Fil photos partage en temps reel avec scroll infini",
         "Theme accent par evenement applique au niveau navigation",
@@ -194,17 +186,6 @@ export const featuredProjects: PortfolioProject[] = [
         "Cloudflare Workers + R2 pour upload photos, API fil et flux token admin.",
       ],
     },
-    image: {
-      src: "/projects/eventpic/card.png",
-      alt: "EventPic ambiance picker with per-event gold theme",
-      tall: true,
-    },
-    gallery: [
-      { src: "/projects/eventpic/card.png", alt: "Event ambiance picker with themed cards", tall: true },
-      { src: "/projects/eventpic/shot-1.png", alt: "Event creation form", tall: true },
-      { src: "/projects/eventpic/shot-2.png", alt: "QR code invitation sheet", tall: true },
-      { src: "/projects/eventpic/shot-3.png", alt: "Event settings with color themes", tall: true },
-    ],
   },
   {
     slug: "luma-studio",
@@ -215,7 +196,7 @@ export const featuredProjects: PortfolioProject[] = [
       "Acts as the public brand front door that explains the company, generates trust, and sends visitors toward quotes, booking, or contact.",
     summary: "A bilingual interior design studio marketing site with services, portfolio pages, contact forms, and SEO structure.",
     description:
-      "Luma Studio is the marketing-site showcase of the kv-web-starter boilerplate. It shows how the same foundation becomes a polished brand website with FR/EN support, real imagery, validated contact forms, and SEO-ready page structure.",
+      "Luma Studio is a complete bilingual marketing website for an interior architecture studio, built to prove the kv-web-starter foundation can become a polished brand site and not just dashboards. It ships real pages -- home, services, selected work, about, case study, and contact -- with a calm editorial design, real photography treatment, and an FR/EN switcher that localizes every section. The contact form runs through a Zod-validated server action wired for Resend delivery. Under the surface it keeps the engineering bar of the starter: strict TypeScript, semantic SEO-ready structure, accessibility passes, and the inherited Vitest and CI setup. The case study page documents the design decisions, so a reviewer can read why the site looks the way it does instead of only seeing the result.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Resend-ready forms"],
     highlights: ["FR/EN support", "Real imagery", "Marketing and SEO structure"],
     recruiterValue:
@@ -229,7 +210,7 @@ export const featuredProjects: PortfolioProject[] = [
       category: "Site marketing premium",
       summary: "Un site marketing bilingue pour studio interieur avec services, portfolio, formulaires de contact et structure SEO.",
       description:
-        "Luma Studio est la demo site marketing du boilerplate kv-web-starter. Il montre comment la meme base devient un site de marque soigne avec support FR/EN, images reelles, formulaires valides et structure SEO.",
+        "Luma Studio est un site marketing bilingue complet pour un studio d'architecture interieure, construit pour prouver que la fondation kv-web-starter peut devenir un site de marque soigne et pas seulement des dashboards. Il livre de vraies pages -- accueil, services, realisations, a propos, etude de cas et contact -- avec un design editorial calme, un vrai traitement photographique et un commutateur FR/EN qui localise chaque section. Le formulaire de contact passe par une action serveur validee avec Zod et prete pour l'envoi via Resend. Sous la surface, le niveau d'ingenierie du starter est maintenu: TypeScript strict, structure semantique prete pour le SEO, passes d'accessibilite et la configuration Vitest et CI heritee. La page etude de cas documente les decisions de design, pour qu'un reviewer puisse lire pourquoi le site a cette apparence au lieu de seulement voir le resultat.",
       highlights: ["Support FR/EN", "Images reelles", "Structure SEO et marketing"],
       recruiterValue:
         "Montre ma capacite a creer une vitrine client avec direction visuelle.",
@@ -241,11 +222,6 @@ export const featuredProjects: PortfolioProject[] = [
     },
     liveUrl: "https://luma-studio-ruddy.vercel.app",
     repoUrl: "https://github.com/kurtisv/luma-studio",
-    image: {
-      src: "/projects/luma-studio/card.png",
-      alt: "Luma Studio marketing site homepage",
-    },
-    gallery: [{ src: "/projects/luma-studio/card.png", alt: "Luma Studio homepage hero" }],
   },
   {
     slug: "quotepilot",
@@ -257,7 +233,7 @@ export const featuredProjects: PortfolioProject[] = [
     summary:
       "A bilingual quoting tool where small businesses create, send, and track professional quotes from one dashboard.",
     description:
-      "QuotePilot is the quoting module of the portfolio ecosystem. It covers quote creation with line items, statuses from draft to accepted, a client-facing quote view, and dashboard metrics -- built from the kv-web-starter foundation with Prisma data models and validated server actions.",
+      "QuotePilot is a bilingual quoting SaaS for small businesses and freelancers: create a professional quote with detailed line items, send it, and track it through its whole lifecycle. Quotes move through explicit statuses -- draft, sent, accepted, declined -- and every transition feeds the dashboard metrics, so the pipeline stays readable at a glance. Clients receive a clean client-facing view of their quote without creating an account. The data layer is Prisma on PostgreSQL with models for quotes, line items, and clients; every mutation runs through a validated server action; and the French-first interface ('Soumissions professionnelles') matches how Quebec small businesses actually talk about quotes. Built from kv-web-starter, it inherits the auth-ready structure, FR/EN i18n, and the test suite of the foundation.",
     stack: ["Next.js", "TypeScript", "Prisma", "Tailwind CSS", "Auth.js"],
     highlights: [
       "Quote lifecycle from draft to accepted",
@@ -276,7 +252,7 @@ export const featuredProjects: PortfolioProject[] = [
       summary:
         "Un outil de soumissions bilingue ou les PME creent, envoient et suivent des soumissions professionnelles depuis un seul dashboard.",
       description:
-        "QuotePilot est le module soumissions de l'ecosysteme portfolio. Il couvre la creation de soumissions avec lignes detaillees, les statuts de brouillon a accepte, une vue client et des metriques dashboard -- construit depuis la fondation kv-web-starter avec modeles Prisma et actions serveur validees.",
+        "QuotePilot est un SaaS de soumissions bilingue pour PME et independants: creer une soumission professionnelle avec lignes detaillees, l'envoyer et la suivre sur tout son cycle de vie. Les soumissions passent par des statuts explicites -- brouillon, envoyee, acceptee, refusee -- et chaque transition alimente les metriques du dashboard, pour que le pipeline reste lisible d'un coup d'oeil. Le client recoit une vue propre de sa soumission sans creer de compte. La couche de donnees est Prisma sur PostgreSQL avec des modeles pour soumissions, lignes et clients; chaque mutation passe par une action serveur validee; et l'interface d'abord en francais ('Soumissions professionnelles') correspond a la facon dont les PME quebecoises parlent vraiment de soumissions. Construit depuis kv-web-starter, il herite de la structure prete pour l'auth, de l'i18n FR/EN et de la suite de tests de la fondation.",
       highlights: [
         "Cycle de vie complet de brouillon a accepte",
         "Vue soumission cote client",
@@ -294,11 +270,6 @@ export const featuredProjects: PortfolioProject[] = [
     },
     liveUrl: "https://quotepilot-omega.vercel.app",
     repoUrl: "https://github.com/kurtisv/quotepilot",
-    image: {
-      src: "/projects/quotepilot/card.png",
-      alt: "QuotePilot landing page",
-    },
-    gallery: [{ src: "/projects/quotepilot/card.png", alt: "QuotePilot landing page" }],
   },
   {
     slug: "gasmobile",
@@ -307,7 +278,7 @@ export const featuredProjects: PortfolioProject[] = [
     status: "live",
     summary: "A React Native mobile app for finding gas stations, comparing fuel prices, and predicting price trends.",
     description:
-      "GasMobile is a production-grade mobile product built with React Native and Expo. It combines real-time gas station maps, fuel price comparison, and a predictive pricing engine backed by live market data and a Sanity content layer.",
+      "GasMobile is a production-grade React Native app for finding gas stations and paying less for fuel in Quebec. The map shows nearby stations with live prices; each station sheet compares its price against the regional average with a clear trust badge, lists every fuel grade, and shows the price history with the current trend over the last days. A prediction engine estimates where prices are heading, so users know whether to fill up today or wait. An account unlocks favorites and smart routes that find the best-priced stations along a real itinerary. The product side is just as real: subscription billing with payment webhooks, a Supabase backend, Sanity-powered editorial content, government open-data integration with price-freshness logic and fallbacks when data is stale or incomplete, and EAS production builds for iOS and Android. French-first UX built for a real audience.",
     stack: ["React Native", "Expo", "TypeScript", "Maps", "Sanity"],
     highlights: ["Real-time maps", "Price prediction engine", "Sanity content"],
     recruiterValue:
@@ -321,7 +292,7 @@ export const featuredProjects: PortfolioProject[] = [
       category: "Application mobile",
       summary: "Une app mobile React Native pour trouver des stations, comparer les prix carburant et predire les tendances de prix.",
       description:
-        "GasMobile est un produit mobile de qualite production construit avec React Native et Expo. Il combine cartes de stations en temps reel, comparaison de prix carburant et un moteur de prediction tarifaire alimente par des donnees marche live.",
+        "GasMobile est une app React Native de qualite production pour trouver des stations-service et payer son essence moins cher au Quebec. La carte montre les stations proches avec leurs prix en direct; chaque fiche station compare son prix a la moyenne regionale avec un badge de confiance clair, liste chaque type de carburant et affiche l'historique des prix avec la tendance des derniers jours. Un moteur de prediction estime ou s'en vont les prix, pour savoir s'il faut faire le plein aujourd'hui ou attendre. Un compte debloque les favoris et les trajets intelligents qui trouvent les stations les moins cheres le long d'un vrai itineraire. Le cote produit est tout aussi reel: abonnements avec webhooks de paiement, backend Supabase, contenu editorial Sanity, integration de donnees ouvertes gouvernementales avec logique de fraicheur des prix et fallbacks quand les donnees sont vieilles ou incompletes, et builds EAS de production pour iOS et Android. UX d'abord en francais, construite pour un vrai public.",
       highlights: ["Cartes en temps reel", "Moteur de prediction prix", "Contenu Sanity"],
       recruiterValue:
         "Montre le developpement mobile multiplateforme, l'integration de donnees en temps reel, les flux cartes et une vision produit au-dela des demos web.",
@@ -332,16 +303,6 @@ export const featuredProjects: PortfolioProject[] = [
       ],
     },
     repoUrl: "https://github.com/kurtisv/gasmobile",
-    image: {
-      src: "/projects/gasmobile/card.png",
-      alt: "GasMobile station sheet with fuel price and trust badge",
-      tall: true,
-    },
-    gallery: [
-      { src: "/projects/gasmobile/card.png", alt: "Station sheet with price and itinerary actions", tall: true },
-      { src: "/projects/gasmobile/shot-1.png", alt: "Live map with station markers", tall: true },
-      { src: "/projects/gasmobile/shot-2.png", alt: "Fuel prices with regional history", tall: true },
-    ],
   },
   {
     slug: "speedzone",
@@ -350,7 +311,7 @@ export const featuredProjects: PortfolioProject[] = [
     status: "live",
     summary: "A full-featured automotive community platform with vehicle profiles, social features, articles, and Sanity CMS.",
     description:
-      "SpeedZone is a larger portfolio application for the automotive space. It combines Next.js, Sanity CMS, Google authentication, vehicle listings, owner profiles, follow functionality, community comments, and editorial articles into one platform.",
+      "SpeedZone is a full automotive community platform, not a landing page. Members sign in with Google through NextAuth, create vehicle profiles with photos and specs, follow other owners, and comment on their builds. An editorial layer powered by Sanity CMS publishes articles alongside the user-generated garage, so the platform mixes curated content with community activity. Public surfaces (articles, vehicle pages, owner profiles) connect to authenticated flows (posting, following, commenting) on a distinct dark and red automotive identity. The project demonstrates content modeling in Sanity, auth and session handling, user-generated content with a moderation-friendly structure, and SEO-minded detail pages -- all live in production.",
     stack: ["Next.js", "React", "TypeScript", "Sanity", "NextAuth", "Tailwind CSS"],
     highlights: ["Automotive community", "Sanity CMS", "Auth and user profiles"],
     recruiterValue:
@@ -365,7 +326,7 @@ export const featuredProjects: PortfolioProject[] = [
       summary:
         "Une plateforme communautaire automobile complete avec profils vehicules, fonctionnalites sociales, articles et Sanity CMS.",
       description:
-        "SpeedZone est une application portfolio plus large dans l'univers automobile. Elle combine Next.js, Sanity CMS, l'authentification Google, des fiches vehicules, profils proprietaires, suivi, commentaires communautaires et articles editoriaux.",
+        "SpeedZone est une plateforme communautaire automobile complete, pas une page vitrine. Les membres se connectent avec Google via NextAuth, creent des fiches vehicules avec photos et specs, suivent d'autres proprietaires et commentent leurs builds. Une couche editoriale propulsee par Sanity CMS publie des articles aux cotes du garage genere par les utilisateurs, melant contenu cure et activite communautaire. Les surfaces publiques (articles, fiches vehicules, profils) se connectent aux flux authentifies (publication, suivi, commentaires) sur une identite automobile sombre et rouge distincte. Le projet demontre la modelisation de contenu dans Sanity, la gestion d'auth et de sessions, le contenu genere par les utilisateurs avec une structure prete pour la moderation et des pages detail pensees SEO -- le tout live en production.",
       highlights: ["Communaute automobile", "Sanity CMS", "Auth et profils"],
       recruiterValue:
         "Montre une surface produit plus riche qu'une page vitrine: auth, modelisation de contenu, publications utilisateur, commentaires et direction visuelle specifique au domaine.",
@@ -377,11 +338,6 @@ export const featuredProjects: PortfolioProject[] = [
     },
     repoUrl: "https://github.com/kurtisv/speedzone",
     liveUrl: "https://cardream-phi.vercel.app",
-    image: {
-      src: "/projects/speedzone/card.png",
-      alt: "SpeedZone automotive community homepage",
-    },
-    gallery: [{ src: "/projects/speedzone/card.png", alt: "SpeedZone homepage" }],
   },
   {
     slug: "suze-immo",
@@ -390,8 +346,8 @@ export const featuredProjects: PortfolioProject[] = [
     status: "live",
     summary: "A live real estate client website with property presentation, contact flows, and a trust-focused design.",
     description:
-      "Suze Immo is a delivered client website for a real estate professional. It covers property presentation, search context, a conversion-focused layout, and a clean design that works for a real audience.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+      "Suze Immo is a delivered client website for a real estate professional, live at suzeimmo.com and serving a real audience today. The site presents properties with photo-forward layouts, gives buyers and sellers a clear contact path, and builds the trust signals a real estate audience expects: clean typography, fast loads, responsive behavior on every screen, and an SEO structure that makes listings and service pages findable. An administration layer on Supabase (authentication, file storage, SQL) lets the owner publish and manage listings without touching code. Built with Next.js, TypeScript, and Tailwind CSS, the project covers the full client-work cycle: understanding a non-technical client's needs, translating them into pages and flows, deploying to production, and handing over a site the client actually uses.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
     highlights: ["Client context", "Business website", "SEO-minded structure"],
     recruiterValue:
       "Shows real client website context and the ability to work on functional business sites that need trust, conversion, SEO, and responsive UI.",
@@ -404,7 +360,7 @@ export const featuredProjects: PortfolioProject[] = [
       category: "Site client reel",
       summary: "Un site client immobilier live avec presentation de proprietes, flux de contact et design oriente confiance.",
       description:
-        "Suze Immo est un site livre pour un professionnel de l'immobilier. Il couvre la presentation de proprietes, le contexte de recherche, une mise en page orientee conversion et un design propre adapte a un vrai public.",
+        "Suze Immo est un site client livre pour un professionnel de l'immobilier, en ligne sur suzeimmo.com et au service d'un vrai public aujourd'hui. Le site presente les proprietes avec des mises en page axees photo, donne aux acheteurs et vendeurs un chemin de contact clair et construit les signaux de confiance qu'un public immobilier attend: typographie propre, chargements rapides, comportement responsive sur chaque ecran et une structure SEO qui rend les fiches et pages de services trouvables. Une couche d'administration sur Supabase (authentification, stockage de fichiers, SQL) permet au proprietaire de publier et gerer ses proprietes sans toucher au code. Construit avec Next.js, TypeScript et Tailwind CSS, le projet couvre le cycle complet du travail client: comprendre les besoins d'un client non technique, les traduire en pages et en flux, deployer en production et livrer un site que le client utilise vraiment.",
       highlights: ["Contexte client", "Site d'affaires", "Structure orientee SEO"],
       recruiterValue:
         "Montre un contexte client reel et la capacite a livrer des sites fonctionnels qui demandent confiance, conversion, SEO et UI responsive.",
@@ -415,11 +371,6 @@ export const featuredProjects: PortfolioProject[] = [
       ],
     },
     liveUrl: "https://suzeimmo.com",
-    image: {
-      src: "/projects/suze-immo/card.png",
-      alt: "Suze Immo real estate website homepage",
-    },
-    gallery: [{ src: "/projects/suze-immo/card.png", alt: "Suze Immo homepage" }],
   },
   {
     slug: "kv-web-starter",
@@ -428,7 +379,7 @@ export const featuredProjects: PortfolioProject[] = [
     status: "live",
     summary: "A reusable Next.js starter with auth, database, billing structure, bilingual support, and a test suite.",
     description:
-      "KV Web Starter is the shared foundation behind every portfolio project on this site. It ships with Auth.js, Prisma, Supabase, Tailwind CSS, Zod validation, FR/EN i18n, and a passing test suite so each new product starts from a verified base.",
+      "KV Web Starter is the foundation every project on this site starts from -- a versioned, public Next.js monorepo boilerplate rather than a folder copied between projects. It ships three reusable project shapes (marketing site, booking site, SaaS/API portal) on one stack: Next.js App Router, strict TypeScript, Tailwind CSS v4 with local shadcn-style components, Prisma on PostgreSQL, Auth.js with the Prisma adapter, Zod validation, a Stripe-ready billing structure, Resend and React Email-ready messaging, and FR/EN i18n. A 50+ test Vitest suite and a CI workflow guard the base, so every product built from it starts verified instead of hopeful. The repo is public on GitHub precisely so a reviewer can inspect the foundation, compare it with the products built from it -- Luma Studio, QuotePilot, and this portfolio -- and read the maintenance discipline in the commit history.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Supabase", "Auth.js", "Zod"],
     highlights: ["Auth + DB ready out of the box", "FR/EN i18n built in", "50+ tests passing"],
     recruiterValue:
@@ -442,7 +393,7 @@ export const featuredProjects: PortfolioProject[] = [
       category: "Boilerplate Next.js",
       summary: "Un starter Next.js reutilisable avec auth, base de donnees, structure facturation, support bilingue et suite de tests.",
       description:
-        "KV Web Starter est la base partagee derriere chaque projet portfolio de ce site. Il inclut Auth.js, Prisma, Supabase, Tailwind CSS, validation Zod, i18n FR/EN et une suite de tests pour demarrer chaque produit sur une base verifiee.",
+        "KV Web Starter est la fondation d'ou part chaque projet de ce site -- un boilerplate monorepo Next.js versionne et public, plutot qu'un dossier copie entre projets. Il livre trois formes de projets reutilisables (site marketing, site de reservation, portail SaaS/API) sur une seule stack: Next.js App Router, TypeScript strict, Tailwind CSS v4 avec composants locaux de style shadcn, Prisma sur PostgreSQL, Auth.js avec l'adaptateur Prisma, validation Zod, structure de facturation prete pour Stripe, messagerie prete pour Resend et React Email, et i18n FR/EN. Une suite Vitest de 50+ tests et un workflow CI gardent la base, pour que chaque produit construit dessus demarre verifie plutot qu'optimiste. Le repo est public sur GitHub precisement pour qu'un reviewer puisse inspecter la fondation, la comparer aux produits construits dessus -- Luma Studio, QuotePilot et ce portfolio -- et lire la discipline de maintenance dans l'historique des commits.",
       highlights: ["Auth + BDD prets hors de la boite", "i18n FR/EN integre", "50+ tests qui passent"],
       recruiterValue:
         "Montre une pensee systeme: plutot que de reconstruire la meme base a chaque projet, je maintiens un boilerplate versionne dont chaque produit de ce portfolio herite.",
@@ -453,11 +404,6 @@ export const featuredProjects: PortfolioProject[] = [
       ],
     },
     repoUrl: "https://github.com/kurtisv/kv-web-starter",
-    image: {
-      src: "/projects/kv-web-starter/card.png",
-      alt: "kv-web-starter public GitHub repository",
-    },
-    gallery: [{ src: "/projects/kv-web-starter/card.png", alt: "kv-web-starter repository on GitHub" }],
   },
 ];
 
