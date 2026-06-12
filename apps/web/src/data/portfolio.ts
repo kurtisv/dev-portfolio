@@ -57,6 +57,92 @@ export const profile = {
   ],
 };
 
+export const aboutProfile = {
+  fullName: "Kurtis Verres",
+  location: "Laval, QC, Canada",
+  email: "verskurtis@live.fr",
+  en: {
+    role: "Telecom technician with a hybrid IT and web development profile",
+    intro:
+      "Telecom technician at Bell Solutions Techniques with an AEC in computer science and hands-on web development experience. A hybrid profile combining network troubleshooting, technical support, customer service, field diagnostics, and a working understanding of web applications. Used to analyzing technical problems, documenting interventions, explaining solutions to non-technical users, and working where service reliability is critical.",
+    objective:
+      "Looking for a network technician, NOC analyst, level 2 IT support, or infrastructure technician role -- this portfolio shows the technical depth behind the resume.",
+    experience: {
+      title: "Telecom technician / Internet services technician",
+      company: "Bell Solutions Techniques / BST -- Laval / Montreal, QC",
+      period: "2024 - present",
+      bullets: [
+        "Diagnose and resolve Internet connectivity, telecom, and customer equipment problems.",
+        "Install, configure, and verify residential and network service equipment.",
+        "Run signal, connection, and performance tests to isolate the source of outages.",
+        "Explain technical problems and solutions clearly to customers.",
+        "Prioritize field interventions by urgency, complexity, and customer impact.",
+        "Document interventions and follow up on recurring problems.",
+        "Escalate and collaborate with internal teams when an issue goes beyond field work.",
+      ],
+    },
+    skillGroups: [
+      {
+        title: "Networks and telecom",
+        items: ["TCP/IP", "Wi-Fi", "Router / modem", "Fiber / coax", "Signal diagnostics", "Connection testing", "Field service"],
+      },
+      {
+        title: "IT support",
+        items: ["User support", "Hardware and software diagnostics", "Incident resolution", "Remote assistance", "Ticketing tools", "Intervention documentation"],
+      },
+      {
+        title: "IT environments",
+        items: ["Windows", "Microsoft 365", "Teams", "Active Directory (notions)", "VPN / DNS / DHCP (notions)", "Browser dev tools"],
+      },
+      {
+        title: "Web development",
+        items: ["HTML / CSS / JavaScript", "TypeScript", "React / Next.js", "Node.js", "REST APIs", "Supabase / MongoDB / MySQL", "Sanity", "Git / GitHub"],
+      },
+    ],
+    languages: ["French: fluent", "English: functional / professional"],
+  },
+  fr: {
+    role: "Technicien telecom avec un profil hybride TI et developpement web",
+    intro:
+      "Technicien telecom chez Bell Solutions Techniques avec une AEC en informatique et une experience pratique en developpement web. Profil hybride combinant depannage reseau, support technique, service client, diagnostic terrain et comprehension des applications web. Habitue a analyser des problemes techniques, documenter les interventions, vulgariser les solutions aux utilisateurs et travailler dans des environnements ou la fiabilite du service est essentielle.",
+    objective:
+      "Recherche un poste de technicien reseau, analyste NOC, technicien support TI niveau 2 ou technicien infrastructure -- ce portfolio montre la profondeur technique derriere le CV.",
+    experience: {
+      title: "Technicien telecom / Technicien de services Internet",
+      company: "Bell Solutions Techniques / BST -- Laval / Montreal, QC",
+      period: "2024 - present",
+      bullets: [
+        "Diagnostiquer et resoudre des problemes de connectivite Internet, telecom et equipements clients.",
+        "Installer, configurer et verifier des equipements residentiels et reseau.",
+        "Effectuer des tests de signal, de connexion et de performance pour isoler la source des pannes.",
+        "Expliquer clairement les problemes techniques et les solutions aux clients.",
+        "Prioriser les interventions terrain selon l'urgence, la complexite et l'impact client.",
+        "Documenter les interventions et assurer le suivi des problemes recurrents.",
+        "Escalader et collaborer avec les equipes internes quand le probleme depasse le terrain.",
+      ],
+    },
+    skillGroups: [
+      {
+        title: "Reseaux et telecom",
+        items: ["TCP/IP", "Wi-Fi", "Routeur / modem", "Fibre / coaxial", "Diagnostic de signal", "Tests de connexion", "Service terrain"],
+      },
+      {
+        title: "Support TI",
+        items: ["Support utilisateur", "Diagnostic materiel et logiciel", "Resolution d'incidents", "Assistance a distance", "Outils de ticketing", "Documentation des interventions"],
+      },
+      {
+        title: "Environnements informatiques",
+        items: ["Windows", "Microsoft 365", "Teams", "Active Directory (notions)", "VPN / DNS / DHCP (notions)", "Outils developpeur navigateur"],
+      },
+      {
+        title: "Developpement web",
+        items: ["HTML / CSS / JavaScript", "TypeScript", "React / Next.js", "Node.js", "API REST", "Supabase / MongoDB / MySQL", "Sanity", "Git / GitHub"],
+      },
+    ],
+    languages: ["Francais : courant", "Anglais : fonctionnel / professionnel"],
+  },
+} as const;
+
 export const featuredProjects: PortfolioProject[] = [
   {
     slug: "eventpic",
@@ -422,6 +508,7 @@ export const pageCopy = {
       stack: "Stack",
       process: "Process",
       contact: "Contact",
+      cv: "Resume",
       cta: "Work together",
     },
     home: {
@@ -467,6 +554,7 @@ export const pageCopy = {
       stack: "Stack",
       process: "Processus",
       contact: "Contact",
+      cv: "CV",
       cta: "Travailler ensemble",
     },
     home: {
