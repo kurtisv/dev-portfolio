@@ -15,8 +15,6 @@
   --accent-foreground: #fff7ef;
   --ink: #0e1715;
   --gold: #bf9149;
-  --font-geist-sans: Arial, Helvetica, sans-serif;
-  --font-geist-mono: "Courier New", Consolas, monospace;
 }
 
 @theme inline {
@@ -34,11 +32,13 @@
   --color-accent-foreground: var(--accent-foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-fraunces);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
 }
 
 body::before {
@@ -94,6 +94,7 @@ body::before {
   color: transparent;
   background: linear-gradient(105deg, #0e1715 0%, #17483e 55%, #b85b3e 100%);
   background-clip: text;
+  font-family: var(--font-display), Georgia, serif;
 }
 
 .motion-card {

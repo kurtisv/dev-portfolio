@@ -12,7 +12,7 @@ export function SectionHeading({
       <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700">
         {eyebrow}
       </p>
-      <h2 className="mt-4 text-3xl font-semibold tracking-normal text-balance sm:text-4xl">
+      <h2 className="font-display mt-4 text-3xl font-semibold tracking-normal text-balance sm:text-4xl">
         {title}
       </h2>
       {description ? (

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
@@ -16,6 +17,24 @@ export function ProjectCard({
 
   return (
     <article className="project-card-accent group flex h-full flex-col border border-border bg-card p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_18px_50px_rgba(14,23,21,0.12)]">
+      {project.image ? (
+        <Link
+          href={`/projects/${project.slug}`}
+          className="relative -mx-5 -mt-5 mb-5 block aspect-[16/9] overflow-hidden border-b border-border bg-[#111a17]"
+        >
+          <Image
+            src={project.image.src}
+            alt={project.image.alt}
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className={
+              project.image.tall
+                ? "object-contain py-3 transition duration-500 group-hover:scale-[1.03]"
+                : "object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+            }
+          />
+        </Link>
+      ) : null}
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary">{copy.category}</p>
