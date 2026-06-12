@@ -55,6 +55,19 @@ body::before {
   mask-image: linear-gradient(180deg, black 0%, transparent 78%);
 }
 
+@media print {
+  header,
+  footer,
+  .no-print,
+  body::before {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff;
+  }
+}
+
 ::selection {
   background: #bbf7d0;
   color: #102018;
