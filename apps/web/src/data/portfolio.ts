@@ -1,5 +1,11 @@
 export type ProjectStatus = "live" | "private" | "coming-soon";
 
+export type ProjectImage = {
+  src: string;
+  alt: string;
+  tall?: boolean;
+};
+
 export type PortfolioProject = {
   slug: string;
   name: string;
@@ -24,6 +30,8 @@ export type PortfolioProject = {
   };
   liveUrl?: string;
   repoUrl?: string;
+  image?: ProjectImage;
+  gallery?: ProjectImage[];
 };
 
 export const profile = {
@@ -100,6 +108,17 @@ export const featuredProjects: PortfolioProject[] = [
         "Cloudflare Workers + R2 pour upload photos, API fil et flux token admin.",
       ],
     },
+    image: {
+      src: "/projects/eventpic/card.png",
+      alt: "EventPic ambiance picker with per-event gold theme",
+      tall: true,
+    },
+    gallery: [
+      { src: "/projects/eventpic/card.png", alt: "Event ambiance picker with themed cards", tall: true },
+      { src: "/projects/eventpic/shot-1.png", alt: "Event creation form", tall: true },
+      { src: "/projects/eventpic/shot-2.png", alt: "QR code invitation sheet", tall: true },
+      { src: "/projects/eventpic/shot-3.png", alt: "Event settings with color themes", tall: true },
+    ],
   },
   {
     slug: "luma-studio",
@@ -136,6 +155,11 @@ export const featuredProjects: PortfolioProject[] = [
     },
     liveUrl: "https://luma-studio-ruddy.vercel.app",
     repoUrl: "https://github.com/kurtisv/luma-studio",
+    image: {
+      src: "/projects/luma-studio/card.png",
+      alt: "Luma Studio marketing site homepage",
+    },
+    gallery: [{ src: "/projects/luma-studio/card.png", alt: "Luma Studio homepage hero" }],
   },
   {
     slug: "quotepilot",
@@ -184,6 +208,11 @@ export const featuredProjects: PortfolioProject[] = [
     },
     liveUrl: "https://quotepilot-omega.vercel.app",
     repoUrl: "https://github.com/kurtisv/quotepilot",
+    image: {
+      src: "/projects/quotepilot/card.png",
+      alt: "QuotePilot landing page",
+    },
+    gallery: [{ src: "/projects/quotepilot/card.png", alt: "QuotePilot landing page" }],
   },
   {
     slug: "gasmobile",
@@ -217,6 +246,16 @@ export const featuredProjects: PortfolioProject[] = [
       ],
     },
     repoUrl: "https://github.com/kurtisv/gasmobile",
+    image: {
+      src: "/projects/gasmobile/card.png",
+      alt: "GasMobile station sheet with fuel price and trust badge",
+      tall: true,
+    },
+    gallery: [
+      { src: "/projects/gasmobile/card.png", alt: "Station sheet with price and itinerary actions", tall: true },
+      { src: "/projects/gasmobile/shot-1.png", alt: "Live map with station markers", tall: true },
+      { src: "/projects/gasmobile/shot-2.png", alt: "Fuel prices with regional history", tall: true },
+    ],
   },
   {
     slug: "speedzone",
@@ -252,6 +291,11 @@ export const featuredProjects: PortfolioProject[] = [
     },
     repoUrl: "https://github.com/kurtisv/speedzone",
     liveUrl: "https://cardream-phi.vercel.app",
+    image: {
+      src: "/projects/speedzone/card.png",
+      alt: "SpeedZone automotive community homepage",
+    },
+    gallery: [{ src: "/projects/speedzone/card.png", alt: "SpeedZone homepage" }],
   },
   {
     slug: "suze-immo",
@@ -285,6 +329,11 @@ export const featuredProjects: PortfolioProject[] = [
       ],
     },
     liveUrl: "https://suzeimmo.com",
+    image: {
+      src: "/projects/suze-immo/card.png",
+      alt: "Suze Immo real estate website homepage",
+    },
+    gallery: [{ src: "/projects/suze-immo/card.png", alt: "Suze Immo homepage" }],
   },
   {
     slug: "kv-web-starter",
@@ -318,6 +367,11 @@ export const featuredProjects: PortfolioProject[] = [
       ],
     },
     repoUrl: "https://github.com/kurtisv/kv-web-starter",
+    image: {
+      src: "/projects/kv-web-starter/card.png",
+      alt: "kv-web-starter public GitHub repository",
+    },
+    gallery: [{ src: "/projects/kv-web-starter/card.png", alt: "kv-web-starter repository on GitHub" }],
   },
 ];
 

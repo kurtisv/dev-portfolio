@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
@@ -61,6 +62,7 @@ export default async function ProjectDetailPage({
       stack: "Stack",
       ecosystem: "Role in the ecosystem",
       connected: "Connected modules",
+      gallery: "Screens",
     },
     fr: {
       back: "Retour aux projets",
@@ -72,6 +74,7 @@ export default async function ProjectDetailPage({
       stack: "Stack",
       ecosystem: "Role dans l'ecosysteme",
       connected: "Modules relies",
+      gallery: "Apercus",
     },
   }[locale];
   const ecosystem = ecosystemNarrative[locale];
@@ -96,7 +99,7 @@ export default async function ProjectDetailPage({
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700">
                   {copy.category}
                 </p>
-                <h1 className="mt-4 text-5xl font-semibold tracking-normal text-balance sm:text-6xl">
+                <h1 className="font-display mt-4 text-5xl font-semibold tracking-normal text-balance sm:text-6xl">
                   {project.name}
                 </h1>
                 <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground">
@@ -126,6 +129,51 @@ export default async function ProjectDetailPage({
             </div>
           </div>
         </section>
+
+        {project.gallery && project.gallery.length > 0 ? (
+          <section className="border-b border-border bg-card/60">
+            <div className="mx-auto max-w-6xl px-6 py-12">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+                {labels.gallery}
+              </p>
+              {project.gallery[0].tall ? (
+                <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
+                  {project.gallery.map((shot) => (
+                    <div
+                      key={shot.src}
+                      className="relative aspect-[9/19] overflow-hidden border border-border bg-[#111a17] shadow-sm"
+                    >
+                      <Image
+                        src={shot.src}
+                        alt={shot.alt}
+                        fill
+                        sizes="(min-width: 768px) 25vw, 50vw"
+                        className="object-cover object-top"
+                      />
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="mt-6 grid gap-4">
+                  {project.gallery.map((shot) => (
+                    <div
+                      key={shot.src}
+                      className="relative aspect-[16/9] overflow-hidden border border-border bg-[#111a17] shadow-sm"
+                    >
+                      <Image
+                        src={shot.src}
+                        alt={shot.alt}
+                        fill
+                        sizes="(min-width: 1024px) 1024px, 100vw"
+                        className="object-cover object-top"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </section>
+        ) : null}
 
         {copy.ecosystemRole ? (
           <section className="border-b border-border bg-[#111a17] text-white">
