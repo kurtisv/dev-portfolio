@@ -186,294 +186,6 @@ export const featuredProjects: PortfolioProject[] = [
     repoUrl: "https://github.com/kurtisv/quotepilot",
   },
   {
-    slug: "reserveflow",
-    name: "ReserveFlow",
-    category: "Booking and availability system",
-    status: "live",
-    ecosystemRole:
-      "Converts accepted quotes into scheduled work with availability logic and booking management.",
-    summary:
-      "A service booking system with a public booking flow, availability logic, service catalog, and operational dashboards.",
-    description:
-      "ReserveFlow turns the shared boilerplate into a service-business booking system: a service catalog with duration and price metadata, staff availability, a booking request and confirmation flow, booking status management, and dashboard metrics for upcoming work.",
-    stack: ["Next.js", "TypeScript", "Prisma", "Tailwind CSS", "Auth.js"],
-    highlights: [
-      "Public booking flow with availability logic",
-      "Service catalog with duration and price metadata",
-      "Operational dashboard for upcoming bookings",
-    ],
-    recruiterValue:
-      "Shows appointment operations beyond generic dashboards: availability rules, booking lifecycle, and email-ready confirmation structure.",
-    buildNotes: [
-      "Availability logic computes open slots from staff schedules.",
-      "Booking statuses flow from request to confirmation to completion.",
-      "Hands confirmed clients to ClientHub through the shared ecosystem data.",
-    ],
-    fr: {
-      category: "Systeme de reservation et disponibilites",
-      summary:
-        "Un systeme de reservation de services avec flux public, logique de disponibilites, catalogue de services et dashboards operationnels.",
-      description:
-        "ReserveFlow transforme le boilerplate partage en systeme de reservation pour entreprises de services: catalogue avec duree et prix, disponibilites du personnel, flux de demande et confirmation, gestion des statuts et metriques dashboard pour le travail a venir.",
-      highlights: [
-        "Flux de reservation public avec logique de disponibilites",
-        "Catalogue de services avec duree et prix",
-        "Dashboard operationnel des reservations a venir",
-      ],
-      recruiterValue:
-        "Montre des operations de rendez-vous au-dela des dashboards generiques: regles de disponibilite, cycle de vie des reservations et structure de confirmation par courriel.",
-      buildNotes: [
-        "La logique de disponibilites calcule les plages libres depuis les horaires.",
-        "Les statuts vont de la demande a la confirmation puis la completion.",
-        "Transmet les clients confirmes a ClientHub via les donnees partagees.",
-      ],
-      ecosystemRole:
-        "Convertit les soumissions acceptees en travail planifie avec disponibilites et gestion des reservations.",
-    },
-    liveUrl: "https://reserveflow-psi.vercel.app",
-    repoUrl: "https://github.com/kurtisv/reserveflow",
-  },
-  {
-    slug: "clienthub",
-    name: "ClientHub",
-    category: "Client portal showcase",
-    status: "live",
-    ecosystemRole:
-      "Centralizes the ongoing client relationship: project status, files, milestones, and messages in one portal.",
-    summary:
-      "A client portal presented as a calm, premium 3D workspace: projects, files, milestones, and messages in one surface.",
-    description:
-      "ClientHub is the client-portal showcase of the ecosystem. Its hero reads as a sober 3D client room rather than a technical scene: a central project card with status and progress, supporting signals for files and milestones, and a short navigation path to the case study and inspectable surfaces.",
-    stack: ["Next.js", "TypeScript", "Prisma", "Tailwind CSS", "CSS 3D"],
-    highlights: [
-      "Sober 3D client-room hero with clear hierarchy",
-      "Central project card with status and progress",
-      "Files, milestones, and messages as work signals",
-    ],
-    recruiterValue:
-      "Shows B2B product storytelling and visual direction: a premium portal surface that stays readable on desktop and mobile.",
-    buildNotes: [
-      "One of three standalone showcases with a distinct 3D metaphor.",
-      "The 3D scene is pure CSS, kept sober so hierarchy stays clear.",
-      "Receives confirmed clients from ReserveFlow through the shared ecosystem data.",
-    ],
-    fr: {
-      category: "Vitrine portail client",
-      summary:
-        "Un portail client presente comme un workspace 3D calme et premium: projets, fichiers, jalons et messages dans une seule surface.",
-      description:
-        "ClientHub est la vitrine portail client de l'ecosysteme. Son hero se lit comme un espace client 3D sobre plutot qu'une scene technique: carte projet centrale avec statut et progression, signaux secondaires pour fichiers et jalons, et navigation courte vers l'etude de cas et les surfaces inspectables.",
-      highlights: [
-        "Hero 3D sobre type espace client avec hierarchie claire",
-        "Carte projet centrale avec statut et progression",
-        "Fichiers, jalons et messages comme signaux de travail reel",
-      ],
-      recruiterValue:
-        "Montre la narration produit B2B et la direction visuelle: une surface portail premium qui reste lisible sur desktop et mobile.",
-      buildNotes: [
-        "Une des trois vitrines autonomes avec sa propre metaphore 3D.",
-        "La scene 3D est en CSS pur, gardee sobre pour la hierarchie.",
-        "Recoit les clients confirmes de ReserveFlow via les donnees partagees.",
-      ],
-      ecosystemRole:
-        "Centralise la relation client en cours: statut projet, fichiers, jalons et messages dans un seul portail.",
-    },
-    liveUrl: "https://clienthub-five.vercel.app",
-    repoUrl: "https://github.com/kurtisv/clienthub",
-  },
-  {
-    slug: "commercekit",
-    name: "CommerceKit",
-    category: "Commerce flow showcase",
-    status: "live",
-    ecosystemRole:
-      "Adds the commerce side of the ecosystem: products, checkout, orders, and revenue tracking.",
-    summary:
-      "A Stripe-ready commerce product showing the full chain: catalog, checkout, orders, and a fulfillment cockpit.",
-    description:
-      "CommerceKit shows the complete commerce chain in one product: an active catalog with inventory and prices in cents, a demo checkout flow with totals, taxes, and shipping, public order tokens with client confirmation and statuses, and an operations cockpit tracking revenue, fulfillment, and recent orders.",
-    stack: ["Next.js", "TypeScript", "Prisma", "Tailwind CSS", "Stripe-ready"],
-    highlights: [
-      "Catalog with inventory, prices in cents, and categories",
-      "Demo checkout with totals, taxes, and shipping",
-      "Operations cockpit for revenue and fulfillment",
-    ],
-    recruiterValue:
-      "Shows commerce data modeling end to end: product, checkout, payment-ready structure, order lifecycle, and fulfillment in a recruiter-readable product object.",
-    buildNotes: [
-      "Order tokens give clients a public confirmation surface without auth.",
-      "Checkout is structured for Stripe Checkout to drop in.",
-      "Second of three standalone showcases, with a 3D product-shelf hero.",
-    ],
-    fr: {
-      category: "Vitrine flux commerce",
-      summary:
-        "Un produit commerce pret pour Stripe montrant la chaine complete: catalogue, checkout, commandes et cockpit de fulfillment.",
-      description:
-        "CommerceKit montre la chaine commerce complete dans un seul produit: catalogue actif avec inventaire et prix en cents, flux checkout demo avec totaux, taxes et livraison, tokens de commande publics avec confirmation client et statuts, et un cockpit operations qui suit revenu, fulfillment et commandes recentes.",
-      highlights: [
-        "Catalogue avec inventaire, prix en cents et categories",
-        "Checkout demo avec totaux, taxes et livraison",
-        "Cockpit operations pour revenu et fulfillment",
-      ],
-      recruiterValue:
-        "Montre la modelisation commerce de bout en bout: produit, checkout, structure prete pour paiement, cycle de commande et fulfillment dans un objet produit lisible par un recruteur.",
-      buildNotes: [
-        "Les tokens de commande donnent une surface de confirmation publique sans auth.",
-        "Le checkout est structure pour accueillir Stripe Checkout.",
-        "Deuxieme des trois vitrines autonomes, avec un hero 3D type etagere produit.",
-      ],
-      ecosystemRole:
-        "Ajoute le volet commerce de l'ecosysteme: produits, checkout, commandes et suivi du revenu.",
-    },
-    liveUrl: "https://commercekit.vercel.app",
-    repoUrl: "https://github.com/kurtisv/commercekit",
-  },
-  {
-    slug: "eventpass",
-    name: "EventPass",
-    category: "Event registration showcase",
-    status: "live",
-    ecosystemRole:
-      "Covers events: registration, check-in, and an operations agenda connected to the same shared data.",
-    summary:
-      "An event registration and check-in product with an operations agenda, a registration pipeline, and a 3D event-card hero.",
-    description:
-      "EventPass handles event registration and check-in: a client event card that stays clear and premium from the hero, an operations agenda for the team, and a registration pipeline that tracks attendees from signup to check-in -- the third standalone showcase of the ecosystem.",
-    stack: ["Next.js", "TypeScript", "Prisma", "Tailwind CSS", "CSS 3D"],
-    highlights: [
-      "Readable 3D event-card hero",
-      "Registration pipeline from signup to check-in",
-      "Operations agenda for the event team",
-    ],
-    recruiterValue:
-      "Shows a domain-specific operational product: registration lifecycle, check-in flows, and a visual identity distinct from the other showcases.",
-    buildNotes: [
-      "Third standalone showcase, with its own 3D event-card metaphor.",
-      "The registration pipeline reads as lanes from signup to checked-in.",
-      "Connected to the shared Supabase KV Portfolio ecosystem data.",
-    ],
-    fr: {
-      category: "Vitrine inscription evenement",
-      summary:
-        "Un produit d'inscription et de check-in evenement avec agenda operationnel, pipeline d'inscriptions et hero 3D carte evenement.",
-      description:
-        "EventPass gere l'inscription et le check-in d'evenements: une carte evenement client claire et premium des le hero, un agenda operationnel pour l'equipe et un pipeline d'inscriptions qui suit les participants du signup au check-in -- la troisieme vitrine autonome de l'ecosysteme.",
-      highlights: [
-        "Hero 3D carte evenement lisible",
-        "Pipeline d'inscriptions du signup au check-in",
-        "Agenda operationnel pour l'equipe evenement",
-      ],
-      recruiterValue:
-        "Montre un produit operationnel specifique a un domaine: cycle d'inscription, flux de check-in et identite visuelle distincte des autres vitrines.",
-      buildNotes: [
-        "Troisieme vitrine autonome, avec sa propre metaphore 3D carte evenement.",
-        "Le pipeline d'inscriptions se lit en colonnes du signup au check-in.",
-        "Connecte aux donnees partagees Supabase KV Portfolio.",
-      ],
-      ecosystemRole:
-        "Couvre les evenements: inscription, check-in et agenda operationnel relies aux memes donnees partagees.",
-    },
-    liveUrl: "https://eventpass-nine.vercel.app",
-    repoUrl: "https://github.com/kurtisv/eventpass",
-  },
-  {
-    slug: "supportdesk-lite",
-    name: "SupportDesk Lite",
-    category: "Support ticketing portal",
-    status: "live",
-    ecosystemRole:
-      "Handles post-sale support: client tickets flow into an agent dashboard with statuses and priorities.",
-    summary:
-      "A lightweight customer support portal: public ticket submission, agent dashboard, priorities, internal notes, and email notifications.",
-    description:
-      "SupportDesk Lite is a functional ticketing system for small support teams. Customers submit requests through a public form without an account; agents manage them in a protected dashboard with statuses (open, in progress, resolved, closed), priority levels, internal notes, and email notifications.",
-    stack: ["Next.js", "TypeScript", "Supabase", "Auth.js", "Resend"],
-    highlights: [
-      "Public ticket submission without an account",
-      "Agent dashboard with statuses and priorities",
-      "Internal notes and email notifications",
-    ],
-    recruiterValue:
-      "Shows a protected operational tool: auth-gated dashboard, role separation between customers and agents, and a complete ticket lifecycle.",
-    buildNotes: [
-      "First project of the series built on the kv-web-starter monorepo.",
-      "Ticket statuses and priorities drive the agent dashboard views.",
-      "Email notifications are wired through Resend.",
-    ],
-    fr: {
-      category: "Portail support et tickets",
-      summary:
-        "Un portail de support client leger: soumission publique de tickets, dashboard agent, priorites, notes internes et notifications courriel.",
-      description:
-        "SupportDesk Lite est un systeme de tickets fonctionnel pour petites equipes de support. Les clients soumettent des demandes via un formulaire public sans compte; les agents les gerent dans un dashboard protege avec statuts (ouvert, en cours, resolu, ferme), niveaux de priorite, notes internes et notifications courriel.",
-      highlights: [
-        "Soumission publique de tickets sans compte",
-        "Dashboard agent avec statuts et priorites",
-        "Notes internes et notifications courriel",
-      ],
-      recruiterValue:
-        "Montre un outil operationnel protege: dashboard avec auth, separation des roles clients et agents, et cycle de vie complet des tickets.",
-      buildNotes: [
-        "Premier projet de la serie construit sur le monorepo kv-web-starter.",
-        "Statuts et priorites alimentent les vues du dashboard agent.",
-        "Notifications courriel branchees via Resend.",
-      ],
-      ecosystemRole:
-        "Gere le support apres-vente: les tickets clients arrivent dans un dashboard agent avec statuts et priorites.",
-    },
-    liveUrl: "https://supportdesk-lite-jet.vercel.app",
-    repoUrl: "https://github.com/kurtisv/supportdesk-lite",
-  },
-  {
-    slug: "api-meter",
-    name: "API Meter",
-    category: "SaaS API portal",
-    status: "live",
-    ecosystemRole:
-      "Shows the billing-ready SaaS side of the foundation: usage metering, API keys, and developer docs.",
-    summary:
-      "A SaaS/API portal with usage metering, API keys, developer docs, pricing, and a demo dashboard.",
-    description:
-      "API Meter demonstrates the SaaS/API portal side of the boilerplate: API key management, usage metering with billing-ready events, a developer portal with documentation, a pricing concept page, and a demo dashboard -- all on production-ready Next.js foundations.",
-    stack: ["Next.js", "TypeScript", "Prisma", "Tailwind CSS"],
-    highlights: [
-      "API key management and usage metering",
-      "Developer portal with documentation",
-      "Billing-ready usage events",
-    ],
-    recruiterValue:
-      "Shows API product thinking: keys, limits, metering, docs, and pricing presented as a coherent developer-facing portal.",
-    buildNotes: [
-      "Usage events are structured to be billing-ready.",
-      "The developer portal exposes docs, keys, and a demo dashboard.",
-      "Fourth project built from kv-web-starter.",
-    ],
-    fr: {
-      category: "Portail SaaS API",
-      summary:
-        "Un portail SaaS/API avec mesure d'usage, cles API, docs developpeur, tarification et dashboard demo.",
-      description:
-        "API Meter demontre le volet portail SaaS/API du boilerplate: gestion de cles API, mesure d'usage avec evenements prets pour la facturation, portail developpeur avec documentation, page de tarification concept et dashboard demo -- sur des fondations Next.js production.",
-      highlights: [
-        "Gestion de cles API et mesure d'usage",
-        "Portail developpeur avec documentation",
-        "Evenements d'usage prets pour la facturation",
-      ],
-      recruiterValue:
-        "Montre une vision produit API: cles, limites, mesure, docs et tarification presentees comme un portail developpeur coherent.",
-      buildNotes: [
-        "Les evenements d'usage sont structures pour la facturation.",
-        "Le portail developpeur expose docs, cles et dashboard demo.",
-        "Quatrieme projet construit depuis kv-web-starter.",
-      ],
-      ecosystemRole:
-        "Montre le volet SaaS pret pour facturation de la fondation: mesure d'usage, cles API et docs developpeur.",
-    },
-    liveUrl: "https://api-meter.vercel.app",
-    repoUrl: "https://github.com/kurtisv/api-meter",
-  },
-  {
     slug: "gasmobile",
     name: "GasMobile",
     category: "Mobile application",
@@ -617,12 +329,6 @@ export const ecosystemOrder = [
   "eventpic",
   "luma-studio",
   "quotepilot",
-  "reserveflow",
-  "clienthub",
-  "commercekit",
-  "eventpass",
-  "supportdesk-lite",
-  "api-meter",
 ] as const;
 
 export const publicPortfolioProjects = featuredProjects;
@@ -671,9 +377,9 @@ export const pageCopy = {
       github: "GitHub",
       selectedEyebrow: "Selected work",
       selectedTitle:
-        "A portfolio centered on a connected ecosystem of live products, real client sites, and mobile apps.",
+        "A portfolio centered on real launched sites, live products, and mobile apps.",
       selectedDescription:
-        "Eight live ecosystem sites built from one boilerplate, two mobile apps, and real client launches -- shipped code with product depth across different verticals.",
+        "Live sites built from one boilerplate, two mobile apps, and real client launches -- shipped code with product depth across different verticals.",
       stackEyebrow: "Stack",
       stackTitle: "Built with a repeatable, recruiter-friendly workflow.",
       stackDescription:
@@ -693,8 +399,8 @@ export const pageCopy = {
       role: "Ecosystem role",
     },
     proof: [
-      ["13", "projects shipped across the portfolio"],
-      ["10", "live sites online"],
+      ["7", "projects shipped across the portfolio"],
+      ["4", "live sites online"],
       ["2", "mobile apps included"],
       ["2", "real client sites live"],
     ],
@@ -716,9 +422,9 @@ export const pageCopy = {
       github: "GitHub",
       selectedEyebrow: "Travaux selectionnes",
       selectedTitle:
-        "Un portfolio centre sur un ecosysteme connecte de produits live, de vrais sites clients et d'apps mobiles.",
+        "Un portfolio centre sur de vrais sites lances, des produits live et des apps mobiles.",
       selectedDescription:
-        "Huit sites ecosysteme live construits depuis un seul boilerplate, deux apps mobiles et de vrais lancements clients -- du code livre avec de la profondeur produit dans differents domaines.",
+        "Des sites live construits depuis un seul boilerplate, deux apps mobiles et de vrais lancements clients -- du code livre avec de la profondeur produit dans differents domaines.",
       stackEyebrow: "Stack",
       stackTitle: "Construit avec un workflow repetable et lisible par un recruteur.",
       stackDescription:
@@ -738,8 +444,8 @@ export const pageCopy = {
       role: "Role ecosysteme",
     },
     proof: [
-      ["13", "projets livres dans le portfolio"],
-      ["10", "sites live en ligne"],
+      ["7", "projets livres dans le portfolio"],
+      ["4", "sites live en ligne"],
       ["2", "apps mobiles incluses"],
       ["2", "vrais sites clients live"],
     ],
@@ -758,19 +464,19 @@ export const upcomingProjectsFr = [
 
 export const ecosystemNarrative = {
   en: {
-    eyebrow: "Published ecosystem",
-    title: "The portfolio shows the whole published ecosystem, live.",
+    eyebrow: "Focused portfolio",
+    title: "The public portfolio keeps only finished work.",
     description:
-      "Eight live sites built from kv-web-starter cover one business path -- Luma Studio attracts, QuotePilot quotes, ReserveFlow books, ClientHub serves clients, CommerceKit sells, EventPass runs events, SupportDesk Lite supports, API Meter meters -- alongside EventPic, the mobile event photo app, and the real client launches.",
+      "The visible portfolio centers on complete projects: EventPic, the live Luma Studio marketing demo, QuotePilot, the real client launches, and the kv-web-starter foundation. Other ecosystem modules will join once they are finished.",
     database: "Shared database: Supabase KV Portfolio",
     foundation: "Foundation: kv-web-starter boilerplate",
     cta: "Explore the path",
   },
   fr: {
-    eyebrow: "Ecosysteme publie",
-    title: "Le portfolio montre tout l'ecosysteme publie, en ligne.",
+    eyebrow: "Portfolio cible",
+    title: "Le portfolio public garde seulement le travail termine.",
     description:
-      "Huit sites live construits depuis kv-web-starter couvrent un meme parcours d'affaires -- Luma Studio attire, QuotePilot soumissionne, ReserveFlow reserve, ClientHub sert les clients, CommerceKit vend, EventPass gere les evenements, SupportDesk Lite supporte, API Meter mesure -- aux cotes d'EventPic, l'app mobile photo evenement, et des vrais sites clients lances.",
+      "Le portfolio visible se concentre sur les projets complets: EventPic, la demo marketing live Luma Studio, QuotePilot, les vrais sites clients lances et la fondation kv-web-starter. Les autres modules de l'ecosysteme s'ajouteront une fois termines.",
     database: "Base partagee: Supabase KV Portfolio",
     foundation: "Fondation: boilerplate kv-web-starter",
     cta: "Explorer le parcours",
@@ -791,30 +497,6 @@ export const ecosystemFlow = {
       description: "QuotePilot turns the inquiry into a structured quote with line items and statuses.",
       projects: ["quotepilot"],
     },
-    {
-      step: "03",
-      title: "Book the work",
-      description: "ReserveFlow schedules the accepted work with availability logic and booking management.",
-      projects: ["reserveflow"],
-    },
-    {
-      step: "04",
-      title: "Serve the client",
-      description: "ClientHub centralizes project status, files, milestones, and messages for the ongoing relationship.",
-      projects: ["clienthub"],
-    },
-    {
-      step: "05",
-      title: "Sell and run events",
-      description: "CommerceKit handles catalog, checkout, and orders; EventPass covers registration and check-in.",
-      projects: ["commercekit", "eventpass"],
-    },
-    {
-      step: "06",
-      title: "Support and measure",
-      description: "SupportDesk Lite handles post-sale tickets while API Meter meters usage with billing-ready events.",
-      projects: ["supportdesk-lite", "api-meter"],
-    },
   ],
   fr: [
     {
@@ -828,30 +510,6 @@ export const ecosystemFlow = {
       title: "Soumissionner le travail",
       description: "QuotePilot transforme la demande en soumission structuree avec lignes et statuts.",
       projects: ["quotepilot"],
-    },
-    {
-      step: "03",
-      title: "Reserver le travail",
-      description: "ReserveFlow planifie le travail accepte avec logique de disponibilites et gestion des reservations.",
-      projects: ["reserveflow"],
-    },
-    {
-      step: "04",
-      title: "Servir le client",
-      description: "ClientHub centralise statut projet, fichiers, jalons et messages pour la relation en cours.",
-      projects: ["clienthub"],
-    },
-    {
-      step: "05",
-      title: "Vendre et gerer les evenements",
-      description: "CommerceKit gere catalogue, checkout et commandes; EventPass couvre inscription et check-in.",
-      projects: ["commercekit", "eventpass"],
-    },
-    {
-      step: "06",
-      title: "Supporter et mesurer",
-      description: "SupportDesk Lite gere les tickets apres-vente pendant qu'API Meter mesure l'usage avec evenements de facturation.",
-      projects: ["supportdesk-lite", "api-meter"],
     },
   ],
 } as const;

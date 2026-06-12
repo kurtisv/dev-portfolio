@@ -14,15 +14,15 @@ export const metadata: Metadata = {
 const copy = {
   en: {
     eyebrow: "Projects",
-    title: "Portfolio projects — a live ecosystem, real client sites, mobile apps, and the boilerplate foundation.",
+    title: "Portfolio projects — real sites, live products, mobile apps, and the boilerplate foundation.",
     description:
-      "Thirteen shipped projects: eight live ecosystem sites built from one boilerplate, the EventPic and GasMobile mobile apps, real client launches, and the Next.js starter that powers them all.",
+      "Seven shipped projects: live sites built from one boilerplate, the EventPic and GasMobile mobile apps, real client launches, and the Next.js starter that powers them all.",
   },
   fr: {
     eyebrow: "Projets",
-    title: "Projets portfolio — un ecosysteme live, de vrais sites clients, des apps mobiles et la fondation boilerplate.",
+    title: "Projets portfolio — vrais sites, produits live, apps mobiles et la fondation boilerplate.",
     description:
-      "Treize projets livres: huit sites ecosysteme live construits depuis un seul boilerplate, les apps mobiles EventPic et GasMobile, de vrais lancements clients et le starter Next.js qui les alimente tous.",
+      "Sept projets livres: des sites live construits depuis un seul boilerplate, les apps mobiles EventPic et GasMobile, de vrais lancements clients et le starter Next.js qui les alimente tous.",
   },
 } as const;
 
