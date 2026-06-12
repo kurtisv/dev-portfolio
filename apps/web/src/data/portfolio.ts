@@ -51,6 +51,57 @@ export const profile = {
 
 export const featuredProjects: PortfolioProject[] = [
   {
+    slug: "eventpic",
+    name: "EventPic",
+    category: "Mobile event photo app",
+    status: "private",
+    summary:
+      "A React Native app for real-time photo sharing at events. Attendees join via QR code or event code, capture photos, and browse a shared live feed.",
+    description:
+      "EventPic is a mobile-first event photo-sharing platform. Guests join a private event session via a generated code or QR code and contribute photos to a shared, real-time feed. The app features per-event theming, admin moderation with approval flows, swipe-to-browse gallery navigation, offline detection, gallery save with FileSystem download, and a slideshow generator with Deezer music selection — all backed by a Cloudflare Workers edge API.",
+    stack: [
+      "React Native",
+      "Expo SDK 54",
+      "TypeScript",
+      "Cloudflare Workers",
+      "TanStack Query",
+      "Zustand",
+      "expo-camera",
+      "expo-media-library",
+    ],
+    highlights: [
+      "Real-time shared photo feed with infinite scroll",
+      "Per-event accent theming applied at navigation level",
+      "Admin moderation with approval flows and role-based UI",
+    ],
+    recruiterValue:
+      "Shows native mobile development beyond a basic screen: real-time data, role-based access, hardware APIs (camera, gallery, haptics, deep links), and a Cloudflare Workers edge backend — all production-shaped without a managed cloud.",
+    buildNotes: [
+      "JWT-based event sessions with distinct admin and guest roles.",
+      "Event type maps to an accent palette (wedding, birthday, corporate…) applied globally at navigation level via Zustand.",
+      "Cloudflare Workers + R2 for photo upload, feed API, and admin token flow.",
+    ],
+    fr: {
+      category: "App mobile partage photo evenement",
+      summary:
+        "Une app React Native pour partager des photos en temps reel lors d'evenements. Les invites rejoignent via QR code ou code evenement et consultent un fil commun en direct.",
+      description:
+        "EventPic est une plateforme mobile de partage de photos lors d'evenements. Les invites rejoignent une session privee par code ou QR code et contribuent a un fil commun en temps reel. L'app integre un theme par type d'evenement, une moderation admin avec flux d'approbation, navigation a glissement entre photos, detection hors ligne, sauvegarde galerie avec telechargement FileSystem et un generateur de diaporama avec selection musicale Deezer.",
+      highlights: [
+        "Fil photos partage en temps reel avec scroll infini",
+        "Theme accent par evenement applique au niveau navigation",
+        "Moderation admin avec flux approbation et UI par role",
+      ],
+      recruiterValue:
+        "Montre le developpement mobile natif au-dela d'un simple ecran: donnees temps reel, acces base sur les roles, APIs hardware (camera, galerie, haptique, liens profonds) et un backend edge Cloudflare Workers sans cloud gere.",
+      buildNotes: [
+        "Sessions JWT avec roles admin et invite distincts.",
+        "Le type d'evenement mappe sur une palette accent (mariage, anniversaire, corporate...) appliquee globalement via Zustand.",
+        "Cloudflare Workers + R2 pour upload photos, API fil et flux token admin.",
+      ],
+    },
+  },
+  {
     slug: "luma-studio",
     name: "Luma Studio",
     category: "Premium marketing website",
@@ -298,8 +349,8 @@ export const pageCopy = {
       role: "Ecosystem role",
     },
     proof: [
-      ["5", "projects shipped and deployed"],
-      ["1", "mobile app included"],
+      ["6", "projects shipped and deployed"],
+      ["2", "mobile apps included"],
       ["2", "real client sites live"],
       ["50", "tests passing in the foundation"],
     ],
@@ -343,8 +394,8 @@ export const pageCopy = {
       role: "Role ecosysteme",
     },
     proof: [
-      ["5", "projets livres et deployes"],
-      ["1", "app mobile incluse"],
+      ["6", "projets livres et deployes"],
+      ["2", "apps mobiles incluses"],
       ["2", "vrais sites clients live"],
       ["50", "tests passent dans la fondation"],
     ],
@@ -366,7 +417,7 @@ export const ecosystemNarrative = {
     eyebrow: "Focused portfolio",
     title: "The public portfolio keeps only the strongest work.",
     description:
-      "The visible portfolio now centers on the real launched sites and the Luma Studio marketing demo. ClientHub, CommerceKit, and EventPass are available on request.",
+      "The visible portfolio now centers on the real launched sites, the Luma Studio marketing demo, and EventPic. ClientHub, CommerceKit, and EventPass are available on request.",
     database: "Shared database: Supabase KV Portfolio",
     foundation: "Foundation: kv-web-starter boilerplate",
     cta: "Explore the path",
@@ -375,7 +426,7 @@ export const ecosystemNarrative = {
     eyebrow: "Portfolio cible",
     title: "Le portfolio public garde seulement le travail le plus fort.",
     description:
-      "Le portfolio visible se concentre maintenant sur les vrais sites lances et la demo marketing Luma Studio. ClientHub, CommerceKit et EventPass sont disponibles sur demande.",
+      "Le portfolio visible se concentre maintenant sur les vrais sites lances, la demo marketing Luma Studio et EventPic. ClientHub, CommerceKit et EventPass sont disponibles sur demande.",
     database: "Base partagee: Supabase KV Portfolio",
     foundation: "Fondation: boilerplate kv-web-starter",
     cta: "Explorer le parcours",
