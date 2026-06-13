@@ -302,6 +302,7 @@ export const featuredProjects: PortfolioProject[] = [
         "Sanity alimente le contenu editorialv et les stations.",
       ],
     },
+    liveUrl: "https://gasmobile-web.vercel.app",
     repoUrl: "https://github.com/kurtisv/gasmobile",
   },
   {
