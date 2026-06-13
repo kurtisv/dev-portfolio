@@ -105,23 +105,26 @@ export default async function Home() {
   return (
     <MarketingPageShell>
       <main>
-        <section className="signature-hero border-b border-border">
-          <div className="relative z-10 mx-auto grid max-w-6xl gap-12 px-6 py-16 sm:py-24 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+        <section
+          className="signature-hero flex items-center border-b border-border"
+          style={{ height: "calc(100svh - 4rem)" }}
+        >
+          <div className="relative z-10 mx-auto grid w-full max-w-6xl gap-6 px-6 py-6 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-10">
             <div>
               <div className="inline-flex items-center gap-2 border border-primary/20 bg-card/80 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-primary shadow-sm">
                 <span className="size-2 bg-accent" />
                 {signature.availability}
               </div>
-              <p className="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+              <p className="mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
                 {t.eyebrow}
               </p>
-              <h1 className="hero-wordmark mt-5 max-w-4xl text-5xl font-semibold tracking-normal text-balance sm:text-7xl">
+              <h1 className="hero-wordmark mt-3 max-w-4xl text-4xl font-semibold tracking-normal text-balance lg:text-5xl">
                 {t.title}
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
+              <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
                 {locale === "fr" ? profile.introFr : profile.intro}
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-5 flex flex-wrap gap-3">
                 <Button asChild size="lg">
                   <Link href="/projects">
                     {t.projects} <ArrowRight className="size-4" />
@@ -133,7 +136,7 @@ export default async function Home() {
                   </Link>
                 </Button>
               </div>
-              <div className="mt-10 grid max-w-xl gap-3 sm:grid-cols-3">
+              <div className="mt-4 grid max-w-xl gap-2 sm:grid-cols-3">
                 {signature.quality.map((item) => (
                   <div key={item} className="flex items-center gap-2 border border-border/80 bg-card/70 px-3 py-2 text-sm font-medium shadow-sm">
                     <CheckCircle2 className="size-4 text-primary" />
@@ -155,21 +158,21 @@ export default async function Home() {
                     {signature.cockpit}
                   </p>
                 </div>
-                <div className="grid gap-4 p-4">
+                <div className="grid gap-3 p-3">
                   <div className="grid gap-3 sm:grid-cols-[0.85fr_1.15fr]">
-                    <div className="border border-white/10 bg-white/[0.06] p-4">
+                    <div className="border border-white/10 bg-white/[0.06] p-3">
                       <p className="text-xs uppercase tracking-[0.18em] text-emerald-200">
                         {signature.shipped}
                       </p>
-                      <p className="mt-3 text-5xl font-semibold">{publicPortfolioProjects.length}</p>
-                      <p className="mt-2 text-sm leading-6 text-white/60">{signature.motion}</p>
+                      <p className="mt-2 text-4xl font-semibold">{publicPortfolioProjects.length}</p>
+                      <p className="mt-1 text-xs leading-5 text-white/60">{signature.motion}</p>
                     </div>
-                    <div className="border border-white/10 bg-[#18241f] p-4">
+                    <div className="border border-white/10 bg-[#18241f] p-3">
                       <div className="flex items-center justify-between gap-3">
                         <p className="text-sm font-semibold">{signature.branch}</p>
                         <GitBranch className="size-4 text-[#f0d7b1]" />
                       </div>
-                      <div className="mt-5 grid gap-3">
+                      <div className="mt-3 grid gap-2">
                         {["01", "02", "03"].map((step, index) => (
                           <div key={step} className="grid grid-cols-[2.5rem_1fr] items-center gap-3">
                             <span className="font-mono text-xs text-white/50">{step}</span>
@@ -182,21 +185,21 @@ export default async function Home() {
                       </div>
                     </div>
                   </div>
-                  <div className="grid gap-3 border border-white/10 bg-white/[0.06] p-4">
+                  <div className="grid gap-2 border border-white/10 bg-white/[0.06] p-3">
                     <div className="flex items-center justify-between gap-4">
                       <div>
                         <p className="text-xs uppercase tracking-[0.18em] text-white/45">
                           {signature.proof}
                         </p>
-                        <p className="mt-1 font-medium">{profile.name}</p>
+                        <p className="mt-0.5 font-medium">{profile.name}</p>
                       </div>
-                      <div className="flex size-11 items-center justify-center bg-[#f0d7b1] text-[#111a17]">
-                        <Layers3 className="size-5" />
+                      <div className="flex size-9 items-center justify-center bg-[#f0d7b1] text-[#111a17]">
+                        <Layers3 className="size-4" />
                       </div>
                     </div>
-                    <div className="grid gap-2">
+                    <div className="grid gap-1.5">
                       {principles.map((principle) => (
-                        <p key={principle} className="border-l border-[#f0d7b1]/35 pl-3 text-sm leading-6 text-white/70">
+                        <p key={principle} className="border-l border-[#f0d7b1]/35 pl-3 text-xs leading-5 text-white/70">
                           {principle}
                         </p>
                       ))}
@@ -204,7 +207,7 @@ export default async function Home() {
                   </div>
                   <Link
                     href="/projects"
-                    className="group inline-flex items-center justify-between bg-[#f0d7b1] px-4 py-3 text-sm font-semibold text-[#111a17]"
+                    className="group inline-flex items-center justify-between bg-[#f0d7b1] px-4 py-2.5 text-sm font-semibold text-[#111a17]"
                   >
                     {signature.route}
                     <MousePointer2 className="size-4 transition group-hover:translate-x-1" />

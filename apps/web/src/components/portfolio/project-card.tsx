@@ -18,7 +18,7 @@ export function ProjectCard({
   return (
     <article className="project-card-accent group flex h-full flex-col border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_18px_50px_rgba(14,23,21,0.12)]">
       {project.previewImage ? (
-        <div className="relative h-44 w-full overflow-hidden border-b border-border bg-muted">
+        <div className="relative h-52 w-full overflow-hidden border-b border-border bg-muted">
           <Image
             src={project.previewImage}
             alt={`${project.name} preview`}
@@ -28,7 +28,7 @@ export function ProjectCard({
           />
         </div>
       ) : (
-        <div className="flex h-44 items-center justify-center border-b border-border bg-[#111a17]">
+        <div className="flex h-52 items-center justify-center border-b border-border bg-[#111a17]">
           <span className="text-3xl font-bold tracking-tight text-white/20">
             {project.name.slice(0, 2).toUpperCase()}
           </span>
