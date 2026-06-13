@@ -107,7 +107,7 @@ export default async function Home() {
       <main>
         <section
           className="signature-hero flex items-center border-b border-border"
-          style={{ height: "calc(100svh - 4rem)" }}
+          style={{ minHeight: "calc(100svh - 4rem)" }}
         >
           <div className="relative z-10 mx-auto grid w-full max-w-6xl gap-6 px-6 py-6 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-10">
             <div>
