@@ -118,7 +118,7 @@ export default async function Home() {
               <p className="mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
                 {t.eyebrow}
               </p>
-              <h1 className="hero-wordmark mt-3 max-w-4xl text-4xl font-semibold tracking-normal text-balance lg:text-5xl">
+              <h1 className="hero-wordmark mt-3 max-w-4xl text-5xl font-semibold tracking-normal text-balance sm:text-7xl">
                 {t.title}
               </h1>
               <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
@@ -164,7 +164,7 @@ export default async function Home() {
                       <p className="text-xs uppercase tracking-[0.18em] text-emerald-200">
                         {signature.shipped}
                       </p>
-                      <p className="mt-2 text-4xl font-semibold">{publicPortfolioProjects.length}</p>
+                      <p className="mt-2 text-5xl font-semibold">{publicPortfolioProjects.length}</p>
                       <p className="mt-1 text-xs leading-5 text-white/60">{signature.motion}</p>
                     </div>
                     <div className="border border-white/10 bg-[#18241f] p-3">
@@ -197,9 +197,9 @@ export default async function Home() {
                         <Layers3 className="size-4" />
                       </div>
                     </div>
-                    <div className="grid gap-1.5">
+                    <div className="grid gap-2">
                       {principles.map((principle) => (
-                        <p key={principle} className="border-l border-[#f0d7b1]/35 pl-3 text-xs leading-5 text-white/70">
+                        <p key={principle} className="border-l border-[#f0d7b1]/35 pl-3 text-sm leading-6 text-white/70">
                           {principle}
                         </p>
                       ))}
