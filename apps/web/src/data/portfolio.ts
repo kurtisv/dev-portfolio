@@ -140,7 +140,7 @@ export const featuredProjects: PortfolioProject[] = [
     slug: "eventpic",
     name: "EventPic",
     category: "Mobile event photo app",
-    status: "private",
+    status: "live",
     summary:
       "A React Native app for real-time photo sharing at events. Attendees join via QR code or event code, capture photos, and browse a shared live feed.",
     description:
@@ -186,6 +186,7 @@ export const featuredProjects: PortfolioProject[] = [
         "Cloudflare Workers + R2 pour upload photos, API fil et flux token admin.",
       ],
     },
+    liveUrl: "https://eventpic-web.vercel.app",
   },
   {
     slug: "luma-studio",
@@ -488,7 +489,7 @@ export const pageCopy = {
     },
     proof: [
       ["7", "projects shipped across the portfolio"],
-      ["5", "live sites online"],
+      ["6", "live sites online"],
       ["2", "mobile apps included"],
       ["2", "real client sites live"],
     ],
@@ -534,7 +535,7 @@ export const pageCopy = {
     },
     proof: [
       ["7", "projets livres dans le portfolio"],
-      ["5", "sites live en ligne"],
+      ["6", "sites live en ligne"],
       ["2", "apps mobiles incluses"],
       ["2", "vrais sites clients live"],
     ],
