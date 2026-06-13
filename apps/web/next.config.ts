@@ -4,6 +4,12 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
   allowedDevOrigins: ["127.0.0.1"],
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "image.thum.io" },
+      { protocol: "https", hostname: "opengraph.githubassets.com" },
+    ],
+  },
 };
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");

@@ -13,8 +13,7 @@ import {
   profile,
   stackGroups,
   stackGroupsFr,
-  upcomingProjects,
-  upcomingProjectsFr,
+  testimonial,
 } from "@/data/portfolio";
 import { getCurrentLocale } from "@/lib/locale";
 
@@ -26,7 +25,7 @@ export default async function Home() {
   const projectRail = [...ecosystemProjects, ...ecosystemProjects];
   const principles = locale === "fr" ? profile.principlesFr : profile.principles;
   const stack = locale === "fr" ? stackGroupsFr : stackGroups;
-  const nextItems = locale === "fr" ? upcomingProjectsFr : upcomingProjects;
+  const t_testimonial = testimonial[locale];
   const signature = {
     en: {
       availability: "Open for focused product work",
@@ -317,14 +316,29 @@ export default async function Home() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-6 py-16">
-          <SectionHeading eyebrow={t.nextEyebrow} title={t.nextTitle} />
-          <div className="mt-8 grid gap-3 md:grid-cols-3">
-            {nextItems.map((item) => (
-              <div key={item} className="border border-border bg-card p-5 text-sm text-muted-foreground shadow-sm transition hover:-translate-y-1 hover:shadow-md">
-                {item}
+        <section className="border-y border-border bg-card/60">
+          <div className="mx-auto max-w-6xl px-6 py-14">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+              {locale === "fr" ? "Temoignage client" : "Client testimonial"}
+            </p>
+            <blockquote className="mt-6 grid gap-8 lg:grid-cols-[1fr_0.55fr] lg:items-center">
+              <p className="text-2xl font-medium leading-9 tracking-tight text-balance sm:text-3xl">
+                &ldquo;{t_testimonial.quote}&rdquo;
+              </p>
+              <div className="border border-border bg-background p-5 shadow-sm">
+                <p className="font-semibold">{t_testimonial.author}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{t_testimonial.role}</p>
+                <a
+                  href={t_testimonial.siteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+                >
+                  {t_testimonial.site}
+                  <ArrowRight className="size-3" />
+                </a>
               </div>
-            ))}
+            </blockquote>
           </div>
         </section>
 

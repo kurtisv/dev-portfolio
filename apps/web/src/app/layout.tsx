@@ -21,16 +21,18 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: {
-    default: "Kurtis V. - Full-stack developer portfolio",
-    template: "%s | Kurtis V.",
+    default: "Kurtis Verres — Full-stack developer portfolio",
+    template: "%s | Kurtis Verres",
   },
   description:
-    "Full-stack developer portfolio showing practical web apps, SaaS portals, client sites, and product-focused development work.",
+    "Portfolio de Kurtis Verres — developpeur full-stack base a Laval, QC. Sites clients livres, apps mobiles React Native, SaaS Next.js et boilerplate open-source.",
   openGraph: {
-    title: "Kurtis V. - Developer Portfolio",
+    title: "Kurtis Verres — Developer Portfolio",
     description:
-      "A portfolio of shipped Next.js, TypeScript, SaaS, dashboard, marketing, and mobile product work.",
+      "Live client sites, React Native mobile apps, and shipped SaaS products built with Next.js, TypeScript, and Tailwind. Based in Laval, QC.",
     type: "website",
+    locale: "fr_CA",
+    alternateLocale: "en_US",
   },
 };
 

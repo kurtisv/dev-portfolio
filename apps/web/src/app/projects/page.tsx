@@ -16,13 +16,13 @@ const copy = {
     eyebrow: "Projects",
     title: "Portfolio projects — real sites, live products, mobile apps, and the boilerplate foundation.",
     description:
-      "Seven shipped projects: live sites built from one boilerplate, the EventPic and GasMobile mobile apps, real client launches, and the Next.js starter that powers them all.",
+      "Six shipped projects: live sites built from one boilerplate, the EventPic and GasMobile mobile apps, a real client launch, and the Next.js starter that powers them all.",
   },
   fr: {
     eyebrow: "Projets",
     title: "Projets portfolio — vrais sites, produits live, apps mobiles et la fondation boilerplate.",
     description:
-      "Sept projets livres: des sites live construits depuis un seul boilerplate, les apps mobiles EventPic et GasMobile, de vrais lancements clients et le starter Next.js qui les alimente tous.",
+      "Six projets livres: des sites live construits depuis un seul boilerplate, les apps mobiles EventPic et GasMobile, un vrai lancement client et le starter Next.js qui les alimente tous.",
   },
 } as const;
 

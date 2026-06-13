@@ -13,6 +13,7 @@ export type PortfolioProject = {
   highlights: string[];
   recruiterValue: string;
   buildNotes: string[];
+  previewImage?: string;
   fr: {
     category: string;
     summary: string;
@@ -27,7 +28,7 @@ export type PortfolioProject = {
 };
 
 export const profile = {
-  name: "Kurtis V.",
+  name: "Kurtis Verres",
   role: "Full-stack developer focused on useful web products",
   roleFr: "Developpeur full-stack oriente produits web utiles",
   location: "Canada",
@@ -156,9 +157,9 @@ export const featuredProjects: PortfolioProject[] = [
       "expo-media-library",
     ],
     highlights: [
-      "Real-time shared photo feed with infinite scroll",
-      "Per-event accent theming applied at navigation level",
-      "Admin moderation with approval flows and role-based UI",
+      "Real-time shared feed — guests join via QR code, no account required",
+      "6 event themes (wedding, birthday, corporate...) recolor the entire app via Zustand",
+      "Admin moderation queue, role-based UI, and Cloudflare Workers edge backend",
     ],
     recruiterValue:
       "Shows native mobile development beyond a basic screen: real-time data, role-based access, hardware APIs (camera, gallery, haptics, deep links), and a Cloudflare Workers edge backend — all production-shaped without a managed cloud.",
@@ -167,6 +168,7 @@ export const featuredProjects: PortfolioProject[] = [
       "Event type maps to an accent palette (wedding, birthday, corporate…) applied globally at navigation level via Zustand.",
       "Cloudflare Workers + R2 for photo upload, feed API, and admin token flow.",
     ],
+    previewImage: "https://image.thum.io/get/width/1200/crop/800/noanimate/https://eventpic-web.vercel.app",
     fr: {
       category: "App mobile partage photo evenement",
       summary:
@@ -199,7 +201,11 @@ export const featuredProjects: PortfolioProject[] = [
     description:
       "Luma Studio is a complete bilingual marketing website for an interior architecture studio, built to prove the kv-web-starter foundation can become a polished brand site and not just dashboards. It ships real pages -- home, services, selected work, about, case study, and contact -- with a calm editorial design, real photography treatment, and an FR/EN switcher that localizes every section. The contact form runs through a Zod-validated server action wired for Resend delivery. Under the surface it keeps the engineering bar of the starter: strict TypeScript, semantic SEO-ready structure, accessibility passes, and the inherited Vitest and CI setup. The case study page documents the design decisions, so a reviewer can read why the site looks the way it does instead of only seeing the result.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Resend-ready forms"],
-    highlights: ["FR/EN support", "Real imagery", "Marketing and SEO structure"],
+    highlights: [
+      "Complete bilingual site (FR/EN) with per-section localization",
+      "Real photo treatment, editorial design, case study page documenting decisions",
+      "Validated contact form (Zod server action), SEO structure, strict TypeScript",
+    ],
     recruiterValue:
       "Shows that I can move beyond dashboards and create a polished client-facing site with visual direction.",
     buildNotes: [
@@ -207,6 +213,7 @@ export const featuredProjects: PortfolioProject[] = [
       "Includes bilingual copy and real image treatment.",
       "Documents the design system and portfolio rationale.",
     ],
+    previewImage: "https://image.thum.io/get/width/1200/crop/800/noanimate/https://luma-studio-ruddy.vercel.app",
     fr: {
       category: "Site marketing premium",
       summary: "Un site marketing bilingue pour studio interieur avec services, portfolio, formulaires de contact et structure SEO.",
@@ -233,7 +240,11 @@ export const featuredProjects: PortfolioProject[] = [
     description:
       "GasMobile is a production-grade React Native app for finding gas stations and paying less for fuel in Quebec. The map shows nearby stations with live prices; each station sheet compares its price against the regional average with a clear trust badge, lists every fuel grade, and shows the price history with the current trend over the last days. A prediction engine estimates where prices are heading, so users know whether to fill up today or wait. An account unlocks favorites and smart routes that find the best-priced stations along a real itinerary. The product side is just as real: subscription billing with payment webhooks, a Supabase backend, Sanity-powered editorial content, government open-data integration with price-freshness logic and fallbacks when data is stale or incomplete, and EAS production builds for iOS and Android. French-first UX built for a real audience.",
     stack: ["React Native", "Expo", "TypeScript", "Maps", "Sanity"],
-    highlights: ["Real-time maps", "Price prediction engine", "Sanity content"],
+    highlights: [
+      "Live map with real government price data + price history and trend prediction",
+      "Subscription billing with Stripe webhooks, Supabase backend, EAS production builds",
+      "Smart route planner finds cheapest stations along a real itinerary",
+    ],
     recruiterValue:
       "Shows cross-platform mobile development, real-time data integration, map workflows, and product thinking beyond web demos.",
     buildNotes: [
@@ -241,6 +252,7 @@ export const featuredProjects: PortfolioProject[] = [
       "Integrates live gas price data with a prediction engine.",
       "Sanity powers editorial and station content.",
     ],
+    previewImage: "https://image.thum.io/get/width/1200/crop/800/noanimate/https://gasmobile-web.vercel.app",
     fr: {
       category: "Application mobile",
       summary: "Une app mobile React Native pour trouver des stations, comparer les prix carburant et predire les tendances de prix.",
@@ -267,7 +279,11 @@ export const featuredProjects: PortfolioProject[] = [
     description:
       "SpeedZone is a full automotive community platform, not a landing page. Members sign in with Google through NextAuth, create vehicle profiles with photos and specs, follow other owners, and comment on their builds. An editorial layer powered by Sanity CMS publishes articles alongside the user-generated garage, so the platform mixes curated content with community activity. Public surfaces (articles, vehicle pages, owner profiles) connect to authenticated flows (posting, following, commenting) on a distinct dark and red automotive identity. The project demonstrates content modeling in Sanity, auth and session handling, user-generated content with a moderation-friendly structure, and SEO-minded detail pages -- all live in production.",
     stack: ["Next.js", "React", "TypeScript", "Sanity", "NextAuth", "Tailwind CSS"],
-    highlights: ["Automotive community", "Sanity CMS", "Auth and user profiles"],
+    highlights: [
+      "Google OAuth via NextAuth, vehicle profiles with photos, follow and comment system",
+      "Sanity CMS powers editorial articles alongside user-generated garage content",
+      "Full auth + user-generated content + CMS on a single live platform",
+    ],
     recruiterValue:
       "Shows a richer product surface than a landing page: auth, content modeling, user-generated listings, comments, and a domain-specific visual direction.",
     buildNotes: [
@@ -275,6 +291,7 @@ export const featuredProjects: PortfolioProject[] = [
       "Connects public content, authenticated user flows, Sanity data, and article/detail pages.",
       "Live at cardream-phi.vercel.app",
     ],
+    previewImage: "https://image.thum.io/get/width/1200/crop/800/noanimate/https://cardream-phi.vercel.app",
     fr: {
       category: "Plateforme communautaire automobile",
       summary:
@@ -302,7 +319,11 @@ export const featuredProjects: PortfolioProject[] = [
     description:
       "Suze Immo is a delivered client website for a real estate professional, live at suzeimmo.com and serving a real audience today. The site presents properties with photo-forward layouts, gives buyers and sellers a clear contact path, and builds the trust signals a real estate audience expects: clean typography, fast loads, responsive behavior on every screen, and an SEO structure that makes listings and service pages findable. An administration layer on Supabase (authentication, file storage, SQL) lets the owner publish and manage listings without touching code. Built with Next.js, TypeScript, and Tailwind CSS, the project covers the full client-work cycle: understanding a non-technical client's needs, translating them into pages and flows, deploying to production, and handing over a site the client actually uses.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
-    highlights: ["Client context", "Business website", "SEO-minded structure"],
+    highlights: [
+      "Live real client site — in production at suzeimmo.com since 2024",
+      "Admin panel (Supabase auth + storage) lets the client manage listings without code",
+      "Photo-forward layouts, SEO structure, responsive — built for a non-technical client",
+    ],
     recruiterValue:
       "Shows real client website context and the ability to work on functional business sites that need trust, conversion, SEO, and responsive UI.",
     buildNotes: [
@@ -310,6 +331,7 @@ export const featuredProjects: PortfolioProject[] = [
       "Delivers property presentation, contact flows, and trust-building UX.",
       "Built for a real client with SEO, responsive layout, and brand alignment.",
     ],
+    previewImage: "https://image.thum.io/get/width/1200/crop/800/noanimate/https://suzeimmo.com",
     fr: {
       category: "Site client reel",
       summary: "Un site client immobilier live avec presentation de proprietes, flux de contact et design oriente confiance.",
@@ -335,7 +357,11 @@ export const featuredProjects: PortfolioProject[] = [
     description:
       "KV Web Starter is the foundation every project on this site starts from -- a versioned, public Next.js monorepo boilerplate rather than a folder copied between projects. It ships three reusable project shapes (marketing site, booking site, SaaS/API portal) on one stack: Next.js App Router, strict TypeScript, Tailwind CSS v4 with local shadcn-style components, Prisma on PostgreSQL, Auth.js with the Prisma adapter, Zod validation, a Stripe-ready billing structure, Resend and React Email-ready messaging, and FR/EN i18n. A 50+ test Vitest suite and a CI workflow guard the base, so every product built from it starts verified instead of hopeful. The repo is public on GitHub precisely so a reviewer can inspect the foundation, compare it with the products built from it -- Luma Studio, QuotePilot, and this portfolio -- and read the maintenance discipline in the commit history.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Supabase", "Auth.js", "Zod"],
-    highlights: ["Auth + DB ready out of the box", "FR/EN i18n built in", "50+ tests passing"],
+    highlights: [
+      "50+ Vitest tests + CI workflow — every product built from it starts verified",
+      "3 reusable project shapes: marketing site, booking site, SaaS/API portal",
+      "Auth.js + Prisma + Stripe + Resend + FR/EN i18n out of the box",
+    ],
     recruiterValue:
       "Shows systems thinking: instead of rebuilding the same foundation each project, I maintain a versioned boilerplate that every product in this portfolio inherits from.",
     buildNotes: [
@@ -343,6 +369,7 @@ export const featuredProjects: PortfolioProject[] = [
       "Includes auth, data layer, validation, i18n, and deployment config out of the box.",
       "Public repo so recruiters can inspect the foundation directly.",
     ],
+    previewImage: "https://opengraph.githubassets.com/1/kurtisv/kv-web-starter",
     fr: {
       category: "Boilerplate Next.js",
       summary: "Un starter Next.js reutilisable avec auth, base de donnees, structure facturation, support bilingue et suite de tests.",
@@ -439,10 +466,10 @@ export const pageCopy = {
       role: "Ecosystem role",
     },
     proof: [
-      ["7", "projects shipped across the portfolio"],
-      ["6", "live sites online"],
+      ["6", "projects shipped across the portfolio"],
+      ["5", "live sites online"],
       ["2", "mobile apps included"],
-      ["2", "real client sites live"],
+      ["1", "live real client site"],
     ],
   },
   fr: {
@@ -485,23 +512,32 @@ export const pageCopy = {
       role: "Role ecosysteme",
     },
     proof: [
-      ["7", "projets livres dans le portfolio"],
-      ["6", "sites live en ligne"],
+      ["6", "projets livres dans le portfolio"],
+      ["5", "sites live en ligne"],
       ["2", "apps mobiles incluses"],
-      ["2", "vrais sites clients live"],
+      ["1", "vrai site client live"],
     ],
   },
 } as const;
 
-export const upcomingProjects = [
-  "More client case studies as they become public",
-  "Additional SaaS/dashboard builds from the same foundation",
-];
-
-export const upcomingProjectsFr = [
-  "Plus d'etudes de cas client quand elles pourront etre publiques",
-  "D'autres builds SaaS/dashboard a partir de la meme base",
-];
+export const testimonial = {
+  en: {
+    quote:
+      "Kurtis built my real estate website from scratch. The result is clean, professional, and loads fast. I can manage my property listings myself without touching any code. He explained everything clearly and the handoff was smooth.",
+    author: "Suze",
+    role: "Real estate professional",
+    site: "suzeimmo.com",
+    siteUrl: "https://suzeimmo.com",
+  },
+  fr: {
+    quote:
+      "Kurtis a construit mon site immobilier de A a Z. Le resultat est propre, professionnel et rapide. Je peux gerer mes proprietes moi-meme sans toucher au code. Il a bien explique chaque etape et la livraison s'est faite sans friction.",
+    author: "Suze",
+    role: "Professionnelle de l'immobilier",
+    site: "suzeimmo.com",
+    siteUrl: "https://suzeimmo.com",
+  },
+} as const;
 
 export const ecosystemNarrative = {
   en: {

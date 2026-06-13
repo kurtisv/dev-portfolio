@@ -26,7 +26,7 @@ export async function Navbar() {
             KV
           </span>
           <span>
-            Kurtis V.
+            Kurtis Verres
             <span className="block text-[10px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
               Portfolio
             </span>

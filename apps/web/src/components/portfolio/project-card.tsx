@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
@@ -15,7 +16,25 @@ export function ProjectCard({
   const labels = pageCopy[locale].projectCard;
 
   return (
-    <article className="project-card-accent group flex h-full flex-col border border-border bg-card p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_18px_50px_rgba(14,23,21,0.12)]">
+    <article className="project-card-accent group flex h-full flex-col border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_18px_50px_rgba(14,23,21,0.12)]">
+      {project.previewImage ? (
+        <div className="relative h-44 w-full overflow-hidden border-b border-border bg-muted">
+          <Image
+            src={project.previewImage}
+            alt={`${project.name} preview`}
+            fill
+            className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+      ) : (
+        <div className="flex h-44 items-center justify-center border-b border-border bg-[#111a17]">
+          <span className="text-3xl font-bold tracking-tight text-white/20">
+            {project.name.slice(0, 2).toUpperCase()}
+          </span>
+        </div>
+      )}
+      <div className="flex flex-1 flex-col p-5">
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary">{copy.category}</p>
@@ -68,6 +87,7 @@ export function ProjectCard({
             {labels.repo} <ArrowUpRight className="size-4" />
           </Link>
         ) : null}
+      </div>
       </div>
     </article>
   );
