@@ -109,7 +109,7 @@ export default async function Home() {
           className="signature-hero flex items-center border-b border-border"
           style={{ minHeight: "calc(100svh - 4rem)" }}
         >
-          <div className="relative z-10 mx-auto grid w-full max-w-6xl gap-6 px-6 py-6 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-10">
+          <div className="relative z-10 mx-auto grid w-full max-w-6xl gap-12 px-6 py-16 sm:py-24 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
             <div>
               <div className="inline-flex items-center gap-2 border border-primary/20 bg-card/80 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-primary shadow-sm">
                 <span className="size-2 bg-accent" />
