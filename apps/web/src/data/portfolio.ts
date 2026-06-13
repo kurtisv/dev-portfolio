@@ -299,7 +299,7 @@ export const featuredProjects: PortfolioProject[] = [
       buildNotes: [
         "Construit avec React Native et Expo pour iOS et Android.",
         "Integre des donnees prix carburant live avec un moteur de prediction.",
-        "Sanity alimente le contenu editorialv et les stations.",
+        "Sanity alimente le contenu editorial et les stations.",
       ],
     },
     liveUrl: "https://gasmobile-web.vercel.app",
@@ -488,7 +488,7 @@ export const pageCopy = {
     },
     proof: [
       ["7", "projects shipped across the portfolio"],
-      ["4", "live sites online"],
+      ["5", "live sites online"],
       ["2", "mobile apps included"],
       ["2", "real client sites live"],
     ],
@@ -534,7 +534,7 @@ export const pageCopy = {
     },
     proof: [
       ["7", "projets livres dans le portfolio"],
-      ["4", "sites live en ligne"],
+      ["5", "sites live en ligne"],
       ["2", "apps mobiles incluses"],
       ["2", "vrais sites clients live"],
     ],
