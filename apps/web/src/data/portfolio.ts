@@ -644,6 +644,53 @@ export const featuredProjects: PortfolioProject[] = [
     },
     repoUrl: "https://github.com/kurtisv/strata",
   },
+  {
+    slug: "waveline",
+    name: "Waveline",
+    category: "Content management",
+    status: "private",
+    summary: "Podcast and audio content manager with show organization, episode show notes, and a 4-stage publish workflow.",
+    description:
+      "Waveline is a dashboard for podcast producers to manage shows and episodes from draft to publication. Episodes move through a 4-stage pipeline: draft -> ready -> published -> archived. Each episode has a title, description, audio URL with an in-page HTML5 player, duration, episode and season numbers, and a markdown-style show notes area. The episode detail page doubles as an editor -- all fields are editable inline without leaving the page.",
+    stack: ["Next.js 15", "TypeScript", "Supabase", "Tailwind CSS v4"],
+    highlights: [
+      "4-stage publish pipeline (draft / ready / published / archived) with one-click status advancement.",
+      "Shows group episodes; episode list can be filtered by status.",
+      "Inline episode editor -- no separate edit page; the detail view toggles between read and edit modes.",
+      "Audio URL stored and rendered as an HTML5 <audio> player directly in the detail view.",
+      "Duration stored in seconds and formatted as H:MM:SS or MM:SS for display.",
+      "Slug auto-generated from title on creation for feed-ready identifiers.",
+    ],
+    recruiterValue:
+      "Podcast management is a clean domain for showing content state machines, inline editing UX, and media handling without a CMS dependency.",
+    buildNotes: [
+      "Episode status stored as a DB enum; advancement uses a Record<EpisodeStatus, EpisodeStatus | null> lookup -- null means terminal.",
+      "published_at is set server-side when status transitions to 'published', not by the user.",
+      "Slug auto-generated via slugify() at create time; not updated on title edits to avoid breaking external references.",
+    ],
+    fr: {
+      category: "Gestion de contenu",
+      summary: "Gestionnaire de podcasts avec organisation par emissions, notes d'episode et workflow de publication en 4 etapes.",
+      description:
+        "Waveline est un tableau de bord pour les producteurs de podcasts qui permet de gerer les emissions et les episodes du brouillon a la publication. Les episodes passent par un pipeline en 4 etapes: brouillon -> pret -> publie -> archive. Chaque episode a un titre, une description, une URL audio avec lecteur HTML5, une duree, un numero d'episode et de saison, et un espace pour les notes d'emission au format markdown. La page de detail de l'episode fait aussi office d'editeur -- tous les champs sont modifiables en ligne sans quitter la page.",
+      highlights: [
+        "Pipeline de publication en 4 etapes (brouillon / pret / publie / archive) avec avancement en un clic.",
+        "Les emissions regroupent les episodes; la liste peut etre filtree par statut.",
+        "Editeur d'episode integre -- pas de page d'edition separee; la vue de detail bascule entre lecture et edition.",
+        "URL audio stockee et rendue comme lecteur HTML5 <audio> directement dans la vue de detail.",
+        "Duree stockee en secondes et formatee en H:MM:SS ou MM:SS pour l'affichage.",
+        "Slug genere automatiquement depuis le titre a la creation pour des identifiants prets pour le flux.",
+      ],
+      recruiterValue:
+        "La gestion de podcasts est un domaine propre pour montrer les machines d'etat de contenu, l'UX d'edition integree et la gestion des medias sans dependance a un CMS.",
+      buildNotes: [
+        "Le statut des episodes est stocke comme enum en base; l'avancement utilise une table Record<EpisodeStatus, EpisodeStatus | null> -- null signifie terminal.",
+        "published_at est defini cote serveur lors de la transition vers 'published', pas par l'utilisateur.",
+        "Le slug est genere automatiquement via slugify() a la creation; non mis a jour lors des modifications de titre pour eviter de casser les references externes.",
+      ],
+    },
+    repoUrl: "https://github.com/kurtisv/waveline",
+  },
 ];
 
 export function getProjectBySlug(slug: string) {
