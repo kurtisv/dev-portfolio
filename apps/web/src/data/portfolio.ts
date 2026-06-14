@@ -599,6 +599,51 @@ export const featuredProjects: PortfolioProject[] = [
     },
     repoUrl: "https://github.com/kurtisv/runbook",
   },
+  {
+    slug: "strata",
+    name: "Strata",
+    category: "Property management",
+    status: "private",
+    summary: "Multi-unit property manager with tenant tracking, lease dates, and maintenance request pipeline.",
+    description:
+      "Strata is a landlord dashboard for managing multi-unit buildings. Units store status (vacant, occupied, maintenance), floor, bedrooms, bathrooms, rent, and notes. Each unit can have multiple tenants with full lease date tracking. Maintenance requests flow through an open / in-progress / resolved / closed pipeline and can be filtered by status. The units grid shows live tenant names and open request counts at a glance.",
+    stack: ["Next.js 15", "TypeScript", "Supabase", "Tailwind CSS v4"],
+    highlights: [
+      "Unit cards show real-time occupancy status, tenant names, and open request count in a compact grid.",
+      "Tenant records carry lease start/end, monthly rent, contact info, and free-form notes.",
+      "Maintenance requests have a 4-step status pipeline (open -> in_progress -> resolved -> closed) with one-click advancement.",
+      "Status filter bar lets the landlord focus on open or in-progress issues only.",
+      "Modal forms with full CRUD for units, tenants, and requests -- no separate pages needed.",
+    ],
+    recruiterValue:
+      "Property management is a real-world vertical with clear data relationships; this project shows multi-table Supabase design, server actions with Zod validation, and status-machine UX in a compact app.",
+    buildNotes: [
+      "Supabase join queries return 'never' without defined Relationships -- cast via 'as unknown as Type[]' in server components.",
+      "updateTenant strips unit_id before passing to Supabase because the Update type excludes FK columns.",
+      "Status advancement done with a Record<RequestStatus, RequestStatus | null> lookup table; null means the request is terminal.",
+    ],
+    fr: {
+      category: "Gestion immobiliere",
+      summary: "Gestionnaire multi-unite avec suivi des locataires, dates de bail et pipeline de demandes de maintenance.",
+      description:
+        "Strata est un tableau de bord pour proprietaires gerant des immeubles multi-logements. Les unites stockent le statut (vacant, occupe, maintenance), l'etage, le nombre de chambres, la salle de bain, le loyer et des notes. Chaque unite peut avoir plusieurs locataires avec suivi complet des dates de bail. Les demandes de maintenance progressent dans un pipeline ouvert / en cours / resolu / ferme et peuvent etre filtrees par statut. La grille des unites affiche les noms des locataires et le nombre de demandes ouvertes en un coup d'oeil.",
+      highlights: [
+        "Les cartes d'unite montrent le statut d'occupation en temps reel, les noms des locataires et le nombre de demandes ouvertes.",
+        "Les fiches locataires incluent debut/fin de bail, loyer mensuel, coordonnees et notes libres.",
+        "Les demandes de maintenance ont un pipeline en 4 etapes (ouvert -> en cours -> resolu -> ferme) avec avancement en un clic.",
+        "La barre de filtre de statut permet de se concentrer sur les problemes ouverts ou en cours.",
+        "Formulaires modaux avec CRUD complet pour les unites, locataires et demandes -- pas de pages separees.",
+      ],
+      recruiterValue:
+        "La gestion immobiliere est un secteur concret avec des relations de donnees claires; ce projet montre la conception multi-table Supabase, les actions serveur avec validation Zod et l'UX machine a etats dans une app compacte.",
+      buildNotes: [
+        "Les requetes join Supabase retournent 'never' sans Relationships definies -- cast via 'as unknown as Type[]' dans les composants serveur.",
+        "updateTenant retire unit_id avant de passer a Supabase car le type Update exclut les colonnes FK.",
+        "L'avancement de statut se fait via une table de correspondance Record<RequestStatus, RequestStatus | null>; null signifie que la demande est terminale.",
+      ],
+    },
+    repoUrl: "https://github.com/kurtisv/strata",
+  },
 ];
 
 export function getProjectBySlug(slug: string) {
