@@ -428,6 +428,48 @@ export const featuredProjects: PortfolioProject[] = [
     },
     repoUrl: "https://github.com/kurtisv/meridian",
   },
+  {
+    slug: "casebook",
+    name: "Casebook",
+    category: "Incident post-mortem tool",
+    status: "live",
+    summary: "A structured post-mortem editor with a drag-and-drop timeline, contributing factors checklist, and one-click PDF or Markdown export.",
+    description:
+      "Casebook is a web tool for writing incident post-mortems that actually get read. It enforces structure without friction: a drag-and-drop timeline lets engineers reconstruct the event sequence and reorder events as the story becomes clearer. A pre-loaded contributing factors checklist covers Human, Process, and Technical categories so reviewers think beyond the immediate cause. Action items are assigned and tracked with a cycle-click status toggle. The narrative section is a full Tiptap rich-text editor, auto-saved on blur, stored as Tiptap JSON. At any point you can export -- a formatted PDF for stakeholders or a Markdown file for the docs system. The export engine generates both formats from the same structured data: Markdown via string assembly, PDF via @react-pdf/renderer with severity color badges, a timeline table, factor checkboxes, and a footer. All data is isolated per user via Supabase row-level security.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Tiptap", "@dnd-kit", "@react-pdf/renderer", "Zod"],
+    highlights: [
+      "Drag-and-drop timeline with @dnd-kit sortable -- no position drift on reorder",
+      "Pre-seeded contributing factors checklist: Human / Process / Technical with custom row support",
+      "Dual export: @react-pdf/renderer PDF and Markdown from the same structured data",
+    ],
+    recruiterValue:
+      "Shows server actions, route groups with protected layouts, rich-text editing with Tiptap JSON persistence, drag-and-drop with @dnd-kit, and server-side PDF generation -- all in a single cohesive tool.",
+    buildNotes: [
+      "Tiptap content is stored as JSON.stringify(editor.getJSON()) in a text column -- parsed back on load and deserialized into the editor's content prop. Blur triggers the save so there are no debounce races.",
+      "PDF generation runs server-side in a Next.js route handler via renderToBuffer -- the same Supabase queries that power the page also drive the export, so the PDF is always consistent with what the user sees.",
+      "@dnd-kit reorder calls reorderTimelineEvents which fires parallel Supabase updates for each new position index -- optimistic UI updates client-side first.",
+    ],
+    previewImage: "https://opengraph.githubassets.com/1/kurtisv/casebook",
+    fr: {
+      category: "Outil de post-mortem d'incidents",
+      summary: "Un editeur de post-mortem structure avec une chronologie glisser-deposer, une liste de facteurs contributifs et un export PDF ou Markdown en un clic.",
+      description:
+        "Casebook est un outil web pour ecrire des post-mortems d'incidents qui seront reellement lus. Il impose une structure sans friction: une chronologie glisser-deposer permet aux ingenieurs de reconstruire la sequence des evenements et de les reordonner. Une liste de facteurs contributifs pre-chargee couvre les categories Humain, Processus et Technique. Les elements d'action sont assignes et suivis avec un toggle de statut. La section narrative est un editeur riche Tiptap, sauvegarde automatiquement, stocke en JSON. A tout moment, vous pouvez exporter un PDF formate pour les parties prenantes ou un fichier Markdown pour la documentation.",
+      highlights: [
+        "Chronologie glisser-deposer avec @dnd-kit -- pas de derive de position au reordonnancement",
+        "Liste de facteurs contributifs pre-chargee: Humain / Processus / Technique avec support de lignes personnalisees",
+        "Export double: PDF @react-pdf/renderer et Markdown depuis les memes donnees structurees",
+      ],
+      recruiterValue:
+        "Montre les server actions, les route groups avec layouts proteges, l'edition riche avec persistance JSON Tiptap, le drag-and-drop avec @dnd-kit et la generation PDF cote serveur.",
+      buildNotes: [
+        "Le contenu Tiptap est stocke comme JSON.stringify(editor.getJSON()) dans une colonne texte -- parse au chargement et deserialise dans la prop content de l'editeur.",
+        "La generation PDF tourne cote serveur dans un route handler Next.js via renderToBuffer.",
+        "@dnd-kit reorder appelle reorderTimelineEvents qui lance des mises a jour Supabase paralleles pour chaque nouvel index de position.",
+      ],
+    },
+    repoUrl: "https://github.com/kurtisv/casebook",
+  },
 ];
 
 export function getProjectBySlug(slug: string) {
@@ -508,7 +550,7 @@ export const pageCopy = {
       role: "Ecosystem role",
     },
     proof: [
-      ["7", "projects shipped across the portfolio"],
+      ["8", "projects shipped across the portfolio"],
       ["5", "live sites online"],
       ["2", "mobile apps included"],
       ["1", "live real client site"],
