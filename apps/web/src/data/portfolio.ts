@@ -470,6 +470,48 @@ export const featuredProjects: PortfolioProject[] = [
     },
     repoUrl: "https://github.com/kurtisv/casebook",
   },
+  {
+    slug: "fieldlog",
+    name: "Fieldlog",
+    category: "Field inspection tool",
+    status: "live",
+    summary: "A field inspection logging tool with custom templates, GPS capture, structured responses, and PDF report export.",
+    description:
+      "Fieldlog is a web tool for teams that inspect physical sites: electrical safety inspections, property walkthroughs, equipment checks. Inspectors build reusable templates with named fields -- short text, number, yes/no, multi-choice, or textarea -- marking each as required or optional. When starting an inspection, the inspector selects a template, names the site, and optionally captures GPS coordinates from the browser Geolocation API. The form renders the template fields in sequence, enforcing required fields before submission. Boolean fields toggle Yes/No buttons rather than a checkbox. Multi-choice fields render as chip toggles rather than a dropdown. On submit, the inspection is locked with a timestamp and coordinates. From the detail view, a PDF report is generated server-side via @react-pdf/renderer, including site info, GPS coordinates, all field responses, notes, and a generation timestamp.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "@react-pdf/renderer", "Zod", "Geolocation API"],
+    highlights: [
+      "Custom template builder: any mix of text, number, boolean, select, and textarea fields",
+      "GPS capture via browser Geolocation API at inspection start -- stored with the record",
+      "Server-side PDF export via @react-pdf/renderer with all responses and coordinates",
+    ],
+    recruiterValue:
+      "Shows dynamic form rendering from a stored JSON schema, browser Geolocation API integration, and server-side PDF generation -- in a domain (field inspections) that is instantly understandable to technical recruiters.",
+    buildNotes: [
+      "Template fields are stored as JSONB in Supabase. The inspection form reads the field schema at render time and builds the input components dynamically -- adding a new field type means adding one case to the renderer.",
+      "GPS capture is gated behind a user action button (not auto-requested on page load) to avoid permission prompt friction. The coordinates are stored as separate latitude and longitude columns, not a string.",
+      "PDF is generated in the Next.js API route, not the browser. renderToBuffer returns a Node.js Buffer; wrapping it in new Uint8Array() satisfies the BodyInit constraint for NextResponse.",
+    ],
+    previewImage: "https://opengraph.githubassets.com/1/kurtisv/fieldlog",
+    fr: {
+      category: "Outil d'inspection terrain",
+      summary: "Un outil de journalisation d'inspections terrain avec des modeles personnalises, capture GPS, reponses structurees et export PDF.",
+      description:
+        "Fieldlog est un outil web pour les equipes qui inspectent des sites physiques. Les inspecteurs construisent des modeles reutilisables avec des champs nommes -- texte court, nombre, oui/non, choix multiple ou zone de texte. Au moment de l'inspection, ils selectionnent un modele, nomment le site et capturent optionnellement les coordonnees GPS depuis l'API Geolocation du navigateur. Le formulaire rend les champs du modele en sequence en imposant les champs obligatoires avant la soumission. Un rapport PDF est genere cote serveur via @react-pdf/renderer.",
+      highlights: [
+        "Constructeur de modeles personnalises: tout melange de champs texte, nombre, booleen, selection et zone de texte",
+        "Capture GPS via l'API Geolocation du navigateur -- stockee avec l'enregistrement",
+        "Export PDF cote serveur via @react-pdf/renderer avec toutes les reponses et coordonnees",
+      ],
+      recruiterValue:
+        "Montre le rendu dynamique de formulaires depuis un schema JSON stocke, l'integration de l'API Geolocation et la generation PDF cote serveur.",
+      buildNotes: [
+        "Les champs de modele sont stockes en JSONB dans Supabase. Le formulaire lit le schema au moment du rendu et construit les composants dynamiquement.",
+        "La capture GPS est declenchee par un bouton utilisateur, pas automatiquement, pour eviter les frictions de permission.",
+        "Le PDF est genere dans le route handler Next.js via renderToBuffer, pas dans le navigateur.",
+      ],
+    },
+    repoUrl: "https://github.com/kurtisv/fieldlog",
+  },
 ];
 
 export function getProjectBySlug(slug: string) {
@@ -550,7 +592,7 @@ export const pageCopy = {
       role: "Ecosystem role",
     },
     proof: [
-      ["8", "projects shipped across the portfolio"],
+      ["9", "projects shipped across the portfolio"],
       ["5", "live sites online"],
       ["2", "mobile apps included"],
       ["1", "live real client site"],
