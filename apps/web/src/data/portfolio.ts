@@ -554,6 +554,51 @@ export const featuredProjects: PortfolioProject[] = [
     },
     repoUrl: "https://github.com/kurtisv/gridlock",
   },
+  {
+    slug: "runbook",
+    name: "Runbook",
+    category: "Internal tooling",
+    status: "private",
+    summary: "Versioned runbook editor with live step-by-step execution tracking and run history.",
+    description:
+      "Runbook lets ops teams write step-by-step procedures and execute them with a live checklist. Each runbook is versioned; starting a run snapshots the current version so old runs are unaffected by edits. Steps are typed (action, check, warning, info), can be required or optional, and carry estimated minutes. The run view checks off steps in real time and blocks completion until all required steps pass.",
+    stack: ["Next.js 15", "TypeScript", "Supabase", "Tailwind CSS v4"],
+    highlights: [
+      "Versioned runbooks: each run stores a snapshot of the runbook version it was started from.",
+      "Step types (action / check / warning / info) and required/optional distinction.",
+      "Live checklist with per-step timestamps stored in a JSONB map keyed by step ID.",
+      "Completion gated on all required steps being checked off.",
+      "Run history with completed/aborted status and executor attribution.",
+    ],
+    recruiterValue:
+      "Shows JSONB patching patterns, server action composition, and operational tooling UX -- a category recruiters rarely see in portfolios.",
+    buildNotes: [
+      "Checklist stored as JSONB map {stepId: {checked, checkedAt}} so individual steps can be patched without rewriting the full array.",
+      "Run row stores a full snapshot of runbook name and version so history is stable across runbook edits.",
+      "Status enum: active / completed / aborted -- completion gated client-side before the server action fires.",
+    ],
+    fr: {
+      category: "Outillage interne",
+      summary: "Editeur de runbooks versiones avec suivi d'execution pas a pas et historique des runs.",
+      description:
+        "Runbook permet aux equipes ops de rediger des procedures etape par etape et de les executer avec une checklist live. Chaque runbook est versionne; demarrer un run prend un snapshot de la version courante, donc les anciens runs ne sont pas affectes par les modifications. Les etapes ont un type (action, verification, avertissement, info), peuvent etre obligatoires ou optionnelles, et portent un temps estime. La vue de run coche les etapes en temps reel et bloque la completion jusqu'a ce que toutes les etapes requises soient validees.",
+      highlights: [
+        "Runbooks versiones: chaque run stocke un snapshot de la version du runbook au moment du lancement.",
+        "Types d'etapes (action / verification / avertissement / info) et distinction obligatoire/optionnel.",
+        "Checklist live avec timestamps par etape stockes dans une map JSONB indexee par ID d'etape.",
+        "Completion bloquee tant que toutes les etapes requises ne sont pas cochees.",
+        "Historique des runs avec statut complete/abandonne et attribution de l'executeur.",
+      ],
+      recruiterValue:
+        "Montre les patterns de patch JSONB, la composition d'actions serveur et l'UX d'outillage operationnel -- une categorie rarement vue dans les portfolios.",
+      buildNotes: [
+        "Checklist stockee comme map JSONB {stepId: {checked, checkedAt}} pour patcher les etapes individuellement sans reecrire tout le tableau.",
+        "Le run stocke un snapshot complet du nom et de la version du runbook pour que l'historique reste stable apres modification.",
+        "Enum de statut: active / completed / aborted -- completion bloquee cote client avant que l'action serveur se declenche.",
+      ],
+    },
+    repoUrl: "https://github.com/kurtisv/runbook",
+  },
 ];
 
 export function getProjectBySlug(slug: string) {
@@ -680,7 +725,7 @@ export const pageCopy = {
       role: "Role ecosysteme",
     },
     proof: [
-      ["7", "projets livres dans le portfolio"],
+      ["10", "projets livres dans le portfolio"],
       ["5", "sites live en ligne"],
       ["2", "apps mobiles incluses"],
       ["1", "vrai site client live"],
