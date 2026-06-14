@@ -691,6 +691,51 @@ export const featuredProjects: PortfolioProject[] = [
     },
     repoUrl: "https://github.com/kurtisv/waveline",
   },
+  {
+    slug: "watchpost",
+    name: "Watchpost",
+    category: "Content planning",
+    status: "private",
+    summary: "Social media content planner with platform tagging, status pipeline, monthly calendar, and post scheduling.",
+    description:
+      "Watchpost is a content planning dashboard for managing social media posts across multiple platforms. Each post carries the full copy, target platforms (Twitter, Instagram, LinkedIn, Facebook, TikTok, YouTube), a 5-stage status pipeline, tags, schedule datetime, and internal notes. The calendar view renders all scheduled posts on a month grid with color-coded status badges. Posts can be filtered by status in the list view.",
+    stack: ["Next.js 15", "TypeScript", "Supabase", "Tailwind CSS v4"],
+    highlights: [
+      "Multi-platform tagging: each post can target any combination of 7 platforms stored as a Postgres array.",
+      "5-stage status pipeline: idea / draft / scheduled / published / cancelled.",
+      "Monthly calendar view renders all scheduled posts on their scheduled date.",
+      "Status and platform filters in the list view for quick triage.",
+      "Tags stored as a text[] array and displayed as chips.",
+    ],
+    recruiterValue:
+      "Shows Postgres array columns used for multi-select attributes, a custom calendar grid built from date-fns math (no calendar library), and a content workflow with real domain complexity.",
+    buildNotes: [
+      "Platforms stored as a Postgres enum array: extractPlatforms() reads checkbox form fields named platform_{name} to build the array before insert.",
+      "Tags parsed from a comma-separated text input into a text[] at the server action level.",
+      "Calendar grid built with getCalendarDays() using eachDayOfInterval from startOfWeek(monthStart) to endOfWeek(monthEnd) -- always 35 or 42 cells.",
+    ],
+    fr: {
+      category: "Planification de contenu",
+      summary: "Planificateur de contenu social avec etiquetage de plateforme, pipeline de statut, calendrier mensuel et planification.",
+      description:
+        "Watchpost est un tableau de bord de planification de contenu pour gerer les publications sur les reseaux sociaux sur plusieurs plateformes. Chaque publication porte le texte complet, les plateformes cibles (Twitter, Instagram, LinkedIn, Facebook, TikTok, YouTube), un pipeline de statut en 5 etapes, des tags, une date/heure programmee et des notes internes. La vue calendrier affiche toutes les publications programmees sur une grille mensuelle avec des badges de statut codes par couleur.",
+      highlights: [
+        "Etiquetage multi-plateforme: chaque publication peut cibler n'importe quelle combinaison de 7 plateformes stockees sous forme de tableau Postgres.",
+        "Pipeline de statut en 5 etapes: idee / brouillon / programme / publie / annule.",
+        "La vue calendrier mensuelle affiche toutes les publications programmees a leur date.",
+        "Filtres de statut et de plateforme dans la vue liste pour un tri rapide.",
+        "Tags stockes sous forme de tableau text[] et affiches sous forme de chips.",
+      ],
+      recruiterValue:
+        "Montre les colonnes de tableaux Postgres pour les attributs a selection multiple, une grille calendrier construite avec les maths de date-fns (pas de bibliotheque calendrier), et un workflow de contenu avec une vraie complexite de domaine.",
+      buildNotes: [
+        "Plateformes stockees sous forme de tableau d'enum Postgres: extractPlatforms() lit les champs de cases a cocher nommes platform_{name} pour construire le tableau avant l'insertion.",
+        "Tags analyses depuis une saisie texte separee par des virgules dans un text[] au niveau de l'action serveur.",
+        "Grille calendrier construite avec getCalendarDays() en utilisant eachDayOfInterval de startOfWeek(monthStart) a endOfWeek(monthEnd) -- toujours 35 ou 42 cellules.",
+      ],
+    },
+    repoUrl: "https://github.com/kurtisv/watchpost",
+  },
 ];
 
 export function getProjectBySlug(slug: string) {
