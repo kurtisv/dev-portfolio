@@ -60,9 +60,9 @@ export default async function Home() {
       boilerplateEyebrow: "Built from my boilerplate",
       boilerplateTitle: "These portfolio sites start from the same reusable foundation.",
       boilerplateText:
-        "Luma Studio and this portfolio are built from my own Next.js boilerplate. Recruiters can inspect the base repo and compare how the same foundation becomes different products.",
+        "Luma Studio, SpeedZone, and this portfolio are all built from the same Next.js boilerplate. Inspect the base repo and compare how the same foundation becomes three distinct products.",
       boilerplateCta: "View boilerplate repo",
-      boilerplateSecondary: "See build process",
+      boilerplateSecondary: "See case note",
     },
     fr: {
       availability: "Disponible pour projets produit cibles",
@@ -97,9 +97,9 @@ export default async function Home() {
       boilerplateEyebrow: "Cree depuis mon boilerplate",
       boilerplateTitle: "Ces sites portfolio partent de la meme fondation reutilisable.",
       boilerplateText:
-        "Luma Studio et ce portfolio sont construits a partir de mon propre boilerplate Next.js. Un recruteur peut inspecter le repo de base et voir comment la meme fondation devient differents produits.",
+        "Luma Studio, SpeedZone et ce portfolio partent tous du meme boilerplate Next.js. Inspecte le repo de base et compare comment la meme fondation devient trois produits distincts.",
       boilerplateCta: "Voir le repo boilerplate",
-      boilerplateSecondary: "Voir le processus",
+      boilerplateSecondary: "Voir la fiche",
     },
   }[locale];
   return (

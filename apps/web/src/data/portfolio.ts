@@ -544,7 +544,7 @@ export const ecosystemNarrative = {
     eyebrow: "Focused portfolio",
     title: "The public portfolio keeps only finished work.",
     description:
-      "The visible portfolio centers on complete projects: EventPic, the live Luma Studio marketing demo, the real client launches, and the kv-web-starter foundation. Other ecosystem modules will join once they are finished.",
+      "The visible portfolio centers on six complete projects: two mobile apps (EventPic, GasMobile), three web products built from the same boilerplate (Luma Studio, SpeedZone, this portfolio), and a delivered real estate client site (Suze Immo). The kv-web-starter foundation underpins all three web products.",
     database: "Shared database: Supabase KV Portfolio",
     foundation: "Foundation: kv-web-starter boilerplate",
     cta: "Explore the path",
@@ -553,7 +553,7 @@ export const ecosystemNarrative = {
     eyebrow: "Portfolio cible",
     title: "Le portfolio public garde seulement le travail termine.",
     description:
-      "Le portfolio visible se concentre sur les projets complets: EventPic, la demo marketing live Luma Studio, les vrais sites clients lances et la fondation kv-web-starter. Les autres modules de l'ecosysteme s'ajouteront une fois termines.",
+      "Le portfolio visible se concentre sur six projets complets: deux apps mobiles (EventPic, GasMobile), trois produits web construits depuis le meme boilerplate (Luma Studio, SpeedZone, ce portfolio) et un site client immobilier livre (Suze Immo). La fondation kv-web-starter soutient les trois produits web.",
     database: "Base partagee: Supabase KV Portfolio",
     foundation: "Fondation: boilerplate kv-web-starter",
     cta: "Explorer le parcours",
