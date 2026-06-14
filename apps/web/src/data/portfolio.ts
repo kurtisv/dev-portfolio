@@ -736,6 +736,51 @@ export const featuredProjects: PortfolioProject[] = [
     },
     repoUrl: "https://github.com/kurtisv/watchpost",
   },
+  {
+    slug: "pressroom",
+    name: "Pressroom",
+    category: "Communications",
+    status: "private",
+    summary: "Press release manager with a 5-stage approval workflow, inline editor, and media contact database.",
+    description:
+      "Pressroom is a communications dashboard for teams managing press releases and media outreach. Releases move through a 5-stage approval pipeline: draft -> review -> approved -> distributed -> archived. The release detail page doubles as an editor -- the body is a large textarea editable inline. A separate media contact database stores journalists and editors by outlet, role, email, and phone. Distributed_at is set automatically server-side when the release reaches the distributed stage.",
+    stack: ["Next.js 15", "TypeScript", "Supabase", "Tailwind CSS v4"],
+    highlights: [
+      "5-stage press release pipeline: draft / review / approved / distributed / archived.",
+      "Release body is a large text area -- no rich text dependency, formatted for copy-paste into wire services.",
+      "distributed_at timestamp set server-side automatically when status reaches 'distributed'.",
+      "Media contact database with outlet, role, email, and phone; searchable by name.",
+      "Status filter lets the team triage drafts vs. approved vs. distributed at a glance.",
+    ],
+    recruiterValue:
+      "Communications tooling is an underrepresented domain in developer portfolios; this project shows multi-step approval workflow logic and a contact CRM alongside a content editor in a production-ready stack.",
+    buildNotes: [
+      "STATUS_NEXT lookup table drives the advance-status pattern: same approach as Waveline and Runbook -- null means terminal.",
+      "distributed_at written by the server action (not the user) to guarantee an accurate audit trail.",
+      "contact_ids stored as uuid[] on the release row for future batch-email linking without a join table.",
+    ],
+    fr: {
+      category: "Communications",
+      summary: "Gestionnaire de communiques de presse avec workflow d'approbation en 5 etapes, editeur integre et base de contacts medias.",
+      description:
+        "Pressroom est un tableau de bord de communication pour les equipes qui gerent les communiques de presse et les relations medias. Les communiques passent par un pipeline d'approbation en 5 etapes: brouillon -> revision -> approuve -> distribue -> archive. La page de detail du communique fait aussi office d'editeur -- le corps est une grande zone de texte modifiable en ligne. Une base de contacts medias separee stocke les journalistes et redacteurs en chef par organe de presse, role, email et telephone.",
+      highlights: [
+        "Pipeline de communique de presse en 5 etapes: brouillon / revision / approuve / distribue / archive.",
+        "Le corps du communique est une grande zone de texte -- pas de dependance en texte riche, formate pour copier-coller vers les services de fil.",
+        "L'horodatage distributed_at est defini automatiquement cote serveur lorsque le statut atteint 'distribue'.",
+        "Base de contacts medias avec organe de presse, role, email et telephone.",
+        "Le filtre de statut permet a l'equipe de trier les brouillons vs approuves vs distribues d'un coup d'oeil.",
+      ],
+      recruiterValue:
+        "L'outillage de communication est un domaine sous-represente dans les portfolios de developpeurs; ce projet montre la logique de workflow d'approbation multi-etapes et un CRM de contacts aux cotes d'un editeur de contenu dans une stack prete pour la production.",
+      buildNotes: [
+        "La table de correspondance STATUS_NEXT conduit le pattern advance-status: meme approche que Waveline et Runbook -- null signifie terminal.",
+        "distributed_at ecrit par l'action serveur (pas l'utilisateur) pour garantir une piste d'audit precise.",
+        "contact_ids stockes comme uuid[] sur la ligne du communique pour une future liaison d'email en lot sans table de jointure.",
+      ],
+    },
+    repoUrl: "https://github.com/kurtisv/pressroom",
+  },
 ];
 
 export function getProjectBySlug(slug: string) {
