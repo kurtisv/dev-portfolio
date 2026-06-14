@@ -781,6 +781,51 @@ export const featuredProjects: PortfolioProject[] = [
     },
     repoUrl: "https://github.com/kurtisv/pressroom",
   },
+  {
+    slug: "patchwork",
+    name: "Patchwork",
+    category: "Developer tooling",
+    status: "private",
+    summary: "Versioned changelog manager where teams write typed change entries (feature / fix / security / breaking) grouped under release records.",
+    description:
+      "Patchwork is a structured changelog tool for software teams. Each release has a version string (semver), an optional title, a summary, and a status of draft or published. Under each release, teams write individual change entries typed as feature, fix, improvement, deprecation, security, or breaking. Entries are ordered positionally within their release and displayed grouped by type. Publishing a release sets a server-stamped published_at timestamp so the audit trail cannot be tampered with client-side. The release list shows entry counts at a glance. The detail page is a single view that handles both the release metadata editor and the entry list with inline add and delete -- no separate edit page or modal routing.",
+    stack: ["Next.js 15", "TypeScript", "Supabase", "Tailwind CSS v4"],
+    highlights: [
+      "6 entry types (feature / fix / improvement / deprecation / security / breaking) stored as a Postgres enum.",
+      "Entries grouped by type on the detail page -- the same visual structure as GitHub Releases.",
+      "Position-ordered entries: each new entry gets last_position + 1 via a server-side query.",
+      "published_at set server-side at publish time -- not editable by the user.",
+      "Single detail page handles both the release meta editor and inline entry CRUD.",
+    ],
+    recruiterValue:
+      "Changelog tooling is a real internal tool domain; this project shows Postgres enum arrays, position-ordered inserts, server-stamped audit fields, and grouped display from a single joined query -- without any external library dependency.",
+    buildNotes: [
+      "Entry type is a Postgres enum (entry_type); position is an integer column with an index on (release_id, position) for ordered fetches.",
+      "createEntry queries the last position for the release before inserting at last + 1 -- avoids gaps and conflicts without a trigger.",
+      "The detail page fetches via an API route (/api/releases/:id) that joins entries ordered by position -- client state is reloaded after each mutation.",
+    ],
+    fr: {
+      category: "Outillage developpeur",
+      summary: "Gestionnaire de changelog versionne ou les equipes ecrivent des entrees typees (feature / fix / security / breaking) groupees par release.",
+      description:
+        "Patchwork est un outil de changelog structure pour les equipes logicielles. Chaque release a une version (semver), un titre optionnel, un resume et un statut brouillon ou publie. Sous chaque release, les equipes ecrivent des entrees typees: feature, fix, improvement, deprecation, security ou breaking. Les entrees sont ordonnees et affichees groupees par type. La publication d'une release definit un published_at cote serveur pour que la piste d'audit ne puisse pas etre modifiee cote client. La page de detail gere a la fois l'editeur de metadonnees et la liste des entrees avec ajout et suppression en ligne.",
+      highlights: [
+        "6 types d'entrees (feature / fix / improvement / deprecation / security / breaking) stockes comme enum Postgres.",
+        "Entrees groupees par type sur la page de detail -- meme structure visuelle que GitHub Releases.",
+        "Entrees ordonnees par position: chaque nouvelle entree recoit last_position + 1 via une requete cote serveur.",
+        "published_at defini cote serveur au moment de la publication -- non modifiable par l'utilisateur.",
+        "Page de detail unique pour l'editeur de release et le CRUD d'entrees en ligne.",
+      ],
+      recruiterValue:
+        "L'outillage de changelog est un domaine d'outil interne reel; ce projet montre les enums Postgres, les insertions ordonnees par position, les champs d'audit estampilles cote serveur et l'affichage groupe depuis une requete jointe unique.",
+      buildNotes: [
+        "Le type d'entree est un enum Postgres (entry_type); la position est une colonne entiere avec un index sur (release_id, position).",
+        "createEntry interroge la derniere position de la release avant d'inserer a last + 1 -- evite les trous sans trigger.",
+        "La page de detail charge via une route API (/api/releases/:id) qui joint les entrees ordonnees par position.",
+      ],
+    },
+    repoUrl: "https://github.com/kurtisv/patchwork",
+  },
 ];
 
 export function getProjectBySlug(slug: string) {
