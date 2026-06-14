@@ -12,7 +12,7 @@ import { getCurrentLocale } from "@/lib/locale";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact Kurtis V. about web products, portfolio work, or client projects.",
+  description: "Contact Kurtis Verres about web products, portfolio work, or client projects.",
 };
 
 const copy = {
@@ -26,7 +26,7 @@ const copy = {
       "Best fit: Next.js websites, SaaS dashboards, API portals, product cleanup, and deployment-ready portfolio work.",
     formTitle: "Project message",
     formText:
-      "Short and specific is enough. The form is wired through the portfolio contact action and can be connected to Resend.",
+      "Short and specific is enough. I'll reply to your email directly.",
     name: "Name",
     projectType: "Project type",
     placeholder: "Website, dashboard, API, mobile app",
@@ -43,7 +43,7 @@ const copy = {
       "Bon fit: sites Next.js, dashboards SaaS, portails API, nettoyage produit et portfolios prets a deployer.",
     formTitle: "Message projet",
     formText:
-      "Court et specifique suffit. Le formulaire utilise l'action contact du portfolio et peut etre connecte a Resend.",
+      "Court et specifique suffit. Je repondrai directement a ton email.",
     name: "Nom",
     projectType: "Type de projet",
     placeholder: "Site, dashboard, API, app mobile",

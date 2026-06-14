@@ -36,24 +36,23 @@ const copy = {
     ],
     projectItems: [
       {
+        name: "Suze Immo (real estate platform)",
+        tech: "React / Supabase / Storage / Auth / SQL",
+        href: "/projects/suze-immo",
+        bullets: [
+          "Delivered for a real client and live today at suzeimmo.com.",
+          "Web interface to display, manage, and publish real estate listings.",
+          "Authentication, file storage, and SQL data layer through Supabase.",
+        ],
+      },
+      {
         name: "GasMobile (GasSaver)",
         tech: "React Native / Expo / APIs / mapping",
         href: "/projects/gasmobile",
         bullets: [
           "Mobile app showing gas stations, fuel prices, and location data on a live map.",
-          "Maps, geolocation, search, routing, and dynamic data display.",
-          "Government data APIs, price freshness logic, error handling, and data fallbacks.",
+          "Government data APIs, geolocation, search, routing, and dynamic data display.",
           "Debugged build, data, mobile performance, and API issues end to end.",
-        ],
-      },
-      {
-        name: "Suze Immo (real estate platform)",
-        tech: "React / Supabase / Storage / Auth / SQL",
-        href: "/projects/suze-immo",
-        bullets: [
-          "Web interface to display, manage, and publish real estate listings.",
-          "Authentication, file storage, and SQL data layer through Supabase.",
-          "Delivered for a real client and live today.",
         ],
       },
       {
@@ -63,6 +62,33 @@ const copy = {
         bullets: [
           "Real-time shared photo feed for private events with QR code invitations.",
           "Per-event theming, admin moderation, and a Cloudflare Workers edge backend.",
+        ],
+      },
+      {
+        name: "Luma Studio (marketing site)",
+        tech: "Next.js / TypeScript / Tailwind / Prisma / Stripe",
+        href: "/projects/luma-studio",
+        bullets: [
+          "Full SaaS marketing and booking platform built on the kv-web-starter boilerplate.",
+          "Bilingual (FR/EN), Stripe subscriptions, validated contact form, production deploy.",
+        ],
+      },
+      {
+        name: "SpeedZone (car dealership site)",
+        tech: "Next.js / TypeScript / Tailwind",
+        href: "/projects/speedzone",
+        bullets: [
+          "Bilingual car dealership website with inventory browsing and contact flow.",
+          "Built in parallel with Luma Studio to demonstrate the boilerplate's adaptability.",
+        ],
+      },
+      {
+        name: "kv-web-starter (open-source boilerplate)",
+        tech: "Next.js / TypeScript / Tailwind / Prisma / Stripe / Resend",
+        href: "/projects/kv-web-starter",
+        bullets: [
+          "Production-ready Next.js boilerplate used as the foundation for all portfolio web projects.",
+          "Auth, billing, email, i18n, and dashboard — open-source on GitHub.",
         ],
       },
     ],
@@ -90,24 +116,23 @@ const copy = {
     ],
     projectItems: [
       {
+        name: "Suze Immo (plateforme immobiliere)",
+        tech: "React / Supabase / Storage / Auth / SQL",
+        href: "/projects/suze-immo",
+        bullets: [
+          "Livre pour un vrai client, en ligne aujourd'hui sur suzeimmo.com.",
+          "Interface web pour afficher, gerer et publier des proprietes immobilieres.",
+          "Authentification, stockage de fichiers et couche SQL via Supabase.",
+        ],
+      },
+      {
         name: "GasMobile (GasSaver)",
         tech: "React Native / Expo / API / cartographie",
         href: "/projects/gasmobile",
         bullets: [
           "App mobile affichant stations-service, prix d'essence et donnees de localisation sur carte.",
-          "Cartes, geolocalisation, recherche, itineraires et affichage dynamique de donnees.",
-          "API de donnees gouvernementales, logique de fraicheur des prix, gestion d'erreurs et fallbacks.",
+          "API de donnees gouvernementales, geolocalisation, recherche, itineraires et affichage dynamique.",
           "Debogage de bout en bout: builds, donnees, performances mobiles et appels API.",
-        ],
-      },
-      {
-        name: "Suze Immo (plateforme immobiliere)",
-        tech: "React / Supabase / Storage / Auth / SQL",
-        href: "/projects/suze-immo",
-        bullets: [
-          "Interface web pour afficher, gerer et publier des proprietes immobilieres.",
-          "Authentification, stockage de fichiers et couche de donnees SQL via Supabase.",
-          "Livre pour un vrai client et en ligne aujourd'hui.",
         ],
       },
       {
@@ -117,6 +142,33 @@ const copy = {
         bullets: [
           "Fil photo partage en temps reel pour evenements prives avec invitations QR.",
           "Theme par evenement, moderation admin et backend edge Cloudflare Workers.",
+        ],
+      },
+      {
+        name: "Luma Studio (site marketing)",
+        tech: "Next.js / TypeScript / Tailwind / Prisma / Stripe",
+        href: "/projects/luma-studio",
+        bullets: [
+          "Plateforme marketing et reservation SaaS construite sur le boilerplate kv-web-starter.",
+          "Bilingue FR/EN, abonnements Stripe, formulaire de contact valide, deploy production.",
+        ],
+      },
+      {
+        name: "SpeedZone (site concessionnaire auto)",
+        tech: "Next.js / TypeScript / Tailwind",
+        href: "/projects/speedzone",
+        bullets: [
+          "Site bilingue pour concessionnaire auto avec navigation inventaire et flux de contact.",
+          "Construit en parallele de Luma Studio pour demontrer l'adaptabilite du boilerplate.",
+        ],
+      },
+      {
+        name: "kv-web-starter (boilerplate open-source)",
+        tech: "Next.js / TypeScript / Tailwind / Prisma / Stripe / Resend",
+        href: "/projects/kv-web-starter",
+        bullets: [
+          "Boilerplate Next.js production-ready, base de tous les projets web du portfolio.",
+          "Auth, facturation, email, i18n et dashboard — open-source sur GitHub.",
         ],
       },
     ],

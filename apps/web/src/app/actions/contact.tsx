@@ -3,7 +3,9 @@
 import { z } from "zod";
 
 import { ContactConfirmationEmail } from "@/emails/contact-confirmation";
+import { ContactNotificationEmail } from "@/emails/contact-notification";
 import { sendTransactionalEmail } from "@/lib/email/resend";
+import { aboutProfile } from "@/data/portfolio";
 
 const contactSchema = z.object({
   name: z.string().min(2),
@@ -24,9 +26,25 @@ export async function sendContactMessage(formData: FormData) {
     return;
   }
 
-  await sendTransactionalEmail({
-    to: parsed.data.email,
-    subject: "Portfolio message received",
-    react: <ContactConfirmationEmail name={parsed.data.name} />,
-  });
+  const { name, email, projectType, message } = parsed.data;
+
+  await Promise.all([
+    sendTransactionalEmail({
+      to: aboutProfile.email,
+      subject: `Portfolio contact from ${name}`,
+      react: (
+        <ContactNotificationEmail
+          name={name}
+          email={email}
+          projectType={projectType}
+          message={message}
+        />
+      ),
+    }),
+    sendTransactionalEmail({
+      to: email,
+      subject: "Portfolio message received",
+      react: <ContactConfirmationEmail name={name} />,
+    }),
+  ]);
 }
