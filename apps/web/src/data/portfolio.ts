@@ -512,6 +512,48 @@ export const featuredProjects: PortfolioProject[] = [
     },
     repoUrl: "https://github.com/kurtisv/fieldlog",
   },
+  {
+    slug: "gridlock",
+    name: "Gridlock",
+    category: "Resource scheduler",
+    status: "live",
+    summary: "A weekly calendar grid for booking rooms, equipment, or any shared resource -- with server-enforced conflict detection.",
+    description:
+      "Gridlock is a visual resource scheduler. Resources (rooms, equipment, staff) appear as columns across a weekly calendar. Each row is one hour. Clicking any cell opens a booking form: title, booker name, duration (30 min to 4 h), and optional notes. Before the booking is saved, the server queries for any existing booking on the same resource that overlaps the requested time window. If there is a conflict, the save is rejected with the conflicting booking title returned to the UI. Confirmed bookings render as colored blocks at their exact vertical position -- the top offset is computed from the difference in minutes between the booking start and midnight, multiplied by 64px per hour. Booking height is computed from duration in minutes. The Resources page shows this-week booking count and total booked hours per resource, computed server-side at render time.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "date-fns", "Zod"],
+    highlights: [
+      "Pixel-accurate booking blocks: top and height computed from time difference in minutes x (64/60)",
+      "Server-enforced conflict detection using overlapping interval query before every save",
+      "Per-resource utilization stats: booking count and total hours computed at render time",
+    ],
+    recruiterValue:
+      "Shows interval overlap queries, pixel-precise calendar rendering from time arithmetic, and a clean separation between the visual grid (client) and the conflict check (server action).",
+    buildNotes: [
+      "Conflict detection uses a half-open interval query: starts_at < requested_end AND ends_at > requested_start. This catches all overlap cases without needing a stored duration column.",
+      "The calendar grid renders resources as columns and hours as rows. Booking top offset = differenceInMinutes(start, midnight) * (64/60). Booking height = duration_in_minutes * (64/60). This makes each hour exactly 64px tall regardless of zoom.",
+      "Week navigation pushes a ?week= query param so the URL is shareable and the schedule page is a server component that fetches fresh data on each load.",
+    ],
+    previewImage: "https://opengraph.githubassets.com/1/kurtisv/gridlock",
+    fr: {
+      category: "Planificateur de ressources",
+      summary: "Une grille de calendrier hebdomadaire pour reserver des salles, equipements ou toute ressource partagee -- avec detection de conflits appliquee cote serveur.",
+      description:
+        "Gridlock est un planificateur de ressources visuel. Les ressources apparaissent en colonnes sur un calendrier hebdomadaire. Cliquer sur une cellule ouvre un formulaire de reservation. Avant la sauvegarde, le serveur verifie les chevauchements. Les reservations confirmes s'affichent comme des blocs colores a leur position verticale exacte. La page Ressources montre le nombre de reservations et les heures totales de la semaine par ressource.",
+      highlights: [
+        "Blocs de reservation pixel-precis: position calculee a partir de la difference en minutes x (64/60)",
+        "Detection de conflits appliquee cote serveur avant chaque sauvegarde",
+        "Stats d'utilisation par ressource: nombre de reservations et heures totales calculees au rendu",
+      ],
+      recruiterValue:
+        "Montre les requetes de chevauchement d'intervalles, le rendu de calendrier pixel-precis et la separation entre la grille visuelle (client) et la verification de conflit (server action).",
+      buildNotes: [
+        "La detection de conflit utilise une requete d'intervalle semi-ouvert: starts_at < fin_demandee ET ends_at > debut_demande.",
+        "La grille calendrier rend les ressources en colonnes et les heures en lignes. Top offset = differenceInMinutes * (64/60).",
+        "La navigation de semaine pousse un param ?week= pour que l'URL soit partageable.",
+      ],
+    },
+    repoUrl: "https://github.com/kurtisv/gridlock",
+  },
 ];
 
 export function getProjectBySlug(slug: string) {
@@ -592,7 +634,7 @@ export const pageCopy = {
       role: "Ecosystem role",
     },
     proof: [
-      ["9", "projects shipped across the portfolio"],
+      ["10", "projects shipped across the portfolio"],
       ["5", "live sites online"],
       ["2", "mobile apps included"],
       ["1", "live real client site"],
