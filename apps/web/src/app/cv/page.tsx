@@ -74,12 +74,12 @@ const copy = {
         ],
       },
       {
-        name: "SpeedZone (car dealership site)",
-        tech: "Next.js / TypeScript / Tailwind",
+        name: "SpeedZone (automotive community platform)",
+        tech: "Next.js / TypeScript / Tailwind / Sanity / NextAuth",
         href: "/projects/speedzone",
         bullets: [
-          "Bilingual car dealership website with inventory browsing and contact flow.",
-          "Built in parallel with Luma Studio to demonstrate the boilerplate's adaptability.",
+          "Automotive community platform with vehicle profiles, social features (follow, comment), and Sanity CMS editorial articles.",
+          "Google OAuth, user-generated content, and Sanity content modeling on a single live platform.",
         ],
       },
       {
@@ -154,12 +154,12 @@ const copy = {
         ],
       },
       {
-        name: "SpeedZone (site concessionnaire auto)",
-        tech: "Next.js / TypeScript / Tailwind",
+        name: "SpeedZone (plateforme communautaire automobile)",
+        tech: "Next.js / TypeScript / Tailwind / Sanity / NextAuth",
         href: "/projects/speedzone",
         bullets: [
-          "Site bilingue pour concessionnaire auto avec navigation inventaire et flux de contact.",
-          "Construit en parallele de Luma Studio pour demontrer l'adaptabilite du boilerplate.",
+          "Plateforme communautaire automobile avec fiches vehicules, fonctionnalites sociales (suivi, commentaires) et articles Sanity CMS.",
+          "Google OAuth, contenu genere par les utilisateurs et modelisation de contenu Sanity sur une seule plateforme live.",
         ],
       },
       {

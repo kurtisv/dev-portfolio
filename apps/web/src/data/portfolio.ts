@@ -207,11 +207,11 @@ export const featuredProjects: PortfolioProject[] = [
       "Validated contact form (Zod server action), SEO structure, strict TypeScript",
     ],
     recruiterValue:
-      "Shows that I can move beyond dashboards and create a polished client-facing site with visual direction.",
+      "Demonstrates the full client marketing site lifecycle: visual direction, bilingual editorial structure, a Zod-validated contact action wired to Resend, SEO structure, and production deployment — all from the same boilerplate foundation as every other portfolio product.",
     buildNotes: [
-      "Built as project 3 to prove marketing-site versatility.",
-      "Includes bilingual copy and real image treatment.",
-      "Documents the design system and portfolio rationale.",
+      "FR/EN localization applied per-section with a clean switcher — same i18n pattern the boilerplate ships.",
+      "Contact form is a Zod server action wired to Resend: validation, email delivery, and error handling in one file.",
+      "Case study page documents the design rationale so a reviewer reads the decisions, not just the result.",
     ],
     previewImage: "https://image.thum.io/get/width/1200/crop/800/noanimate/https://luma-studio-ruddy.vercel.app",
     fr: {
@@ -221,11 +221,11 @@ export const featuredProjects: PortfolioProject[] = [
         "Luma Studio est un site marketing bilingue complet pour un studio d'architecture interieure, construit pour prouver que la fondation kv-web-starter peut devenir un site de marque soigne et pas seulement des dashboards. Il livre de vraies pages -- accueil, services, realisations, a propos, etude de cas et contact -- avec un design editorial calme, un vrai traitement photographique et un commutateur FR/EN qui localise chaque section. Le formulaire de contact passe par une action serveur validee avec Zod et prete pour l'envoi via Resend. Sous la surface, le niveau d'ingenierie du starter est maintenu: TypeScript strict, structure semantique prete pour le SEO, passes d'accessibilite et la configuration Vitest et CI heritee. La page etude de cas documente les decisions de design, pour qu'un reviewer puisse lire pourquoi le site a cette apparence au lieu de seulement voir le resultat.",
       highlights: ["Support FR/EN", "Images reelles", "Structure SEO et marketing"],
       recruiterValue:
-        "Montre ma capacite a creer une vitrine client avec direction visuelle.",
+        "Demontre le cycle complet d'un site marketing client: direction visuelle, structure editoriale bilingue, action contact validee Zod couplee a Resend, structure SEO et deploy production — tout depuis la meme fondation boilerplate que les autres projets du portfolio.",
       buildNotes: [
-        "Projet 3 construit pour montrer la polyvalence visuelle.",
-        "Copie bilingue et traitement d'images reelles.",
-        "Design system et raisonnement portfolio documentes.",
+        "Localisation FR/EN appliquee par section — meme pattern i18n que le boilerplate.",
+        "Le formulaire contact est une action serveur Zod couplee a Resend: validation, livraison email et gestion d'erreurs en un seul fichier.",
+        "Page etude de cas documente le raisonnement design — un reviewer lit les decisions, pas seulement le resultat.",
       ],
     },
     liveUrl: "https://luma-studio-ruddy.vercel.app",
@@ -248,9 +248,9 @@ export const featuredProjects: PortfolioProject[] = [
     recruiterValue:
       "Shows cross-platform mobile development, real-time data integration, map workflows, and product thinking beyond web demos.",
     buildNotes: [
-      "Built with React Native and Expo for iOS and Android.",
-      "Integrates live gas price data with a prediction engine.",
-      "Sanity powers editorial and station content.",
+      "Government open-data feed with price-freshness logic: stale data falls back gracefully instead of showing wrong prices.",
+      "Stripe subscription billing with payment webhooks, Supabase user accounts, and EAS production builds for iOS and Android.",
+      "Price prediction engine runs a daily trend estimate from historical data — a feature layer on top of raw data display.",
     ],
     previewImage: "https://image.thum.io/get/width/1200/crop/800/noanimate/https://gasmobile-web.vercel.app",
     fr: {
@@ -262,9 +262,9 @@ export const featuredProjects: PortfolioProject[] = [
       recruiterValue:
         "Montre le developpement mobile multiplateforme, l'integration de donnees en temps reel, les flux cartes et une vision produit au-dela des demos web.",
       buildNotes: [
-        "Construit avec React Native et Expo pour iOS et Android.",
-        "Integre des donnees prix carburant live avec un moteur de prediction.",
-        "Sanity alimente le contenu editorial et les stations.",
+        "Donnees gouvernementales open data avec logique de fraicheur: si les donnees sont perimees, l'app tombe en fallback au lieu d'afficher des prix errones.",
+        "Abonnements Stripe avec webhooks paiement, comptes Supabase et builds EAS production iOS et Android.",
+        "Moteur de prediction: estime la tendance journaliere des prix depuis l'historique — une couche feature au-dessus de l'affichage brut.",
       ],
     },
     liveUrl: "https://gasmobile-web.vercel.app",
@@ -287,9 +287,9 @@ export const featuredProjects: PortfolioProject[] = [
     recruiterValue:
       "Shows a richer product surface than a landing page: auth, content modeling, user-generated listings, comments, and a domain-specific visual direction.",
     buildNotes: [
-      "Built with a distinct dark/red automotive visual identity.",
-      "Connects public content, authenticated user flows, Sanity data, and article/detail pages.",
-      "Live at cardream-phi.vercel.app",
+      "Google OAuth via NextAuth handles sessions across public (articles, vehicle pages, owner profiles) and authenticated (post, follow, comment) surfaces in the same app.",
+      "Sanity content modeling: editorial articles and user-generated garage listings coexist in one content layer with distinct schemas.",
+      "The dark/red automotive identity is intentional — proves the boilerplate produces distinct brands, not cookie-cutter clones.",
     ],
     previewImage: "https://image.thum.io/get/width/1200/crop/800/noanimate/https://cardream-phi.vercel.app",
     fr: {
@@ -302,9 +302,9 @@ export const featuredProjects: PortfolioProject[] = [
       recruiterValue:
         "Montre une surface produit plus riche qu'une page vitrine: auth, modelisation de contenu, publications utilisateur, commentaires et direction visuelle specifique au domaine.",
       buildNotes: [
-        "Construit avec une identite visuelle sombre/rouge distincte.",
-        "Relie contenu public, flux authentifies, donnees Sanity et pages article/detail.",
-        "Live sur cardream-phi.vercel.app",
+        "Google OAuth via NextAuth gere les sessions sur les surfaces publiques (articles, fiches) et authentifiees (publication, suivi, commentaires) dans la meme app.",
+        "Modelisation Sanity: articles editoriaux et contenu garage genere par les utilisateurs coexistent dans une meme couche avec des schemas distincts.",
+        "L'identite sombre/rouge automobile est intentionnelle — prouve que le boilerplate produit des marques distinctes, pas des clones.",
       ],
     },
     repoUrl: "https://github.com/kurtisv/speedzone",
@@ -327,9 +327,9 @@ export const featuredProjects: PortfolioProject[] = [
     recruiterValue:
       "Shows real client website context and the ability to work on functional business sites that need trust, conversion, SEO, and responsive UI.",
     buildNotes: [
-      "Live site available for direct recruiter review.",
-      "Delivers property presentation, contact flows, and trust-building UX.",
-      "Built for a real client with SEO, responsive layout, and brand alignment.",
+      "Supabase admin layer: the client publishes and manages listings through auth-protected storage and SQL without touching code.",
+      "Covers the full client-work cycle: brief, design, build, deploy, and handoff to a non-technical owner.",
+      "Live at suzeimmo.com — reviewers can visit the actual delivered product, not a demo.",
     ],
     previewImage: "https://image.thum.io/get/width/1200/crop/800/noanimate/https://suzeimmo.com",
     fr: {
@@ -341,9 +341,9 @@ export const featuredProjects: PortfolioProject[] = [
       recruiterValue:
         "Montre un contexte client reel et la capacite a livrer des sites fonctionnels qui demandent confiance, conversion, SEO et UI responsive.",
       buildNotes: [
-        "Site live disponible pour revue recruteur directe.",
-        "Livraison: presentation proprietes, flux contact et UX de confiance.",
-        "Construit pour un vrai client avec SEO, layout responsive et alignement marque.",
+        "Couche admin Supabase: le client publie et gere ses proprietes via stockage protege par auth et SQL, sans toucher au code.",
+        "Couvre le cycle complet du travail client: brief, design, construction, deploy et livraison a un proprietaire non technique.",
+        "Live sur suzeimmo.com — les reviewers visitent le produit livre, pas une demo.",
       ],
     },
     liveUrl: "https://suzeimmo.com",
@@ -355,7 +355,7 @@ export const featuredProjects: PortfolioProject[] = [
     status: "live",
     summary: "A reusable Next.js starter with auth, database, billing structure, bilingual support, and a test suite.",
     description:
-      "KV Web Starter is the foundation every project on this site starts from -- a versioned, public Next.js monorepo boilerplate rather than a folder copied between projects. It ships three reusable project shapes (marketing site, booking site, SaaS/API portal) on one stack: Next.js App Router, strict TypeScript, Tailwind CSS v4 with local shadcn-style components, Prisma on PostgreSQL, Auth.js with the Prisma adapter, Zod validation, a Stripe-ready billing structure, Resend and React Email-ready messaging, and FR/EN i18n. A 50+ test Vitest suite and a CI workflow guard the base, so every product built from it starts verified instead of hopeful. The repo is public on GitHub precisely so a reviewer can inspect the foundation, compare it with the products built from it -- Luma Studio, QuotePilot, and this portfolio -- and read the maintenance discipline in the commit history.",
+      "KV Web Starter is the foundation every project on this site starts from -- a versioned, public Next.js monorepo boilerplate rather than a folder copied between projects. It ships three reusable project shapes (marketing site, booking site, SaaS/API portal) on one stack: Next.js App Router, strict TypeScript, Tailwind CSS v4 with local shadcn-style components, Prisma on PostgreSQL, Auth.js with the Prisma adapter, Zod validation, a Stripe-ready billing structure, Resend and React Email-ready messaging, and FR/EN i18n. A 50+ test Vitest suite and a CI workflow guard the base, so every product built from it starts verified instead of hopeful. The repo is public on GitHub precisely so a reviewer can inspect the foundation, compare it with the products built from it -- Luma Studio, SpeedZone, and this portfolio -- and read the maintenance discipline in the commit history.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Supabase", "Auth.js", "Zod"],
     highlights: [
       "50+ Vitest tests + CI workflow — every product built from it starts verified",
@@ -365,23 +365,23 @@ export const featuredProjects: PortfolioProject[] = [
     recruiterValue:
       "Shows systems thinking: instead of rebuilding the same foundation each project, I maintain a versioned boilerplate that every product in this portfolio inherits from.",
     buildNotes: [
-      "Every portfolio project on this site is built from this starter.",
-      "Includes auth, data layer, validation, i18n, and deployment config out of the box.",
-      "Public repo so recruiters can inspect the foundation directly.",
+      "Three distinct products from the same codebase: Luma Studio (marketing site), SpeedZone (community platform), and this portfolio.",
+      "50+ Vitest tests and a CI workflow guard the base — every product built from it starts verified, not hopeful.",
+      "Public GitHub repo: read the commit history and compare the boilerplate against each product built from it.",
     ],
     previewImage: "https://opengraph.githubassets.com/1/kurtisv/kv-web-starter",
     fr: {
       category: "Boilerplate Next.js",
       summary: "Un starter Next.js reutilisable avec auth, base de donnees, structure facturation, support bilingue et suite de tests.",
       description:
-        "KV Web Starter est la fondation d'ou part chaque projet de ce site -- un boilerplate monorepo Next.js versionne et public, plutot qu'un dossier copie entre projets. Il livre trois formes de projets reutilisables (site marketing, site de reservation, portail SaaS/API) sur une seule stack: Next.js App Router, TypeScript strict, Tailwind CSS v4 avec composants locaux de style shadcn, Prisma sur PostgreSQL, Auth.js avec l'adaptateur Prisma, validation Zod, structure de facturation prete pour Stripe, messagerie prete pour Resend et React Email, et i18n FR/EN. Une suite Vitest de 50+ tests et un workflow CI gardent la base, pour que chaque produit construit dessus demarre verifie plutot qu'optimiste. Le repo est public sur GitHub precisement pour qu'un reviewer puisse inspecter la fondation, la comparer aux produits construits dessus -- Luma Studio, QuotePilot et ce portfolio -- et lire la discipline de maintenance dans l'historique des commits.",
+        "KV Web Starter est la fondation d'ou part chaque projet de ce site -- un boilerplate monorepo Next.js versionne et public, plutot qu'un dossier copie entre projets. Il livre trois formes de projets reutilisables (site marketing, site de reservation, portail SaaS/API) sur une seule stack: Next.js App Router, TypeScript strict, Tailwind CSS v4 avec composants locaux de style shadcn, Prisma sur PostgreSQL, Auth.js avec l'adaptateur Prisma, validation Zod, structure de facturation prete pour Stripe, messagerie prete pour Resend et React Email, et i18n FR/EN. Une suite Vitest de 50+ tests et un workflow CI gardent la base, pour que chaque produit construit dessus demarre verifie plutot qu'optimiste. Le repo est public sur GitHub precisement pour qu'un reviewer puisse inspecter la fondation, la comparer aux produits construits dessus -- Luma Studio, SpeedZone et ce portfolio -- et lire la discipline de maintenance dans l'historique des commits.",
       highlights: ["Auth + BDD prets hors de la boite", "i18n FR/EN integre", "50+ tests qui passent"],
       recruiterValue:
         "Montre une pensee systeme: plutot que de reconstruire la meme base a chaque projet, je maintiens un boilerplate versionne dont chaque produit de ce portfolio herite.",
       buildNotes: [
-        "Chaque projet portfolio de ce site est construit depuis ce starter.",
-        "Inclut auth, couche donnees, validation, i18n et config de deploiement.",
-        "Repo public pour que les recruteurs inspectent la fondation directement.",
+        "Trois produits distincts depuis la meme codebase: Luma Studio (site marketing), SpeedZone (plateforme communautaire) et ce portfolio.",
+        "50+ tests Vitest et un workflow CI gardent la base — chaque produit construit dessus demarre verifie, pas optimiste.",
+        "Repo GitHub public: lire l'historique des commits et comparer le boilerplate a chaque produit construit dessus.",
       ],
     },
     repoUrl: "https://github.com/kurtisv/kv-web-starter",
