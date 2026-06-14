@@ -386,6 +386,48 @@ export const featuredProjects: PortfolioProject[] = [
     },
     repoUrl: "https://github.com/kurtisv/kv-web-starter",
   },
+  {
+    slug: "meridian",
+    name: "Meridian",
+    category: "Personal finance web app",
+    status: "live",
+    summary: "A zero-based envelope budget tracker with CSV bank import, auto-assignment rules, and immutable monthly snapshots.",
+    description:
+      "Meridian is a personal finance web app built around zero-based budgeting: every dollar of income is assigned to a named envelope (Groceries, Rent, Dining, Savings) before the month begins. Transactions are imported from real bank CSV exports -- the parser auto-detects TD Bank, RBC, and Desjardins formats, normalizes field names, extracts merchant names from raw description strings, and sorts the ledger chronologically. An assignment rules engine learns as you work: check a checkbox while assigning a transaction and Meridian saves the pattern -- next time 'Tim Hortons' always maps to Food without touching the interface. At month end, a freeze action takes an immutable snapshot of every envelope's allocation, spending, and rolled-over surplus. Locked months cannot be edited -- they are permanent budget records. Rolled-over surplus from frozen months carries forward automatically into the next month's available balance. The dashboard shows live progress bars per envelope, a Recharts savings trend chart across the last six locked months, and a horizontal bar chart of top spending categories. All data is isolated per user via Supabase row-level security policies.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Recharts", "papaparse", "Zod"],
+    highlights: [
+      "CSV import auto-detects TD / RBC / Desjardins format -- no manual column mapping",
+      "Assignment rules engine: save once, auto-assign forever on matching merchants",
+      "Immutable monthly snapshots with rolled-over surplus tracking",
+    ],
+    recruiterValue:
+      "Shows data normalization across multiple real-world input formats, a pattern-matching rules engine, immutability constraints on financial records, and Recharts dashboard visualization -- all wired to a Supabase RLS-secured backend.",
+    buildNotes: [
+      "Bank CSV normalization: each format (TD, RBC, Desjardins) has its own header detection and field extractor -- a strategy pattern that makes adding future banks trivial.",
+      "Rules engine matches on normalized merchant name first, then falls back to the first three words of the raw description. Rules are upserted on conflict so duplicates never accumulate.",
+      "Monthly freeze reads the previous month's locked surplus and carries it into the new snapshot row -- roll-over is computed at freeze time, not stored as mutable state.",
+    ],
+    previewImage: "https://opengraph.githubassets.com/1/kurtisv/meridian",
+    fr: {
+      category: "Application web finances personnelles",
+      summary: "Un gestionnaire de budget par enveloppes avec importation CSV bancaire, regles d'attribution automatique et instantanes mensuels immuables.",
+      description:
+        "Meridian est une application web de finances personnelles basee sur le budget a base zero: chaque dollar de revenu est attribue a une enveloppe nommee (epicerie, loyer, restauration, epargne) avant le debut du mois. Les transactions sont importees depuis de vrais exports CSV bancaires -- le parseur detecte automatiquement les formats TD Bank, RBC et Desjardins, normalise les noms de champs, extrait les noms de commercants depuis les descriptions brutes et trie le registre chronologiquement. Un moteur de regles apprend au fil de l'utilisation: cocher une case lors de l'attribution d'une transaction et Meridian sauvegarde le pattern -- la prochaine fois, 'Tim Hortons' ira toujours dans Alimentation sans toucher l'interface. En fin de mois, une action de gel cree un instantane immuable de l'allocation, des depenses et du surplus reporte de chaque enveloppe. Les mois geles ne peuvent etre modifies -- ce sont des registres budgetaires permanents. Le surplus reporte des mois geles est automatiquement reintegre dans le solde disponible du mois suivant.",
+      highlights: [
+        "Import CSV detecte automatiquement le format TD / RBC / Desjardins",
+        "Moteur de regles: sauvegarder une fois, attribuer automatiquement pour toujours",
+        "Instantanes mensuels immuables avec suivi du surplus reporte",
+      ],
+      recruiterValue:
+        "Montre la normalisation de donnees sur plusieurs formats reels, un moteur de correspondance de patterns, des contraintes d'immuabilite sur les registres financiers et la visualisation Recharts -- le tout securise par les politiques RLS Supabase.",
+      buildNotes: [
+        "Normalisation CSV bancaire: chaque format (TD, RBC, Desjardins) a sa propre detection d'en-tetes et extracteur de champs -- un pattern strategie qui rend l'ajout de futures banques trivial.",
+        "Le moteur de regles correspond d'abord au nom de commercant normalise, puis se rabat sur les trois premiers mots de la description brute.",
+        "Le gel mensuel lit le surplus verrouille du mois precedent et le reintegre dans la nouvelle ligne d'instantane -- le report est calcule au moment du gel, pas stocke comme etat mutable.",
+      ],
+    },
+    repoUrl: "https://github.com/kurtisv/meridian",
+  },
 ];
 
 export function getProjectBySlug(slug: string) {
@@ -466,7 +508,7 @@ export const pageCopy = {
       role: "Ecosystem role",
     },
     proof: [
-      ["6", "projects shipped across the portfolio"],
+      ["7", "projects shipped across the portfolio"],
       ["5", "live sites online"],
       ["2", "mobile apps included"],
       ["1", "live real client site"],
@@ -512,7 +554,7 @@ export const pageCopy = {
       role: "Role ecosysteme",
     },
     proof: [
-      ["6", "projets livres dans le portfolio"],
+      ["7", "projets livres dans le portfolio"],
       ["5", "sites live en ligne"],
       ["2", "apps mobiles incluses"],
       ["1", "vrai site client live"],
