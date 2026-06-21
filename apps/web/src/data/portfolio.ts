@@ -429,48 +429,6 @@ export const featuredProjects: PortfolioProject[] = [
     repoUrl: "https://github.com/kurtisv/meridian",
   },
   {
-    slug: "casebook",
-    name: "Casebook",
-    category: "Incident post-mortem tool",
-    status: "live",
-    summary: "A structured post-mortem editor with a drag-and-drop timeline, contributing factors checklist, and one-click PDF or Markdown export.",
-    description:
-      "Casebook is a web tool for writing incident post-mortems that actually get read. It enforces structure without friction: a drag-and-drop timeline lets engineers reconstruct the event sequence and reorder events as the story becomes clearer. A pre-loaded contributing factors checklist covers Human, Process, and Technical categories so reviewers think beyond the immediate cause. Action items are assigned and tracked with a cycle-click status toggle. The narrative section is a full Tiptap rich-text editor, auto-saved on blur, stored as Tiptap JSON. At any point you can export -- a formatted PDF for stakeholders or a Markdown file for the docs system. The export engine generates both formats from the same structured data: Markdown via string assembly, PDF via @react-pdf/renderer with severity color badges, a timeline table, factor checkboxes, and a footer. All data is isolated per user via Supabase row-level security.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Tiptap", "@dnd-kit", "@react-pdf/renderer", "Zod"],
-    highlights: [
-      "Drag-and-drop timeline with @dnd-kit sortable -- no position drift on reorder",
-      "Pre-seeded contributing factors checklist: Human / Process / Technical with custom row support",
-      "Dual export: @react-pdf/renderer PDF and Markdown from the same structured data",
-    ],
-    recruiterValue:
-      "Shows server actions, route groups with protected layouts, rich-text editing with Tiptap JSON persistence, drag-and-drop with @dnd-kit, and server-side PDF generation -- all in a single cohesive tool.",
-    buildNotes: [
-      "Tiptap content is stored as JSON.stringify(editor.getJSON()) in a text column -- parsed back on load and deserialized into the editor's content prop. Blur triggers the save so there are no debounce races.",
-      "PDF generation runs server-side in a Next.js route handler via renderToBuffer -- the same Supabase queries that power the page also drive the export, so the PDF is always consistent with what the user sees.",
-      "@dnd-kit reorder calls reorderTimelineEvents which fires parallel Supabase updates for each new position index -- optimistic UI updates client-side first.",
-    ],
-    previewImage: "https://opengraph.githubassets.com/1/kurtisv/casebook",
-    fr: {
-      category: "Outil de post-mortem d'incidents",
-      summary: "Un editeur de post-mortem structure avec une chronologie glisser-deposer, une liste de facteurs contributifs et un export PDF ou Markdown en un clic.",
-      description:
-        "Casebook est un outil web pour ecrire des post-mortems d'incidents qui seront reellement lus. Il impose une structure sans friction: une chronologie glisser-deposer permet aux ingenieurs de reconstruire la sequence des evenements et de les reordonner. Une liste de facteurs contributifs pre-chargee couvre les categories Humain, Processus et Technique. Les elements d'action sont assignes et suivis avec un toggle de statut. La section narrative est un editeur riche Tiptap, sauvegarde automatiquement, stocke en JSON. A tout moment, vous pouvez exporter un PDF formate pour les parties prenantes ou un fichier Markdown pour la documentation.",
-      highlights: [
-        "Chronologie glisser-deposer avec @dnd-kit -- pas de derive de position au reordonnancement",
-        "Liste de facteurs contributifs pre-chargee: Humain / Processus / Technique avec support de lignes personnalisees",
-        "Export double: PDF @react-pdf/renderer et Markdown depuis les memes donnees structurees",
-      ],
-      recruiterValue:
-        "Montre les server actions, les route groups avec layouts proteges, l'edition riche avec persistance JSON Tiptap, le drag-and-drop avec @dnd-kit et la generation PDF cote serveur.",
-      buildNotes: [
-        "Le contenu Tiptap est stocke comme JSON.stringify(editor.getJSON()) dans une colonne texte -- parse au chargement et deserialise dans la prop content de l'editeur.",
-        "La generation PDF tourne cote serveur dans un route handler Next.js via renderToBuffer.",
-        "@dnd-kit reorder appelle reorderTimelineEvents qui lance des mises a jour Supabase paralleles pour chaque nouvel index de position.",
-      ],
-    },
-    repoUrl: "https://github.com/kurtisv/casebook",
-  },
-  {
     slug: "fieldlog",
     name: "Fieldlog",
     category: "Field inspection tool",
@@ -554,278 +512,6 @@ export const featuredProjects: PortfolioProject[] = [
     },
     repoUrl: "https://github.com/kurtisv/gridlock",
   },
-  {
-    slug: "runbook",
-    name: "Runbook",
-    category: "Internal tooling",
-    status: "private",
-    summary: "Versioned runbook editor with live step-by-step execution tracking and run history.",
-    description:
-      "Runbook lets ops teams write step-by-step procedures and execute them with a live checklist. Each runbook is versioned; starting a run snapshots the current version so old runs are unaffected by edits. Steps are typed (action, check, warning, info), can be required or optional, and carry estimated minutes. The run view checks off steps in real time and blocks completion until all required steps pass.",
-    stack: ["Next.js 15", "TypeScript", "Supabase", "Tailwind CSS v4"],
-    highlights: [
-      "Versioned runbooks: each run stores a snapshot of the runbook version it was started from.",
-      "Step types (action / check / warning / info) and required/optional distinction.",
-      "Live checklist with per-step timestamps stored in a JSONB map keyed by step ID.",
-      "Completion gated on all required steps being checked off.",
-      "Run history with completed/aborted status and executor attribution.",
-    ],
-    recruiterValue:
-      "Shows JSONB patching patterns, server action composition, and operational tooling UX -- a category recruiters rarely see in portfolios.",
-    buildNotes: [
-      "Checklist stored as JSONB map {stepId: {checked, checkedAt}} so individual steps can be patched without rewriting the full array.",
-      "Run row stores a full snapshot of runbook name and version so history is stable across runbook edits.",
-      "Status enum: active / completed / aborted -- completion gated client-side before the server action fires.",
-    ],
-    fr: {
-      category: "Outillage interne",
-      summary: "Editeur de runbooks versiones avec suivi d'execution pas a pas et historique des runs.",
-      description:
-        "Runbook permet aux equipes ops de rediger des procedures etape par etape et de les executer avec une checklist live. Chaque runbook est versionne; demarrer un run prend un snapshot de la version courante, donc les anciens runs ne sont pas affectes par les modifications. Les etapes ont un type (action, verification, avertissement, info), peuvent etre obligatoires ou optionnelles, et portent un temps estime. La vue de run coche les etapes en temps reel et bloque la completion jusqu'a ce que toutes les etapes requises soient validees.",
-      highlights: [
-        "Runbooks versiones: chaque run stocke un snapshot de la version du runbook au moment du lancement.",
-        "Types d'etapes (action / verification / avertissement / info) et distinction obligatoire/optionnel.",
-        "Checklist live avec timestamps par etape stockes dans une map JSONB indexee par ID d'etape.",
-        "Completion bloquee tant que toutes les etapes requises ne sont pas cochees.",
-        "Historique des runs avec statut complete/abandonne et attribution de l'executeur.",
-      ],
-      recruiterValue:
-        "Montre les patterns de patch JSONB, la composition d'actions serveur et l'UX d'outillage operationnel -- une categorie rarement vue dans les portfolios.",
-      buildNotes: [
-        "Checklist stockee comme map JSONB {stepId: {checked, checkedAt}} pour patcher les etapes individuellement sans reecrire tout le tableau.",
-        "Le run stocke un snapshot complet du nom et de la version du runbook pour que l'historique reste stable apres modification.",
-        "Enum de statut: active / completed / aborted -- completion bloquee cote client avant que l'action serveur se declenche.",
-      ],
-    },
-    repoUrl: "https://github.com/kurtisv/runbook",
-  },
-  {
-    slug: "strata",
-    name: "Strata",
-    category: "Property management",
-    status: "private",
-    summary: "Multi-unit property manager with tenant tracking, lease dates, and maintenance request pipeline.",
-    description:
-      "Strata is a landlord dashboard for managing multi-unit buildings. Units store status (vacant, occupied, maintenance), floor, bedrooms, bathrooms, rent, and notes. Each unit can have multiple tenants with full lease date tracking. Maintenance requests flow through an open / in-progress / resolved / closed pipeline and can be filtered by status. The units grid shows live tenant names and open request counts at a glance.",
-    stack: ["Next.js 15", "TypeScript", "Supabase", "Tailwind CSS v4"],
-    highlights: [
-      "Unit cards show real-time occupancy status, tenant names, and open request count in a compact grid.",
-      "Tenant records carry lease start/end, monthly rent, contact info, and free-form notes.",
-      "Maintenance requests have a 4-step status pipeline (open -> in_progress -> resolved -> closed) with one-click advancement.",
-      "Status filter bar lets the landlord focus on open or in-progress issues only.",
-      "Modal forms with full CRUD for units, tenants, and requests -- no separate pages needed.",
-    ],
-    recruiterValue:
-      "Property management is a real-world vertical with clear data relationships; this project shows multi-table Supabase design, server actions with Zod validation, and status-machine UX in a compact app.",
-    buildNotes: [
-      "Supabase join queries return 'never' without defined Relationships -- cast via 'as unknown as Type[]' in server components.",
-      "updateTenant strips unit_id before passing to Supabase because the Update type excludes FK columns.",
-      "Status advancement done with a Record<RequestStatus, RequestStatus | null> lookup table; null means the request is terminal.",
-    ],
-    fr: {
-      category: "Gestion immobiliere",
-      summary: "Gestionnaire multi-unite avec suivi des locataires, dates de bail et pipeline de demandes de maintenance.",
-      description:
-        "Strata est un tableau de bord pour proprietaires gerant des immeubles multi-logements. Les unites stockent le statut (vacant, occupe, maintenance), l'etage, le nombre de chambres, la salle de bain, le loyer et des notes. Chaque unite peut avoir plusieurs locataires avec suivi complet des dates de bail. Les demandes de maintenance progressent dans un pipeline ouvert / en cours / resolu / ferme et peuvent etre filtrees par statut. La grille des unites affiche les noms des locataires et le nombre de demandes ouvertes en un coup d'oeil.",
-      highlights: [
-        "Les cartes d'unite montrent le statut d'occupation en temps reel, les noms des locataires et le nombre de demandes ouvertes.",
-        "Les fiches locataires incluent debut/fin de bail, loyer mensuel, coordonnees et notes libres.",
-        "Les demandes de maintenance ont un pipeline en 4 etapes (ouvert -> en cours -> resolu -> ferme) avec avancement en un clic.",
-        "La barre de filtre de statut permet de se concentrer sur les problemes ouverts ou en cours.",
-        "Formulaires modaux avec CRUD complet pour les unites, locataires et demandes -- pas de pages separees.",
-      ],
-      recruiterValue:
-        "La gestion immobiliere est un secteur concret avec des relations de donnees claires; ce projet montre la conception multi-table Supabase, les actions serveur avec validation Zod et l'UX machine a etats dans une app compacte.",
-      buildNotes: [
-        "Les requetes join Supabase retournent 'never' sans Relationships definies -- cast via 'as unknown as Type[]' dans les composants serveur.",
-        "updateTenant retire unit_id avant de passer a Supabase car le type Update exclut les colonnes FK.",
-        "L'avancement de statut se fait via une table de correspondance Record<RequestStatus, RequestStatus | null>; null signifie que la demande est terminale.",
-      ],
-    },
-    repoUrl: "https://github.com/kurtisv/strata",
-  },
-  {
-    slug: "waveline",
-    name: "Waveline",
-    category: "Content management",
-    status: "private",
-    summary: "Podcast and audio content manager with show organization, episode show notes, and a 4-stage publish workflow.",
-    description:
-      "Waveline is a dashboard for podcast producers to manage shows and episodes from draft to publication. Episodes move through a 4-stage pipeline: draft -> ready -> published -> archived. Each episode has a title, description, audio URL with an in-page HTML5 player, duration, episode and season numbers, and a markdown-style show notes area. The episode detail page doubles as an editor -- all fields are editable inline without leaving the page.",
-    stack: ["Next.js 15", "TypeScript", "Supabase", "Tailwind CSS v4"],
-    highlights: [
-      "4-stage publish pipeline (draft / ready / published / archived) with one-click status advancement.",
-      "Shows group episodes; episode list can be filtered by status.",
-      "Inline episode editor -- no separate edit page; the detail view toggles between read and edit modes.",
-      "Audio URL stored and rendered as an HTML5 <audio> player directly in the detail view.",
-      "Duration stored in seconds and formatted as H:MM:SS or MM:SS for display.",
-      "Slug auto-generated from title on creation for feed-ready identifiers.",
-    ],
-    recruiterValue:
-      "Podcast management is a clean domain for showing content state machines, inline editing UX, and media handling without a CMS dependency.",
-    buildNotes: [
-      "Episode status stored as a DB enum; advancement uses a Record<EpisodeStatus, EpisodeStatus | null> lookup -- null means terminal.",
-      "published_at is set server-side when status transitions to 'published', not by the user.",
-      "Slug auto-generated via slugify() at create time; not updated on title edits to avoid breaking external references.",
-    ],
-    fr: {
-      category: "Gestion de contenu",
-      summary: "Gestionnaire de podcasts avec organisation par emissions, notes d'episode et workflow de publication en 4 etapes.",
-      description:
-        "Waveline est un tableau de bord pour les producteurs de podcasts qui permet de gerer les emissions et les episodes du brouillon a la publication. Les episodes passent par un pipeline en 4 etapes: brouillon -> pret -> publie -> archive. Chaque episode a un titre, une description, une URL audio avec lecteur HTML5, une duree, un numero d'episode et de saison, et un espace pour les notes d'emission au format markdown. La page de detail de l'episode fait aussi office d'editeur -- tous les champs sont modifiables en ligne sans quitter la page.",
-      highlights: [
-        "Pipeline de publication en 4 etapes (brouillon / pret / publie / archive) avec avancement en un clic.",
-        "Les emissions regroupent les episodes; la liste peut etre filtree par statut.",
-        "Editeur d'episode integre -- pas de page d'edition separee; la vue de detail bascule entre lecture et edition.",
-        "URL audio stockee et rendue comme lecteur HTML5 <audio> directement dans la vue de detail.",
-        "Duree stockee en secondes et formatee en H:MM:SS ou MM:SS pour l'affichage.",
-        "Slug genere automatiquement depuis le titre a la creation pour des identifiants prets pour le flux.",
-      ],
-      recruiterValue:
-        "La gestion de podcasts est un domaine propre pour montrer les machines d'etat de contenu, l'UX d'edition integree et la gestion des medias sans dependance a un CMS.",
-      buildNotes: [
-        "Le statut des episodes est stocke comme enum en base; l'avancement utilise une table Record<EpisodeStatus, EpisodeStatus | null> -- null signifie terminal.",
-        "published_at est defini cote serveur lors de la transition vers 'published', pas par l'utilisateur.",
-        "Le slug est genere automatiquement via slugify() a la creation; non mis a jour lors des modifications de titre pour eviter de casser les references externes.",
-      ],
-    },
-    repoUrl: "https://github.com/kurtisv/waveline",
-  },
-  {
-    slug: "watchpost",
-    name: "Watchpost",
-    category: "Content planning",
-    status: "private",
-    summary: "Social media content planner with platform tagging, status pipeline, monthly calendar, and post scheduling.",
-    description:
-      "Watchpost is a content planning dashboard for managing social media posts across multiple platforms. Each post carries the full copy, target platforms (Twitter, Instagram, LinkedIn, Facebook, TikTok, YouTube), a 5-stage status pipeline, tags, schedule datetime, and internal notes. The calendar view renders all scheduled posts on a month grid with color-coded status badges. Posts can be filtered by status in the list view.",
-    stack: ["Next.js 15", "TypeScript", "Supabase", "Tailwind CSS v4"],
-    highlights: [
-      "Multi-platform tagging: each post can target any combination of 7 platforms stored as a Postgres array.",
-      "5-stage status pipeline: idea / draft / scheduled / published / cancelled.",
-      "Monthly calendar view renders all scheduled posts on their scheduled date.",
-      "Status and platform filters in the list view for quick triage.",
-      "Tags stored as a text[] array and displayed as chips.",
-    ],
-    recruiterValue:
-      "Shows Postgres array columns used for multi-select attributes, a custom calendar grid built from date-fns math (no calendar library), and a content workflow with real domain complexity.",
-    buildNotes: [
-      "Platforms stored as a Postgres enum array: extractPlatforms() reads checkbox form fields named platform_{name} to build the array before insert.",
-      "Tags parsed from a comma-separated text input into a text[] at the server action level.",
-      "Calendar grid built with getCalendarDays() using eachDayOfInterval from startOfWeek(monthStart) to endOfWeek(monthEnd) -- always 35 or 42 cells.",
-    ],
-    fr: {
-      category: "Planification de contenu",
-      summary: "Planificateur de contenu social avec etiquetage de plateforme, pipeline de statut, calendrier mensuel et planification.",
-      description:
-        "Watchpost est un tableau de bord de planification de contenu pour gerer les publications sur les reseaux sociaux sur plusieurs plateformes. Chaque publication porte le texte complet, les plateformes cibles (Twitter, Instagram, LinkedIn, Facebook, TikTok, YouTube), un pipeline de statut en 5 etapes, des tags, une date/heure programmee et des notes internes. La vue calendrier affiche toutes les publications programmees sur une grille mensuelle avec des badges de statut codes par couleur.",
-      highlights: [
-        "Etiquetage multi-plateforme: chaque publication peut cibler n'importe quelle combinaison de 7 plateformes stockees sous forme de tableau Postgres.",
-        "Pipeline de statut en 5 etapes: idee / brouillon / programme / publie / annule.",
-        "La vue calendrier mensuelle affiche toutes les publications programmees a leur date.",
-        "Filtres de statut et de plateforme dans la vue liste pour un tri rapide.",
-        "Tags stockes sous forme de tableau text[] et affiches sous forme de chips.",
-      ],
-      recruiterValue:
-        "Montre les colonnes de tableaux Postgres pour les attributs a selection multiple, une grille calendrier construite avec les maths de date-fns (pas de bibliotheque calendrier), et un workflow de contenu avec une vraie complexite de domaine.",
-      buildNotes: [
-        "Plateformes stockees sous forme de tableau d'enum Postgres: extractPlatforms() lit les champs de cases a cocher nommes platform_{name} pour construire le tableau avant l'insertion.",
-        "Tags analyses depuis une saisie texte separee par des virgules dans un text[] au niveau de l'action serveur.",
-        "Grille calendrier construite avec getCalendarDays() en utilisant eachDayOfInterval de startOfWeek(monthStart) a endOfWeek(monthEnd) -- toujours 35 ou 42 cellules.",
-      ],
-    },
-    repoUrl: "https://github.com/kurtisv/watchpost",
-  },
-  {
-    slug: "pressroom",
-    name: "Pressroom",
-    category: "Communications",
-    status: "private",
-    summary: "Press release manager with a 5-stage approval workflow, inline editor, and media contact database.",
-    description:
-      "Pressroom is a communications dashboard for teams managing press releases and media outreach. Releases move through a 5-stage approval pipeline: draft -> review -> approved -> distributed -> archived. The release detail page doubles as an editor -- the body is a large textarea editable inline. A separate media contact database stores journalists and editors by outlet, role, email, and phone. Distributed_at is set automatically server-side when the release reaches the distributed stage.",
-    stack: ["Next.js 15", "TypeScript", "Supabase", "Tailwind CSS v4"],
-    highlights: [
-      "5-stage press release pipeline: draft / review / approved / distributed / archived.",
-      "Release body is a large text area -- no rich text dependency, formatted for copy-paste into wire services.",
-      "distributed_at timestamp set server-side automatically when status reaches 'distributed'.",
-      "Media contact database with outlet, role, email, and phone; searchable by name.",
-      "Status filter lets the team triage drafts vs. approved vs. distributed at a glance.",
-    ],
-    recruiterValue:
-      "Communications tooling is an underrepresented domain in developer portfolios; this project shows multi-step approval workflow logic and a contact CRM alongside a content editor in a production-ready stack.",
-    buildNotes: [
-      "STATUS_NEXT lookup table drives the advance-status pattern: same approach as Waveline and Runbook -- null means terminal.",
-      "distributed_at written by the server action (not the user) to guarantee an accurate audit trail.",
-      "contact_ids stored as uuid[] on the release row for future batch-email linking without a join table.",
-    ],
-    fr: {
-      category: "Communications",
-      summary: "Gestionnaire de communiques de presse avec workflow d'approbation en 5 etapes, editeur integre et base de contacts medias.",
-      description:
-        "Pressroom est un tableau de bord de communication pour les equipes qui gerent les communiques de presse et les relations medias. Les communiques passent par un pipeline d'approbation en 5 etapes: brouillon -> revision -> approuve -> distribue -> archive. La page de detail du communique fait aussi office d'editeur -- le corps est une grande zone de texte modifiable en ligne. Une base de contacts medias separee stocke les journalistes et redacteurs en chef par organe de presse, role, email et telephone.",
-      highlights: [
-        "Pipeline de communique de presse en 5 etapes: brouillon / revision / approuve / distribue / archive.",
-        "Le corps du communique est une grande zone de texte -- pas de dependance en texte riche, formate pour copier-coller vers les services de fil.",
-        "L'horodatage distributed_at est defini automatiquement cote serveur lorsque le statut atteint 'distribue'.",
-        "Base de contacts medias avec organe de presse, role, email et telephone.",
-        "Le filtre de statut permet a l'equipe de trier les brouillons vs approuves vs distribues d'un coup d'oeil.",
-      ],
-      recruiterValue:
-        "L'outillage de communication est un domaine sous-represente dans les portfolios de developpeurs; ce projet montre la logique de workflow d'approbation multi-etapes et un CRM de contacts aux cotes d'un editeur de contenu dans une stack prete pour la production.",
-      buildNotes: [
-        "La table de correspondance STATUS_NEXT conduit le pattern advance-status: meme approche que Waveline et Runbook -- null signifie terminal.",
-        "distributed_at ecrit par l'action serveur (pas l'utilisateur) pour garantir une piste d'audit precise.",
-        "contact_ids stockes comme uuid[] sur la ligne du communique pour une future liaison d'email en lot sans table de jointure.",
-      ],
-    },
-    repoUrl: "https://github.com/kurtisv/pressroom",
-  },
-  {
-    slug: "patchwork",
-    name: "Patchwork",
-    category: "Developer tooling",
-    status: "private",
-    summary: "Versioned changelog manager where teams write typed change entries (feature / fix / security / breaking) grouped under release records.",
-    description:
-      "Patchwork is a structured changelog tool for software teams. Each release has a version string (semver), an optional title, a summary, and a status of draft or published. Under each release, teams write individual change entries typed as feature, fix, improvement, deprecation, security, or breaking. Entries are ordered positionally within their release and displayed grouped by type. Publishing a release sets a server-stamped published_at timestamp so the audit trail cannot be tampered with client-side. The release list shows entry counts at a glance. The detail page is a single view that handles both the release metadata editor and the entry list with inline add and delete -- no separate edit page or modal routing.",
-    stack: ["Next.js 15", "TypeScript", "Supabase", "Tailwind CSS v4"],
-    highlights: [
-      "6 entry types (feature / fix / improvement / deprecation / security / breaking) stored as a Postgres enum.",
-      "Entries grouped by type on the detail page -- the same visual structure as GitHub Releases.",
-      "Position-ordered entries: each new entry gets last_position + 1 via a server-side query.",
-      "published_at set server-side at publish time -- not editable by the user.",
-      "Single detail page handles both the release meta editor and inline entry CRUD.",
-    ],
-    recruiterValue:
-      "Changelog tooling is a real internal tool domain; this project shows Postgres enum arrays, position-ordered inserts, server-stamped audit fields, and grouped display from a single joined query -- without any external library dependency.",
-    buildNotes: [
-      "Entry type is a Postgres enum (entry_type); position is an integer column with an index on (release_id, position) for ordered fetches.",
-      "createEntry queries the last position for the release before inserting at last + 1 -- avoids gaps and conflicts without a trigger.",
-      "The detail page fetches via an API route (/api/releases/:id) that joins entries ordered by position -- client state is reloaded after each mutation.",
-    ],
-    fr: {
-      category: "Outillage developpeur",
-      summary: "Gestionnaire de changelog versionne ou les equipes ecrivent des entrees typees (feature / fix / security / breaking) groupees par release.",
-      description:
-        "Patchwork est un outil de changelog structure pour les equipes logicielles. Chaque release a une version (semver), un titre optionnel, un resume et un statut brouillon ou publie. Sous chaque release, les equipes ecrivent des entrees typees: feature, fix, improvement, deprecation, security ou breaking. Les entrees sont ordonnees et affichees groupees par type. La publication d'une release definit un published_at cote serveur pour que la piste d'audit ne puisse pas etre modifiee cote client. La page de detail gere a la fois l'editeur de metadonnees et la liste des entrees avec ajout et suppression en ligne.",
-      highlights: [
-        "6 types d'entrees (feature / fix / improvement / deprecation / security / breaking) stockes comme enum Postgres.",
-        "Entrees groupees par type sur la page de detail -- meme structure visuelle que GitHub Releases.",
-        "Entrees ordonnees par position: chaque nouvelle entree recoit last_position + 1 via une requete cote serveur.",
-        "published_at defini cote serveur au moment de la publication -- non modifiable par l'utilisateur.",
-        "Page de detail unique pour l'editeur de release et le CRUD d'entrees en ligne.",
-      ],
-      recruiterValue:
-        "L'outillage de changelog est un domaine d'outil interne reel; ce projet montre les enums Postgres, les insertions ordonnees par position, les champs d'audit estampilles cote serveur et l'affichage groupe depuis une requete jointe unique.",
-      buildNotes: [
-        "Le type d'entree est un enum Postgres (entry_type); la position est une colonne entiere avec un index sur (release_id, position).",
-        "createEntry interroge la derniere position de la release avant d'inserer a last + 1 -- evite les trous sans trigger.",
-        "La page de detail charge via une route API (/api/releases/:id) qui joint les entrees ordonnees par position.",
-      ],
-    },
-    repoUrl: "https://github.com/kurtisv/patchwork",
-  },
 ];
 
 export function getProjectBySlug(slug: string) {
@@ -906,7 +592,7 @@ export const pageCopy = {
       role: "Ecosystem role",
     },
     proof: [
-      ["10", "projects shipped across the portfolio"],
+      ["9", "projects shipped across the portfolio"],
       ["5", "live sites online"],
       ["2", "mobile apps included"],
       ["1", "live real client site"],
@@ -952,7 +638,7 @@ export const pageCopy = {
       role: "Role ecosysteme",
     },
     proof: [
-      ["10", "projets livres dans le portfolio"],
+      ["9", "projets livres dans le portfolio"],
       ["5", "sites live en ligne"],
       ["2", "apps mobiles incluses"],
       ["1", "vrai site client live"],
@@ -984,7 +670,7 @@ export const ecosystemNarrative = {
     eyebrow: "Focused portfolio",
     title: "The public portfolio keeps only finished work.",
     description:
-      "The visible portfolio centers on six complete projects: two mobile apps (EventPic, GasMobile), three web products built from the same boilerplate (Luma Studio, SpeedZone, this portfolio), and a delivered real estate client site (Suze Immo). The kv-web-starter foundation underpins all three web products.",
+      "The visible portfolio keeps only finished work: two mobile apps (EventPic, GasMobile), three web products from the same boilerplate (Luma Studio, SpeedZone, this portfolio), a delivered real estate client site (Suze Immo), a shared boilerplate (KV Web Starter), and three internal tools (Meridian, Fieldlog, Gridlock). Nine projects, all shipped.",
     database: "Shared database: Supabase KV Portfolio",
     foundation: "Foundation: kv-web-starter boilerplate",
     cta: "Explore the path",
@@ -993,7 +679,7 @@ export const ecosystemNarrative = {
     eyebrow: "Portfolio cible",
     title: "Le portfolio public garde seulement le travail termine.",
     description:
-      "Le portfolio visible se concentre sur six projets complets: deux apps mobiles (EventPic, GasMobile), trois produits web construits depuis le meme boilerplate (Luma Studio, SpeedZone, ce portfolio) et un site client immobilier livre (Suze Immo). La fondation kv-web-starter soutient les trois produits web.",
+      "Le portfolio visible garde seulement le travail termine: deux apps mobiles (EventPic, GasMobile), trois produits web depuis le meme boilerplate (Luma Studio, SpeedZone, ce portfolio), un site client immobilier livre (Suze Immo), un boilerplate partage (KV Web Starter) et trois outils internes (Meridian, Fieldlog, Gridlock). Neuf projets, tous livres.",
     database: "Base partagee: Supabase KV Portfolio",
     foundation: "Fondation: boilerplate kv-web-starter",
     cta: "Explorer le parcours",
