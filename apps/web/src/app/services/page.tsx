@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 import { SectionHeading } from "@/components/portfolio/section-heading";
 import { MarketingPageShell } from "@/components/marketing/page-shell";
+import { Button } from "@/components/ui/button";
 import { serviceAreas, serviceAreasFr } from "@/data/portfolio";
 import { getCurrentLocale } from "@/lib/locale";
 
@@ -16,12 +19,18 @@ const copy = {
     title: "The work is centered on practical product development.",
     description:
       "This page frames the portfolio from a client or recruiter perspective: what kind of problems the work is meant to solve.",
+    ctaEyebrow: "Ready to start?",
+    ctaTitle: "Describe your project and I'll tell you if it's a good fit.",
+    cta: "Contact",
   },
   fr: {
     eyebrow: "Services",
-    title: "Le travail est centre sur du developpement produit concret.",
+    title: "Le travail est centré sur du développement produit concret.",
     description:
-      "Cette page presente le portfolio du point de vue client ou recruteur: quels problemes le travail cherche a resoudre.",
+      "Cette page présente le portfolio du point de vue client ou recruteur : quels problèmes le travail cherche à résoudre.",
+    ctaEyebrow: "Prêt à démarrer ?",
+    ctaTitle: "Décris ton projet et je te dis si c'est un bon fit.",
+    cta: "Prendre contact",
   },
 } as const;
 
@@ -45,6 +54,20 @@ export default async function ServicesPage() {
               <p className="mt-4 leading-7 text-muted-foreground">{area.description}</p>
             </article>
           ))}
+        </div>
+
+        <div className="mt-16 border border-primary/20 bg-card p-8 shadow-sm">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+            {t.ctaEyebrow}
+          </p>
+          <p className="mt-3 text-2xl font-semibold">{t.ctaTitle}</p>
+          <div className="mt-6">
+            <Button asChild size="lg">
+              <Link href="/contact">
+                {t.cta} <ArrowRight className="size-4" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </main>
     </MarketingPageShell>

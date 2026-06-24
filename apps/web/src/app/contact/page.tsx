@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
 
-import { sendContactMessage } from "@/app/actions/contact";
+import { ContactForm } from "@/components/portfolio/contact-form";
 import { SectionHeading } from "@/components/portfolio/section-heading";
 import { MarketingPageShell } from "@/components/marketing/page-shell";
-import { Button } from "@/components/ui/button";
-import { Form, FormField } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { getCurrentLocale } from "@/lib/locale";
 
 export const metadata: Metadata = {
@@ -25,30 +20,36 @@ const copy = {
     noteTwo:
       "Best fit: Next.js websites, SaaS dashboards, API portals, product cleanup, and deployment-ready portfolio work.",
     formTitle: "Project message",
-    formText:
-      "Short and specific is enough. I'll reply to your email directly.",
+    formText: "Short and specific is enough. I'll reply to your email directly.",
     name: "Name",
     projectType: "Project type",
     placeholder: "Website, dashboard, API, mobile app",
     message: "Message",
     submit: "Send message",
+    success: "Message sent!",
+    successDetail: "I'll get back to you within 48 hours.",
+    errorValidation: "Please fill in all required fields correctly.",
+    errorSend: "Something went wrong. Please try again or email me directly.",
   },
   fr: {
     eyebrow: "Contact",
-    title: "Dis-moi ce qui doit etre construit, ameliore ou livre.",
+    title: "Dis-moi ce qui doit être construit, amélioré ou livré.",
     description:
-      "Les meilleurs projets ont un probleme utilisateur clair, un scope pratique et un niveau de qualite qui rend le code revisable.",
-    noteOne: "Contexte utile: objectif produit, delai, stack actuelle et ce qui existe deja.",
+      "Les meilleurs projets ont un problème utilisateur clair, un scope pratique et un niveau de qualité qui rend le code révisable.",
+    noteOne: "Contexte utile : objectif produit, délai, stack actuelle et ce qui existe déjà.",
     noteTwo:
-      "Bon fit: sites Next.js, dashboards SaaS, portails API, nettoyage produit et portfolios prets a deployer.",
+      "Bon fit : sites Next.js, dashboards SaaS, portails API, nettoyage produit et portfolios prêts à déployer.",
     formTitle: "Message projet",
-    formText:
-      "Court et specifique suffit. Je repondrai directement a ton email.",
+    formText: "Court et spécifique suffit. Je répondrai directement à ton email.",
     name: "Nom",
     projectType: "Type de projet",
     placeholder: "Site, dashboard, API, app mobile",
     message: "Message",
     submit: "Envoyer",
+    success: "Message envoyé !",
+    successDetail: "Je te réponds sous 48 heures.",
+    errorValidation: "Merci de remplir tous les champs obligatoires correctement.",
+    errorSend: "Une erreur s'est produite. Réessaie ou écris-moi directement par email.",
   },
 } as const;
 
@@ -67,39 +68,11 @@ export default async function ContactPage() {
               description={t.description}
             />
             <div className="mt-8 grid gap-4 text-sm text-muted-foreground">
-              <p className="border-l border-border pl-4">
-                {t.noteOne}
-              </p>
-              <p className="border-l border-border pl-4">
-                {t.noteTwo}
-              </p>
+              <p className="border-l border-border pl-4">{t.noteOne}</p>
+              <p className="border-l border-border pl-4">{t.noteTwo}</p>
             </div>
           </div>
-          <div className="border border-border bg-card p-6 shadow-sm">
-            <h2 className="text-xl font-semibold">{t.formTitle}</h2>
-            <p className="mt-2 text-sm text-muted-foreground">
-              {t.formText}
-            </p>
-            <Form action={sendContactMessage} className="mt-6">
-              <FormField>
-                <Label htmlFor="name">{t.name}</Label>
-                <Input id="name" name="name" required />
-              </FormField>
-              <FormField>
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" name="email" required type="email" />
-              </FormField>
-              <FormField>
-                <Label htmlFor="projectType">{t.projectType}</Label>
-                <Input id="projectType" name="projectType" placeholder={t.placeholder} />
-              </FormField>
-              <FormField>
-                <Label htmlFor="message">{t.message}</Label>
-                <Textarea id="message" name="message" required />
-              </FormField>
-              <Button type="submit">{t.submit}</Button>
-            </Form>
-          </div>
+          <ContactForm copy={t} />
         </section>
       </main>
     </MarketingPageShell>

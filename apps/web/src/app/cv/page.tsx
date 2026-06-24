@@ -96,15 +96,15 @@ const copy = {
   fr: {
     print: "Imprimer / Enregistrer en PDF",
     profile: "Profil professionnel",
-    skills: "Competences cles",
-    experience: "Experience professionnelle",
+    skills: "Compétences clés",
+    experience: "Expérience professionnelle",
     projects: "Projets techniques",
-    projectsNote: "Chaque projet ci-dessous est documente en detail, avec captures et liens live, dans le portfolio.",
+    projectsNote: "Chaque projet ci-dessous est documenté en détail, avec captures et liens live, dans le portfolio.",
     projectsCta: "Voir tous les projets",
     education: "Formation",
     educationItems: ["AEC en informatique"],
     languages: "Langues",
-    qualities: "Qualites professionnelles",
+    qualities: "Qualités professionnelles",
     qualitiesItems: [
       "Esprit d'analyse",
       "Autonomie",
@@ -116,12 +116,12 @@ const copy = {
     ],
     projectItems: [
       {
-        name: "Suze Immo (plateforme immobiliere)",
+        name: "Suze Immo (plateforme immobilière)",
         tech: "React / Supabase / Storage / Auth / SQL",
         href: "/projects/suze-immo",
         bullets: [
-          "Livre pour un vrai client, en ligne aujourd'hui sur suzeimmo.com.",
-          "Interface web pour afficher, gerer et publier des proprietes immobilieres.",
+          "Livré pour un vrai client, en ligne aujourd'hui sur suzeimmo.com.",
+          "Interface web pour afficher, gérer et publier des propriétés immobilières.",
           "Authentification, stockage de fichiers et couche SQL via Supabase.",
         ],
       },
@@ -130,18 +130,18 @@ const copy = {
         tech: "React Native / Expo / API / cartographie",
         href: "/projects/gasmobile",
         bullets: [
-          "App mobile affichant stations-service, prix d'essence et donnees de localisation sur carte.",
-          "API de donnees gouvernementales, geolocalisation, recherche, itineraires et affichage dynamique.",
-          "Debogage de bout en bout: builds, donnees, performances mobiles et appels API.",
+          "App mobile affichant stations-service, prix d'essence et données de localisation sur carte.",
+          "API de données gouvernementales, géolocalisation, recherche, itinéraires et affichage dynamique.",
+          "Débogage de bout en bout : builds, données, performances mobiles et appels API.",
         ],
       },
       {
-        name: "EventPic (app photo evenement)",
+        name: "EventPic (app photo événement)",
         tech: "React Native / Cloudflare Workers / R2",
         href: "/projects/eventpic",
         bullets: [
-          "Fil photo partage en temps reel pour evenements prives avec invitations QR.",
-          "Theme par evenement, moderation admin et backend edge Cloudflare Workers.",
+          "Fil photo partagé en temps réel pour événements privés avec invitations QR.",
+          "Thème par événement, modération admin et backend edge Cloudflare Workers.",
         ],
       },
       {
@@ -149,8 +149,8 @@ const copy = {
         tech: "Next.js / TypeScript / Tailwind / Prisma / Stripe",
         href: "/projects/luma-studio",
         bullets: [
-          "Plateforme marketing et reservation SaaS construite sur le boilerplate kv-web-starter.",
-          "Bilingue FR/EN, abonnements Stripe, formulaire de contact valide, deploy production.",
+          "Plateforme marketing et réservation SaaS construite sur le boilerplate kv-web-starter.",
+          "Bilingue FR/EN, abonnements Stripe, formulaire de contact validé, déploiement production.",
         ],
       },
       {
@@ -158,8 +158,8 @@ const copy = {
         tech: "Next.js / TypeScript / Tailwind / Sanity / NextAuth",
         href: "/projects/speedzone",
         bullets: [
-          "Plateforme communautaire automobile avec fiches vehicules, fonctionnalites sociales (suivi, commentaires) et articles Sanity CMS.",
-          "Google OAuth, contenu genere par les utilisateurs et modelisation de contenu Sanity sur une seule plateforme live.",
+          "Plateforme communautaire automobile avec fiches véhicules, fonctionnalités sociales (suivi, commentaires) et articles Sanity CMS.",
+          "Google OAuth, contenu généré par les utilisateurs et modélisation de contenu Sanity sur une seule plateforme live.",
         ],
       },
       {
