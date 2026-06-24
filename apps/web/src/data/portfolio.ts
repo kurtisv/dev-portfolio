@@ -385,6 +385,7 @@ export const featuredProjects: PortfolioProject[] = [
       ],
     },
     repoUrl: "https://github.com/kurtisv/kv-web-starter",
+    liveUrl: "https://kv-web-starter.vercel.app",
   },
   {
     slug: "meridian",
