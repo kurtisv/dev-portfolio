@@ -22,7 +22,7 @@ const copy = {
     eyebrow: "Projets",
     title: "Projets portfolio — vrais sites, produits live, apps mobiles et la fondation boilerplate.",
     description:
-      "Six projets livres: des sites live construits depuis un seul boilerplate, les apps mobiles EventPic et GasMobile, un vrai lancement client et le starter Next.js qui les alimente tous.",
+      "Six projets livrés : des sites live construits depuis un seul boilerplate, les apps mobiles EventPic et GasMobile, un vrai lancement client et le starter Next.js qui les alimente tous.",
   },
 } as const;
 
@@ -39,7 +39,7 @@ export default async function ProjectsPage() {
           title={t.title}
           description={t.description}
         />
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
+        <div className="mt-10 grid gap-4 md:grid-cols-2 [&>article:last-child:nth-child(odd)]:md:col-span-2">
           {orderedProjects.map((project) => (
             <ProjectCard key={project.slug} project={project} locale={locale} />
           ))}

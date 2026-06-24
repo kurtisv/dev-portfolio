@@ -33,7 +33,7 @@ export async function Navbar() {
             </span>
           </span>
         </Link>
-        <nav className="hidden items-center gap-1 rounded-full border border-border/80 bg-card/70 p-1 shadow-sm md:flex">
+        <nav className="hidden items-center gap-1 rounded-full border border-border/80 bg-card/70 p-1 shadow-sm lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -46,7 +46,7 @@ export async function Navbar() {
         </nav>
         <div className="flex items-center gap-2">
           <LanguageSwitcher current={locale} />
-          <Button asChild size="sm" className="hidden md:inline-flex">
+          <Button asChild size="sm" className="hidden lg:inline-flex">
             <Link href="/contact">{t.cta}</Link>
           </Button>
           <MobileMenu items={navItems} cta={t.cta} />
