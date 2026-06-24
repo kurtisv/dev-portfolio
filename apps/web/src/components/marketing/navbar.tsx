@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { MobileMenu } from "@/components/marketing/mobile-menu";
 import { LanguageSwitcher } from "@/components/portfolio/language-switcher";
 import { Button } from "@/components/ui/button";
 import { pageCopy } from "@/data/portfolio";
@@ -45,9 +46,10 @@ export async function Navbar() {
         </nav>
         <div className="flex items-center gap-2">
           <LanguageSwitcher current={locale} />
-          <Button asChild size="sm">
+          <Button asChild size="sm" className="hidden md:inline-flex">
             <Link href="/contact">{t.cta}</Link>
           </Button>
+          <MobileMenu items={navItems} cta={t.cta} />
         </div>
       </div>
     </header>
