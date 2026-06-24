@@ -118,7 +118,7 @@ export default async function Home() {
               <p className="mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
                 {t.eyebrow}
               </p>
-              <h1 className="hero-wordmark mt-3 max-w-4xl text-5xl font-semibold tracking-normal text-balance sm:text-7xl">
+              <h1 className="hero-wordmark mt-3 max-w-4xl text-4xl font-semibold tracking-normal text-balance sm:text-5xl lg:text-7xl">
                 {t.title}
               </h1>
               <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
@@ -290,7 +290,7 @@ export default async function Home() {
             title={t.selectedTitle}
             description={t.selectedDescription}
           />
-          <div className="mt-10 grid gap-4 md:grid-cols-2">
+          <div className="mt-10 grid gap-4 md:grid-cols-2 [&>article:last-child:nth-child(odd)]:md:col-span-2">
             {visibleProjects.map((project) => (
               <ProjectCard key={project.slug} project={project} locale={locale} />
             ))}

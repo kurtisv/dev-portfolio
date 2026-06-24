@@ -23,7 +23,7 @@ export function MobileMenu({ items, cta }: { items: NavItem[]; cta: string }) {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="flex size-9 items-center justify-center text-foreground transition hover:bg-secondary/60 md:hidden"
+        className="flex size-9 items-center justify-center text-foreground transition hover:bg-secondary/60 lg:hidden"
         aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
         aria-expanded={open}
       >
@@ -33,12 +33,12 @@ export function MobileMenu({ items, cta }: { items: NavItem[]; cta: string }) {
       {open && (
         <>
           <div
-            className="fixed inset-0 top-16 z-30 bg-background/80 backdrop-blur-sm md:hidden"
+            className="fixed inset-0 top-16 z-30 bg-background/80 backdrop-blur-sm lg:hidden"
             onClick={() => setOpen(false)}
             aria-hidden
           />
           <nav
-            className="fixed inset-x-0 top-16 z-40 border-b border-border bg-background/95 shadow-lg backdrop-blur-xl md:hidden"
+            className="fixed inset-x-0 top-16 z-40 border-b border-border bg-background/95 shadow-lg backdrop-blur-xl lg:hidden"
             aria-label="Navigation mobile"
           >
             <div className="flex flex-col gap-1 px-4 py-3">

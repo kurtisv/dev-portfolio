@@ -369,7 +369,7 @@ export const featuredProjects: PortfolioProject[] = [
       "50+ Vitest tests and a CI workflow guard the base — every product built from it starts verified, not hopeful.",
       "Public GitHub repo: read the commit history and compare the boilerplate against each product built from it.",
     ],
-    previewImage: "https://opengraph.githubassets.com/1/kurtisv/kv-web-starter",
+    previewImage: undefined,
     fr: {
       category: "Boilerplate Next.js",
       summary: "Un starter Next.js réutilisable avec auth, base de données, structure facturation, support bilingue et suite de tests.",
@@ -407,7 +407,7 @@ export const featuredProjects: PortfolioProject[] = [
       "Rules engine matches on normalized merchant name first, then falls back to the first three words of the raw description. Rules are upserted on conflict so duplicates never accumulate.",
       "Monthly freeze reads the previous month's locked surplus and carries it into the new snapshot row — roll-over is computed at freeze time, not stored as mutable state.",
     ],
-    previewImage: "https://opengraph.githubassets.com/1/kurtisv/meridian",
+    previewImage: undefined,
     fr: {
       category: "Application web finances personnelles",
       summary: "Un gestionnaire de budget par enveloppes avec importation CSV bancaire, règles d'attribution automatique et instantanés mensuels immuables.",
@@ -449,7 +449,7 @@ export const featuredProjects: PortfolioProject[] = [
       "GPS capture is gated behind a user action button (not auto-requested on page load) to avoid permission prompt friction. The coordinates are stored as separate latitude and longitude columns, not a string.",
       "PDF is generated in the Next.js API route, not the browser. renderToBuffer returns a Node.js Buffer; wrapping it in new Uint8Array() satisfies the BodyInit constraint for NextResponse.",
     ],
-    previewImage: "https://opengraph.githubassets.com/1/kurtisv/fieldlog",
+    previewImage: undefined,
     fr: {
       category: "Outil d'inspection terrain",
       summary: "Un outil de journalisation d'inspections terrain avec des modèles personnalisés, capture GPS, réponses structurées et export PDF.",
@@ -491,7 +491,7 @@ export const featuredProjects: PortfolioProject[] = [
       "The calendar grid renders resources as columns and hours as rows. Booking top offset = differenceInMinutes(start, midnight) * (64/60). Booking height = duration_in_minutes * (64/60). This makes each hour exactly 64px tall regardless of zoom.",
       "Week navigation pushes a ?week= query param so the URL is shareable and the schedule page is a server component that fetches fresh data on each load.",
     ],
-    previewImage: "https://opengraph.githubassets.com/1/kurtisv/gridlock",
+    previewImage: undefined,
     fr: {
       category: "Planificateur de ressources",
       summary: "Une grille de calendrier hebdomadaire pour réserver des salles, équipements ou toute ressource partagée — avec détection de conflits appliquée côté serveur.",

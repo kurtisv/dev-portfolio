@@ -28,8 +28,26 @@ export function ProjectCard({
           />
         </div>
       ) : (
-        <div className="flex h-52 items-center justify-center border-b border-border bg-[#111a17]">
-          <span className="text-3xl font-bold tracking-tight text-white/20">
+        <div className="relative flex h-52 flex-col justify-between overflow-hidden border-b border-border bg-[#111a17] p-5">
+          <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/30">
+            {project.category}
+          </span>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/30">
+              Stack
+            </p>
+            <div className="mt-2 flex flex-wrap gap-1.5">
+              {project.stack.slice(0, 5).map((item) => (
+                <span
+                  key={item}
+                  className="border border-white/10 bg-white/[0.06] px-2 py-0.5 font-mono text-[10px] text-white/50"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+          <span className="absolute right-4 top-4 text-6xl font-bold tracking-tighter text-white/[0.04]">
             {project.name.slice(0, 2).toUpperCase()}
           </span>
         </div>
